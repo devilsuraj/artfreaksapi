@@ -1,0 +1,139 @@
+@charset "utf-8";
+/* CSS Document */
+
+/*dropdown Navigation */
+
+.navigation1 {
+  display: block;
+/*padding-left:240px;*/
+  background: #FFF;
+
+  border-radius: 3px;
+
+
+}
+
+.navigation1 ul {
+  list-style-type: none;
+  margin: 0;
+  /*padding: 0;*/
+  display: inline-block;
+}
+
+.navigation1 li {
+/*  list-style-type: none;*/
+ /* margin-left:30px;*/
+  padding: 0 35px 0 0px;
+  display: inline-block;
+  position: relative;
+  font-size: 14px;
+  color: #000;
+  z-index:1;
+}
+
+.navigation1 li a {
+
+  font-size: 15px;
+  color: #000;
+  display:block;
+  outline: 0;
+  font-weight: 400;
+  font-family:'MyriadPro Cond';
+  text-transform:uppercase;
+}
+
+
+.navigation1 li:hover ul.dropdown { display: block; color:red; }
+
+.navigation1 li ul.dropdown {
+  position: absolute;
+  display: none;
+  width: 140px;
+  background: #FFF;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.26);
+  padding-top: 0;
+  text-align:center;
+  color:#000;
+}
+
+.navigation1 li ul.dropdown li 
+{
+	color:#000;
+}
+
+.navigation1 li ul.dropdown li {
+  display: block;
+  list-style-type: none;
+}
+
+.navigation1 li ul.dropdown li a {
+  padding: 2px;
+  font-size: 14px;
+  color:#000;
+  display: block;
+text-align:left;
+  font-weight: 300;
+
+ 
+}
+
+.navigation1 li ul.dropdown li:last-child a { color:#000; border-bottom: none; }
+
+.navigation1 li:hover a {
+
+  color: red; !important;
+}
+
+.navigation1 li:first-child:hover a { border-radius: 1px 0 0 1px; }
+
+.navigation1 li ul.dropdown li:hover a { background: #; text-align:left; color:#FD0004; }
+
+.navigation1 li ul.dropdown li:first-child:hover a { border-radius: 0; }
+
+.navigation1 li:hover .arrow-down { border-top: 5px solid #fff; }
+
+.arrow-down {
+  width: 0;
+  height: 0;
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 5px solid #FFF;
+  position: relative;
+  top: 12px;
+  right: -5px;
+  content: '';
+}
+
+
+
+@media only screen and (max-width:767px) {
+
+.navigation1
+ {
+  background: #fff;
+  width: 200px;
+  height: 100%;
+  display: block;
+  position: fixed;
+  top: 0px;
+  transition: left 0.3s linear;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100%;
+  padding:0px;
+}
+
+
+.navigation1 li
+
+{
+	margin-left:0px;
+}
+
+.navigation1.visible {
+  left: 0px;
+  transition: left 0.3s linear;
+}

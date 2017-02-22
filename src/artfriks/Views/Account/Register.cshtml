@@ -1,0 +1,116 @@
+﻿@model RegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+    <div class="row" id="reg">
+        <h4 class="center red-text" style="font-family:MyriadPro Cond;"> Registration </h4>
+        <form asp-controller="Account" asp-action="Register" OnSuccess="return ShowCont(2);"  data-ajax="true" data-ajax-method="POST"  data-ajax-update="#reg" LoadingElementId="#loader" data-ajax-mode="replace"  class="form-horizontal">
+            <div asp-validation-summary="All" class="text-danger"></div>
+             <div class="row">
+                <div class="input-field col s12 m3 l3">
+                    <span class="lable"> First Name<sup>*</sup></span>
+                </div>
+                <div class="input-field col s12 m9 l9">
+                    <input asp-for="FullName" class="validate box-style" />
+                    <span asp-validation-for="FullName" class="text-danger"></span> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m3 l3">
+                    <span class="lable"> Email<sup>*</sup></span>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input asp-for="Email" class="validate box-style" />
+                    <span asp-validation-for="Email" class="text-danger"></span> 
+                </div>
+                <div class="radi input-field col s12 m3 l3">
+                    <input asp-for="OTPfrom" value="2" class="with-gap red radio-bt" name="group1" type="radio" id="test4">
+                    <label for="test4">Yes, send OTP by Email</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m3 l3">
+                    <span class="lable"> Phone<sup>*</sup></span>
+                </div>
+                <div class="input-field col s12 m6 l6">
+                    <input asp-for="CountryCode"  maxlength="3" type="tel" class="validate box-style tel-code" style="float:left" />
+                     <input asp-for="Phone" type="tel" class="validate box-style tel-num" style="float:left" />
+                </div>
+                <div class="input-field col s12 m3 l3">
+                    <input asp-for="OTPfrom" class="with-gap red radio-bt" value="1" name="group1" type="radio" id="test3">
+                    <label for="test3">Yes, send OTP by Phone</label>
+                </div>
+                <div class="col l12 right-align note">
+                    An OTP (one time password) will be sent on your registered phone number.
+                    Please make sure your number is correct with country code etc.
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col s12 m3 l3">
+                    <span class="lable"> Address<sup>*</sup></span>
+                </div>
+                <div class="input-field col s12 m9 l9">
+                    <textarea asp-for="Address" id="address" class="materialize-textarea validate box-style"></textarea>
+                    <span asp-validation-for="Address" class="text-danger"></span> 
+                </div>
+            </div>
+        <div id="loader" onclick="return ShowCont(2);" >Loading...</div>
+            <button class="waves-effect waves-light btn right white black-text" style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;"  ><i class="material-icons right">fast_forward</i> log in</button>
+            </form>
+    </div> <!-- /registartion ends-->
+    <!--:::::::: OTP DIV::::::::::  -->
+
+    <div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+ <!-- /registartion ends-->
+
+
+<!--:::::::: OTP DIV::::::::::  -->
+<div class="row" id="otp" style="display:none;">
+    <h4 class="center red-text" style="font-family:MyriadPro Cond;"> Registration confirmation </h4>
+    <form class="col s12">
+
+        <div class="row">
+            <div class="input-field col s12 m4 l4">
+                <span class="lable"> Cofirm OTP</span>
+            </div>
+            <div class="input-field col s12 m8 l8">
+                <input asp-for="OTP"  type="text" class="validate box-style " />
+                <span asp-validation-for="OTP" class="text-danger"></span> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m4 l4">
+                <span class="lable"> User Name</span>
+            </div>
+            <div class="input-field col s12 m8 l8">
+                <input asp-for="UserName" type="text" class="validate box-style " />
+                <span asp-validation-for="UserName" class="text-danger"></span> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m4 l4">
+                <span class="lable"> Password</span>
+            </div>
+            <div class="input-field col s12 m8 l8">
+                <input asp-for="Password" type="Password" class="validate box-style" />
+                <span asp-validation-for="Password" class="text-danger"></span> 
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="input-field col s12 m4 l4">
+                <span class="lable"> Confirm Password</span>
+            </div>
+            <div class="input-field col s12 m8 l8">
+                <input asp-for="ConfirmPassword" type="Password" class="validate box-style " />
+                <span asp-validation-for="ConfirmPassword" class="text-danger"></span> 
+            </div>
+        </div>
+
+        <a class="waves-effect waves-light btn left white black-text" style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;" href="javascript:void(0)" onclick="return ShowCont(1);"><i class="material-icons left">fast_rewind</i>Back</a>
+
+        <a class="waves-effect waves-light btn right white black-text" style="border-top:1px solid #ccc; border-bottom:1px solid #ccc;" href="javascript:void(0)" onclick="return ShowCont(3);"><i class="material-icons right">fast_forward</i>Next</a>
+    </form>
+</div>  <!-- / otp ends-->

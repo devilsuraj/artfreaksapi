@@ -1,0 +1,263 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>ArtFreaks</title>
+    <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="~/css/materialize.css" type="text/css">
+    @*<link href="~/Content/style.css" rel="stylesheet" type="text/css">*@
+    <link href="~/css/Header.css" rel="stylesheet" />
+    <script type="text/javascript" language="javascript">
+        function ShowCont(id){
+            var reg = document.getElementById('reg');
+            var otp = document.getElementById('otp');
+            var wel = document.getElementById('wel');
+            if(id == 1){
+                reg.style.display = 'block';
+                otp.style.display = 'none';
+            }
+            if(id == 2){
+                reg.style.display = 'none';
+                otp.style.display = 'block';
+            }
+            if(id == 3){
+                reg.style.display = 'none';
+                otp.style.display = 'none';
+                wel.style.display = 'block';
+            }
+        }
+    </script>
+    @*<link href="menu.css" rel="stylesheet" type="text/css">*@
+    <link href="~/css/menu.css" rel="stylesheet" />
+    <link href="https://use.fontawesome.com/a329414e7c.css" media="all" rel="stylesheet">
+</head>
+<body>
+    <header class="header-pos">
+        <div class="container">
+            <nav class="navbar">
+                <div class="navi nav-wrapper white">
+                    <a href="index.html" class="brand-logo"><img src="~/images/logo.png" class="responsive-img center" alt=""></a>
+                    <a href="#" data-activates="mobile-demo" class="button-collapse black-text"><i class="material-icons">menu</i></a>
+                    <div class="search-area hide-on-med-and-down">
+                        <input id="search" type="text" required=""><i class="material-icons red white-text center right">search</i>
+                    </div>
+                    <ul class="social right hide-on-med-and-down rightpad">
+                        <li> <a class="grey-text" href="#!"> <i class="fa fa-facebook-official" aria-hidden="true"></i></a></li>
+                        <li class="black-text"> <a class="grey-text" href="#!"><i class="fa fa-twitter-square" aria-hidden="true"></i> </a></li>
+                        <li> <a class="grey-text" href="#!"><i class="fa fa-youtube-square" aria-hidden="true"></i> </a> </li>
+                        <li> <a href="artworks.html">  <img src="~/images/notsure2.png" class="responsive-img" width="60px" height="80px;" alt=""></a> </li>
+                    </ul>
+                    <!--mobile menu-->
+                    <ul id="mobile-demo" class="side-nav show-on-small" style="transform: translateX(-100%);">
+                        <li class="search">
+                            <input id="search">
+                        </li>
+                        <li class="no-padding">
+                            <ul class="collapsible collapsible-accordion">
+                                <li class="bold">
+                                    <a class="collapsible-header waves-effect waves-grey darken-2">Art</a>
+                                    <div class="collapsible-body" style="">
+                                        <ul>
+                                            <li><a href="" class="black-text">Paintings</a></li>
+                                            <li><a href="" class="black-text">Photography</a></li>
+                                            <li><a href="" class="black-text">Drawings</a></li>
+                                            <li><a href="" class="black-text">Sclupture</a></li>
+                                            <li><a href="" class="black-text">Digital</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="bold"><a class="collapsible-header  waves-effect waves-grey darken-2">Art Deals</a> </li>
+                                <li class="bold active">
+                                    <a class="collapsible-header waves-effect waves-grey darken-2 active">Artist</a>
+                                    <div class="collapsible-body" style="display: block;">
+                                        <ul>
+                                            <li><a href="" class="black-text">By Name</a></li>
+                                            <li><a href="" class="black-text">By Location</a></li>
+                                            <li><a href="" class="black-text">By Style</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">New Additions</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">About Us</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">Art Articles</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">Art Articles</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">Artfreaks Collection</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">Register</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">Login</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">My Order</a></li>
+                        <li class="bold"><a href="#.html" class="waves-effect waves-grey darken-2">My Account</a></li>
+                        <li><a href="#"> <i class="material-icons">  shopping_basket</i> </a></li>
+                    </ul>
+                </div>
+            </nav>
+            <!-- <div class="">-->
+            <nav1 class="grey darken-1 navbar-fixed1 hide-on-med-and-down">
+                <div class="navigation1">
+                    <ul>
+                        <li>
+                            <a href="#">Art<span class="arrow-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="">Paintings</a></li>
+                                <li><a href="">Photography</a></li>
+                                <li><a href="">Drawings</a></li>
+                                <li><a href="">Sclupture</a></li>
+                                <li><a href="">Digital</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" tabindex="1">$ Art Deals</a></li>
+                        <li>
+                            <a href="#" tabindex="1">Artist<span class="arrow-down"></span></a>
+                            <ul class="dropdown">
+                                <li><a href="">By Name</a></li>
+                                <li><a href="">By Location</a></li>
+                                <li><a href="">By Style</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="#" tabindex="1">*New Additions</a> </li>
+                        <li><a href="#" tabindex="1">About Us</a> </li>
+                        <li><a href="#" tabindex="1">Art Articles</a> </li>
+                        <li><a href="#" tabindex="1">Artfreaks Collection</a> </li>
+                        <li> <a href="artistpage.html"><span style="font-family:Kefa; font-style:italic; color:red; font-size:24px;"> ! </span>Anjum Siddique </a></li>
+                        <li class="black-text"> <a class="grey-text" href="#"> <i class="material-icons">  shopping_basket</i> </a> </li>
+                    </ul>
+                </div>
+            </nav1>
+            <!--</div>-->
+        </div>
+    </header>
+    <main>
+        <div class="row" style="margin-top:30px;">
+            <div class="col m12 l12">
+                <div class="col m3 l3"> </div>
+                <div class="col s12 m11 l6">
+                    @RenderBody()
+                    <div class="row card" id="wel" style="display:none; margin-top:50px;">
+                        <div class="row">
+                            <h4 class="center red-text" style="font-family:MyriadPro Cond;">
+                                Welcome to  <br>
+                                <img src="~/images/logo.png" width="400" height="46" class="responsive-img" alt="artfreaks">
+                            </h4>
+                        </div>
+                        <div class="row">
+                            <div clas="col s12 m12 l12">
+                                <div class="col s3 m3 l3"> </div>
+                                <div class="col s6 m6 l6">
+                                    <div class="file-field input-field">
+                                        <div class="btn waves-effect waves-light white black-text" style="border-bottom:1px solid #ccc; border-top:1px solid #CCC;">
+                                            <span><a href="index.html" class="black-text" style="font-size:14px;"> + Browse Collection</a></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s3 m3 l3"> </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div clas="col s12 m12 l12">
+                                <div class="col s3 m3 l3"> </div>
+                                <div class="col s6 m6 l6">
+                                    <div class="file-field input-field">
+                                        <div class="btn waves-effect white black-text" style="border-bottom:1px solid #ccc; border-top:1px solid #CCC;">
+                                            <span style="font-size:14px;">+ Upload Artwork</span>
+                                            <input type="file" multiple="">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col s3 m3 l3"> </div>
+                            </div>
+                        </div>
+                    </div>  <!--/wel ends-->
+                </div>
+                <div class="col m3 l3"> </div>
+            </div>
+        </div>  <!--registration row-->
+    </main>
+    <footer class="page-footer grey darken-1">
+        <div class="container">
+            <div class="row">
+                <div class="col l2 s12">
+                    <h5 class="white-text">LINKS</h5>
+                    <ul>
+                        <li><a class="grey-text text-lighten-3" href="#!"> About Us</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">The Team</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">BLOG</a></li>
+                        <li><a class="grey-text text-lighten-3" href="#!">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col l2 s12">
+                    <img src="~/images/notsure1.png" alt="" class="responsive-img">
+                </div>
+                <div class="col l6 s12">
+                    <h5 class="white-text">
+                        NEWSLETTER
+                    </h5>
+                    <p class="white-text" style="font-family:Century751 BT; font-style:italic;">
+                        YES, SIGN ME UP!
+                        Sign up for your Newsletter to get the latest from our world
+                    </p>
+                    <input type="text">
+                    <a class="waves-effect waves-light btn red" style="font-weight:bold; font-size:14px">YES,SIGN ME UP!</a>
+                    <div class="row">
+                        <p class="white-text" style="font-family:Century751 BT; font-style:italic;">
+                            By entering your email address, you agree to receive our
+                            offers, and promotions.
+                            We will not be sending you commercial messages.
+                            You may unsubscribe at any time.
+                            2
+                        </p>
+                    </div>
+                </div>
+                <div class="col l2 s12">
+                    <h5 class="white-text">GET SOCIAL</h5>
+                    <div style="margin-left:20px;">
+                        <a class="grey-text text-lighten-3" href="#!"> <i class="fa fa-facebook-official" aria-hidden="true"></i></a> <a class="grey-text text-lighten-3" href="#!"><i class="fa fa-twitter-square" aria-hidden="true"></i> </a> <a class="grey-text text-lighten-3" href="#!"><i class="fa fa-youtube-square" aria-hidden="true"></i> </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <div class="container">
+                © 2017 Artfreaks.com
+            </div>
+        </div>
+    </footer>
+    <script src="https://use.fontawesome.com/a329414e7c.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
+    <script src="~/lib/job.js"></script>
+    <script src="~/js/materialize.js"></script>
+    <script type="text/javascript">
+        $( document ).ready(function(){ $(".button-collapse").sideNav();})
+        $( document ).ready(function(){$(".dropdown-button").dropdown();})
+        $(document).ready(function(){
+            $('.carousel').carousel();
+        });
+        $('.carousel').carousel('next');
+        $('.carousel').carousel('next', 2); // Move next n times.
+        // Previous slide
+        $('.carousel').carousel('prev');
+        $('.carousel').carousel('prev', 3); // Move prev n times.
+        // Set to nth slide
+        $('.carousel').carousel('set', 3);
+        $('.carousel.carousel-slider').carousel({full_width: true});
+    </script>
+    <script>
+        $(document).scroll(function(){
+            var sv=	$(document).scrollTop();
+            //Materialize.toast(sv);
+            if(sv<120){
+                $('#nav1').addClass("red");
+                $('#nav1').removeClass("grey");
+            }
+            if(sv>120){
+                $('#nav1').removeClass("red");
+                $('#nav1').addClass("grey");
+            }
+        });
+    </script>
+    <div id="content"></div>
+
+    @RenderSection("scripts", required: false)
+    <div class="hiddendiv common"></div><div class="drag-target" style="left: 0px; touch-action: pan-y; -webkit-user-drag: none; -webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></div>
+</body>
+</html>
