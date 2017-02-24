@@ -14,6 +14,7 @@ using artfriks.Models;
 using artfriks.Services;
 using Microsoft.AspNetCore.Http;
 using React.AspNet;
+using Microsoft.IdentityModel.Tokens;
 
 namespace artfriks
 {
@@ -50,9 +51,59 @@ namespace artfriks
             services.AddDbContext<ApplicationDbContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
 
-            services.AddIdentity<ApplicationUser, IdentityRole>()
+          /*  services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
-                .AddDefaultTokenProviders();
+                .AddDefaultTokenProviders();*/
+            services.AddIdentity<ApplicationUser, IdentityRole>(o =>
+            {
+                o.Password.RequireDigit = false;
+                o.Password.RequireLowercase = false;
+                o.Password.RequireUppercase = false;
+                o.Password.RequireNonAlphanumeric = false;
+                o.Password.RequiredLength = 6;
+                o.Cookies.ApplicationCookie.AutomaticChallenge = false;
+                
+
+            });
+            services.AddOpenIddict()
+               // Register the Entity Framework stores.
+               .AddEntityFrameworkCoreStores<ApplicationDbContext>()
+               // Register the ASP.NET Core MVC binder used by OpenIddict.
+               // Note: if you don't call this method, you won't be able to
+               // bind OpenIdConnectRequest or OpenIdConnectResponse parameters.
+               .AddMvcBinders()
+               // Enable the token endpoint (required to use the password flow).
+               .UseJsonWebTokens()
+               .EnableAuthorizationEndpoint("/connect/authorize")
+               .EnableLogoutEndpoint("/connect/logout")
+               .EnableTokenEndpoint("/connect/verifycode")
+               .EnableUserinfoEndpoint("/Account/Userinfo")
+                      .AllowAuthorizationCodeFlow()
+               .AllowRefreshTokenFlow()
+               // Allow client applications to use the grant_type=password flow.
+               .AllowPasswordFlow()
+               .AllowImplicitFlow()
+
+
+                         //   .RequireClientIdentification()
+
+                         // During development, you can disable the HTTPS requirement.
+
+                         // When request caching is enabled, authorization and logout requests
+                         // are stored in the distributed cache by OpenIddict and the user agent
+                         // is redirected to the same page with a single parameter (request_id).
+                         // This allows flowing large OpenID Connect requests even when using
+                         // an external authentication provider like Google, Facebook or Twitter.
+                         //.AddSigningCertificate("Certificate.pfx")
+                         //Dont delete this line D3233644E8A0882D48F4CA91CE1E281F4D344E1C
+                         //DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199
+                       //  .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
+                       //  .DisableHttpsRequirement()
+               .EnableRequestCaching()
+               .RequireClientIdentification()
+               
+             .AddEphemeralSigningKey();
+
             services.AddCors(options =>
             {
                 options.AddPolicy("AeonPolicy",
@@ -111,7 +162,18 @@ namespace artfriks
                 //  .AddScriptWithoutTransform("~/Scripts/bundle.server.js");
             });
             app.UseStaticFiles();
-
+            app.UseJwtBearerAuthentication(new JwtBearerOptions
+            {
+                TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
+                AutomaticAuthenticate = true,
+                AutomaticChallenge = true,
+                RequireHttpsMetadata = false,
+                Audience = "http://localhost:52909/ myclient postman",
+                Authority = "http://localhost:52909/",
+                
+                
+            });
+            app.UseOpenIddict();
             app.UseIdentity();
 
             // Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
