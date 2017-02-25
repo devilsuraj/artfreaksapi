@@ -5,9 +5,9 @@ using System.Threading.Tasks;
 
 namespace artfriks.Models
 {
-    public class ArtCategoy
+    public class Category
     {
         public int Id { get; set; }
-        public string Category { get; set; }
+        public string Title { get; set; }
     }
 }

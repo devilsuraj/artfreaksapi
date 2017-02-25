@@ -5,7 +5,7 @@ using System.Threading.Tasks;
 
 namespace artfriks.Models
 {
-    public class ArtTypeList
+    public class ArtWithTypes
     {
         public int Id { get; set; }
         public int ArtId { get; set; }
