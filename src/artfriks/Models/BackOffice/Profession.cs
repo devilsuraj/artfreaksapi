@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace artfriks.Models.ArtWork
+namespace artfriks.Models.BackOffice
 {
-    public class ArtType
+    public class Profession
     {
         public int Id { get; set; }
-        public int ArtId { get; set; }
-        public int ArtTypes { get; set; }
+        public string ProfessionString { get; set; }
+
     }
 }
