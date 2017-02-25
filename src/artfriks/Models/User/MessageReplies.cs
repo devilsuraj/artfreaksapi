@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace artfriks.Models.User
+namespace artfriks.Models
 {
     public class MessageReplies
     {
