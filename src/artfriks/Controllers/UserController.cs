@@ -4,13 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using artfriks.Data;
+using Microsoft.AspNetCore.Identity;
+using artfriks.Models;
+
 namespace artfriks.Controllers
 {
     [Produces("application/json")]
-    [Route("api/User")]
     public class UserController : Controller
     {
+        private ApplicationDbContext _context;
+        private UserManager<ApplicationUser> _userManager;
         // GET: api/User
+        public UserController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        {
+            _userManager = userManager;
+            _context = context;
+        }
         [HttpGet]
         public IEnumerable<string> Get()
         {
