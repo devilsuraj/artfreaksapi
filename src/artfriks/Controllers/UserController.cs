@@ -22,9 +22,22 @@ namespace artfriks.Controllers
             _context = context;
         }
         [HttpGet]
-        public IEnumerable<string> Get()
-        {
-            return new string[] { "value1", "value2" };
+        [Route("~/user/userinfo")]
+        public IActionResult Get()
+        {try
+            {
+                var user = _userManager.GetUserId(User);
+                var returnValue = _context.Users.Where(x => x.Id == user).Select(o => new
+                {
+                    user = o,
+                    userbio = _context.UserModel.Where(x => x.UserId == o.Id)
+                }).ToList();
+                return Ok( new { status =1, message=returnValue});
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 1, message = ex.Message });
+            }
         }
 
         // GET: api/User/5
@@ -36,7 +49,7 @@ namespace artfriks.Controllers
         
         // POST: api/User
         [HttpPost]
-        public void Post([FromBody]string value)
+        public void Post([FromBody]UserModel value)
         {
         }
         
