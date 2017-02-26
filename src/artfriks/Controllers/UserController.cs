@@ -36,7 +36,7 @@ namespace artfriks.Controllers
             }
             catch (Exception ex)
             {
-                return Ok(new { status = 1, message = ex.Message });
+                return Ok(new { status = 0, message = ex.Message });
             }
         }
 
@@ -51,12 +51,33 @@ namespace artfriks.Controllers
         [HttpPost]
         public void Post([FromBody]UserModel value)
         {
+
         }
         
         // PUT: api/User/5
-        [HttpPut("{id}")]
-        public void Put(int id, [FromBody]string value)
+        [HttpPost("{id}")]
+        [Route("~/user/updateuserinfo")]
+        public IActionResult Put(int id, [FromBody]UserModel value)
         {
+            try { 
+            var userId = _userManager.GetUserId(User);
+            var UserBio = _context.UserModel.FirstOrDefault(x => x.UserId == userId);
+                if (UserBio == null)
+                {
+                    value.UserId = userId;
+                    _context.UserModel.Add(UserBio);
+                    _context.SaveChanges();
+                    return Ok(new { status = 2, message = "Added Successfully" });
+                }
+            UserBio = value;
+            _context.UserModel.Update(UserBio);
+            _context.SaveChanges();
+                return Ok(new { status = 1, message = "Updated Successfully" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
         }
         
         // DELETE: api/ApiWithActions/5
