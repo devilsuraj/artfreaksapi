@@ -69,5 +69,51 @@ namespace artfriks.Controllers
                 return Ok(new { status = 0, message = ex.Message });
             }
         }
+
+        [HttpGet]
+        [Route("~/artowrk/MarkFavourite")]
+        public IActionResult MarkFavourite(int Id)
+        {
+            try
+            {
+                var user = _userManager.GetUserId(User);
+                var Fav = new ArtFavourite();
+                Fav.UserId = user;
+                Fav.ArtId = Id;
+                _context.ArtFavourites.Add(Fav);
+                _context.SaveChanges();
+             // Call Notification here
+                return Ok(new { status = 1, message = "Success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("~/artowrk/Details")]
+        public IActionResult Details(int Id)
+        {
+            try
+            {
+                var art = _context.ArtWorks.FirstOrDefault(x => x.Id == Id);
+                if (art == null)
+                {
+                    return Ok(new { status = 0, message = "Not Found" });
+                }
+                var userInfo = _context.Users.Where(x => x.Id == art.UserId).Select(n => new
+                {
+                    userbio = _context.UserModel.FirstOrDefault(user => user.UserId == n.Id),
+                    user = n
+                }).First();
+                var userArts = _context.ArtWorks.Where(x => x.UserId == art.UserId && x.Id != art.Id).ToList() ?? new List<ArtWork>();
+                return Ok(new { status = 1, message = "Success", art=art,bio=userInfo, userArts = userArts });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
     }
 }
