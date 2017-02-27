@@ -12,10 +12,10 @@ using Microsoft.AspNetCore.Hosting;
 namespace artfriks.Controllers
 {
 
-    public class pictureController : Controller
+    public class PictureController : Controller
     {
         private readonly IHostingEnvironment _appEnvironment;
-        public pictureController(IHostingEnvironment appEnvironment)
+        public PictureController(IHostingEnvironment appEnvironment)
         {
             _appEnvironment = appEnvironment;
         }
@@ -157,7 +157,7 @@ namespace artfriks.Controllers
                         ResizeOptions options = new ResizeOptions()
                         {
                             Size = new Size(400, 250),
-                            Mode = ResizeMode.Crop,
+                            Mode = ResizeMode.Pad,
                             Sampler = new NearestNeighborResampler()
 
                         };

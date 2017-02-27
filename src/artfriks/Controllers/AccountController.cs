@@ -114,6 +114,7 @@ namespace artfriks.Controllers
                     FullName =model.FullName,
                     Address =model.Address,
                     Phone =model.Phone,
+                    Profession=model.Profession,
                     CountryCode =model.CountryCode,
                     UserName = model.Email,
                     Email = model.Email };
@@ -287,9 +288,17 @@ namespace artfriks.Controllers
                     FullName = dto.FullName,
                     Email = dto.Email,
                     Address = dto.Address,
+                    FormattedAddress=dto.FormattedAddress,
+                    Latitude=dto.Latitude,
+                    Longitude=dto.Longitude,
+                    PinCode=dto.PinCode,
+                    Country=dto.Country,
+                    State=dto.State,
+                    City=dto.City,
+                    Profession=dto.Profession,
                     Phone = dto.Phone,
                     CountryCode = dto.CountryCode,
-                 PhoneNumber=dto.Phone
+                    PhoneNumber=dto.Phone
                    
                 };
                 user.SecurityStamp = Guid.NewGuid().ToString();

@@ -49,11 +49,85 @@ namespace artfriks.Controllers
         
         // POST: api/User
         [HttpPost]
-        public void Post([FromBody]UserModel value)
+        [Route("~/user/sendMessage")]
+        public IActionResult Post([FromBody]Messages value)
         {
-
+            try { 
+            var userId = _userManager.GetUserId(User);
+            value.FromUserId = userId;
+                value.AddedDate = DateTime.Now;
+            value.ToUserId = _context.ArtWorks.FirstOrDefault(x => x.Id == value.ArtId).UserId ?? "";
+            _context.Messages.Add(value);
+            _context.SaveChanges();
+                return Ok(new { status = 1, message = "Success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
         }
-        
+
+        // POST: api/User
+        [HttpPost]
+        [Route("~/user/ReplyMessage")]
+        public IActionResult PostReply([FromBody]MessageReplies value)
+        {
+            try
+            {
+                var userId = _userManager.GetUserId(User);
+                value.UserId = userId;
+                value.AddedDate = DateTime.Now;
+                _context.MessageReplies.Add(value);
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "Success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [Route("~/user/deleteReplyMessage")]
+        public IActionResult deleteReplyMessage(int Id)
+        {
+            try
+            {
+                var Message = _context.MessageReplies.FirstOrDefault(x=>x.Id==Id);
+                if (Message == null)
+                {
+                    return Ok(new { status = 0, message = "Not Found" });
+                }
+                _context.MessageReplies.Remove(Message);
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "Success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpPost]
+        [Route("~/user/deleteMessage")]
+        public IActionResult deleteMessage(int Id)
+        {
+            try
+            {
+                var Message = _context.Messages.FirstOrDefault(x => x.Id == Id);
+                if (Message == null)
+                {
+                    return Ok(new { status = 0, message = "Not Found" });
+                }
+                _context.Messages.Remove(Message);
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "Success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
         // PUT: api/User/5
         [HttpPost("{id}")]
         [Route("~/user/updateuserinfo")]
@@ -79,7 +153,32 @@ namespace artfriks.Controllers
                 return Ok(new { status = 0, message = ex.Message });
             }
         }
-        
+
+        [HttpPost("{id}")]
+        [Route("~/user/updateuserprofile")]
+        public IActionResult PutApplicationUser(int id, [FromBody]ApplicationUser value)
+        {
+            try
+            {
+                var userId = _userManager.GetUserName(User);
+                var UserBio = _context.Users.FirstOrDefault(x => x.UserName == userId);
+                if (UserBio == null)
+                {
+                    _context.Users.Add(UserBio);
+                    _context.SaveChanges();
+                    return Ok(new { status = 2, message = "Added Successfully" });
+                }
+                UserBio = value;
+                _context.Users.Update(UserBio);
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "Updated Successfully" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
         // DELETE: api/ApiWithActions/5
         [HttpDelete("{id}")]
         public void Delete(int id)

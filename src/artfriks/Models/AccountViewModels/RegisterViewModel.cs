@@ -45,11 +45,18 @@ namespace artfriks.Models.AccountViewModels
         public string CountryCode { get; set; }
         [Required]
         public string Address { get; set; }
+        public string FormattedAddress { get; set; }
+        public string Longitude { get; set; }
+        public string Latitude { get; set; }
+        public string City { get; set; }
+        public string State { get; set; }
+        public string Country { get; set; }
+        public string PinCode { get; set; }
         public string UserName { get; set; }
         public string OTP { get; set; }
         public int OTPfrom { get; set; }
         public string Role { get; set; }
-
+        public string Profession { get; set; }
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} and at max {1} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]

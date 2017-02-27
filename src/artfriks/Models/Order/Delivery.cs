@@ -173,6 +173,8 @@ namespace artfriks.Models
         public CartItem() { this.DateCreated = DateTime.Now; }
         public Decimal totalPrice { get; set; }
         public virtual ArtWork Product { get; set; }
+
+      
     }
 
     public class OrderItemViewModel
@@ -200,4 +202,27 @@ namespace artfriks.Models
         public string PhoneNumber { get; set; }
         public string UserId { get; set; }
     }
+
+    public class ShoppingCartViewModel
+    {
+        public List<CartItem> CartItems { get; set; }
+        public decimal CartTotal { get; set; }
+        public int ItemTotal { get; set; }
+    }
+    public class ShoppingCartRemoveViewModel
+    {
+        public string Message { get; set; }
+        public decimal CartTotal { get; set; }
+        public int CartCount { get; set; }
+        public int ItemCount { get; set; }
+        public int DeleteId { get; set; }
+    }
+
+    public class ReturnMessage
+    {
+        public string Status { get; set; }
+        public string Message { get; set; }
+        public string CartId { get; set; }
+    }
+
 }

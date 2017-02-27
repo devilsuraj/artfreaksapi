@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170226125850_messagewithart")]
+    partial class messagewithart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -24,12 +25,8 @@ namespace artfriks.Data.Migrations
 
                     b.Property<string>("Address");
 
-                    b.Property<string>("City");
-
                     b.Property<string>("ConcurrencyStamp")
                         .IsConcurrencyToken();
-
-                    b.Property<string>("Country");
 
                     b.Property<string>("CountryCode");
 
@@ -38,17 +35,11 @@ namespace artfriks.Data.Migrations
 
                     b.Property<bool>("EmailConfirmed");
 
-                    b.Property<string>("FormattedAddress");
-
                     b.Property<string>("FullName");
-
-                    b.Property<string>("Latitude");
 
                     b.Property<bool>("LockoutEnabled");
 
                     b.Property<DateTimeOffset?>("LockoutEnd");
-
-                    b.Property<string>("Longitude");
 
                     b.Property<string>("NormalizedEmail")
                         .HasAnnotation("MaxLength", 256);
@@ -68,13 +59,9 @@ namespace artfriks.Data.Migrations
 
                     b.Property<bool>("PhoneNumberConfirmed");
 
-                    b.Property<string>("PinCode");
-
                     b.Property<string>("Profession");
 
                     b.Property<string>("SecurityStamp");
-
-                    b.Property<string>("State");
 
                     b.Property<bool>("TwoFactorEnabled");
 
