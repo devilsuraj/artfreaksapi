@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Hosting;
 
 namespace artfriks.Controllers
 {
-
+    [Produces("application/json")]
     public class PictureController : Controller
     {
         private readonly IHostingEnvironment _appEnvironment;
@@ -26,7 +26,7 @@ namespace artfriks.Controllers
             return bytes;
         }
         [HttpGet]
-        [Route("api/picture/delete")]
+        [Route("~/picture/delete")]
         public ActionResult DeleteImage(string imageId)
         {
             string pathString;
@@ -51,7 +51,7 @@ namespace artfriks.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return Json(new { Message = "verall" + ex.Message, status = 1 });
+                    return Ok(new { Message = "verall" + ex.Message, status = 1 });
                 }
 
             }
@@ -59,7 +59,7 @@ namespace artfriks.Controllers
 
 
         [HttpPost]
-        [Route("api/picture/save")]
+        [Route("~/picture/save")]
      
         public ActionResult SaveUploadedFile()
         {
@@ -174,11 +174,11 @@ namespace artfriks.Controllers
                     }
                 }
 
-                return Json(new { Message = fname2, status = 0 });
+                return Ok(new { Message = fname2, status = 0 });
             }
             catch (Exception ex)
             {
-                return Json(new { Message = ex.Message + ex.InnerException, status = 1 });
+                return Ok(new { Message = ex.Message + ex.InnerException, status = 1 });
             }
 
         }

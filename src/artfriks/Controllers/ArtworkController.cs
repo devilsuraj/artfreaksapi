@@ -71,6 +71,21 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
+        [Route("~/artowrk/GetById")]
+        public IActionResult GetById(int Id)
+        {
+            try
+            {
+                var returnValue = _context.ArtWorks.FirstOrDefault(x => x.Id == Id) ?? new ArtWork();
+                return Ok(new { status = 1, message = returnValue });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
         [Route("~/artowrk/MarkFavourite")]
         public IActionResult MarkFavourite(int Id)
         {
