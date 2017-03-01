@@ -15,7 +15,7 @@ using Microsoft.AspNetCore.Http;
 
 namespace artfriks.Controllers
 {
-    [Authorize]
+  
     public class AccountController : Controller
     {
         private readonly UserManager<ApplicationUser> _userManager;
@@ -277,8 +277,13 @@ namespace artfriks.Controllers
         {
             if (!ModelState.IsValid)
             {
-                return Ok(new { status = 3, errors=ModelState });
+                return Ok(new { status = 2, errors=ModelState.Values });
                
+            }
+            var checkuser = await _userManager.FindByEmailAsync(dto.Email);
+            if (checkuser != null &&  await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == false)
+            {
+                return Ok(new { status = 99, error="Verify your mobile number" });
             }
             try
             {
@@ -305,11 +310,11 @@ namespace artfriks.Controllers
                 var result = await _userManager.CreateAsync(user, "Polardevil#1");
 
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
+                var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user,  user.Phone);
                 var callbackUrl = $"https://bo.cocospices.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
                 await _emailSender.SendEmailAsync(dto.Email, "Artfreaks - Confirm your account",
                        $"Your OTP for Artfreaks is " + OTP + ".");
-                await _smsSender.SendSmsAsync(dto.Phone, "Your OTP for CocoSpices is " + OTP + ".");
+                await _smsSender.SendSmsAsync(dto.CountryCode+dto.Phone, "Your OTP for CocoSpices is " + OTP + ".");
 
                 await _signInManager.SignInAsync(user, isPersistent: false);
                 _logger.LogInformation(3, "User created a new account with password.");
@@ -331,15 +336,15 @@ namespace artfriks.Controllers
                 }
                 else
                 {
-                    return Ok(new { status = 1, result.Errors });
+                    return Ok(new { status = 1,  result.Errors });
                 }
 
 
             }
             catch (Exception ex)
             {
-                _logger.LogDebug(3, ex.Message);
-                return Ok(new { status = 3, errors=new {description= ex.Message } });
+                _logger.LogDebug(5, ex.Message);
+                return Ok(new { status = 5, errors=new {description= ex.Message } });
              
             }
         }
@@ -350,24 +355,26 @@ namespace artfriks.Controllers
         public async Task<IActionResult> updateUser([FromBody]RegisterViewModel username)
         {
             var check = await _userManager.FindByNameAsync(username.UserName);
-            if (check != null)
+            if (check != null && await _userManager.IsPhoneNumberConfirmedAsync(check) == true)
             {
                    return Ok(new { status = 5, Message = "Please choose another UserName" });
             }
             var aa = username.Email;
             try
             {
-                
-              
                 var user = await _userManager.FindByEmailAsync(username.Email);
-                
                 if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, username.OTP, username.Phone) == false)
                 {
-                    return Ok(new { status = 4, Message = "Wrong verification code" });
+                    return Ok(new { status = 4, Message = "Wrong verification code " });
+                }
+                else
+                {
+                    user.PhoneNumberConfirmed = true;
                 }
                 user.FullName = username.FullName;
                 user.Address = username.Address;
                 user.UserName = username.UserName;
+                await _userManager.ChangePasswordAsync(user, "Polardevil#1", username.Password);
                 await _userManager.UpdateAsync(user);
                 return Ok(new { status = 0, Message = "success" });
             }
@@ -382,13 +389,13 @@ namespace artfriks.Controllers
         [Route("api/account/sendOtp")]
         [HttpPost]
         [AllowAnonymous]
-        public async Task<IActionResult> sendOtp(string username)
+        public async Task<IActionResult> sendOtp(string email , string countrycode, string username)
         {
             try
             {
-                var user = await _userManager.FindByNameAsync(username);
+                var user = await _userManager.FindByEmailAsync(email);
                 var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, username);
-                await _smsSender.SendSmsAsync(username, "Your OTP for CocoSpices is " + OTP + ".");
+                await _smsSender.SendSmsAsync(countrycode+username, "Your OTP for CocoSpices is " + OTP + ".");
                 return Ok(new { status = 0, Message = "success" });
             }
             catch (Exception ex)

@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170228122612_newchangesuser")]
+    partial class newchangesuser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -777,79 +778,6 @@ namespace artfriks.Data.Migrations
                     b.ToTable("AspNetUserTokens");
                 });
 
-            modelBuilder.Entity("OpenIddict.Models.OpenIddictApplication", b =>
-                {
-                    b.Property<string>("Id");
-
-                    b.Property<string>("ClientId");
-
-                    b.Property<string>("ClientSecret");
-
-                    b.Property<string>("DisplayName");
-
-                    b.Property<string>("LogoutRedirectUri");
-
-                    b.Property<string>("RedirectUri");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ClientId")
-                        .IsUnique();
-
-                    b.ToTable("OpenIddictApplications");
-                });
-
-            modelBuilder.Entity("OpenIddict.Models.OpenIddictAuthorization", b =>
-                {
-                    b.Property<string>("Id");
-
-                    b.Property<string>("ApplicationId");
-
-                    b.Property<string>("Scope");
-
-                    b.Property<string>("Subject");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationId");
-
-                    b.ToTable("OpenIddictAuthorizations");
-                });
-
-            modelBuilder.Entity("OpenIddict.Models.OpenIddictScope", b =>
-                {
-                    b.Property<string>("Id");
-
-                    b.Property<string>("Description");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("OpenIddictScopes");
-                });
-
-            modelBuilder.Entity("OpenIddict.Models.OpenIddictToken", b =>
-                {
-                    b.Property<string>("Id");
-
-                    b.Property<string>("ApplicationId");
-
-                    b.Property<string>("AuthorizationId");
-
-                    b.Property<string>("Subject");
-
-                    b.Property<string>("Type");
-
-                    b.HasKey("Id");
-
-                    b.HasIndex("ApplicationId");
-
-                    b.HasIndex("AuthorizationId");
-
-                    b.ToTable("OpenIddictTokens");
-                });
-
             modelBuilder.Entity("artfriks.Models.CartItem", b =>
                 {
                     b.HasOne("artfriks.Models.ArtWork", "Product")
@@ -906,24 +834,6 @@ namespace artfriks.Data.Migrations
                         .WithMany("Roles")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade);
-                });
-
-            modelBuilder.Entity("OpenIddict.Models.OpenIddictAuthorization", b =>
-                {
-                    b.HasOne("OpenIddict.Models.OpenIddictApplication", "Application")
-                        .WithMany("Authorizations")
-                        .HasForeignKey("ApplicationId");
-                });
-
-            modelBuilder.Entity("OpenIddict.Models.OpenIddictToken", b =>
-                {
-                    b.HasOne("OpenIddict.Models.OpenIddictApplication", "Application")
-                        .WithMany("Tokens")
-                        .HasForeignKey("ApplicationId");
-
-                    b.HasOne("OpenIddict.Models.OpenIddictAuthorization", "Authorization")
-                        .WithMany("Tokens")
-                        .HasForeignKey("AuthorizationId");
                 });
         }
     }
