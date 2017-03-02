@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using artfriks.Data;
 using Microsoft.AspNetCore.Identity;
 using artfriks.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace artfriks.Controllers
 {
@@ -23,7 +24,7 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
-        [Route("~/artowrk/getAllPersonal")]
+        [Route("api/artowrk/getAllPersonal")]
         public IActionResult Get()
         {
             try
@@ -39,7 +40,7 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
-        [Route("~/artowrk/getAll")]
+        [Route("api/artowrk/getAll")]
         public IActionResult GetAll()
         {
             try
@@ -54,7 +55,7 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
-        [Route("~/artowrk/getByTag")]
+        [Route("api/artowrk/getByTag")]
         public IActionResult GetAllDaily(int Id)
         {
             try
@@ -71,7 +72,7 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
-        [Route("~/artowrk/GetById")]
+        [Route("api/artowrk/GetById")]
         public IActionResult GetById(int Id)
         {
             try
@@ -86,7 +87,7 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
-        [Route("~/artowrk/MarkFavourite")]
+        [Route("api/artowrk/MarkFavourite")]
         public IActionResult MarkFavourite(int Id)
         {
             try
@@ -107,7 +108,7 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
-        [Route("~/artowrk/Details")]
+        [Route("api/artowrk/Details")]
         public IActionResult Details(int Id)
         {
             try
@@ -124,6 +125,73 @@ namespace artfriks.Controllers
                 }).First();
                 var userArts = _context.ArtWorks.Where(x => x.UserId == art.UserId && x.Id != art.Id).ToList() ?? new List<ArtWork>();
                 return Ok(new { status = 1, message = "Success", art=art,bio=userInfo, userArts = userArts });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+        [Route("api/artowrk/Tags")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getUsers(string name)
+        {
+            return Ok(_context.ArtTags.Where(x => x.Tag.ToLower().Contains(name.ToLower())));
+        }
+
+        [Route("api/artowrk/Categories")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getCategories()
+        {
+            return Ok(_context.Categories.ToList());
+        }
+
+        [Route("api/artowrk/Types")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getTypes()
+        {
+            return Ok(_context.ArtTypes.ToList());
+        }
+        [Route("api/artowrk/Profession")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getProfession()
+        {
+            return Ok(_context.Professions.ToList());
+        }
+
+        [Route("api/artowrk/units")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getUnits()
+        {
+            return Ok(_context.Units.ToList());
+        }
+
+        [Route("api/artowrk/mediums")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getmediums()
+        {
+            return Ok(_context.Mediums.ToList());
+        }
+
+        [HttpPost]
+        [Authorize]
+        [Route("api/artowrk/postArt")]
+        public IActionResult postArt([FromBody]ArtWork Art)
+        {
+            var user = _userManager.GetUserId(User);
+            Art.UserId = user;
+            Art.Status = 0;
+            Art.AddedDate = DateTime.Now;
+            try
+            {
+                _context.ArtWorks.Add(Art);
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "Success" , id=Art.Id});
             }
             catch (Exception ex)
             {

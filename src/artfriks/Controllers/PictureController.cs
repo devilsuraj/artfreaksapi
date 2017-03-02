@@ -36,7 +36,6 @@ namespace artfriks.Controllers
             }
             else
             {
-
                 try
                 {
                     var originalDirectory = new DirectoryInfo(string.Format("{0}\\wwwroot\\WallImages", _appEnvironment.ContentRootPath));
@@ -46,21 +45,18 @@ namespace artfriks.Controllers
                     FileInfo thumb1 = new FileInfo(pathString + "\\thumb-" + imageId);
                     thumb1.Delete();
                     fname2.Delete();
-
                     return Json(new { Message = "Success", status = 0 });
                 }
                 catch (Exception ex)
                 {
                     return Ok(new { Message = "verall" + ex.Message, status = 1 });
                 }
-
             }
         }
 
 
         [HttpPost]
         [Route("~/picture/save")]
-     
         public ActionResult SaveUploadedFile()
         {
             string fName = "";
@@ -76,18 +72,12 @@ namespace artfriks.Controllers
                     fName = parsedContentDisposition.FileName.Trim('"');
                     if (file != null && file.ContentDisposition.Length > 0)
                     {
-
                         var originalDirectory = new DirectoryInfo(string.Format("{0}\\wwwroot\\WallImages", _appEnvironment.ContentRootPath));
-
                         string pathString = System.IO.Path.Combine(originalDirectory.ToString(), "imagepath");
-
                         var fileName1 = Path.GetFileName(ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"'));
-
                         bool isExists = System.IO.Directory.Exists(pathString);
-
                         if (!isExists)
                             System.IO.Directory.CreateDirectory(pathString);
-
                         int i = 0;
                         string filemask = "scart{0}" + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
                         fname2 = string.Format(filemask, i);
@@ -95,9 +85,7 @@ namespace artfriks.Controllers
                         {
                             i = i + 1;
                             fname2 = String.Format(filemask, i);
-
                         } while (System.IO.File.Exists(pathString + "\\" + fname2));
-
                         string path = string.Format("{0}\\{1}", pathString, fname2);
                         string Originalpath = string.Format("{0}\\{1}", pathString, "og-" + fname2);
                         string thumbpath = string.Format("{0}\\{1}", pathString, "thumb-" + fname2);
