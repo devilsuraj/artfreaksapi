@@ -59,7 +59,7 @@ namespace artfriks.Controllers
             {
                 _context.Add(artArticles);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(artArticles);
         }
@@ -110,7 +110,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(artArticles);
         }
@@ -140,7 +140,7 @@ namespace artfriks.Controllers
             var artArticles = await _context.ArtArticles.SingleOrDefaultAsync(m => m.Id == id);
             _context.ArtArticles.Remove(artArticles);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool ArtArticlesExists(int id)

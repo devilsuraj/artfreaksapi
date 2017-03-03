@@ -283,6 +283,8 @@ namespace artfriks.Controllers
             var checkuser = await _userManager.FindByEmailAsync(dto.Email);
             if (checkuser != null &&  await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == false)
             {
+                var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(checkuser, checkuser.Phone);
+                await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for CocoSpices is " + OTP + ".");
                 return Ok(new { status = 99, error="Verify your mobile number" });
             }
             try

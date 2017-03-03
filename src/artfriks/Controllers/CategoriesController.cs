@@ -59,7 +59,7 @@ namespace artfriks.Controllers
             {
                 _context.Add(category);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(category);
         }
@@ -110,7 +110,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(category);
         }
@@ -140,7 +140,7 @@ namespace artfriks.Controllers
             var category = await _context.Categories.SingleOrDefaultAsync(m => m.Id == id);
             _context.Categories.Remove(category);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool CategoryExists(int id)

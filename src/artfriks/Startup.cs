@@ -13,7 +13,6 @@ using artfriks.Data;
 using artfriks.Models;
 using artfriks.Services;
 using Microsoft.AspNetCore.Http;
-using React.AspNet;
 using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Models;
 using OpenIddict.Core;
@@ -72,8 +71,8 @@ namespace artfriks
                 o.Password.RequireNonAlphanumeric = false;
                 o.Password.RequiredLength = 6;
                 o.Cookies.ApplicationCookie.AutomaticChallenge = false;
-            }).AddEntityFrameworkStores<ApplicationDbContext>();
-            //  .AddDefaultTokenProviders(); 
+            }).AddEntityFrameworkStores<ApplicationDbContext>()
+              .AddDefaultTokenProviders();
             services.AddOpenIddict()
                // Register the Entity Framework stores.
                .AddEntityFrameworkCoreStores<ApplicationDbContext>()
@@ -99,7 +98,7 @@ namespace artfriks
                .EnableRequestCaching()
                .RequireClientIdentification();
                
-            // .AddEphemeralSigningKey();
+         //  .AddEphemeralSigningKey();
 
             services.AddCors(options =>
             {
@@ -137,8 +136,8 @@ namespace artfriks
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true,
                 RequireHttpsMetadata = false,
-                Audience = "http://localhost:2822/",
-                Authority = "http://localhost:2822/",
+                Audience = "http://base.kmtrt.in",
+                Authority = "http://base.kmtrt.in",
             });
             app.UseOpenIddict();
             app.UseIdentity();
@@ -164,8 +163,8 @@ namespace artfriks
                         ClientId = "myClient",
                         ClientSecret = Crypto.HashPassword("secret_secret_secret"),
                         DisplayName = "My client application",
-                        LogoutRedirectUri = "http://54.201.192.104",
-                        RedirectUri = "http://54.201.192.104/signin-oidc",
+                        LogoutRedirectUri = "http://base.kmtrt.in",
+                        RedirectUri = "http://base.kmtrt.in/signin-oidc",
                         Type = OpenIddictConstants.ClientTypes.Public
 
                     });

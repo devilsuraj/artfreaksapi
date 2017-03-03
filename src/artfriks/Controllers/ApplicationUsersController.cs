@@ -63,7 +63,7 @@ namespace artfriks.Controllers
             {
                 _context.Add(applicationUser);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(applicationUser);
         }
@@ -114,7 +114,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(applicationUser);
         }
@@ -144,7 +144,7 @@ namespace artfriks.Controllers
             var applicationUser = await _context.ApplicationUser.SingleOrDefaultAsync(m => m.Id == id);
             _context.ApplicationUser.Remove(applicationUser);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool ApplicationUserExists(string id)

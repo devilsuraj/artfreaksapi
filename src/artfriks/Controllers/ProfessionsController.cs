@@ -59,7 +59,7 @@ namespace artfriks.Controllers
             {
                 _context.Add(profession);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(profession);
         }
@@ -110,7 +110,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(profession);
         }
@@ -140,7 +140,7 @@ namespace artfriks.Controllers
             var profession = await _context.Professions.SingleOrDefaultAsync(m => m.Id == id);
             _context.Professions.Remove(profession);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool ProfessionExists(int id)

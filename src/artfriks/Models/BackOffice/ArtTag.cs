@@ -8,6 +8,7 @@ namespace artfriks.Models
     public class ArtTag
     {
         public int Id { get; set; }
+        public string Type { get; set; }
         public string Tag { get; set; }
     }
 

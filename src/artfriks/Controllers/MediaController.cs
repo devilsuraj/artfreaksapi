@@ -59,7 +59,7 @@ namespace artfriks.Controllers
             {
                 _context.Add(medium);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(medium);
         }
@@ -110,7 +110,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(medium);
         }
@@ -140,7 +140,7 @@ namespace artfriks.Controllers
             var medium = await _context.Mediums.SingleOrDefaultAsync(m => m.Id == id);
             _context.Mediums.Remove(medium);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool MediumExists(int id)
