@@ -56,9 +56,7 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    },
-    "React.Core": "3.0.1",
-    "React.AspNet": "3.0.1"
+    }
   },
 
   "tools": {

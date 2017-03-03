@@ -18,6 +18,9 @@ using Microsoft.IdentityModel.Tokens;
 using OpenIddict.Models;
 using OpenIddict.Core;
 using CryptoHelper;
+using System.Security.Cryptography.X509Certificates;
+using System.IO;
+using Serilog;
 
 namespace artfriks
 {
@@ -48,6 +51,7 @@ namespace artfriks
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+         
             // Add framework services.
             services.AddApplicationInsightsTelemetry(Configuration);
 
@@ -69,7 +73,7 @@ namespace artfriks
                 o.Password.RequiredLength = 6;
                 o.Cookies.ApplicationCookie.AutomaticChallenge = false;
             }).AddEntityFrameworkStores<ApplicationDbContext>();
-           //  .AddDefaultTokenProviders(); 
+            //  .AddDefaultTokenProviders(); 
             services.AddOpenIddict()
                // Register the Entity Framework stores.
                .AddEntityFrameworkCoreStores<ApplicationDbContext>()
@@ -90,12 +94,12 @@ namespace artfriks
                .AllowImplicitFlow()
                          //Dont delete this line D3233644E8A0882D48F4CA91CE1E281F4D344E1C
                          //DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199
-                       //  .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
+                         .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
                .DisableHttpsRequirement()
                .EnableRequestCaching()
-               .RequireClientIdentification()
+               .RequireClientIdentification();
                
-             .AddEphemeralSigningKey();
+            // .AddEphemeralSigningKey();
 
             services.AddCors(options =>
             {
@@ -116,7 +120,9 @@ namespace artfriks
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
         {
-            loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddFile(Path.Combine(env.ContentRootPath, "Logs/myapp-{Date}.txt"));
+            // loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+            loggerFactory.AddSerilog();
             loggerFactory.AddDebug();
             app.UseCors("AeonPolicy");
             app.UseApplicationInsightsRequestTelemetry();

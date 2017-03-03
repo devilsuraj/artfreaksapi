@@ -1,0 +1,219 @@
+2017-03-03T13:32:05.8514069+05:30  [INF] Executed DbCommand (122ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-03T13:32:07.0274742+05:30  [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-03T13:32:08.1255370+05:30  [INF] Executed DbCommand (126ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 450), @p8='?' (Size = 450), @p9='?' (Size = 4000), @p10='?' (Size = 4000), @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?' (Size = 4000), @p14='?' (Size = 450), @p15='?' (Size = 450), @p16='?' (Size = 4000), @p17='?' (Size = 4000), @p18='?' (Size = 4000), @p19='?' (Size = 4000), @p20='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OpenIddictApplications] ([Id], [ClientId], [ClientSecret], [DisplayName], [LogoutRedirectUri], [RedirectUri], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5, @p6),
+(@p7, @p8, @p9, @p10, @p11, @p12, @p13),
+(@p14, @p15, @p16, @p17, @p18, @p19, @p20); (3b5ca34b)
+2017-03-03T13:32:08.5905636+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-03T13:32:09.7426295+05:30 0HL321EBT7U7D [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-03T13:32:09.7426295+05:30 0HL321EBT7U7C [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T13:32:09.9866435+05:30 0HL321EBT7U7D [INF] Request finished in 269.8782ms 200  (15c52c40)
+2017-03-03T13:32:11.0237028+05:30 0HL321EBT7U7C [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T13:32:14.9639281+05:30 0HL321EBT7U7C [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-03T13:32:15.7809749+05:30 0HL321EBT7U7C [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4846.7482ms (afa2e885)
+2017-03-03T13:32:15.8039762+05:30 0HL321EBT7U7E [INF] Request starting HTTP/1.1 GET http://localhost:2822/css/site.css   (e5be5b71)
+2017-03-03T13:32:15.8059763+05:30 0HL321EBT7U7F [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery/dist/jquery.js   (e5be5b71)
+2017-03-03T13:32:15.8059763+05:30 0HL321EBT7U7G [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css   (e5be5b71)
+2017-03-03T13:32:15.8589793+05:30 0HL321EBT7U7E [INF] The file "/css/site.css" was not modified (f1f8d725)
+2017-03-03T13:32:15.8589793+05:30 0HL321EBT7U7F [INF] The file "/lib/jquery/dist/jquery.js" was not modified (f1f8d725)
+2017-03-03T13:32:15.8599794+05:30 0HL321EBT7U7G [INF] The file "/lib/bootstrap/dist/css/bootstrap.css" was not modified (f1f8d725)
+2017-03-03T13:32:15.9359837+05:30 0HL321EBT7U7F [INF] Request finished in 129.3993ms 304 application/javascript (15c52c40)
+2017-03-03T13:32:15.9359837+05:30 0HL321EBT7U7E [INF] Request finished in 132.2482ms 304 text/css (15c52c40)
+2017-03-03T13:32:15.9389839+05:30 0HL321EBT7U7G [INF] Request finished in 132.8454ms 304 text/css (15c52c40)
+2017-03-03T13:32:15.9519847+05:30 0HL321EBT7U7C [INF] Request finished in 6255.8646ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T13:32:16.0309892+05:30 0HL321EBT7U7H [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/js/bootstrap.js   (e5be5b71)
+2017-03-03T13:32:16.0309892+05:30 0HL321EBT7U7I [INF] Request starting HTTP/1.1 GET http://localhost:2822/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo   (e5be5b71)
+2017-03-03T13:32:16.0339893+05:30 0HL321EBT7U7J [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner1.svg   (e5be5b71)
+2017-03-03T13:32:16.0339893+05:30 0HL321EBT7U7K [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner2.svg   (e5be5b71)
+2017-03-03T13:32:16.0409897+05:30 0HL321EBT7U7H [INF] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified (f1f8d725)
+2017-03-03T13:32:16.0439899+05:30 0HL321EBT7U7J [INF] The file "/images/banner1.svg" was not modified (f1f8d725)
+2017-03-03T13:32:16.0439899+05:30 0HL321EBT7U7K [INF] The file "/images/banner2.svg" was not modified (f1f8d725)
+2017-03-03T13:32:16.0499903+05:30 0HL321EBT7U7H [INF] Request finished in 18.55ms 304 application/javascript (15c52c40)
+2017-03-03T13:32:16.0509903+05:30 0HL321EBT7U7I [INF] The file "/js/site.js" was not modified (f1f8d725)
+2017-03-03T13:32:16.0999931+05:30 0HL321EBT7U7J [INF] Request finished in 65.7326ms 304 image/svg+xml (15c52c40)
+2017-03-03T13:32:16.0999931+05:30 0HL321EBT7U7L [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner3.svg   (e5be5b71)
+2017-03-03T13:32:16.1179942+05:30 0HL321EBT7U7I [INF] Request finished in 86.6882ms 304 application/javascript (15c52c40)
+2017-03-03T13:32:16.1469958+05:30 0HL321EBT7U7M [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner4.svg   (e5be5b71)
+2017-03-03T13:32:16.1719972+05:30 0HL321EBT7U7N [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2   (e5be5b71)
+2017-03-03T13:32:16.1749974+05:30 0HL321EBT7U7M [INF] The file "/images/banner4.svg" was not modified (f1f8d725)
+2017-03-03T13:32:16.1789976+05:30 0HL321EBT7U7K [INF] Request finished in 144.5125ms 304 image/svg+xml (15c52c40)
+2017-03-03T13:32:16.1829979+05:30 0HL321EBT7U7L [INF] The file "/images/banner3.svg" was not modified (f1f8d725)
+2017-03-03T13:32:16.2360009+05:30 0HL321EBT7U7M [INF] Request finished in 88.638ms 304 image/svg+xml (15c52c40)
+2017-03-03T13:32:16.2380010+05:30 0HL321EBT7U7L [INF] Request finished in 138.4293ms 304 image/svg+xml (15c52c40)
+2017-03-03T13:32:16.2680027+05:30 0HL321EBT7U7N [INF] The file "/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" was not modified (f1f8d725)
+2017-03-03T13:32:16.2710029+05:30 0HL321EBT7U7N [INF] Request finished in 99.2433ms 304 application/font-woff2 (15c52c40)
+2017-03-03T13:46:05.9764593+05:30  [INF] Executed DbCommand (123ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-03T13:46:06.9225135+05:30  [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-03T13:46:07.0525209+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-03T13:46:07.9575727+05:30 0HL321M5N2H8J [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T13:46:07.9575727+05:30 0HL321M5N2H8K [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-03T13:46:08.0425775+05:30 0HL321M5N2H8K [INF] Request finished in 136.7653ms 200  (15c52c40)
+2017-03-03T13:46:08.9316284+05:30 0HL321M5N2H8J [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T13:46:12.1168105+05:30 0HL321M5N2H8J [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-03T13:46:12.8468523+05:30 0HL321M5N2H8J [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4019.3718ms (afa2e885)
+2017-03-03T13:46:13.0168620+05:30 0HL321M5N2H8J [INF] Request finished in 5124.7186ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T13:46:32.5769808+05:30 0HL321M5N2H8L [INF] Request starting HTTP/1.1 GET http://localhost:2822/professions   (e5be5b71)
+2017-03-03T13:46:33.3060225+05:30 0HL321M5N2H8L [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-03T13:46:33.3400244+05:30 0HL321M5N2H8L [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-03T13:46:33.3590255+05:30 0HL321M5N2H8L [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 747.6455ms (afa2e885)
+2017-03-03T13:46:33.3690261+05:30 0HL321M5N2H8L [INF] Request finished in 791.9325ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-03T13:46:37.6842729+05:30 0HL321M5N2H8M [INF] Request starting HTTP/1.1 GET http://localhost:2822/professions/index   (e5be5b71)
+2017-03-03T13:46:37.7092744+05:30 0HL321M5N2H8M [INF] Executing action method "artfriks.Controllers.ProfessionsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T13:46:38.2863074+05:30 0HL321M5N2H8M [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [p].[Id], [p].[ProfessionString]
+FROM [Professions] AS [p] (3b5ca34b)
+2017-03-03T13:46:39.1023540+05:30 0HL321M5N2H8M [INF] Executing ViewResult, running view at path "/Views/Professions/Index.cshtml". (9707eebe)
+2017-03-03T13:46:39.1523569+05:30 0HL321M5N2H8M [INF] Executed action "artfriks.Controllers.ProfessionsController.Index (artfriks)" in 1444.22ms (afa2e885)
+2017-03-03T13:46:39.2453622+05:30 0HL321M5N2H8M [INF] Request finished in 1561.1686ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:00:32.8240402+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: The route parameter name 'action?' is invalid. Route parameter names must be non-empty and cannot contain these characters: '{', '}', '/'. The '?' character marks a parameter as optional, and can occur only at the end of the parameter. The '*' character marks a parameter as catch-all, and can occur only at the start of the parameter.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Routing.RouteBase..ctor(String template, String name, IInlineConstraintResolver constraintResolver, RouteValueDictionary defaults, IDictionary`2 constraints, RouteValueDictionary dataTokens)
+   at Microsoft.AspNetCore.Routing.Route..ctor(IRouter target, String routeName, String routeTemplate, RouteValueDictionary defaults, IDictionary`2 constraints, RouteValueDictionary dataTokens, IInlineConstraintResolver inlineConstraintResolver)
+   at Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute(IRouteBuilder routeBuilder, String name, String template, Object defaults, Object constraints, Object dataTokens)
+   at Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute(IRouteBuilder routeBuilder, String name, String template)
+   at artfriks.Startup.<>c.<Configure>b__5_0(IRouteBuilder routes)
+   at Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc(IApplicationBuilder app, Action`1 configureRoutes)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-03-03T14:00:33.2520647+05:30 0HL321U7J7J4V [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T14:00:33.3570707+05:30 0HL321U7J7J4V [INF] Request finished in 129.1941ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:01:05.7059209+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.ArgumentException: The route parameter name 'action?' is invalid. Route parameter names must be non-empty and cannot contain these characters: '{', '}', '/'. The '?' character marks a parameter as optional, and can occur only at the end of the parameter. The '*' character marks a parameter as catch-all, and can occur only at the start of the parameter.
+Parameter name: routeTemplate
+   at Microsoft.AspNetCore.Routing.Template.TemplateParser.Parse(String routeTemplate)
+   at Microsoft.AspNetCore.Routing.RouteBase..ctor(String template, String name, IInlineConstraintResolver constraintResolver, RouteValueDictionary defaults, IDictionary`2 constraints, RouteValueDictionary dataTokens)
+   at Microsoft.AspNetCore.Routing.Route..ctor(IRouter target, String routeName, String routeTemplate, RouteValueDictionary defaults, IDictionary`2 constraints, RouteValueDictionary dataTokens, IInlineConstraintResolver inlineConstraintResolver)
+   at Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute(IRouteBuilder routeBuilder, String name, String template, Object defaults, Object constraints, Object dataTokens)
+   at Microsoft.AspNetCore.Builder.MapRouteRouteBuilderExtensions.MapRoute(IRouteBuilder routeBuilder, String name, String template)
+   at artfriks.Startup.<>c.<Configure>b__5_0(IRouteBuilder routes)
+   at Microsoft.AspNetCore.Builder.MvcApplicationBuilderExtensions.UseMvc(IApplicationBuilder app, Action`1 configureRoutes)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-03-03T14:01:06.2899543+05:30 0HL321UHE7QDS [INF] Request starting HTTP/1.1 GET http://localhost:2822/professions/index   (e5be5b71)
+2017-03-03T14:01:06.3869599+05:30 0HL321UHE7QDS [INF] Request finished in 118.3558ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:01:38.3537883+05:30  [INF] Executed DbCommand (109ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-03T14:01:39.2158376+05:30  [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-03T14:01:39.2988423+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-03T14:01:39.9728809+05:30 0HL321URFPN2H [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T14:01:40.8829329+05:30 0HL321URFPN2H [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T14:01:43.8891049+05:30 0HL321URFPN2H [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-03T14:01:45.1611776+05:30 0HL321URFPN2H [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4369.7904ms (afa2e885)
+2017-03-03T14:01:45.2861848+05:30 0HL321URFPN2H [INF] Request finished in 5348.0683ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:01:49.8404453+05:30 0HL321URFPN2I [INF] Request starting HTTP/1.1 GET http://localhost:2822/media/index   (e5be5b71)
+2017-03-03T14:01:49.8494458+05:30 0HL321URFPN2I [INF] Executing action method "artfriks.Controllers.MediaController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T14:01:50.4404796+05:30 0HL321URFPN2I [INF] Executed DbCommand (108ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Mediums]
+FROM [Mediums] AS [m] (3b5ca34b)
+2017-03-03T14:01:50.8945056+05:30 0HL321URFPN2I [INF] Executing ViewResult, running view at path "/Views/Media/Index.cshtml". (9707eebe)
+2017-03-03T14:01:50.9525089+05:30 0HL321URFPN2I [INF] Executed action "artfriks.Controllers.MediaController.Index (artfriks)" in 1105.6423ms (afa2e885)
+2017-03-03T14:01:50.9535089+05:30 0HL321URFPN2I [INF] Request finished in 1112.9905ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:01:52.6946085+05:30 0HL321URFPN2J [INF] Request starting HTTP/1.1 GET http://localhost:2822/media/   (e5be5b71)
+2017-03-03T14:01:52.8416169+05:30 0HL321URFPN2J [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-03T14:01:52.8686185+05:30 0HL321URFPN2J [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-03T14:01:52.8826193+05:30 0HL321URFPN2J [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 157.7395ms (afa2e885)
+2017-03-03T14:01:52.8846194+05:30 0HL321URFPN2J [INF] Request finished in 190.3444ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-03T14:02:02.9581956+05:30 0HL321URFPN2K [INF] Request starting HTTP/1.1 GET http://localhost:2822/media/   (e5be5b71)
+2017-03-03T14:02:02.9631959+05:30 0HL321URFPN2K [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-03T14:02:02.9631959+05:30 0HL321URFPN2K [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-03T14:02:02.9641959+05:30 0HL321URFPN2K [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 2.8021ms (afa2e885)
+2017-03-03T14:02:02.9641959+05:30 0HL321URFPN2K [INF] Request finished in 6.4836ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-03T14:03:24.0868359+05:30  [INF] Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-03T14:03:25.0628917+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-03T14:03:25.1568971+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-03T14:03:25.8529369+05:30 0HL321VR17LMV [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T14:03:25.8589372+05:30 0HL321VR17LMU [INF] Request starting HTTP/1.1 GET http://localhost:2822/media/   (e5be5b71)
+2017-03-03T14:03:26.7039855+05:30 0HL321VR17LMV [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T14:03:26.8249925+05:30 0HL321VR17LMU [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-03T14:03:26.9259982+05:30 0HL321VR17LMU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-03T14:03:27.0910077+05:30 0HL321VR17LMU [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 486.9445ms (afa2e885)
+2017-03-03T14:03:27.2050142+05:30 0HL321VR17LMU [INF] Request finished in 1372.8389ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-03T14:03:30.3111919+05:30 0HL321VR17LMV [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-03T14:03:30.9732297+05:30 0HL321VR17LMV [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4373.8194ms (afa2e885)
+2017-03-03T14:03:30.9802301+05:30 0HL321VR17LMV [INF] Request finished in 5164.2272ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:03:36.7015574+05:30 0HL321VR17LN0 [INF] Request starting HTTP/1.1 GET http://localhost:2822/units/index   (e5be5b71)
+2017-03-03T14:03:36.7095578+05:30 0HL321VR17LN0 [INF] Executing action method "artfriks.Controllers.UnitsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T14:03:37.4255988+05:30 0HL321VR17LN0 [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Units]
+FROM [Units] AS [u] (3b5ca34b)
+2017-03-03T14:03:37.9266274+05:30 0HL321VR17LN0 [INF] Executing ViewResult, running view at path "/Views/Units/Index.cshtml". (9707eebe)
+2017-03-03T14:03:38.0296333+05:30 0HL321VR17LN0 [INF] Executed action "artfriks.Controllers.UnitsController.Index (artfriks)" in 1322.6928ms (afa2e885)
+2017-03-03T14:03:38.0306334+05:30 0HL321VR17LN0 [INF] Request finished in 1329.0908ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:03:38.9496860+05:30 0HL321VR17LN1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/units/   (e5be5b71)
+2017-03-03T14:03:38.9526861+05:30 0HL321VR17LN1 [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-03T14:03:38.9526861+05:30 0HL321VR17LN1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-03T14:03:38.9526861+05:30 0HL321VR17LN1 [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 1.4691ms (afa2e885)
+2017-03-03T14:03:38.9536862+05:30 0HL321VR17LN1 [INF] Request finished in 4.0199ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-03T14:09:03.5812538+05:30  [INF] Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-03T14:09:04.5853113+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-03T14:09:04.7143186+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-03T14:09:05.4653616+05:30 0HL322308159L [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T14:09:06.6654302+05:30 0HL322308159L [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-03T14:09:10.5156505+05:30 0HL322308159L [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-03T14:09:11.2846944+05:30 0HL322308159L [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4799.1479ms (afa2e885)
+2017-03-03T14:09:11.3967008+05:30 0HL322308159L [INF] Request finished in 5974.4949ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-03T14:09:25.1254861+05:30 0HL322308159M [INF] Request starting HTTP/1.1 GET http://localhost:2822/home   (e5be5b71)
+2017-03-03T14:09:25.3094966+05:30 0HL322308159M [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-03T14:09:25.3374982+05:30 0HL322308159M [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-03T14:09:25.4005018+05:30 0HL322308159M [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 245.9214ms (afa2e885)
+2017-03-03T14:09:25.4025019+05:30 0HL322308159M [INF] Request finished in 276.641ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-03T14:13:57.2110485+05:30  [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-03T14:13:58.3321126+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-03T14:13:58.4481192+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-03T14:13:59.0611543+05:30 0HL3225NNV5UC [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-03T14:14:00.0102086+05:30 0HL3225NNV5UC [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)

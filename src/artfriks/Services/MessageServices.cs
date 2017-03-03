@@ -23,7 +23,7 @@ namespace artfriks.Services
             try
             {
                 var emailMessage = new MimeMessage();
-                emailMessage.From.Add(new MailboxAddress("Artfreaks", "cocospicesindia@gmail.com"));
+                emailMessage.From.Add(new MailboxAddress("Artfreaks", "support@artfreaksindia.com"));
                 emailMessage.To.Add(new MailboxAddress(email, email));
                 emailMessage.Subject = subject;
                 emailMessage.Body = new TextPart("html") { Text = message };
@@ -33,12 +33,12 @@ namespace artfriks.Services
                                delegate (object s, X509Certificate certificate,
                                         X509Chain chain, SslPolicyErrors sslPolicyErrors)
                                { return true; };
-                    client.Connect("smtp.gmail.com", 465, MailKit.Security.SecureSocketOptions.Auto);
+                    client.Connect("smtp.zoho.com", 465, MailKit.Security.SecureSocketOptions.Auto);
                     // Note: since we don't have an OAuth2 token, disable
                     // the XOAUTH2 authentication mechanism.
                     client.AuthenticationMechanisms.Remove("XOAUTH2");
                     // Note: only needed if the SMTP server requires authentication
-                    client.Authenticate("cocospicesindia@gmail.com", "cocospices01");
+                    client.Authenticate("support@artfreaksindia.com", "support104");
                     client.Send(emailMessage);
                     client.Disconnect(true);
                     return Task.FromResult(0);
