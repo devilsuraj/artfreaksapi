@@ -22,4 +22,27 @@ namespace artfriks.Models
         public int Status { get; set; } // 0 for new , 1 for approved , 2 for rejected , 3 for deleted
         public string Category { get; set; } // 0 for normal - 1 for deals - 2 for anything else
     }
+
+    public class ArtWorkView
+    {
+        public ArtWork artwork { get; set; }
+        public string user { get; set; }
+    }
+    public class ArtWorkEditView
+    {
+        public ArtWork Artwork { get; set; }
+        public string User { get; set; }
+        public IEnumerable<Category> Category { get; set; }
+        public IEnumerable<Medium> Medium { get; set; }
+        public IEnumerable<Type> Types { get; set; }
+        public IEnumerable<Unit> Units { get; set; }
+        public IEnumerable<ArtWithTagsView> Tagset { get; set; }
+        public IEnumerable<ArtTag> Tags { get; set; }
+        public string Tag { get; set; }
+    }
+    public class PostTags
+    {
+      public string artId { get; set; }
+        public string tagId { get; set; }
+    }
 }

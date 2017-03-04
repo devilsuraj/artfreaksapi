@@ -12,12 +12,12 @@ using Microsoft.AspNetCore.Authorization;
 namespace artfriks.Controllers
 {
     [Produces("application/json")]
-    public class ArtworkController : Controller
+    public class artController : Controller
     {
         private ApplicationDbContext _context;
         private UserManager<ApplicationUser> _userManager;
         // GET: api/User
-        public ArtworkController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
+        public artController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
             _userManager = userManager;
             _context = context;
@@ -60,8 +60,8 @@ namespace artfriks.Controllers
         {
             try
             {
-                var returnValue = _context.ArtWithTags.Where(x=>x.TagId==Id).Select(c=>new  {
-                    art=_context.ArtWorks.Where(art=>art.Id==c.ArtId).OrderByDescending(v=>v.AddedDate)
+                var returnValue = _context.ArtWithTags.Where(x => x.TagId == Id).Select(c => new {
+                    art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderByDescending(v => v.AddedDate)
                 }).ToList();
                 return Ok(new { status = 1, message = returnValue });
             }
@@ -86,6 +86,56 @@ namespace artfriks.Controllers
             }
         }
 
+
+        [HttpPost]
+        [Route("api/artowrk/PostTags")]
+        public IActionResult PostTags([FromBody]IEnumerable<PostTags> Posttags)
+        {
+            try
+            {
+                foreach(var i in Posttags)
+                {
+                    var arta = new ArtWithTags();
+                    arta.ArtId = Convert.ToInt32( i.artId);
+                    arta.TagId = Convert.ToInt32( i.tagId);
+                    _context.ArtWithTags.Add(arta);
+                }
+             
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("api/artowrk/RemoveTags")]
+        public IActionResult RemoveTags(string Id, string tag)
+        {
+            var artId = Convert.ToInt32(Id);
+            var tagId = Convert.ToInt32(tag);
+            try
+            {
+                var arta = _context.ArtWithTags.Where(x => x.ArtId == artId && x.TagId == tagId);
+                if (arta == null)
+                {
+                    return Ok(new { status = 0, message = "Not Found" });
+                }
+                foreach (var i in arta)
+                {
+                    _context.ArtWithTags.Remove(i);
+                }
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
         [HttpGet]
         [Route("api/artowrk/MarkFavourite")]
         public IActionResult MarkFavourite(int Id)
@@ -98,7 +148,7 @@ namespace artfriks.Controllers
                 Fav.ArtId = Id;
                 _context.ArtFavourites.Add(Fav);
                 _context.SaveChanges();
-             // Call Notification here
+                // Call Notification here
                 return Ok(new { status = 1, message = "Success" });
             }
             catch (Exception ex)
@@ -124,13 +174,14 @@ namespace artfriks.Controllers
                     user = n
                 }).First();
                 var userArts = _context.ArtWorks.Where(x => x.UserId == art.UserId && x.Id != art.Id).ToList() ?? new List<ArtWork>();
-                return Ok(new { status = 1, message = "Success", art=art,bio=userInfo, userArts = userArts });
+                return Ok(new { status = 1, message = "Success", art = art, bio = userInfo, userArts = userArts });
             }
             catch (Exception ex)
             {
                 return Ok(new { status = 0, message = ex.Message });
             }
         }
+
         [Route("api/artowrk/Tags")]
         [HttpGet]
         [AllowAnonymous]
@@ -191,7 +242,7 @@ namespace artfriks.Controllers
             {
                 _context.ArtWorks.Add(Art);
                 _context.SaveChanges();
-                return Ok(new { status = 1, message = "Success" , id=Art.Id});
+                return Ok(new { status = 1, message = "Success", id = Art.Id });
             }
             catch (Exception ex)
             {

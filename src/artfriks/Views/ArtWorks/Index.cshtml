@@ -1,0 +1,60 @@
+@model IEnumerable<ArtWorkView>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<h2>Index</h2>
+<style>
+    td {
+        vertical-align: middle;
+    }
+</style>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.artwork.Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.artwork.PictureUrl)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.artwork.Title)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.artwork.UserId)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.artwork.Description)
+                </td>
+                <td class="align-middle" valign="middle">
+                    <img src="http://base.kmtrt.in/wallimages/imagepath/thumb-@Html.DisplayFor(modelItem => item.artwork.PictureUrl)" width="100" />
+                    <br />   @Html.DisplayFor(modelItem => item.artwork.AddedDate)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.artwork.Title)
+                </td>
+                <td class="align-middle">
+                    @Html.DisplayFor(modelItem => item.user)
+                </td>
+                <td class="align-middle">
+                    <a asp-action="Edit" asp-route-id="@item.artwork.Id">Details</a> |
+                    <a asp-action="Delete" asp-route-id="@item.artwork.Id">Delete</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+

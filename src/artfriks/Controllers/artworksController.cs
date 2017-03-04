@@ -2,100 +2,224 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using artfriks.Data;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
+using artfriks.Data;
+using artfriks.Models;
+using Microsoft.AspNetCore.Identity;
 
 namespace artfriks.Controllers
 {
-    public class artworksController : Controller
+    public class ArtWorksController : Controller
     {
-        private readonly ApplicationDbContext _context;
-
-        public artworksController(ApplicationDbContext context)
+        private ApplicationDbContext _context;
+        private UserManager<ApplicationUser> _userManager;
+        // GET: api/User
+        public ArtWorksController(ApplicationDbContext context, UserManager<ApplicationUser> userManager)
         {
+            _userManager = userManager;
             _context = context;
         }
-        // GET: artworks
+
+        // GET: ArtWorks
         public async Task<IActionResult> Index()
         {
-            return View(await _context.ArtWorks.ToListAsync());
-        }
-
-        // GET: artworks/Details/5
-        public async Task<IActionResult> Details(int id)
-        {
-            return View();
-        }
-
-        // GET: artworks/Create
-        public async Task<IActionResult> Create()
-        {
-            return View();
-        }
-
-        // POST: artworks/Create
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(IFormCollection collection)
-        {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                var model = _context.ArtWorks.ToList().Select(x => new ArtWorkView
+                {
+                    artwork = x ,
+                    user = _context.Users.FirstOrDefault(v => v.Id == x.UserId).Email
+                });
+                foreach (var i in model)
+                {
+                    var str = i.artwork.Title;
+                }
+                return View(model);
             }
-            catch
+            catch (Exception ex)
             {
-                return View();
+                return BadRequest(new { ex=ex.Message,exc=ex.InnerException});
             }
+         
         }
 
-        // GET: artworks/Edit/5
-        public async Task<IActionResult> Edit(int id)
+        // GET: ArtWorks/Details/5
+        public async Task<IActionResult> Details(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var artWork = await _context.ArtWorks.SingleOrDefaultAsync(m => m.Id == id);
+            if (artWork == null)
+            {
+                return NotFound();
+            }
+
+            return View(artWork);
+        }
+
+        // GET: ArtWorks/Create
+        public IActionResult Create()
         {
             return View();
         }
 
-        // POST: artworks/Edit/5
+        // POST: ArtWorks/Create
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, IFormCollection collection)
+        public async Task<IActionResult> Create([Bind("Id,AddedDate,Category,Description,DimensionUnit,Height,MediumString,PictureUrl,Price,Status,TermAccepted,Title,UserId,Width")] ArtWork artWork)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                _context.Add(artWork);
+                await _context.SaveChangesAsync();
+                return RedirectToAction("/Index");
             }
-            catch
-            {
-                return View();
-            }
+            return View(artWork);
         }
 
-        // GET: artworks/Delete/5
-        public async Task<IActionResult> Delete(int id)
+        // GET: ArtWorks/Edit/5
+        public IActionResult Edit(int? id)
         {
-            return View();
-        }
+            if (id == null)
+            {
+                return NotFound();
+            }
 
-        // POST: artworks/Delete/5
+            var artWork = _context.ArtWorks.FirstOrDefault(m => m.Id == id);
+            ArtWorkEditView artView = new ArtWorkEditView();
+            artView.Artwork = artWork;
+            artView.User = _context.Users.Where(v => v.Id == artWork.UserId).First().Email;
+            artView.Medium = _context.Mediums.ToList();
+            artView.Category = _context.Categories.ToList();
+            artView.Units = _context.Units.ToList();
+            artView.Tags = _context.ArtTags.ToList();
+            artView.Tagset = _context.ArtWithTags.Where(n => n.ArtId == artView.Artwork.Id).Select(c => new ArtWithTagsView
+            {
+                ArtId = c.ArtId,
+                TagId = c.TagId,
+                Tag = _context.ArtTags.Where(v => v.Id == c.TagId).First().Tag
+            });
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Medium = GetMediums(_context);
+            ViewBag.Units = GetUnits(_context);
+            ViewBag.Tags = GetTags(_context);
+
+            if (artWork == null)
+            {
+                return NotFound();
+            }
+            return View(artView);
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context)
+        {
+            var model = _context.Categories.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Title });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetUnits(ApplicationDbContext _context)
+        {
+            var model = _context.Units.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Units });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetProfession(ApplicationDbContext _context)
+        {
+            var model = _context.Professions.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.ProfessionString });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetTypes(ApplicationDbContext _context)
+        {
+            var model = _context.ArtTypes.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Type });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetTags(ApplicationDbContext _context)
+        {
+            var model = _context.ArtTags.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Tag });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetMediums(ApplicationDbContext _context)
+        {
+            var model = _context.Mediums.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Mediums });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        // POST: ArtWorks/Edit/5
+        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+        // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Delete(int id, IFormCollection collection)
+        public async Task<IActionResult> Edit(int id, ArtWorkEditView artWork)
         {
-            try
+            if (id != artWork.Artwork.Id)
             {
-                // TODO: Add delete logic here
+                return NotFound();
+            }
 
-                return RedirectToAction("Index");
-            }
-            catch
+            if (ModelState.IsValid)
             {
-                return View();
+                try
+                {
+                    artWork.Artwork.Status = 1;
+                    _context.Update(artWork.Artwork);
+                    await _context.SaveChangesAsync();
+                }
+                catch (DbUpdateConcurrencyException)
+                {
+                    if (!ArtWorkExists(artWork.Artwork.Id))
+                    {
+                        return NotFound();
+                    }
+                    else
+                    {
+                        throw;
+                    }
+                }
+                return RedirectToAction("/Index");
             }
+            return View(artWork);
+        }
+
+        // GET: ArtWorks/Delete/5
+        public async Task<IActionResult> Delete(int? id)
+        {
+            if (id == null)
+            {
+                return NotFound();
+            }
+
+            var artWork = await _context.ArtWorks.SingleOrDefaultAsync(m => m.Id == id);
+            if (artWork == null)
+            {
+                return NotFound();
+            }
+
+            return View(artWork);
+        }
+
+        // POST: ArtWorks/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
+        public async Task<IActionResult> DeleteConfirmed(int id)
+        {
+            var artWork = await _context.ArtWorks.SingleOrDefaultAsync(m => m.Id == id);
+            _context.ArtWorks.Remove(artWork);
+            await _context.SaveChangesAsync();
+            return RedirectToAction("/Index");
+        }
+
+        private bool ArtWorkExists(int id)
+        {
+            return _context.ArtWorks.Any(e => e.Id == id);
         }
     }
 }

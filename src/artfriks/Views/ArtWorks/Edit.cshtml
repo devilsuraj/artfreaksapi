@@ -1,0 +1,183 @@
+@model artfriks.Models.ArtWorkEditView
+
+@{
+    ViewData["Title"] = "Edit";
+}
+<h2>Edit</h2>
+
+<form asp-action="Edit">
+    <div class="form-horizontal">
+        <h4>ArtWork</h4>
+        <hr />
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <input id="artid" type="hidden" asp-for="Artwork.Id" />
+        <input type="hidden" asp-for="Artwork.UserId" />
+        <div class="form-group">
+            <label class="col-md-2 control-label">Art</label>
+            <div class="col-md-10">
+                <img src="http://base.kmtrt.in/wallimages/imagepath/thumb-@Html.DisplayFor(modelItem => modelItem.Artwork.PictureUrl)" width="500"
+                     style="border:5px solid #808080" /><br /><hr />
+                @Html.DisplayFor(modelItem => modelItem.Artwork.AddedDate)
+                <span asp-validation-for="Artwork.PictureUrl" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Artwork.Category" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select asp-for="Artwork.Category" class="form-control" asp-items="@ViewBag.Catgories"></select>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artwork.Description" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.Description" class="form-control" />
+                <span asp-validation-for="Artwork.Description" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artwork.DimensionUnit" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.DimensionUnit" class="form-control" />
+                <span asp-validation-for="Artwork.DimensionUnit" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artwork.Height" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.Height" class="form-control" />
+                <span asp-validation-for="Artwork.Height" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artwork.MediumString" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.MediumString" class="form-control" />
+                <span asp-validation-for="Artwork.MediumString" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Artwork.Price" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.Price" class="form-control" />
+                <span asp-validation-for="Artwork.Price" class="text-danger" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label asp-for="Artwork.Title" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.Title" class="form-control" />
+                <span asp-validation-for="Artwork.Title" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artwork.UserId" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <label class="col-md-2 control-label">@Html.DisplayFor(modelItem => modelItem.User)</label>
+            </div>
+        </div>
+        <div class="form-group">
+            <label asp-for="Artwork.Width" class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <input asp-for="Artwork.Width" class="form-control" />
+                <span asp-validation-for="Artwork.Width" class="text-danger" />
+            </div>
+        </div>
+        <div class="form-group">
+            <label class="col-md-2 control-label">Tags</label>
+            <div id="tagger" class="col-md-4">
+                <input id="Tag" asp-for="Tag" class="form-control" />
+                <br/>
+@foreach (var item in Model.Tagset)
+{
+    <span class="label label-default" id="@Html.DisplayFor(modelItem => item.ArtId)" Tagid=" @Html.DisplayFor(modelItem => item.TagId) ">@Html.DisplayFor(modelItem => item.Tag) <i id="@Html.DisplayFor(modelItem => item.ArtId)" tagId="@Html.DisplayFor(modelItem => item.TagId)" class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></span>
+}
+            </div>
+            <div class="col-md-2">
+                <span  id="addtag" style="cursor:pointer">Loading....</span>
+            </div>
+        </div>
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Approve" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#addtag').hide();
+        $("#Tag").autocomplete({
+            source: function (request, response) {
+                $('#addtag').show();
+                $.ajax({
+                 
+                    url: "/api/artowrk/Tags?name=" + request.term,
+                    type: "GET",
+                    contentType:"application/json",
+                    dataType: "json",
+                    success: function (data) {
+                        $('#addtag').hide();
+                        console.log(data);
+                        response($.map(data, function (item) {
+                            return { label: item.tag, value: item.id };
+                            $('#addtag').hide();
+                        }))
+                    }
+                })
+            },
+            select: function (event, ui) {
+                var b = $('#artid').val();
+                $('#addtag').show();
+                var str = ` <span class="label label-default" id="${b}" Tagid="${ui.item.value}">${ui.item.label}<i  id="${b}" tagId="${ui.item.value}" class="remove glyphicon glyphicon-remove-sign glyphicon-white"></i></span>`;
+                $('#tagger').append(str);
+                $.ajax({
+                    url: "/api/artowrk/PostTags",
+                    type: "POST",
+                    contentType: "application/json",
+                    data: JSON.stringify([{ "artId": b, "tagId": ui.item.value }]),
+                    dataType: "json",
+                    success: function (data) {
+                        $('#addtag').hide();
+                        console.log(data);
+                        response($.map(data, function (item) {
+                            return { label: item.tag, value: item.id };
+                            $('#addtag').hide();
+                        }))
+                    }
+                })
+                return false;
+            },
+
+        });
+
+
+        })
+        $('.remove').click(function (e) {
+            var instance = $(this);
+            var b = instance.attr("id");
+            var a = instance.attr("tagId");
+            $('#addtag').show();
+             $.ajax({
+                 url: "/api/artowrk/RemoveTags?Id="+b + "&tag="+a,
+                type: "GET",
+                contentType: "application/json",
+                dataType: "json",
+                success: function (data) {
+                    $('#addtag').hide();
+                    console.log(data);
+                    instance.parent().remove();
+                }
+            })
+        });
+    </script>
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
