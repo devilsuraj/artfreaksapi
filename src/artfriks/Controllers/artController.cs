@@ -43,9 +43,27 @@ namespace artfriks.Controllers
         [Route("api/artowrk/getAll")]
         public IActionResult GetAll()
         {
+            var user = _userManager.GetUserId(User);
             try
             {
-                var returnValue = _context.ArtWorks.ToList().OrderByDescending(v => v.AddedDate);
+                var returnValue = _context.ArtWorks.Where(x=>x.Status==1).Select(p=>new  {
+                    Id=p.Id,
+                    AddedDate=p.AddedDate,
+                    TermAccepted=p.TermAccepted,
+                    Category=p.Category,
+                    Description=p.Description,
+                    DimensionUnit=p.DimensionUnit,
+                    Height=p.Height,
+                    MediumString=p.MediumString,
+                    PictureUrl=p.PictureUrl,
+                    Price=p.Price,
+                    Status=p.Status,
+                    Title=p.Title,
+                    Width=p.Width,
+                    UserId=_context.Users.Where(n=>n.Id==p.UserId).First().FullName,
+                    favcount=_context.ArtFavourites.Where(x=>x.ArtId==p.Id).Count(),
+                    isfav=_context.ArtFavourites.Any(x=>x.ArtId==p.Id && x.UserId==user)
+                }).OrderByDescending(v => v.AddedDate);
                 return Ok(new { status = 1, message = returnValue });
             }
             catch (Exception ex)
@@ -75,10 +93,47 @@ namespace artfriks.Controllers
         [Route("api/artowrk/GetById")]
         public IActionResult GetById(int Id)
         {
+            var user = _userManager.GetUserId(User);
             try
             {
-                var returnValue = _context.ArtWorks.FirstOrDefault(x => x.Id == Id) ?? new ArtWork();
-                return Ok(new { status = 1, message = returnValue });
+                var returnValue = _context.ArtWorks.Where(x => x.Id == Id).Select(p => new ArtWorkView
+                {
+                    artwork=p,
+                    user= _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                    isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user),
+                    favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count()
+                   
+                }).First() ?? new ArtWorkView();
+                if (returnValue == null) { return Ok(new { status = 0, message = "Not Found" }); }
+                var userInfo = _context.Users.Where(c => c.Id == returnValue.artwork.UserId).First() ;
+                var userProfile = _context.UserModel.Where(x => x.UserId == returnValue.artwork.UserId).First() ?? new UserModel();
+                var userArtWorks = _context.ArtWorks.Where(x => x.UserId == returnValue.artwork.UserId).Take(5).OrderByDescending(c=>c.AddedDate);
+                if (user != null) {
+                    var MessageReplies = _context.Messages.Where(x => x.ArtId == Id && x.FromUserId == user).Select(o => new {
+                        message = _context.Messages.Where(b => b.Id == o.Id),
+                        replyies = _context.MessageReplies.Where(v=>v.MessageId==o.Id)
+                     
+                });
+                    return Ok(new
+                    {
+                        status = 1,
+                        message = "success",
+                        art = returnValue,
+                        user = userInfo,
+                        profile = userProfile,
+                        artworks = userArtWorks,
+                        messages = MessageReplies
+                    });
+                }
+                return Ok(new
+                {
+                    status = 1,
+                    message = "success",
+                    art = returnValue,
+                    user = userInfo,
+                    profile = userProfile,
+                    artworks = userArtWorks
+                });
             }
             catch (Exception ex)
             {

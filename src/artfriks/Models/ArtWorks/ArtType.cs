@@ -11,4 +11,5 @@ namespace artfriks.Models
         public int ArtId { get; set; }
         public int ArtTypes { get; set; }
     }
+  
 }

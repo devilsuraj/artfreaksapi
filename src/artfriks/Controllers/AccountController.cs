@@ -189,9 +189,9 @@ namespace artfriks.Controllers
             {
                 return Ok(new { status = 0, Message = "User Does Not Exists" });
             }
-            if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, model.code, model.username))
+            if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, model.code, user.Phone))
             {
-                await _userManager.ChangePhoneNumberAsync(user, model.username, model.code);
+                await _userManager.ChangePhoneNumberAsync(user, user.Phone, model.code);
                 var code = await _userManager.RemovePasswordAsync(user);
                 var result = await _userManager.AddPasswordAsync(user, model.password);
                 if (result.Succeeded)
@@ -406,6 +406,27 @@ namespace artfriks.Controllers
                 return BadRequest(new { status = 1, Message = "failed" });
             }
         }
+
+        [Route("api/account/sendOtpbyuser")]
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> sendOtpbyuser(string username)
+        {
+            try
+            {
+                var user = await _userManager.FindByNameAsync(username);
+                var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
+                await _smsSender.SendSmsAsync(user.CountryCode + user.Phone, "Your OTP for CocoSpices is " + OTP + ".");
+                await _emailSender.SendEmailAsync(user.Email, "Artfreaks OTP", "Your OTP for Artfreaks is " + OTP + ".");
+                return Ok(new { status = 0, Message = "success" });
+            }
+            catch (Exception ex)
+            {
+                _logger.LogDebug(3, ex.Message);
+                return BadRequest(new { status = 1, Message =ex.Message });
+            }
+        }
+
 
 
 

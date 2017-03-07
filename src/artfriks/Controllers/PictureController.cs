@@ -144,8 +144,8 @@ namespace artfriks.Controllers
                         image.Resize(ogoptions).Save(file2);
                         ResizeOptions options = new ResizeOptions()
                         {
-                            Size = new Size(400, 250),
-                            Mode = ResizeMode.Pad,
+                            Size = new Size(300, 300),
+                            Mode = ResizeMode.Crop,
                             Sampler = new NearestNeighborResampler()
 
                         };

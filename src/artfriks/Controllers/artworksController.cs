@@ -158,9 +158,9 @@ namespace artfriks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, ArtWorkEditView artWork)
+        public async Task<IActionResult> Edit(int id,  ArtWorkEditView param)
         {
-            if (id != artWork.Artwork.Id)
+            if (id != param.Artwork.Id)
             {
                 return NotFound();
             }
@@ -169,13 +169,13 @@ namespace artfriks.Controllers
             {
                 try
                 {
-                    artWork.Artwork.Status = 1;
-                    _context.Update(artWork.Artwork);
+                    param.Artwork.Status = 1;
+                    _context.Update(param.Artwork);
                     await _context.SaveChangesAsync();
                 }
                 catch (DbUpdateConcurrencyException)
                 {
-                    if (!ArtWorkExists(artWork.Artwork.Id))
+                    if (!ArtWorkExists(param.Artwork.Id))
                     {
                         return NotFound();
                     }
@@ -186,7 +186,7 @@ namespace artfriks.Controllers
                 }
                 return RedirectToAction("/Index");
             }
-            return View(artWork);
+            return View(param);
         }
 
         // GET: ArtWorks/Delete/5

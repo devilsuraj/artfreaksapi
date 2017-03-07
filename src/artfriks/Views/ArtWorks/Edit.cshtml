@@ -5,13 +5,14 @@
 }
 <h2>Edit</h2>
 
-<form asp-action="Edit">
+<form asp-action="Edit" method="post">
     <div class="form-horizontal">
         <h4>ArtWork</h4>
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <input id="artid" type="hidden" asp-for="Artwork.Id" />
         <input type="hidden" asp-for="Artwork.UserId" />
+        <input type="hidden" asp-for="Artwork.PictureUrl" />
         <div class="form-group">
             <label class="col-md-2 control-label">Art</label>
             <div class="col-md-10">
@@ -108,7 +109,7 @@
 </form>
 
 <div>
-    <a asp-action="Index">Back to List</a>
+    <a asp-action="/Index">Back to List</a>
 </div>
 
 @section Scripts {

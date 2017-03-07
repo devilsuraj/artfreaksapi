@@ -27,7 +27,11 @@ namespace artfriks.Models
     {
         public ArtWork artwork { get; set; }
         public string user { get; set; }
+        public int favcount { get; set; }
+        public bool isfav { get; set; }
     }
+
+   
     public class ArtWorkEditView
     {
         public ArtWork Artwork { get; set; }

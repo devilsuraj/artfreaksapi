@@ -11,6 +11,7 @@ namespace artfriks.Models
         public int Id { get; set; }
         public int ArtId { get; set; }
         public int TagId { get; set; }
+
     }
     public class ArtWithTagsView
     {
