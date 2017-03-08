@@ -1,0 +1,1054 @@
+2017-03-08T11:23:17.8336717+05:30  [INF] Executed DbCommand (108ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-08T11:23:18.8507299+05:30  [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-08T11:23:18.9327346+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-08T11:23:19.8347861+05:30 0HL35STM85CFD [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-08T11:23:19.8347861+05:30 0HL35STM85CFC [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-08T11:23:19.9487927+05:30 0HL35STM85CFC [INF] Request finished in 145.9683ms 200  (15c52c40)
+2017-03-08T11:23:21.1438610+05:30 0HL35STM85CFD [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T11:23:24.5610565+05:30 0HL35STM85CFD [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-08T11:23:25.7551248+05:30 0HL35STM85CFD [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4756.3679ms (afa2e885)
+2017-03-08T11:23:25.8101279+05:30 0HL35STM85CFE [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css   (e5be5b71)
+2017-03-08T11:23:25.8131281+05:30 0HL35STM85CFF [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery/dist/jquery.js   (e5be5b71)
+2017-03-08T11:23:25.8141281+05:30 0HL35STM85CFG [INF] Request starting HTTP/1.1 GET http://localhost:2822/css/site.css   (e5be5b71)
+2017-03-08T11:23:25.8571306+05:30 0HL35STM85CFE [INF] The file "/lib/bootstrap/dist/css/bootstrap.css" was not modified (f1f8d725)
+2017-03-08T11:23:25.8581307+05:30 0HL35STM85CFF [INF] The file "/lib/jquery/dist/jquery.js" was not modified (f1f8d725)
+2017-03-08T11:23:25.8591307+05:30 0HL35STM85CFG [INF] The file "/css/site.css" was not modified (f1f8d725)
+2017-03-08T11:23:26.0651425+05:30 0HL35STM85CFF [INF] Request finished in 251.3439ms 304 application/javascript (15c52c40)
+2017-03-08T11:23:26.0701428+05:30 0HL35STM85CFG [INF] Request finished in 255.6637ms 304 text/css (15c52c40)
+2017-03-08T11:23:26.1011446+05:30 0HL35STM85CFD [INF] Request finished in 6325.4546ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-08T11:23:26.1551477+05:30 0HL35STM85CFE [INF] Request finished in 345.0221ms 304 text/css (15c52c40)
+2017-03-08T11:23:26.2871552+05:30 0HL35STM85CFH [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner1.svg   (e5be5b71)
+2017-03-08T11:23:26.3121566+05:30 0HL35STM85CFI [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner4.svg   (e5be5b71)
+2017-03-08T11:23:26.3121566+05:30 0HL35STM85CFJ [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/js/bootstrap.js   (e5be5b71)
+2017-03-08T11:23:26.3171569+05:30 0HL35STM85CFK [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner3.svg   (e5be5b71)
+2017-03-08T11:23:26.3191570+05:30 0HL35STM85CFH [INF] The file "/images/banner1.svg" was not modified (f1f8d725)
+2017-03-08T11:23:26.3251574+05:30 0HL35STM85CFK [INF] The file "/images/banner3.svg" was not modified (f1f8d725)
+2017-03-08T11:23:26.3451585+05:30 0HL35STM85CFI [INF] The file "/images/banner4.svg" was not modified (f1f8d725)
+2017-03-08T11:23:26.3741602+05:30 0HL35STM85CFJ [INF] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified (f1f8d725)
+2017-03-08T11:23:26.3821606+05:30 0HL35STM85CFK [INF] Request finished in 65.1111ms 304 image/svg+xml (15c52c40)
+2017-03-08T11:23:26.3861609+05:30 0HL35STM85CFH [INF] Request finished in 98.781ms 304 image/svg+xml (15c52c40)
+2017-03-08T11:23:26.3891610+05:30 0HL35STM85CFI [INF] Request finished in 76.9855ms 304 image/svg+xml (15c52c40)
+2017-03-08T11:23:26.4031618+05:30 0HL35STM85CFL [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner2.svg   (e5be5b71)
+2017-03-08T11:23:26.4061620+05:30 0HL35STM85CFJ [INF] Request finished in 93.2708ms 304 application/javascript (15c52c40)
+2017-03-08T11:23:26.4151625+05:30 0HL35STM85CFM [INF] Request starting HTTP/1.1 GET http://localhost:2822/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo   (e5be5b71)
+2017-03-08T11:23:26.4231630+05:30 0HL35STM85CFN [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2   (e5be5b71)
+2017-03-08T11:23:26.4251631+05:30 0HL35STM85CFL [INF] The file "/images/banner2.svg" was not modified (f1f8d725)
+2017-03-08T11:23:26.4331636+05:30 0HL35STM85CFM [INF] The file "/js/site.js" was not modified (f1f8d725)
+2017-03-08T11:23:26.4481644+05:30 0HL35STM85CFL [INF] Request finished in 45.0602ms 304 image/svg+xml (15c52c40)
+2017-03-08T11:23:26.4641653+05:30 0HL35STM85CFN [INF] The file "/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" was not modified (f1f8d725)
+2017-03-08T11:23:26.4671655+05:30 0HL35STM85CFM [INF] Request finished in 51.7304ms 304 application/javascript (15c52c40)
+2017-03-08T11:23:26.4791662+05:30 0HL35STM85CFN [INF] Request finished in 56.6196ms 304 application/font-woff2 (15c52c40)
+2017-03-08T11:26:22.6152406+05:30 0HL35STM85CFO [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T11:26:22.6642434+05:30 0HL35STM85CFO [INF] Request finished in 48.729ms 204  (15c52c40)
+2017-03-08T11:26:22.7012455+05:30 0HL35STM85CFP [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T11:26:28.7995943+05:30 0HL35STM85CFP [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 05:56:28'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T11:26:28.8095949+05:30 0HL35STM85CFP [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 05:56:28'." (48071232)
+2017-03-08T11:26:28.8815990+05:30 0HL35STM85CFP [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T11:26:29.3186240+05:30 0HL35STM85CFP [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T11:26:30.5116922+05:30 0HL35STM85CFP [INF] Executed DbCommand (100ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T11:26:30.5546947+05:30 0HL35STM85CFP [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 1718.8728ms (afa2e885)
+2017-03-08T11:26:30.5606950+05:30 0HL35STM85CFP [INF] Request finished in 7859.2978ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T11:26:46.3175963+05:30 0HL35STM85CFQ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T11:26:46.3275969+05:30 0HL35STM85CFQ [INF] Request finished in 9.3986ms 204  (15c52c40)
+2017-03-08T11:26:46.3595987+05:30 0HL35STM85CFR [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T11:26:46.4786055+05:30 0HL35STM85CFR [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 05:56:46'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T11:26:46.4826057+05:30 0HL35STM85CFR [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 05:56:46'." (48071232)
+2017-03-08T11:26:46.6256139+05:30 0HL35STM85CFR [INF] Executing action method "artfriks.Controllers.artController.GetById (artfriks)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T11:26:46.7276197+05:30 0HL35STM85CFR [WRN] The LINQ expression '([n].Id == [x].UserId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T11:26:46.7326200+05:30 0HL35STM85CFR [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T11:26:46.7386204+05:30 0HL35STM85CFR [WRN] The LINQ expression '([x].ArtId == [x].Id)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T11:26:46.7436207+05:30 0HL35STM85CFR [WRN] The LINQ expression 'Any()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T11:26:46.7476209+05:30 0HL35STM85CFR [WRN] The LINQ expression '([x].ArtId == [x].Id)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T11:26:46.7506211+05:30 0HL35STM85CFR [WRN] The LINQ expression 'Count()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T11:26:47.2516497+05:30 0HL35STM85CFR [INF] Executed DbCommand (134ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AddedDate], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[TermAccepted], [x].[Title], [x].[UserId], [x].[Width], (
+    SELECT TOP(1) [n].[FullName]
+    FROM [AspNetUsers] AS [n]
+    WHERE [n].[Id] = [x].[UserId]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x0]
+            WHERE ([x0].[ArtId] = [x].[Id]) AND [x0].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x1]
+    WHERE [x1].[ArtId] = [x].[Id]
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Id] = @__Id_0 (3b5ca34b)
+2017-03-08T11:26:47.8476838+05:30 0HL35STM85CFR [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n0].[Id], [n0].[FullName]
+FROM [AspNetUsers] AS [n0] (3b5ca34b)
+2017-03-08T11:26:48.3877147+05:30 0HL35STM85CFR [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x2].[Id], [x2].[ArtId], [x2].[UserId]
+FROM [ArtFavourites] AS [x2]
+WHERE [x2].[UserId] IS NULL (3b5ca34b)
+2017-03-08T11:26:48.8897434+05:30 0HL35STM85CFR [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x3].[Id], [x3].[ArtId], [x3].[UserId]
+FROM [ArtFavourites] AS [x3] (3b5ca34b)
+2017-03-08T11:26:49.3317687+05:30 0HL35STM85CFR [INF] Executed DbCommand (98ms) [Parameters=[@__returnValue_artwork_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccessFailedCount], [c].[Address], [c].[City], [c].[ConcurrencyStamp], [c].[Country], [c].[CountryCode], [c].[Email], [c].[EmailConfirmed], [c].[FirstName], [c].[FormattedAddress], [c].[FullName], [c].[Gender], [c].[LastName], [c].[Latitude], [c].[LockoutEnabled], [c].[LockoutEnd], [c].[Longitude], [c].[NormalizedEmail], [c].[NormalizedUserName], [c].[OTP], [c].[OTPfrom], [c].[PasswordHash], [c].[Phone], [c].[PhoneNumber], [c].[PhoneNumberConfirmed], [c].[PinCode], [c].[Profession], [c].[SecurityStamp], [c].[State], [c].[TwoFactorEnabled], [c].[UserName]
+FROM [AspNetUsers] AS [c]
+WHERE [c].[Id] = @__returnValue_artwork_UserId_0 (3b5ca34b)
+2017-03-08T11:26:49.8898006+05:30 0HL35STM85CFR [INF] Executed DbCommand (132ms) [Parameters=[@__returnValue_artwork_UserId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[BioData], [x].[PictureUrl], [x].[UpdateDate], [x].[UserBrief], [x].[UserId]
+FROM [UserModel] AS [x]
+WHERE [x].[UserId] = @__returnValue_artwork_UserId_0 (3b5ca34b)
+2017-03-08T11:26:50.0488097+05:30 0HL35STM85CFR [ERR] An exception occurred in the database while iterating the results of a query.
+ (3b5ca34b)
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass19_1`1.<CompileQuery>b__1(QueryContext qc)
+2017-03-08T11:26:50.2328202+05:30 0HL35STM85CFR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T11:26:50.2828231+05:30 0HL35STM85CFR [INF] Executed action "artfriks.Controllers.artController.GetById (artfriks)" in 3796.6139ms (afa2e885)
+2017-03-08T11:26:50.3728282+05:30 0HL35STM85CFR [INF] Request finished in 4013.0654ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:15:50.0308753+05:30 0HL35STM85CFS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:15:51.1549396+05:30 0HL35STM85CFS [INF] Request finished in 1286.0947ms 204  (15c52c40)
+2017-03-08T13:15:51.5109599+05:30 0HL35STM85CFT [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:15:56.1772268+05:30 0HL35STM85CFT [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:45:52'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:15:57.6773126+05:30 0HL35STM85CFT [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:45:52'." (48071232)
+2017-03-08T13:15:59.8714381+05:30 0HL35STM85CFT [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:16:01.4685295+05:30 0HL35STM85CFT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:16:05.6407681+05:30 0HL35STM85CFT [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:16:05.8597806+05:30 0HL35STM85CFT [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 6447.1332ms (afa2e885)
+2017-03-08T13:16:06.2158010+05:30 0HL35STM85CFT [INF] Request finished in 14704.3161ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:18:21.6415469+05:30 0HL35STM85CFU [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:18:21.6585479+05:30 0HL35STM85CFU [INF] Request finished in 17.1456ms 204  (15c52c40)
+2017-03-08T13:18:21.7415526+05:30 0HL35STM85CFV [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:18:21.8275576+05:30 0HL35STM85CFV [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:48:21'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:18:21.8555592+05:30 0HL35STM85CFV [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:48:21'." (48071232)
+2017-03-08T13:18:21.8585593+05:30 0HL35STM85CFV [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:18:21.8625596+05:30 0HL35STM85CFV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:18:22.2185799+05:30 0HL35STM85CFV [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:18:22.2645825+05:30 0HL35STM85CFV [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 386.7798ms (afa2e885)
+2017-03-08T13:18:22.2695828+05:30 0HL35STM85CFV [INF] Request finished in 528.4179ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:18:42.1717212+05:30 0HL35STM85CG0 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:18:42.1737213+05:30 0HL35STM85CG0 [INF] Request finished in 2.2354ms 204  (15c52c40)
+2017-03-08T13:18:42.2697268+05:30 0HL35STM85CG1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:18:42.3867335+05:30 0HL35STM85CG1 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:48:42'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:18:42.4057346+05:30 0HL35STM85CG1 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:48:42'." (48071232)
+2017-03-08T13:18:42.4277358+05:30 0HL35STM85CG1 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:18:42.4327361+05:30 0HL35STM85CG1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:18:42.7707554+05:30 0HL35STM85CG1 [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:18:42.7737556+05:30 0HL35STM85CG1 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 345.6973ms (afa2e885)
+2017-03-08T13:18:42.7797559+05:30 0HL35STM85CG1 [INF] Request finished in 509.9708ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:19:41.4131096+05:30 0HL35STM85CG2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:19:41.4161098+05:30 0HL35STM85CG2 [INF] Request finished in 3.5101ms 204  (15c52c40)
+2017-03-08T13:19:41.6121210+05:30 0HL35STM85CG3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:19:41.7261275+05:30 0HL35STM85CG3 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:49:41'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:19:41.9511404+05:30 0HL35STM85CG3 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:49:41'." (48071232)
+2017-03-08T13:19:41.9571407+05:30 0HL35STM85CG3 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:19:41.9681413+05:30 0HL35STM85CG3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:19:42.2951600+05:30 0HL35STM85CG3 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:19:42.3001603+05:30 0HL35STM85CG3 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 343.0943ms (afa2e885)
+2017-03-08T13:19:42.3821650+05:30 0HL35STM85CG3 [INF] Request finished in 770.0231ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:20:03.5123736+05:30 0HL35STM85CG4 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:20:03.5713770+05:30 0HL35STM85CG4 [INF] Request finished in 47.695ms 204  (15c52c40)
+2017-03-08T13:20:03.6553818+05:30 0HL35STM85CG5 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:20:03.8113907+05:30 0HL35STM85CG5 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:50:03'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:20:03.8163910+05:30 0HL35STM85CG5 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:50:03'." (48071232)
+2017-03-08T13:20:03.8293917+05:30 0HL35STM85CG5 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:20:03.8533931+05:30 0HL35STM85CG5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:20:04.2254144+05:30 0HL35STM85CG5 [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:20:04.2484157+05:30 0HL35STM85CG5 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 418.9742ms (afa2e885)
+2017-03-08T13:20:04.2804175+05:30 0HL35STM85CG5 [INF] Request finished in 624.4631ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:20:43.2606471+05:30 0HL35STM85CG6 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:20:43.2646473+05:30 0HL35STM85CG6 [INF] Request finished in 2.6471ms 204  (15c52c40)
+2017-03-08T13:20:43.3776538+05:30 0HL35STM85CG7 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:20:43.4916603+05:30 0HL35STM85CG7 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:50:43'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:20:43.5356628+05:30 0HL35STM85CG7 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 07:50:43'." (48071232)
+2017-03-08T13:20:43.5516637+05:30 0HL35STM85CG7 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:20:43.5576641+05:30 0HL35STM85CG7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:20:43.9066840+05:30 0HL35STM85CG7 [INF] Executed DbCommand (103ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:20:43.9496865+05:30 0HL35STM85CG7 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 397.6232ms (afa2e885)
+2017-03-08T13:20:43.9646873+05:30 0HL35STM85CG7 [INF] Request finished in 598.1887ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:21:35.4366314+05:30 0HL35STM85CG8 [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 1043 (e5be5b71)
+2017-03-08T13:21:39.3838571+05:30 0HL35STM85CG8 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"refresh_token\",
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\"
+}" (2bd72e75)
+2017-03-08T13:21:41.0889547+05:30 0HL35STM85CG8 [WRN] The LINQ expression 'SingleOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:21:42.2900233+05:30 0HL35STM85CG8 [INF] Executed DbCommand (189ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T13:21:42.7110474+05:30 0HL35STM85CG8 [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T13:21:42.7320486+05:30 0HL35STM85CG8 [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T13:21:44.2411349+05:30 0HL35STM85CG8 [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2017-03-08T13:21:44.2501355+05:30 0HL35STM85CG8 [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"Invalid ticket\"
+}" (def80055)
+2017-03-08T13:21:44.6651592+05:30 0HL35STM85CG8 [INF] Request finished in 9228.0215ms 400 application/json;charset=UTF-8 (15c52c40)
+2017-03-08T13:22:20.8852309+05:30 0HL35STM85CG9 [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 1043 (e5be5b71)
+2017-03-08T13:22:20.9002317+05:30 0HL35STM85CG9 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"refresh_token\",
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\"
+}" (2bd72e75)
+2017-03-08T13:22:21.2322507+05:30 0HL35STM85CG9 [INF] Executed DbCommand (93ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T13:22:21.3052549+05:30 0HL35STM85CG9 [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T13:22:21.3082551+05:30 0HL35STM85CG9 [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T13:22:21.3422570+05:30 0HL35STM85CG9 [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2017-03-08T13:22:21.3462572+05:30 0HL35STM85CG9 [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"Invalid ticket\"
+}" (def80055)
+2017-03-08T13:22:21.3542577+05:30 0HL35STM85CG9 [INF] Request finished in 469.1306ms 400 application/json;charset=UTF-8 (15c52c40)
+2017-03-08T13:23:12.1771646+05:30 0HL35STM85CGA [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 1043 (e5be5b71)
+2017-03-08T13:23:12.1801648+05:30 0HL35STM85CGA [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"refresh_token\",
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\"
+}" (2bd72e75)
+2017-03-08T13:23:12.5101836+05:30 0HL35STM85CGA [INF] Executed DbCommand (97ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T13:23:12.5541862+05:30 0HL35STM85CGA [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T13:23:12.6011889+05:30 0HL35STM85CGA [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T13:23:12.6311906+05:30 0HL35STM85CGA [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2017-03-08T13:23:12.6731930+05:30 0HL35STM85CGA [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"Invalid ticket\"
+}" (def80055)
+2017-03-08T13:23:12.6851937+05:30 0HL35STM85CGA [INF] Request finished in 508.1515ms 400 application/json;charset=UTF-8 (15c52c40)
+2017-03-08T13:23:37.3756059+05:30 0HL35STM85CGB [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 1043 (e5be5b71)
+2017-03-08T13:23:37.3786060+05:30 0HL35STM85CGB [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"refresh_token\",
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\"
+}" (2bd72e75)
+2017-03-08T13:23:37.7476271+05:30 0HL35STM85CGB [INF] Executed DbCommand (108ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T13:23:37.7506273+05:30 0HL35STM85CGB [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T13:23:37.7536275+05:30 0HL35STM85CGB [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T13:23:37.8026303+05:30 0HL35STM85CGB [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2017-03-08T13:23:37.8086306+05:30 0HL35STM85CGB [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"Invalid ticket\"
+}" (def80055)
+2017-03-08T13:23:37.8256316+05:30 0HL35STM85CGB [INF] Request finished in 450.2996ms 400 application/json;charset=UTF-8 (15c52c40)
+2017-03-08T13:26:58.6081157+05:30  [INF] Executed DbCommand (137ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-08T13:26:59.6891775+05:30  [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-08T13:26:59.7911834+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-08T13:27:00.5682278+05:30 0HL35V2PPO9DQ [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-08T13:27:00.5682278+05:30 0HL35V2PPO9DR [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-08T13:27:00.7172363+05:30 0HL35V2PPO9DQ [INF] Request finished in 179.3427ms 200  (15c52c40)
+2017-03-08T13:27:01.6512898+05:30 0HL35V2PPO9DR [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:27:05.1714911+05:30 0HL35V2PPO9DR [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-08T13:27:06.0185396+05:30 0HL35V2PPO9DR [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4450.3759ms (afa2e885)
+2017-03-08T13:27:06.2745542+05:30 0HL35V2PPO9DR [INF] Request finished in 5753.0646ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-08T13:54:56.9071089+05:30 0HL35V2PPO9DS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:54:56.9481113+05:30 0HL35V2PPO9DS [INF] Request finished in 41.1032ms 204  (15c52c40)
+2017-03-08T13:54:57.0701182+05:30 0HL35V2PPO9DT [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:55:04.0765190+05:30 0HL35V2PPO9DT [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:25:03'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:55:04.1045206+05:30 0HL35V2PPO9DT [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:25:03'." (48071232)
+2017-03-08T13:55:04.1745246+05:30 0HL35V2PPO9DT [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:55:04.5765476+05:30 0HL35V2PPO9DT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:55:07.6437230+05:30 0HL35V2PPO9DT [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:55:07.6877255+05:30 0HL35V2PPO9DT [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 3538.4201ms (afa2e885)
+2017-03-08T13:55:07.6967261+05:30 0HL35V2PPO9DT [INF] Request finished in 10626.9004ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:55:44.9688579+05:30 0HL35V2PPO9DU [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T13:55:44.9748582+05:30 0HL35V2PPO9DU [INF] Request finished in 6.1666ms 204  (15c52c40)
+2017-03-08T13:55:45.1458680+05:30 0HL35V2PPO9DV [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T13:55:45.3038771+05:30 0HL35V2PPO9DV [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:25:45'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:55:45.3908820+05:30 0HL35V2PPO9DV [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:25:45'." (48071232)
+2017-03-08T13:55:45.6648977+05:30 0HL35V2PPO9DV [INF] Executing action method "artfriks.Controllers.artController.GetById (artfriks)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:55:45.7649034+05:30 0HL35V2PPO9DV [WRN] The LINQ expression '([n].Id == [x].UserId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:55:45.7859046+05:30 0HL35V2PPO9DV [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:55:45.7979053+05:30 0HL35V2PPO9DV [WRN] The LINQ expression '([x].ArtId == [x].Id)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:55:45.8049057+05:30 0HL35V2PPO9DV [WRN] The LINQ expression 'Any()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:55:45.8109061+05:30 0HL35V2PPO9DV [WRN] The LINQ expression '([x].ArtId == [x].Id)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:55:45.8859103+05:30 0HL35V2PPO9DV [WRN] The LINQ expression 'Count()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T13:55:46.3509369+05:30 0HL35V2PPO9DV [INF] Executed DbCommand (121ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AddedDate], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[TermAccepted], [x].[Title], [x].[UserId], [x].[Width], (
+    SELECT TOP(1) [n].[FullName]
+    FROM [AspNetUsers] AS [n]
+    WHERE [n].[Id] = [x].[UserId]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x0]
+            WHERE ([x0].[ArtId] = [x].[Id]) AND [x0].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x1]
+    WHERE [x1].[ArtId] = [x].[Id]
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Id] = @__Id_0 (3b5ca34b)
+2017-03-08T13:55:46.7959624+05:30 0HL35V2PPO9DV [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n0].[Id], [n0].[FullName]
+FROM [AspNetUsers] AS [n0] (3b5ca34b)
+2017-03-08T13:55:47.1059801+05:30 0HL35V2PPO9DV [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x2].[Id], [x2].[ArtId], [x2].[UserId]
+FROM [ArtFavourites] AS [x2]
+WHERE [x2].[UserId] IS NULL (3b5ca34b)
+2017-03-08T13:55:47.4550001+05:30 0HL35V2PPO9DV [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x3].[Id], [x3].[ArtId], [x3].[UserId]
+FROM [ArtFavourites] AS [x3] (3b5ca34b)
+2017-03-08T13:55:48.0700353+05:30 0HL35V2PPO9DV [INF] Executed DbCommand (97ms) [Parameters=[@__returnValue_artwork_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccessFailedCount], [c].[Address], [c].[City], [c].[ConcurrencyStamp], [c].[Country], [c].[CountryCode], [c].[Email], [c].[EmailConfirmed], [c].[FirstName], [c].[FormattedAddress], [c].[FullName], [c].[Gender], [c].[LastName], [c].[Latitude], [c].[LockoutEnabled], [c].[LockoutEnd], [c].[Longitude], [c].[NormalizedEmail], [c].[NormalizedUserName], [c].[OTP], [c].[OTPfrom], [c].[PasswordHash], [c].[Phone], [c].[PhoneNumber], [c].[PhoneNumberConfirmed], [c].[PinCode], [c].[Profession], [c].[SecurityStamp], [c].[State], [c].[TwoFactorEnabled], [c].[UserName]
+FROM [AspNetUsers] AS [c]
+WHERE [c].[Id] = @__returnValue_artwork_UserId_0 (3b5ca34b)
+2017-03-08T13:55:48.4840590+05:30 0HL35V2PPO9DV [INF] Executed DbCommand (90ms) [Parameters=[@__returnValue_artwork_UserId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[BioData], [x].[PictureUrl], [x].[UpdateDate], [x].[UserBrief], [x].[UserId]
+FROM [UserModel] AS [x]
+WHERE [x].[UserId] = @__returnValue_artwork_UserId_0 (3b5ca34b)
+2017-03-08T13:55:48.9350848+05:30 0HL35V2PPO9DV [ERR] An exception occurred in the database while iterating the results of a query.
+ (3b5ca34b)
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass19_1`1.<CompileQuery>b__1(QueryContext qc)
+2017-03-08T13:55:49.0170894+05:30 0HL35V2PPO9DV [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:55:49.0290901+05:30 0HL35V2PPO9DV [INF] Executed action "artfriks.Controllers.artController.GetById (artfriks)" in 3634.0636ms (afa2e885)
+2017-03-08T13:55:49.0470912+05:30 0HL35V2PPO9DV [INF] Request finished in 3901.0963ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:56:05.1770137+05:30 0HL35V2PPO9E0 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:56:05.1800139+05:30 0HL35V2PPO9E0 [INF] Request finished in 2.7248ms 204  (15c52c40)
+2017-03-08T13:56:05.1960148+05:30 0HL35V2PPO9E1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T13:56:05.2600185+05:30 0HL35V2PPO9E1 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:26:05'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:56:05.3020209+05:30 0HL35V2PPO9E1 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:26:05'." (48071232)
+2017-03-08T13:56:05.3100213+05:30 0HL35V2PPO9E1 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:56:05.3140216+05:30 0HL35V2PPO9E1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:56:05.7340456+05:30 0HL35V2PPO9E1 [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T13:56:05.7370458+05:30 0HL35V2PPO9E1 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 427.1811ms (afa2e885)
+2017-03-08T13:56:05.7640473+05:30 0HL35V2PPO9E1 [INF] Request finished in 567.7142ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:56:06.7281025+05:30 0HL35V2PPO9E2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T13:56:06.7431033+05:30 0HL35V2PPO9E2 [INF] Request finished in 14.791ms 204  (15c52c40)
+2017-03-08T13:56:06.7611043+05:30 0HL35V2PPO9E3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T13:56:06.7941062+05:30 0HL35V2PPO9E3 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:26:06'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:56:06.7991065+05:30 0HL35V2PPO9E3 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:26:06'." (48071232)
+2017-03-08T13:56:06.8041068+05:30 0HL35V2PPO9E3 [INF] Executing action method "artfriks.Controllers.artController.GetById (artfriks)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T13:56:26.4122283+05:30 0HL35V2PPO9E3 [INF] Executed DbCommand (95ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AddedDate], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[TermAccepted], [x].[Title], [x].[UserId], [x].[Width], (
+    SELECT TOP(1) [n].[FullName]
+    FROM [AspNetUsers] AS [n]
+    WHERE [n].[Id] = [x].[UserId]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x0]
+            WHERE ([x0].[ArtId] = [x].[Id]) AND [x0].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x1]
+    WHERE [x1].[ArtId] = [x].[Id]
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Id] = @__Id_0 (3b5ca34b)
+2017-03-08T13:56:26.7062451+05:30 0HL35V2PPO9E3 [INF] Executed DbCommand (86ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [n0].[Id], [n0].[FullName]
+FROM [AspNetUsers] AS [n0] (3b5ca34b)
+2017-03-08T13:56:27.0022621+05:30 0HL35V2PPO9E3 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x2].[Id], [x2].[ArtId], [x2].[UserId]
+FROM [ArtFavourites] AS [x2]
+WHERE [x2].[UserId] IS NULL (3b5ca34b)
+2017-03-08T13:56:27.3002791+05:30 0HL35V2PPO9E3 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x3].[Id], [x3].[ArtId], [x3].[UserId]
+FROM [ArtFavourites] AS [x3] (3b5ca34b)
+2017-03-08T13:56:34.8377102+05:30 0HL35V2PPO9E3 [INF] Executed DbCommand (97ms) [Parameters=[@__returnValue_artwork_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [c].[Id], [c].[AccessFailedCount], [c].[Address], [c].[City], [c].[ConcurrencyStamp], [c].[Country], [c].[CountryCode], [c].[Email], [c].[EmailConfirmed], [c].[FirstName], [c].[FormattedAddress], [c].[FullName], [c].[Gender], [c].[LastName], [c].[Latitude], [c].[LockoutEnabled], [c].[LockoutEnd], [c].[Longitude], [c].[NormalizedEmail], [c].[NormalizedUserName], [c].[OTP], [c].[OTPfrom], [c].[PasswordHash], [c].[Phone], [c].[PhoneNumber], [c].[PhoneNumberConfirmed], [c].[PinCode], [c].[Profession], [c].[SecurityStamp], [c].[State], [c].[TwoFactorEnabled], [c].[UserName]
+FROM [AspNetUsers] AS [c]
+WHERE [c].[Id] = @__returnValue_artwork_UserId_0 (3b5ca34b)
+2017-03-08T13:56:38.1258983+05:30 0HL35V2PPO9E3 [INF] Executed DbCommand (90ms) [Parameters=[@__returnValue_artwork_UserId_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[BioData], [x].[PictureUrl], [x].[UpdateDate], [x].[UserBrief], [x].[UserId]
+FROM [UserModel] AS [x]
+WHERE [x].[UserId] = @__returnValue_artwork_UserId_0 (3b5ca34b)
+2017-03-08T13:56:38.1959023+05:30 0HL35V2PPO9E3 [ERR] An exception occurred in the database while iterating the results of a query.
+ (3b5ca34b)
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass19_1`1.<CompileQuery>b__1(QueryContext qc)
+2017-03-08T13:57:10.9647766+05:30 0HL35V2PPO9E3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T13:57:11.1237857+05:30 0HL35V2PPO9E3 [INF] Executed action "artfriks.Controllers.artController.GetById (artfriks)" in 64321.4792ms (afa2e885)
+2017-03-08T13:57:11.9758344+05:30 0HL35V2PPO9E3 [INF] Request finished in 65213.819ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T13:57:42.5435828+05:30 0HL35V2PPO9E4 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T13:57:42.6425884+05:30 0HL35V2PPO9E4 [INF] Request finished in 99.2771ms 204  (15c52c40)
+2017-03-08T13:57:42.9116038+05:30 0HL35V2PPO9E5 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/GetById?id=7   (e5be5b71)
+2017-03-08T13:57:43.5086380+05:30 0HL35V2PPO9E5 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:27:43'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T13:57:43.5306392+05:30 0HL35V2PPO9E5 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 08:27:43'." (48071232)
+2017-03-08T13:57:43.5416399+05:30 0HL35V2PPO9E5 [INF] Executing action method "artfriks.Controllers.artController.GetById (artfriks)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:45:29.2903678+05:30  [INF] Executed DbCommand (312ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-08T16:45:30.6594461+05:30  [INF] Executed DbCommand (184ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-08T16:45:30.7624520+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-08T16:45:31.6655036+05:30 0HL362HNIR0H1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-08T16:45:32.9335761+05:30 0HL362HNIR0H1 [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:45:36.2887681+05:30 0HL362HNIR0H1 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-08T16:45:37.5088378+05:30 0HL362HNIR0H1 [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4643.1566ms (afa2e885)
+2017-03-08T16:45:37.6138438+05:30 0HL362HNIR0H1 [INF] Request finished in 6013.5926ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-08T16:48:09.1495112+05:30 0HL362HNIR0H2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T16:48:09.1685123+05:30 0HL362HNIR0H2 [INF] Request finished in 19.076ms 204  (15c52c40)
+2017-03-08T16:48:09.2085146+05:30 0HL362HNIR0H3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T16:48:18.2190299+05:30 0HL362HNIR0H3 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 11:18:18'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T16:48:18.2230302+05:30 0HL362HNIR0H3 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 11:18:18'." (48071232)
+2017-03-08T16:48:18.2490316+05:30 0HL362HNIR0H3 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:48:18.4520433+05:30 0HL362HNIR0H3 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T16:48:20.3441515+05:30 0HL362HNIR0H3 [INF] Executed DbCommand (313ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T16:48:20.3861539+05:30 0HL362HNIR0H3 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 2149.7164ms (afa2e885)
+2017-03-08T16:48:20.3871539+05:30 0HL362HNIR0H3 [INF] Request finished in 11178.877ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T16:49:11.9161012+05:30 0HL362HNIR0H4 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T16:49:11.9161012+05:30 0HL362HNIR0H4 [INF] Request finished in 0.4435ms 204  (15c52c40)
+2017-03-08T16:49:11.9881053+05:30 0HL362HNIR0H5 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T16:49:11.9971059+05:30 0HL362HNIR0H5 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 11:19:11'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T16:49:11.9981059+05:30 0HL362HNIR0H5 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 11:19:11'." (48071232)
+2017-03-08T16:49:12.0021061+05:30 0HL362HNIR0H5 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:49:12.0071064+05:30 0HL362HNIR0H5 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T16:49:13.2151755+05:30 0HL362HNIR0H5 [INF] Executed DbCommand (344ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T16:49:13.2151755+05:30 0HL362HNIR0H5 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 1213.8133ms (afa2e885)
+2017-03-08T16:49:13.2161756+05:30 0HL362HNIR0H5 [INF] Request finished in 1228.6659ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T16:50:05.0181385+05:30 0HL362HNIR0H6 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T16:50:05.0181385+05:30 0HL362HNIR0H6 [INF] Request finished in 0.2898ms 204  (15c52c40)
+2017-03-08T16:50:05.0901426+05:30 0HL362HNIR0H7 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAll   (e5be5b71)
+2017-03-08T16:50:05.0951429+05:30 0HL362HNIR0H7 [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkRDQkY2QkM5NUM1MkJERTZBQTExMzUyOTc1ODlBMUFEQjhCQjcxOTkiLCJ0eXAiOiJKV1QifQ.eyJ1bmlxdWVfbmFtZSI6InN1cmFqIiwiQXNwTmV0LklkZW50aXR5LlNlY3VyaXR5U3RhbXAiOiJlNDIwNTIzMi1iYzFjLTQ3NjgtOGYwNy0wMzYwNWViYTgxZjMiLCJqdGkiOiIzMjdlYmNkMi02YWE0LTRlYzctOTAzMS1jOGFjNjkxYjAyNTkiLCJ1c2FnZSI6ImFjY2Vzc190b2tlbiIsInNjb3BlIjpbIm9mZmxpbmVfYWNjZXNzIiwicHJvZmlsZSIsImVtYWlsIiwicm9sZXMiXSwic3ViIjoiNjY5YjQ4ZTMtZTM1MC00MjkzLWExYTItY2Y3N2ExODAzMTcxIiwiYXpwIjoibXlDbGllbnQiLCJuYmYiOjE0ODg3OTc1MzEsImV4cCI6MTQ4ODgwMTEzMSwiaWF0IjoxNDg4Nzk3NTMxLCJpc3MiOiJodHRwOi8vYmFzZS5rbXRydC5pbi8ifQ.FDTFphQcYEU_6FFhcZW_IxXtazClDoRHVRSv-6ccQ8mgI5hlr6ls13aN0mM1gZxoE3-zyrn4TGYKPAIZN0qTzLdvMDK3jt0KufxYzip-KxOQMS3vTa_F9DIOXfDP0S2Hs-aZeqDYOJNX2RPadIRG8VaZfZ8ASE6LhP0onz4iVele2piEgfHaBIyTKcNdGbAQIlqfC6xFH63x_sP0EI9ZfVMqlPgrBahWwpKmVqevqx5YYfA3SJMVbYX-h_SpPGQJpdiNwwiVatnlPGgXIaHmVCgtjmwPZ4DUjqsbHc4jwvagc7PYmoQLOc1x_xdznhVFaOG6qvasHjWzgOawNXwt9ubTV-IK8JUtpPUU9MO9opRORrvExKYMCamf0d39rpOaPkbIn-Odc122YWNc3i3EA16urxoglFN8Pki_r2f_4qa5kgZRX1PSgeehyYezVdK9kkwaSrRoxHmCSsolpTEVC9tjU3hJvIWK4W2gpg61r4JMmyCXAOMic_mDUvkJMXIj4MHw9yYQCKdJ3hpJ8YDt1WhXglgbWKr417Q23wxr5IuQwLI01VzJAl-97tO1hYdRCnyv3vr6AQPmzdL3sfXmbyAdYMN0474SEFGBQ1Ku-Vj5XJwyxhXohutP9Ym7ITYyE2TWOyYYYGg4n-n8FDU1XDnZG-pGjDnnZIWRSSXTDPA". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenExpiredException: IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 11:20:05'.
+   at Microsoft.IdentityModel.Tokens.Validators.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, SecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateLifetime(Nullable`1 notBefore, Nullable`1 expires, JwtSecurityToken securityToken, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-08T16:50:05.0951429+05:30 0HL362HNIR0H7 [INF] "Bearer" was not authenticated. Failure message: "IDX10223: Lifetime validation failed. The token is expired.
+ValidTo: '03/06/2017 11:52:11'
+Current time: '03/08/2017 11:20:05'." (48071232)
+2017-03-08T16:50:05.0961430+05:30 0HL362HNIR0H7 [INF] Executing action method "artfriks.Controllers.artController.GetAll (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:50:05.0971430+05:30 0HL362HNIR0H7 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T16:50:05.5951715+05:30 0HL362HNIR0H7 [INF] Executed DbCommand (148ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-03-08T16:50:05.5961716+05:30 0HL362HNIR0H7 [INF] Executed action "artfriks.Controllers.artController.GetAll (artfriks)" in 500.6063ms (afa2e885)
+2017-03-08T16:50:05.5961716+05:30 0HL362HNIR0H7 [INF] Request finished in 506.5738ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-08T16:50:32.4617082+05:30 0HL362HNIR0H8 [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 1043 (e5be5b71)
+2017-03-08T16:50:32.7207230+05:30 0HL362HNIR0H8 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"refresh_token\",
+  \"refresh_token\": \"[removed for security reasons]\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\"
+}" (2bd72e75)
+2017-03-08T16:50:32.8127283+05:30 0HL362HNIR0H8 [WRN] The LINQ expression 'SingleOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-08T16:50:33.7677829+05:30 0HL362HNIR0H8 [INF] Executed DbCommand (256ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T16:50:33.9277920+05:30 0HL362HNIR0H8 [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T16:50:33.9277920+05:30 0HL362HNIR0H8 [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T16:50:34.4488218+05:30 0HL362HNIR0H8 [ERR] The token request was rejected because the authorization code or the refresh token was invalid. (4f68f9ee)
+2017-03-08T16:50:34.4568223+05:30 0HL362HNIR0H8 [INF] The token response was successfully returned: "{
+  \"error\": \"invalid_grant\",
+  \"error_description\": \"Invalid ticket\"
+}" (def80055)
+2017-03-08T16:50:34.4728232+05:30 0HL362HNIR0H8 [INF] Request finished in 2010.8711ms 400 application/json;charset=UTF-8 (15c52c40)
+2017-03-08T16:50:39.6041167+05:30 0HL362HNIR0H9 [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 110 (e5be5b71)
+2017-03-08T16:50:39.6051168+05:30 0HL362HNIR0H9 [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"password\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\",
+  \"username\": \"suraj\",
+  \"password\": \"[removed for security reasons]\"
+}" (2bd72e75)
+2017-03-08T16:50:40.5571712+05:30 0HL362HNIR0H9 [INF] Executed DbCommand (283ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T16:50:40.5581713+05:30 0HL362HNIR0H9 [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T16:50:40.5581713+05:30 0HL362HNIR0H9 [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T16:50:41.1392045+05:30 0HL362HNIR0H9 [INF] Executing action method "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" with arguments (["suraj", "suraj1", "", "", "password", "", "myClient", "offline_access profile email roles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:50:41.7242380+05:30 0HL362HNIR0H9 [INF] Executed DbCommand (122ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-08T16:50:42.7652975+05:30 0HL362HNIR0H9 [INF] Executed DbCommand (268ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-08T16:50:42.9493080+05:30 0HL362HNIR0H9 [WRN] Invalid password for user "669b48e3-e350-4293-a1a2-cf77a1803171". (c2dce6c7)
+2017-03-08T16:50:42.9513081+05:30 0HL362HNIR0H9 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T16:50:42.9563084+05:30 0HL362HNIR0H9 [INF] Executed action "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" in 2379.0057ms (afa2e885)
+2017-03-08T16:50:42.9583085+05:30 0HL362HNIR0H9 [INF] Request finished in 3354.157ms 400 application/json; charset=utf-8 (15c52c40)
+2017-03-08T16:50:49.7386964+05:30 0HL362HNIR0HA [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 110 (e5be5b71)
+2017-03-08T16:50:49.7536972+05:30 0HL362HNIR0HA [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"password\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\",
+  \"username\": \"suraj\",
+  \"password\": \"[removed for security reasons]\"
+}" (2bd72e75)
+2017-03-08T16:50:50.6537487+05:30 0HL362HNIR0HA [INF] Executed DbCommand (268ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T16:50:50.6547488+05:30 0HL362HNIR0HA [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T16:50:50.6547488+05:30 0HL362HNIR0HA [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T16:50:50.6557488+05:30 0HL362HNIR0HA [INF] Executing action method "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" with arguments (["suraj", "suraj1", "", "", "password", "", "myClient", "offline_access profile email roles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:50:51.5768015+05:30 0HL362HNIR0HA [INF] Executed DbCommand (274ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-08T16:50:52.4878536+05:30 0HL362HNIR0HA [INF] Executed DbCommand (271ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-08T16:50:52.5328562+05:30 0HL362HNIR0HA [WRN] Invalid password for user "669b48e3-e350-4293-a1a2-cf77a1803171". (c2dce6c7)
+2017-03-08T16:50:52.5328562+05:30 0HL362HNIR0HA [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-08T16:50:52.5328562+05:30 0HL362HNIR0HA [INF] Executed action "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" in 1878.2427ms (afa2e885)
+2017-03-08T16:50:52.5338562+05:30 0HL362HNIR0HA [INF] Request finished in 2795.0583ms 400 application/json; charset=utf-8 (15c52c40)
+2017-03-08T16:50:57.9721673+05:30 0HL362HNIR0HB [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 110 (e5be5b71)
+2017-03-08T16:50:57.9731673+05:30 0HL362HNIR0HB [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"password\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\",
+  \"username\": \"suraj\",
+  \"password\": \"[removed for security reasons]\"
+}" (2bd72e75)
+2017-03-08T16:50:58.8692186+05:30 0HL362HNIR0HB [INF] Executed DbCommand (267ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-08T16:50:58.8692186+05:30 0HL362HNIR0HB [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-08T16:50:58.8692186+05:30 0HL362HNIR0HB [INF] The token request was successfully validated. (d7e51e65)
+2017-03-08T16:50:58.8702187+05:30 0HL362HNIR0HB [INF] Executing action method "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" with arguments (["suraj", "123456", "", "", "password", "", "myClient", "offline_access profile email roles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-08T16:50:59.8032720+05:30 0HL362HNIR0HB [INF] Executed DbCommand (278ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-08T16:51:00.4753105+05:30 0HL362HNIR0HB [INF] Executed DbCommand (200ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-08T16:51:02.2344111+05:30 0HL362HNIR0HB [INF] Executed DbCommand (455ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (3b5ca34b)
+2017-03-08T16:51:04.0905172+05:30 0HL362HNIR0HB [INF] Executed DbCommand (546ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0 (3b5ca34b)
+2017-03-08T16:51:04.1145186+05:30 0HL362HNIR0HB [INF] Executing SignInResult with authentication scheme ("ASOS") and the following principal: "System.Security.Claims.ClaimsPrincipal". (f8bf0a82)
+2017-03-08T16:51:04.3355313+05:30 0HL362HNIR0HB [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: The authentication ticket was rejected because it doesn't contain the mandatory subject claim.
+   at AspNet.Security.OpenIdConnect.Server.OpenIdConnectServerHandler.<HandleSignInAsync>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<SignInAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<SignInAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<SignInAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<SignInAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<SignInAsync>d__61.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Http.Authentication.Internal.DefaultAuthenticationManager.<SignInAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.SignInResult.<ExecuteResultAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultFilterAsync>d__31.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAllResultFiltersAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResourceFilterAsync>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-08T16:51:04.7725562+05:30  [INF] Connection id ""0HL362HNGT1VT"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-08T16:51:04.7755564+05:30  [INF] Connection id ""0HL362HNGT1VT"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-08T16:51:04.7775565+05:30 0HL362HNIR0HB [INF] Request finished in 6804.9383ms 500 text/html; charset=utf-8 (15c52c40)

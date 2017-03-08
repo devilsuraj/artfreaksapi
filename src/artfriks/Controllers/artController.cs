@@ -213,6 +213,29 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
+        [Route("api/artowrk/removefav")]
+        public IActionResult removefav(int Id)
+        {
+            try
+            {
+                var user = _userManager.GetUserId(User);
+                var Fav = _context.ArtFavourites.Where(x=>x.UserId==user && x.ArtId==Id);
+                 foreach(var i in Fav)
+                {
+                    _context.ArtFavourites.Remove(i);
+                }
+              
+                _context.SaveChanges();
+                // Call Notification here
+                return Ok(new { status = 1, message = "Success" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
         [Route("api/artowrk/Details")]
         public IActionResult Details(int Id)
         {

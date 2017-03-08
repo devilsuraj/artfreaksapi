@@ -139,7 +139,7 @@ namespace artfriks.Controllers
                 if (UserBio == null)
                 {
                     value.UserId = userId;
-                    _context.UserModel.Add(UserBio);
+                    _context.UserModel.Add(value);
                     _context.SaveChanges();
                     return Ok(new { status = 2, message = "Added Successfully" });
                 }
