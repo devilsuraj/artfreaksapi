@@ -30,7 +30,47 @@ namespace artfriks.Controllers
             try
             {
                 var user = _userManager.GetUserId(User);
-                var returnValue = _context.ArtWorks.Where(x => x.UserId == user).ToList().OrderByDescending(v => v.AddedDate);
+                var returnValue = _context.ArtWorks.Where(x => x.UserId == user).Select(p => new {
+                    Id = p.Id,
+                    AddedDate = p.AddedDate,
+                    TermAccepted = p.TermAccepted,
+                    Category = p.Category,
+                    Description = p.Description,
+                    DimensionUnit = p.DimensionUnit,
+                    Height = p.Height,
+                    MediumString = p.MediumString,
+                    PictureUrl = p.PictureUrl,
+                    Price = p.Price,
+                    Status = p.Status,
+                    Title = p.Title,
+                    Width = p.Width,
+                    UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                    favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                    isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user)
+                }).OrderByDescending(v => v.AddedDate); 
+                return Ok(new { status = 1, message = returnValue });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("api/artowrk/getAllFavourites")]
+        public IActionResult Getfav()
+        {
+            try
+            {
+                var user = _userManager.GetUserId(User);
+                var returnValue = _context.ArtFavourites.Where(x=>x.UserId==user).
+                    Select(mo=> new {
+
+                       artwork = _context.ArtWorks.FirstOrDefault(op=> op.Id ==mo.ArtId && op.Title !=null) ?? new ArtWork(),
+                        UserId = _context.Users.Where(n => n.Id == mo.UserId).First().FullName,
+                        favcount = _context.ArtFavourites.Where(x => x.ArtId == mo.Id).Count(),
+                        isfav = _context.ArtFavourites.Any(x => x.ArtId == mo.Id && x.UserId == user)
+                 });
                 return Ok(new { status = 1, message = returnValue });
             }
             catch (Exception ex)

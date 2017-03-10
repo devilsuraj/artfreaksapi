@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using artfriks.Data;
 using Microsoft.AspNetCore.Identity;
 using artfriks.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace artfriks.Controllers
 {
@@ -30,8 +31,8 @@ namespace artfriks.Controllers
                 var returnValue = _context.Users.Where(x => x.Id == user).Select(o => new
                 {
                     user = o,
-                    userbio = _context.UserModel.Where(x => x.UserId == o.Id)
-                }).ToList();
+                    userbio = _context.UserModel.Where(x => x.UserId == o.Id).First()
+                }).First();
                 return Ok( new { status =1, message=returnValue});
             }
             catch (Exception ex)
@@ -135,16 +136,20 @@ namespace artfriks.Controllers
         {
             try { 
             var userId = _userManager.GetUserId(User);
-            var UserBio = _context.UserModel.FirstOrDefault(x => x.UserId == userId);
-                if (UserBio == null)
+            var UserBio = _context.UserModel.Any(x => x.UserId == userId);
+                if (UserBio == false)
                 {
                     value.UserId = userId;
                     _context.UserModel.Add(value);
                     _context.SaveChanges();
                     return Ok(new { status = 2, message = "Added Successfully" });
                 }
-            UserBio = value;
-            _context.UserModel.Update(UserBio);
+
+                _context.Entry(value).State = EntityState.Modified;
+               /* var UserBio2 = _context.UserModel.Where(x => x.UserId == userId).First();
+                
+                UserBio2 = value;
+            _context.UserModel.Update(UserBio2);*/
             _context.SaveChanges();
                 return Ok(new { status = 1, message = "Updated Successfully" });
             }
