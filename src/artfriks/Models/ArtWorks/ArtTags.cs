@@ -19,4 +19,5 @@ namespace artfriks.Models
         public int TagId { get; set; }
         public string Tag { get; set; }
     }
+
 }

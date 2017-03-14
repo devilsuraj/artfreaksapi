@@ -68,6 +68,55 @@ namespace artfriks.Controllers
             }
         }
 
+        // Get: api/User
+        [HttpGet]
+        [Route("~/user/getMessage")]
+        public IActionResult getMessage()
+        {
+            try
+            {
+                var userId = _userManager.GetUserId(User);
+              
+              var message=  _context.Messages.Where(x=>x.ToUserId ==userId || x.FromUserId==userId).Select(m=> new {
+                    message = m,
+                    from = _context.Users.FirstOrDefault(x=>x.Id==m.FromUserId).UserName,
+                    to = _context.Users.FirstOrDefault(x => x.Id == m.ToUserId).UserName,
+                    replies = _context.MessageReplies.Where(x => x.MessageId == m.Id).Select(mo => new {
+                        message = mo,
+                        from = _context.Users.FirstOrDefault(x => x.Id == mo.UserId).UserName
+                    })
+            });
+          
+                return Ok(new { status = 1, message = message });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        // Get: api/User
+        [HttpGet]
+        [Route("~/user/getreplyMessage")]
+        public IActionResult getreplyMessage(int id)
+        {
+            try
+            {
+                var userId = _userManager.GetUserId(User);
+
+                var message = _context.MessageReplies.Where(x => x.MessageId == id).Select(m => new {
+                    message = m,
+                    from = _context.Users.FirstOrDefault(x => x.Id == m.UserId).UserName
+                });
+               
+                return Ok(new { status = 1, message = message });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
         // POST: api/User
         [HttpPost]
         [Route("~/user/ReplyMessage")]

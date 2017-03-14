@@ -1,0 +1,391 @@
+2017-03-14T17:05:13.1491245+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-03-14T17:05:13.9811720+05:30 0HL3APON5UNGE [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-14T17:05:14.0801777+05:30 0HL3APON5UNGE [INF] Request finished in 149.0242ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:05:14.3601937+05:30 0HL3APON5UNGF [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-14T17:05:14.3601937+05:30 0HL3APON5UNGF [INF] Request finished in 0.3313ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:05:38.3805676+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-03-14T17:05:38.9746016+05:30 0HL3APOUK96LK [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-14T17:05:39.0536061+05:30 0HL3APOUK96LK [INF] Request finished in 104.9119ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:05:39.1046090+05:30 0HL3APOUK96LL [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-14T17:05:39.1056091+05:30 0HL3APOUK96LL [INF] Request finished in 0.3129ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:06:15.6106971+05:30  [INF] Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-14T17:06:16.4637458+05:30  [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-14T17:06:16.5457505+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-14T17:06:17.0257780+05:30 0HL3APP9V5G68 [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-14T17:06:17.9658318+05:30 0HL3APP9V5G68 [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:06:20.7109888+05:30 0HL3APP9V5G68 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-14T17:06:21.5830387+05:30 0HL3APP9V5G68 [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 3746.109ms (afa2e885)
+2017-03-14T17:06:21.5970395+05:30 0HL3APP9V5G69 [INF] Request starting HTTP/1.1 GET http://localhost:2822/css/site.css   (e5be5b71)
+2017-03-14T17:06:21.5980395+05:30 0HL3APP9V5G6A [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css   (e5be5b71)
+2017-03-14T17:06:21.6220409+05:30 0HL3APP9V5G69 [INF] The file "/css/site.css" was not modified (f1f8d725)
+2017-03-14T17:06:21.6220409+05:30 0HL3APP9V5G6A [INF] The file "/lib/bootstrap/dist/css/bootstrap.css" was not modified (f1f8d725)
+2017-03-14T17:06:21.6350416+05:30 0HL3APP9V5G6B [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery/dist/jquery.js   (e5be5b71)
+2017-03-14T17:06:21.6360417+05:30 0HL3APP9V5G6B [INF] The file "/lib/jquery/dist/jquery.js" was not modified (f1f8d725)
+2017-03-14T17:06:21.6560428+05:30 0HL3APP9V5G6A [INF] Request finished in 54.4066ms 304 text/css (15c52c40)
+2017-03-14T17:06:21.6560428+05:30 0HL3APP9V5G69 [INF] Request finished in 55.3342ms 304 text/css (15c52c40)
+2017-03-14T17:06:21.6560428+05:30 0HL3APP9V5G68 [INF] Request finished in 4659.2671ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:06:21.6560428+05:30 0HL3APP9V5G6B [INF] Request finished in 17.1625ms 304 application/javascript (15c52c40)
+2017-03-14T17:06:21.7070457+05:30 0HL3APP9V5G6C [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/js/bootstrap.js   (e5be5b71)
+2017-03-14T17:06:21.7070457+05:30 0HL3APP9V5G6C [INF] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified (f1f8d725)
+2017-03-14T17:06:21.7080458+05:30 0HL3APP9V5G6C [INF] Request finished in 0.879ms 304 application/javascript (15c52c40)
+2017-03-14T17:06:22.0430650+05:30 0HL3APP9V5G6D [INF] Request starting HTTP/1.1 GET http://localhost:2822/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo   (e5be5b71)
+2017-03-14T17:06:22.0440650+05:30 0HL3APP9V5G6D [INF] The file "/js/site.js" was not modified (f1f8d725)
+2017-03-14T17:06:22.0440650+05:30 0HL3APP9V5G6E [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner3.svg   (e5be5b71)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6D [INF] Request finished in 1.2639ms 304 application/javascript (15c52c40)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6E [INF] The file "/images/banner3.svg" was not modified (f1f8d725)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6F [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner2.svg   (e5be5b71)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6E [INF] Request finished in 0.5687ms 304 image/svg+xml (15c52c40)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6F [INF] The file "/images/banner2.svg" was not modified (f1f8d725)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6G [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner1.svg   (e5be5b71)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6F [INF] Request finished in 0.3759ms 304 image/svg+xml (15c52c40)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6G [INF] The file "/images/banner1.svg" was not modified (f1f8d725)
+2017-03-14T17:06:22.0450651+05:30 0HL3APP9V5G6G [INF] Request finished in 0.5329ms 304 image/svg+xml (15c52c40)
+2017-03-14T17:06:22.0490653+05:30 0HL3APP9V5G6H [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner4.svg   (e5be5b71)
+2017-03-14T17:06:22.0500654+05:30 0HL3APP9V5G6H [INF] The file "/images/banner4.svg" was not modified (f1f8d725)
+2017-03-14T17:06:22.0530655+05:30 0HL3APP9V5G6H [INF] Request finished in 3.644ms 304 image/svg+xml (15c52c40)
+2017-03-14T17:06:22.1120689+05:30 0HL3APP9V5G6I [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2   (e5be5b71)
+2017-03-14T17:06:22.1220695+05:30 0HL3APP9V5G6I [INF] The file "/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" was not modified (f1f8d725)
+2017-03-14T17:06:22.1220695+05:30 0HL3APP9V5G6I [INF] Request finished in 10.1122ms 304 application/font-woff2 (15c52c40)
+2017-03-14T17:06:22.3040799+05:30 0HL3APP9V5G6J [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-14T17:06:22.3130804+05:30 0HL3APP9V5G6J [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-14T17:06:22.3460823+05:30 0HL3APP9V5G6J [INF] Request finished in 42.8339ms 200 image/x-icon (15c52c40)
+2017-03-14T17:06:39.6260707+05:30 0HL3APP9V5G6K [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/index   (e5be5b71)
+2017-03-14T17:06:39.6340711+05:30 0HL3APP9V5G6K [INF] Executing action method "artfriks.Controllers.FeaturedsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:06:40.1691017+05:30 0HL3APP9V5G6K [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [f].[Id], [f].[Image], [f].[Text]
+FROM [Featured] AS [f] (3b5ca34b)
+2017-03-14T17:06:40.7381343+05:30 0HL3APP9V5G6K [ERR] An unhandled exception has occurred while executing the request (cf926119)
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
+tkx3tftk.svf(277,122): error CS1031: Type expected
+tkx3tftk.svf(277,289): error CS1031: Type expected
+tkx3tftk.svf(42,103): error CS0246: The type or namespace name 'artfreaksbackoffice' could not be found (are you missing a using directive or an assembly reference?)
+tkx3tftk.svf(72,75): error CS0246: The type or namespace name 'artfreaksbackoffice' could not be found (are you missing a using directive or an assembly reference?)
+tkx3tftk.svf(277,85): error CS0246: The type or namespace name 'artfreaksbackoffice' could not be found (are you missing a using directive or an assembly reference?)
+tkx3tftk.svf(277,252): error CS0246: The type or namespace name 'artfreaksbackoffice' could not be found (are you missing a using directive or an assembly reference?)
+   at Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationResult.EnsureSuccessful()
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.CompilerCache.CreateCacheEntry(String relativePath, String normalizedPath, Func`2 compile)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.CompilerCache.GetOrAdd(String relativePath, Func`2 compile)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRazorPageFactoryProvider.CreateFactory(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.CreateCacheResult(HashSet`1 expirationTokens, String relativePath, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.OnCacheMiss(ViewLocationExpanderContext expanderContext, ViewLocationCacheKey cacheKey)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.LocatePageFromViewLocations(ActionContext actionContext, String pageName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewEngines.CompositeViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor.FindView(ActionContext actionContext, ViewResult viewResult)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultFilterAsync>d__31.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAllResultFiltersAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResourceFilterAsync>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-14T17:06:40.8001378+05:30 0HL3APP9V5G6K [INF] Request finished in 1173.2615ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:07:57.6025307+05:30 0HL3APP9V5G6L [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/index   (e5be5b71)
+2017-03-14T17:07:57.6035307+05:30 0HL3APP9V5G6L [INF] Executing action method "artfriks.Controllers.FeaturedsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:07:57.9405500+05:30 0HL3APP9V5G6L [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [f].[Id], [f].[Image], [f].[Text]
+FROM [Featured] AS [f] (3b5ca34b)
+2017-03-14T17:07:58.1775635+05:30 0HL3APP9V5G6L [INF] Executing ViewResult, running view at path "/Views/Featureds/Index.cshtml". (9707eebe)
+2017-03-14T17:07:58.2545679+05:30 0HL3APP9V5G6L [INF] Executed action "artfriks.Controllers.FeaturedsController.Index (artfriks)" in 651.4291ms (afa2e885)
+2017-03-14T17:07:58.2555680+05:30 0HL3APP9V5G6L [INF] Request finished in 652.6282ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:07:58.4555794+05:30 0HL3APP9V5G6M [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-14T17:07:58.4565795+05:30 0HL3APP9V5G6M [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-14T17:07:58.4575796+05:30 0HL3APP9V5G6M [INF] Request finished in 1.4012ms 200 image/x-icon (15c52c40)
+2017-03-14T17:08:01.1757350+05:30 0HL3APP9V5G6N [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/Create   (e5be5b71)
+2017-03-14T17:08:01.1887358+05:30 0HL3APP9V5G6N [INF] Executing action method "artfriks.Controllers.FeaturedsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:08:01.3827469+05:30 0HL3APP9V5G6N [INF] Executing ViewResult, running view at path "/Views/Featureds/Create.cshtml". (9707eebe)
+2017-03-14T17:08:02.5898159+05:30 0HL3APP9V5G6N [INF] Executed action "artfriks.Controllers.FeaturedsController.Create (artfriks)" in 1401.7908ms (afa2e885)
+2017-03-14T17:08:02.5908160+05:30 0HL3APP9V5G6N [INF] Request finished in 1414.7567ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:08:02.6118172+05:30 0HL3APP9V5G6O [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery-validation/dist/jquery.validate.js   (e5be5b71)
+2017-03-14T17:08:02.6128172+05:30 0HL3APP9V5G6O [INF] The file "/lib/jquery-validation/dist/jquery.validate.js" was not modified (f1f8d725)
+2017-03-14T17:08:02.6158174+05:30 0HL3APP9V5G6O [INF] Request finished in 4.0888ms 304 application/javascript (15c52c40)
+2017-03-14T17:08:02.6718206+05:30 0HL3APP9V5G6P [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js   (e5be5b71)
+2017-03-14T17:08:02.6718206+05:30 0HL3APP9V5G6P [INF] The file "/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" was not modified (f1f8d725)
+2017-03-14T17:08:02.6718206+05:30 0HL3APP9V5G6P [INF] Request finished in 0.7016ms 304 application/javascript (15c52c40)
+2017-03-14T17:26:57.8997519+05:30 0HL3APP9V5G6Q [INF] Request starting HTTP/1.1 POST http://localhost:2822/featureds/Create application/x-www-form-urlencoded 274 (e5be5b71)
+2017-03-14T17:26:58.1147642+05:30 0HL3APP9V5G6Q [INF] Executing action method "artfriks.Controllers.FeaturedsController.Create (artfriks)" with arguments (["artfriks.Models.Featured"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:00.3968947+05:30 0HL3APP9V5G6Q [INF] Executed DbCommand (162ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Featured] ([Image], [Text])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Featured]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:27:00.7469148+05:30 0HL3APP9V5G6Q [INF] Executing RedirectResult, redirecting to "/featureds". (d98d540e)
+2017-03-14T17:27:00.7479148+05:30 0HL3APP9V5G6Q [INF] Executed action "artfriks.Controllers.FeaturedsController.Create (artfriks)" in 2838.9153ms (afa2e885)
+2017-03-14T17:27:00.7489149+05:30 0HL3APP9V5G6Q [INF] Request finished in 2849.534ms 302  (15c52c40)
+2017-03-14T17:27:00.7529151+05:30 0HL3APP9V5G6R [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds   (e5be5b71)
+2017-03-14T17:27:00.8059181+05:30 0HL3APP9V5G6R [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:27:00.8339197+05:30 0HL3APP9V5G6R [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:27:00.8459204+05:30 0HL3APP9V5G6R [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 87.7091ms (afa2e885)
+2017-03-14T17:27:00.8469205+05:30 0HL3APP9V5G6R [INF] Request finished in 93.941ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:27:07.6603102+05:30 0HL3APP9V5G6S [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/index   (e5be5b71)
+2017-03-14T17:27:07.6613103+05:30 0HL3APP9V5G6S [INF] Executing action method "artfriks.Controllers.FeaturedsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:07.9603274+05:30 0HL3APP9V5G6S [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [f].[Id], [f].[Image], [f].[Text]
+FROM [Featured] AS [f] (3b5ca34b)
+2017-03-14T17:27:07.9853288+05:30 0HL3APP9V5G6S [INF] Executing ViewResult, running view at path "/Views/Featureds/Index.cshtml". (9707eebe)
+2017-03-14T17:27:08.0313314+05:30 0HL3APP9V5G6S [INF] Executed action "artfriks.Controllers.FeaturedsController.Index (artfriks)" in 369.6813ms (afa2e885)
+2017-03-14T17:27:08.0313314+05:30 0HL3APP9V5G6S [INF] Request finished in 371.0678ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:27:10.4904721+05:30 0HL3APP9V5G6T [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/Create   (e5be5b71)
+2017-03-14T17:27:10.4914721+05:30 0HL3APP9V5G6T [INF] Executing action method "artfriks.Controllers.FeaturedsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:10.4914721+05:30 0HL3APP9V5G6T [INF] Executing ViewResult, running view at path "/Views/Featureds/Create.cshtml". (9707eebe)
+2017-03-14T17:27:10.5004726+05:30 0HL3APP9V5G6T [INF] Executed action "artfriks.Controllers.FeaturedsController.Create (artfriks)" in 7.4995ms (afa2e885)
+2017-03-14T17:27:10.5014727+05:30 0HL3APP9V5G6T [INF] Request finished in 10.549ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:27:24.7482876+05:30 0HL3APP9V5G6U [INF] Request starting HTTP/1.1 POST http://localhost:2822/featureds/Create application/x-www-form-urlencoded 259 (e5be5b71)
+2017-03-14T17:27:24.7632884+05:30 0HL3APP9V5G6U [INF] Executing action method "artfriks.Controllers.FeaturedsController.Create (artfriks)" with arguments (["artfriks.Models.Featured"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:25.3593225+05:30 0HL3APP9V5G6U [INF] Executed DbCommand (89ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Featured] ([Image], [Text])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Featured]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:27:25.6533393+05:30 0HL3APP9V5G6U [INF] Executing RedirectResult, redirecting to "/featureds". (d98d540e)
+2017-03-14T17:27:25.6533393+05:30 0HL3APP9V5G6U [INF] Executed action "artfriks.Controllers.FeaturedsController.Create (artfriks)" in 905.2234ms (afa2e885)
+2017-03-14T17:27:25.6543394+05:30 0HL3APP9V5G6U [INF] Request finished in 906.3106ms 302  (15c52c40)
+2017-03-14T17:27:25.6613398+05:30 0HL3APP9V5G6V [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds   (e5be5b71)
+2017-03-14T17:27:25.6633399+05:30 0HL3APP9V5G6V [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:27:25.6633399+05:30 0HL3APP9V5G6V [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:27:25.6643400+05:30 0HL3APP9V5G6V [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 2.1159ms (afa2e885)
+2017-03-14T17:27:25.6643400+05:30 0HL3APP9V5G6V [INF] Request finished in 3.2222ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:27:38.5560773+05:30 0HL3APP9V5G70 [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/index   (e5be5b71)
+2017-03-14T17:27:38.5560773+05:30 0HL3APP9V5G70 [INF] Executing action method "artfriks.Controllers.FeaturedsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:38.8500941+05:30 0HL3APP9V5G70 [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [f].[Id], [f].[Image], [f].[Text]
+FROM [Featured] AS [f] (3b5ca34b)
+2017-03-14T17:27:38.8500941+05:30 0HL3APP9V5G70 [INF] Executing ViewResult, running view at path "/Views/Featureds/Index.cshtml". (9707eebe)
+2017-03-14T17:27:38.8540944+05:30 0HL3APP9V5G70 [INF] Executed action "artfriks.Controllers.FeaturedsController.Index (artfriks)" in 297.6454ms (afa2e885)
+2017-03-14T17:27:38.8540944+05:30 0HL3APP9V5G70 [INF] Request finished in 298.8364ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:27:41.2752329+05:30 0HL3APP9V5G71 [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds/Create   (e5be5b71)
+2017-03-14T17:27:41.2762329+05:30 0HL3APP9V5G71 [INF] Executing action method "artfriks.Controllers.FeaturedsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:41.2762329+05:30 0HL3APP9V5G71 [INF] Executing ViewResult, running view at path "/Views/Featureds/Create.cshtml". (9707eebe)
+2017-03-14T17:27:41.2792331+05:30 0HL3APP9V5G71 [INF] Executed action "artfriks.Controllers.FeaturedsController.Create (artfriks)" in 3.1037ms (afa2e885)
+2017-03-14T17:27:41.2792331+05:30 0HL3APP9V5G71 [INF] Request finished in 4.4965ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:27:52.4998749+05:30 0HL3APP9V5G72 [INF] Request starting HTTP/1.1 POST http://localhost:2822/featureds/Create application/x-www-form-urlencoded 272 (e5be5b71)
+2017-03-14T17:27:52.5018750+05:30 0HL3APP9V5G72 [INF] Executing action method "artfriks.Controllers.FeaturedsController.Create (artfriks)" with arguments (["artfriks.Models.Featured"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:27:53.0969090+05:30 0HL3APP9V5G72 [INF] Executed DbCommand (90ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [Featured] ([Image], [Text])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [Featured]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:27:53.3919259+05:30 0HL3APP9V5G72 [INF] Executing RedirectResult, redirecting to "/featureds". (d98d540e)
+2017-03-14T17:27:53.3919259+05:30 0HL3APP9V5G72 [INF] Executed action "artfriks.Controllers.FeaturedsController.Create (artfriks)" in 892.0881ms (afa2e885)
+2017-03-14T17:27:53.3929259+05:30 0HL3APP9V5G72 [INF] Request finished in 893.0029ms 302  (15c52c40)
+2017-03-14T17:27:53.3969262+05:30 0HL3APP9V5G73 [INF] Request starting HTTP/1.1 GET http://localhost:2822/featureds   (e5be5b71)
+2017-03-14T17:27:53.3979262+05:30 0HL3APP9V5G73 [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:27:53.3979262+05:30 0HL3APP9V5G73 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:27:53.3989263+05:30 0HL3APP9V5G73 [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 1.3058ms (afa2e885)
+2017-03-14T17:27:53.3999263+05:30 0HL3APP9V5G73 [INF] Request finished in 2.8151ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:28:42.6817451+05:30 0HL3APP9V5G74 [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections/index   (e5be5b71)
+2017-03-14T17:28:42.6887455+05:30 0HL3APP9V5G74 [INF] Executing action method "artfriks.Controllers.homesectionsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:28:42.9987632+05:30 0HL3APP9V5G74 [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [h].[Id], [h].[Description], [h].[Image], [h].[Sectiontype], [h].[TextonButton], [h].[Title], [h].[Title2]
+FROM [homesection] AS [h] (3b5ca34b)
+2017-03-14T17:28:43.1257705+05:30 0HL3APP9V5G74 [INF] Executing ViewResult, running view at path "/Views/homesections/Index.cshtml". (9707eebe)
+2017-03-14T17:28:43.1577723+05:30 0HL3APP9V5G74 [INF] Executed action "artfriks.Controllers.homesectionsController.Index (artfriks)" in 472.9657ms (afa2e885)
+2017-03-14T17:28:43.1597725+05:30 0HL3APP9V5G74 [INF] Request finished in 478.271ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:28:45.7439203+05:30 0HL3APP9V5G75 [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections/Create   (e5be5b71)
+2017-03-14T17:28:45.7449203+05:30 0HL3APP9V5G75 [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:28:45.9449318+05:30 0HL3APP9V5G75 [INF] Executing ViewResult, running view at path "/Views/homesections/Create.cshtml". (9707eebe)
+2017-03-14T17:28:46.0119356+05:30 0HL3APP9V5G75 [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 266.8166ms (afa2e885)
+2017-03-14T17:28:46.0129356+05:30 0HL3APP9V5G75 [INF] Request finished in 269.0557ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:29:50.2336089+05:30 0HL3APP9V5G76 [INF] Request starting HTTP/1.1 POST http://localhost:2822/homesections/Create application/x-www-form-urlencoded 364 (e5be5b71)
+2017-03-14T17:29:50.2396092+05:30 0HL3APP9V5G76 [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (["artfriks.Models.homesection"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:29:50.8506441+05:30 0HL3APP9V5G76 [INF] Executed DbCommand (93ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [homesection] ([Description], [Image], [Sectiontype], [TextonButton], [Title], [Title2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [homesection]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:29:51.1446610+05:30 0HL3APP9V5G76 [INF] Executing RedirectResult, redirecting to "/homesections". (d98d540e)
+2017-03-14T17:29:51.1446610+05:30 0HL3APP9V5G76 [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 909.6226ms (afa2e885)
+2017-03-14T17:29:51.1456610+05:30 0HL3APP9V5G76 [INF] Request finished in 911.313ms 302  (15c52c40)
+2017-03-14T17:29:51.1496612+05:30 0HL3APP9V5G77 [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections   (e5be5b71)
+2017-03-14T17:29:51.1506613+05:30 0HL3APP9V5G77 [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:29:51.1506613+05:30 0HL3APP9V5G77 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:29:51.1506613+05:30 0HL3APP9V5G77 [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 0.6269ms (afa2e885)
+2017-03-14T17:29:51.1506613+05:30 0HL3APP9V5G77 [INF] Request finished in 1.6599ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:29:58.3880753+05:30 0HL3APP9V5G78 [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections/Create   (e5be5b71)
+2017-03-14T17:29:58.3880753+05:30 0HL3APP9V5G78 [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:29:58.3890753+05:30 0HL3APP9V5G78 [INF] Executing ViewResult, running view at path "/Views/homesections/Create.cshtml". (9707eebe)
+2017-03-14T17:29:58.3920755+05:30 0HL3APP9V5G78 [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 3.4953ms (afa2e885)
+2017-03-14T17:29:58.3920755+05:30 0HL3APP9V5G78 [INF] Request finished in 4.2405ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:30:37.8113301+05:30 0HL3APP9V5G79 [INF] Request starting HTTP/1.1 POST http://localhost:2822/homesections/Create application/x-www-form-urlencoded 366 (e5be5b71)
+2017-03-14T17:30:37.8133303+05:30 0HL3APP9V5G79 [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (["artfriks.Models.homesection"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:30:38.4223651+05:30 0HL3APP9V5G79 [INF] Executed DbCommand (92ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [homesection] ([Description], [Image], [Sectiontype], [TextonButton], [Title], [Title2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [homesection]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:30:38.7243824+05:30 0HL3APP9V5G79 [INF] Executing RedirectResult, redirecting to "/homesections". (d98d540e)
+2017-03-14T17:30:38.7243824+05:30 0HL3APP9V5G79 [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 912.4776ms (afa2e885)
+2017-03-14T17:30:38.7243824+05:30 0HL3APP9V5G79 [INF] Request finished in 913.4718ms 302  (15c52c40)
+2017-03-14T17:30:38.7313828+05:30 0HL3APP9V5G7A [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections   (e5be5b71)
+2017-03-14T17:30:38.7323828+05:30 0HL3APP9V5G7A [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:30:38.7333829+05:30 0HL3APP9V5G7A [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:30:38.7333829+05:30 0HL3APP9V5G7A [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 0.9754ms (afa2e885)
+2017-03-14T17:30:38.7333829+05:30 0HL3APP9V5G7A [INF] Request finished in 1.7811ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:30:43.9886835+05:30 0HL3APP9V5G7B [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections/Create   (e5be5b71)
+2017-03-14T17:30:43.9896835+05:30 0HL3APP9V5G7B [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:30:43.9896835+05:30 0HL3APP9V5G7B [INF] Executing ViewResult, running view at path "/Views/homesections/Create.cshtml". (9707eebe)
+2017-03-14T17:30:43.9926837+05:30 0HL3APP9V5G7B [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 2.2735ms (afa2e885)
+2017-03-14T17:30:43.9936838+05:30 0HL3APP9V5G7B [INF] Request finished in 4.6659ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:32:11.6786991+05:30 0HL3APP9V5G7C [INF] Request starting HTTP/1.1 POST http://localhost:2822/homesections/Create application/x-www-form-urlencoded 370 (e5be5b71)
+2017-03-14T17:32:11.6816992+05:30 0HL3APP9V5G7C [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (["artfriks.Models.homesection"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:32:12.2867338+05:30 0HL3APP9V5G7C [INF] Executed DbCommand (92ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [homesection] ([Description], [Image], [Sectiontype], [TextonButton], [Title], [Title2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [homesection]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:32:12.5857509+05:30 0HL3APP9V5G7C [INF] Executing RedirectResult, redirecting to "/homesections". (d98d540e)
+2017-03-14T17:32:12.5857509+05:30 0HL3APP9V5G7C [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 906.6942ms (afa2e885)
+2017-03-14T17:32:12.5857509+05:30 0HL3APP9V5G7C [INF] Request finished in 907.6533ms 302  (15c52c40)
+2017-03-14T17:32:12.6047520+05:30 0HL3APP9V5G7D [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections   (e5be5b71)
+2017-03-14T17:32:12.6057521+05:30 0HL3APP9V5G7D [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:32:12.6057521+05:30 0HL3APP9V5G7D [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:32:12.6057521+05:30 0HL3APP9V5G7D [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 0.6962ms (afa2e885)
+2017-03-14T17:32:12.6057521+05:30 0HL3APP9V5G7D [INF] Request finished in 1.3044ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:32:15.2349025+05:30 0HL3APP9V5G7E [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections/Create   (e5be5b71)
+2017-03-14T17:32:15.2359025+05:30 0HL3APP9V5G7E [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:32:15.2369026+05:30 0HL3APP9V5G7E [INF] Executing ViewResult, running view at path "/Views/homesections/Create.cshtml". (9707eebe)
+2017-03-14T17:32:15.2409028+05:30 0HL3APP9V5G7E [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 4.9779ms (afa2e885)
+2017-03-14T17:32:15.2409028+05:30 0HL3APP9V5G7E [INF] Request finished in 6.3349ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-14T17:33:04.2327050+05:30 0HL3APP9V5G7F [INF] Request starting HTTP/1.1 POST http://localhost:2822/homesections/Create application/x-www-form-urlencoded 399 (e5be5b71)
+2017-03-14T17:33:04.2357051+05:30 0HL3APP9V5G7F [INF] Executing action method "artfriks.Controllers.homesectionsController.Create (artfriks)" with arguments (["artfriks.Models.homesection"]) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:33:04.9357452+05:30 0HL3APP9V5G7F [INF] Executed DbCommand (121ms) [Parameters=[@p0='?' (Size = 4000), @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?' (Size = 4000), @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [homesection] ([Description], [Image], [Sectiontype], [TextonButton], [Title], [Title2])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [homesection]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-14T17:33:05.8517976+05:30 0HL3APP9V5G7F [INF] Executing RedirectResult, redirecting to "/homesections". (d98d540e)
+2017-03-14T17:33:05.8517976+05:30 0HL3APP9V5G7F [INF] Executed action "artfriks.Controllers.homesectionsController.Create (artfriks)" in 1618.4289ms (afa2e885)
+2017-03-14T17:33:05.8517976+05:30 0HL3APP9V5G7F [INF] Request finished in 1619.3846ms 302  (15c52c40)
+2017-03-14T17:33:05.8557978+05:30 0HL3APP9V5G7G [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections   (e5be5b71)
+2017-03-14T17:33:05.8567979+05:30 0HL3APP9V5G7G [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (["0"]) - ModelState is Invalid (ba7f4ac2)
+2017-03-14T17:33:05.8567979+05:30 0HL3APP9V5G7G [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-14T17:33:05.8587980+05:30 0HL3APP9V5G7G [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 1.5873ms (afa2e885)
+2017-03-14T17:33:05.8597980+05:30 0HL3APP9V5G7G [INF] Request finished in 3.6985ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-14T17:33:12.8451976+05:30 0HL3APP9V5G7H [INF] Request starting HTTP/1.1 GET http://localhost:2822/homesections/index   (e5be5b71)
+2017-03-14T17:33:12.8461976+05:30 0HL3APP9V5G7H [INF] Executing action method "artfriks.Controllers.homesectionsController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-14T17:33:13.1442147+05:30 0HL3APP9V5G7H [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [h].[Id], [h].[Description], [h].[Image], [h].[Sectiontype], [h].[TextonButton], [h].[Title], [h].[Title2]
+FROM [homesection] AS [h] (3b5ca34b)
+2017-03-14T17:33:13.1472148+05:30 0HL3APP9V5G7H [INF] Executing ViewResult, running view at path "/Views/homesections/Index.cshtml". (9707eebe)
+2017-03-14T17:33:13.1652159+05:30 0HL3APP9V5G7H [INF] Executed action "artfriks.Controllers.homesectionsController.Index (artfriks)" in 320.0393ms (afa2e885)
+2017-03-14T17:33:13.1662159+05:30 0HL3APP9V5G7H [INF] Request finished in 321.0754ms 200 text/html; charset=utf-8 (15c52c40)

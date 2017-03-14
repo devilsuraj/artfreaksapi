@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170314105537_homesection")]
+    partial class homesection
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -322,22 +323,6 @@ namespace artfriks.Data.Migrations
                     b.ToTable("Categories");
                 });
 
-            modelBuilder.Entity("artfriks.Models.Catgoryhomesection", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<int>("CatId");
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Catgoryhomesection");
-                });
-
             modelBuilder.Entity("artfriks.Models.DailyDiscount", b =>
                 {
                     b.Property<int>("Id")
@@ -402,20 +387,6 @@ namespace artfriks.Data.Migrations
                     b.ToTable("DeliveryDetails");
                 });
 
-            modelBuilder.Entity("artfriks.Models.Featured", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Featured");
-                });
-
             modelBuilder.Entity("artfriks.Models.Feedback", b =>
                 {
                     b.Property<int>("id")
@@ -430,28 +401,6 @@ namespace artfriks.Data.Migrations
                     b.HasKey("id");
 
                     b.ToTable("Feedbacks");
-                });
-
-            modelBuilder.Entity("artfriks.Models.homesection", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Description");
-
-                    b.Property<string>("Image");
-
-                    b.Property<string>("Sectiontype");
-
-                    b.Property<string>("TextonButton");
-
-                    b.Property<string>("Title");
-
-                    b.Property<string>("Title2");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("homesection");
                 });
 
             modelBuilder.Entity("artfriks.Models.Invite", b =>
@@ -690,22 +639,6 @@ namespace artfriks.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Professions");
-                });
-
-            modelBuilder.Entity("artfriks.Models.Styles", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("Image");
-
-                    b.Property<int>("TagId");
-
-                    b.Property<string>("Text");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Styles");
                 });
 
             modelBuilder.Entity("artfriks.Models.Unit", b =>

@@ -52,5 +52,9 @@ namespace artfriks.Data
         public DbSet<MessageReplies> MessageReplies { get; set; }
         public DbSet<Messages> Messages { get; set; }
         public DbSet<UserModel> UserModel { get; set; }
+        public DbSet<homesection> homesection { get; set; }
+        public DbSet<Styles> Styles { get; set; }
+        public DbSet<Catgoryhomesection> Catgoryhomesection { get; set; }
+        public DbSet<Featured> Featured { get; set; }
     }
 }

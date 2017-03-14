@@ -130,6 +130,28 @@ namespace artfriks.Controllers
         }
 
         [HttpGet]
+        [Route("api/artowrk/GetHomeData")]
+        public IActionResult GetHomeData(int Id)
+        {
+            //10 - deals , 11 - collection , 12 - slider
+            try
+            {
+                var slider = _context.ArtWithTags.Where(x => x.TagId == 12).Select(c => new {
+                    art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderBy(x => Guid.NewGuid()).Take(7)
+                  }).ToList();
+
+                var returnValue = _context.ArtWithTags.Where(x => x.TagId == Id).Select(c => new {
+                    art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderByDescending(v => v.AddedDate)
+                }).ToList();
+                return Ok(new { status = 1, message = returnValue });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
         [Route("api/artowrk/GetById")]
         public IActionResult GetById(int Id)
         {

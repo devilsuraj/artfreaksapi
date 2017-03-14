@@ -27,4 +27,38 @@ namespace artfriks.Models
         public string Country { get; set; }
         public string PinCode { get; set; }
     }
+
+    public class homesection
+    {
+        public int Id { get; set; }
+        public string Sectiontype { get; set; }
+        public string Title { get; set; }
+        public string Image { get; set; }
+        public string Title2 { get; set; }
+        public string Description { get; set; }
+        public string TextonButton { get; set; }
+    }
+
+    public class Featured
+    {
+        public int Id { get; set; }
+        public string Text { get; set; }
+        public string Image { get; set; }
+    }
+
+    public class Styles
+    {
+        public int Id { get; set; }
+        public int TagId { get; set; }
+        public string Text { get; set; }
+        public string Image { get; set; }
+    }
+
+    public class Catgoryhomesection
+    {
+        public int Id { get; set; }
+        public int CatId { get; set; }
+        public string Text { get; set; }
+        public string Image { get; set; }
+    }
 }
