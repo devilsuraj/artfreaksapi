@@ -59,7 +59,7 @@ namespace artfriks.Controllers
             {
                 _context.Add(homesection);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(homesection);
         }
@@ -110,7 +110,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(homesection);
         }
@@ -140,7 +140,7 @@ namespace artfriks.Controllers
             var homesection = await _context.homesection.SingleOrDefaultAsync(m => m.Id == id);
             _context.homesection.Remove(homesection);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool homesectionExists(int id)

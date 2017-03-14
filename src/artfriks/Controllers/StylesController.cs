@@ -45,6 +45,8 @@ namespace artfriks.Controllers
         // GET: Styles/Create
         public IActionResult Create()
         {
+            ViewBag.cats = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             return View();
         }
 
@@ -55,18 +57,35 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Image,TagId,Text")] Styles styles)
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             if (ModelState.IsValid)
             {
                 _context.Add(styles);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(styles);
+        }
+
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context)
+        {
+            var model = _context.Categories.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Title });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetTags(ApplicationDbContext _context)
+        {
+            var model = _context.ArtTags.Where(x=>x.Type=="Style").ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Tag  });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
         }
 
         // GET: Styles/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             if (id == null)
             {
                 return NotFound();
@@ -87,6 +106,8 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Image,TagId,Text")] Styles styles)
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             if (id != styles.Id)
             {
                 return NotFound();
@@ -110,7 +131,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(styles);
         }
@@ -140,7 +161,7 @@ namespace artfriks.Controllers
             var styles = await _context.Styles.SingleOrDefaultAsync(m => m.Id == id);
             _context.Styles.Remove(styles);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool StylesExists(int id)

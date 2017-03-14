@@ -53,7 +53,7 @@ namespace artfriks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Tag")] ArtTag artTag)
+        public async Task<IActionResult> Create([Bind("Id,Tag,Type")] ArtTag artTag)
         {
             if (ModelState.IsValid)
             {
@@ -85,7 +85,7 @@ namespace artfriks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Tag")] ArtTag artTag)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Tag,Type")] ArtTag artTag)
         {
             if (id != artTag.Id)
             {

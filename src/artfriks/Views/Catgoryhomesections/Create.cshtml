@@ -14,7 +14,7 @@
         <div class="form-group">
             <label asp-for="CatId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="CatId" class="form-control" />
+                <select asp-for="CatId" class="form-control" asp-items="@ViewBag.Catgories"></select>
                 <span asp-validation-for="CatId" class="text-danger" />
             </div>
         </div>

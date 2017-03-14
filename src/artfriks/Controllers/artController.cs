@@ -140,10 +140,12 @@ namespace artfriks.Controllers
                     art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderBy(x => Guid.NewGuid()).Take(7)
                   }).ToList();
 
-                var returnValue = _context.ArtWithTags.Where(x => x.TagId == Id).Select(c => new {
-                    art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderByDescending(v => v.AddedDate)
-                }).ToList();
-                return Ok(new { status = 1, message = returnValue });
+                var featured = _context.Featured.ToList();
+                var category = _context.Catgoryhomesection.ToList();
+                var styles = _context.Styles.ToList();
+                var homesection = _context.homesection.ToList();
+              
+                return Ok(new { status = 1, slider=slider,featured=featured,styles=styles,homesection=homesection  });
             }
             catch (Exception ex)
             {

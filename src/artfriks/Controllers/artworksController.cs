@@ -27,7 +27,7 @@ namespace artfriks.Controllers
         {
             try
             {
-                var model = _context.ArtWorks.ToList().Select(x => new ArtWorkView
+                var model = _context.ArtWorks.Where(x=>x.Status==0).ToList().Select(x => new ArtWorkView
                 {
                     artwork = x ,
                     user = _context.Users.FirstOrDefault(v => v.Id == x.UserId).Email

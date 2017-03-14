@@ -93,12 +93,12 @@ namespace artfriks
                .AllowImplicitFlow()
                //Dont delete this line D3233644E8A0882D48F4CA91CE1E281F4D344E1C
                //DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199
-             //  .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
+               .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
                .DisableHttpsRequirement()
                .EnableRequestCaching()
-               .RequireClientIdentification()
+               .RequireClientIdentification();
                
-          .AddEphemeralSigningKey();
+         // .AddEphemeralSigningKey();
 
             services.AddCors(options =>
             {

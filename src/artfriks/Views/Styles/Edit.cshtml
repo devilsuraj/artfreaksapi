@@ -22,7 +22,7 @@
         <div class="form-group">
             <label asp-for="TagId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="TagId" class="form-control" />
+                <select asp-for="TagId" class="form-control" asp-items="@ViewBag.Tags"></select>
                 <span asp-validation-for="TagId" class="text-danger" />
             </div>
         </div>

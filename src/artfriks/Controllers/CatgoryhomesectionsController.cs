@@ -45,6 +45,8 @@ namespace artfriks.Controllers
         // GET: Catgoryhomesections/Create
         public IActionResult Create()
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             return View();
         }
 
@@ -55,11 +57,13 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,CatId,Image,Text")] Catgoryhomesection catgoryhomesection)
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             if (ModelState.IsValid)
             {
                 _context.Add(catgoryhomesection);
                 await _context.SaveChangesAsync();
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(catgoryhomesection);
         }
@@ -67,6 +71,8 @@ namespace artfriks.Controllers
         // GET: Catgoryhomesections/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             if (id == null)
             {
                 return NotFound();
@@ -79,7 +85,18 @@ namespace artfriks.Controllers
             }
             return View(catgoryhomesection);
         }
-
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context)
+        {
+            var model = _context.Categories.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Title });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetTags(ApplicationDbContext _context)
+        {
+            var model = _context.ArtTags.Where(x => x.Type == "Style").ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Tag });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
         // POST: Catgoryhomesections/Edit/5
         // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
@@ -87,6 +104,8 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,CatId,Image,Text")] Catgoryhomesection catgoryhomesection)
         {
+            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Tags = GetTags(_context);
             if (id != catgoryhomesection.Id)
             {
                 return NotFound();
@@ -110,7 +129,7 @@ namespace artfriks.Controllers
                         throw;
                     }
                 }
-                return RedirectToAction("Index");
+                return RedirectToAction("/Index");
             }
             return View(catgoryhomesection);
         }
@@ -140,7 +159,7 @@ namespace artfriks.Controllers
             var catgoryhomesection = await _context.Catgoryhomesection.SingleOrDefaultAsync(m => m.Id == id);
             _context.Catgoryhomesection.Remove(catgoryhomesection);
             await _context.SaveChangesAsync();
-            return RedirectToAction("Index");
+            return RedirectToAction("/Index");
         }
 
         private bool CatgoryhomesectionExists(int id)
