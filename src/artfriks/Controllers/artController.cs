@@ -8,6 +8,7 @@ using artfriks.Data;
 using Microsoft.AspNetCore.Identity;
 using artfriks.Models;
 using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace artfriks.Controllers
 {
@@ -41,6 +42,7 @@ namespace artfriks.Controllers
                     MediumString = p.MediumString,
                     PictureUrl = p.PictureUrl,
                     Price = p.Price,
+                    views = p.Views,
                     Status = p.Status,
                     Title = p.Title,
                     Width = p.Width,
@@ -98,7 +100,8 @@ namespace artfriks.Controllers
                     PictureUrl=p.PictureUrl,
                     Price=p.Price,
                     Status=p.Status,
-                    Title=p.Title,
+                    views = p.Views,
+                    Title =p.Title,
                     Width=p.Width,
                     UserId=_context.Users.Where(n=>n.Id==p.UserId).First().FullName,
                     favcount=_context.ArtFavourites.Where(x=>x.ArtId==p.Id).Count(),
@@ -119,9 +122,80 @@ namespace artfriks.Controllers
             try
             {
                 var returnValue = _context.ArtWithTags.Where(x => x.TagId == Id).Select(c => new {
-                    art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderByDescending(v => v.AddedDate)
+                    art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId),
+                    UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId).First().FullName,
+                    favcount = _context.ArtFavourites.Where(x => x.ArtId == c.Id).Count(),
+                    isfav = _context.ArtFavourites.Any(x => x.ArtId == c.Id && x.UserId == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId)
                 }).ToList();
                 return Ok(new { status = 1, message = returnValue });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        public IEnumerable<CategoryChildFromStore> GetCatLevel(int id)
+        {
+                datalayer _dataLayer = new datalayer();
+            using (var reader = _dataLayer.GetDataReaderByProc("catsLevel", "@CategoryId", id.ToString()))
+            {
+                while (reader.Read())
+                {
+                    yield return Create(reader);
+                }
+            }
+        }
+        public static CategoryChildFromStore Create(IDataRecord record)
+        {
+            return new CategoryChildFromStore
+            {
+                id = Convert.ToInt32(record["id"]),
+                parentId = Convert.ToInt32(record["parentId"]),
+                category = record["category"].ToString(),
+                Level = Convert.ToInt32(record["Level"])
+            };
+        }
+
+        [HttpGet]
+        [Route("api/artowrk/getbycategory")]
+        public IActionResult getbycategory(int Id)
+        {
+            var user = _userManager.GetUserId(User);
+            var result = GetCatLevel(Id);
+            try
+            {
+                if (result != null)
+                {
+                    var model = _context.ArtWorks.Where(x => x.Status == 1).Select(p => new {
+                        Id = p.Id,
+                        AddedDate = p.AddedDate,
+                        TermAccepted = p.TermAccepted,
+                        Category = p.Category,
+                        Description = p.Description,
+                        DimensionUnit = p.DimensionUnit,
+                        Height = p.Height,
+                        MediumString = p.MediumString,
+                        PictureUrl = p.PictureUrl,
+                        Price = p.Price,
+                        Status = p.Status,
+                        Title = p.Title,
+                        views=p.Views,
+                        Width = p.Width,
+                        UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                        favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                        isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user)
+                    }).OrderByDescending(v => v.AddedDate);
+
+                    var returnValue = (from a in result join b in model on a.id.ToString() equals b.Category group b by b.Id into bg select bg.FirstOrDefault());
+                    var subcategories = _context.Categories.Where(x => x.ParentId == Id);
+                    var categorytitle = _context.Categories.FirstOrDefault(x => x.Id == Id).Title;
+                    return Ok(new { status = 1, message = returnValue, subcategories= subcategories, categorytitle= categorytitle });
+                }
+                else
+                {
+                    return Ok(new { status = 0, message = "No Records" });
+                }
             }
             catch (Exception ex)
             {
@@ -137,15 +211,15 @@ namespace artfriks.Controllers
             try
             {
                 var slider = _context.ArtWithTags.Where(x => x.TagId == 12).Select(c => new {
-                    art = _context.ArtWorks.Where(art => art.Id == c.ArtId).OrderBy(x => Guid.NewGuid()).Take(7)
-                  }).ToList();
+                    art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId)
+                  }).OrderBy(x => Guid.NewGuid()).Take(7).ToList();
 
                 var featured = _context.Featured.ToList();
                 var category = _context.Catgoryhomesection.ToList();
                 var styles = _context.Styles.ToList();
                 var homesection = _context.homesection.ToList();
               
-                return Ok(new { status = 1, slider=slider,featured=featured,styles=styles,homesection=homesection  });
+                return Ok(new { status = 1, slider=slider,featured=featured,styles=styles,homesection=homesection , category=category });
             }
             catch (Exception ex)
             {
@@ -332,12 +406,35 @@ namespace artfriks.Controllers
             return Ok(_context.ArtTags.Where(x => x.Tag.ToLower().Contains(name.ToLower())));
         }
 
+        [Route("api/artowrk/getARticle")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getArticles()
+        {
+            return Ok(_context.ArtArticles.ToList());
+        }
+        [Route("api/artowrk/getARticlebyId")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getArticlesbyId(int Id)
+        {
+            return Ok(_context.ArtArticles.Where(x=>x.Id==Id).First());
+        }
+
         [Route("api/artowrk/Categories")]
         [HttpGet]
         [AllowAnonymous]
         public IActionResult getCategories()
         {
-            return Ok(_context.Categories.ToList());
+            return Ok(_context.Categories.Where(x=>x.ParentId==0).ToList());
+        }
+
+        [Route("api/artowrk/Subcategories")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getSubCategories(int id)
+        {
+            return Ok(_context.Categories.Where(x => x.ParentId == id).ToList());
         }
 
         [Route("api/artowrk/Types")]

@@ -20,6 +20,8 @@ using CryptoHelper;
 using System.Security.Cryptography.X509Certificates;
 using System.IO;
 using Serilog;
+using AspNet.Security.OpenIdConnect.Primitives;
+using System.IdentityModel.Tokens.Jwt;
 
 namespace artfriks
 {
@@ -73,6 +75,14 @@ namespace artfriks
                 o.Cookies.ApplicationCookie.AutomaticChallenge = false;
             }).AddEntityFrameworkStores<ApplicationDbContext>()
               .AddDefaultTokenProviders();
+
+            services.Configure<IdentityOptions>(options =>
+            {
+                options.ClaimsIdentity.UserNameClaimType = OpenIdConnectConstants.Claims.Name;
+                options.ClaimsIdentity.UserIdClaimType = OpenIdConnectConstants.Claims.Subject;
+                options.ClaimsIdentity.RoleClaimType = OpenIdConnectConstants.Claims.Role;
+            });
+
             services.AddOpenIddict()
                // Register the Entity Framework stores.
                .AddEntityFrameworkCoreStores<ApplicationDbContext>()
@@ -88,17 +98,14 @@ namespace artfriks
                .EnableUserinfoEndpoint("/Account/Userinfo")
                .AllowAuthorizationCodeFlow()
                .AllowRefreshTokenFlow()
-               // Allow client applications to use the grant_type=password flow.
                .AllowPasswordFlow()
                .AllowImplicitFlow()
                //Dont delete this line D3233644E8A0882D48F4CA91CE1E281F4D344E1C
-               //DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199
                .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
                .DisableHttpsRequirement()
                .EnableRequestCaching()
-               .RequireClientIdentification();
-               
-         // .AddEphemeralSigningKey();
+              .RequireClientIdentification();
+              // .AddEphemeralSigningKey()
 
             services.AddCors(options =>
             {
@@ -130,9 +137,15 @@ namespace artfriks
             app.UseBrowserLink();
             app.UseApplicationInsightsExceptionTelemetry();
             app.UseStaticFiles();
+            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            JwtSecurityTokenHandler.DefaultOutboundClaimTypeMap.Clear();
             app.UseJwtBearerAuthentication(new JwtBearerOptions
             {
-                TokenValidationParameters = new TokenValidationParameters { ValidateAudience = false },
+                TokenValidationParameters = new TokenValidationParameters {
+                    ValidateAudience = false,
+                    NameClaimType = OpenIdConnectConstants.Claims.Subject,
+                    RoleClaimType = OpenIdConnectConstants.Claims.Role
+                },
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true,
                 RequireHttpsMetadata = false,
@@ -148,6 +161,9 @@ namespace artfriks
                     name: "default",
                     template: "{controller=Home}/{action=Index}/{id?}");
             });
+
+
+         
             using (var context = new ApplicationDbContext(
               app.ApplicationServices.GetRequiredService<DbContextOptions<ApplicationDbContext>>()))
             {

@@ -12,6 +12,7 @@ using artfriks.Models;
 using artfriks.Models.AccountViewModels;
 using artfriks.Services;
 using Microsoft.AspNetCore.Http;
+using artfriks.Data;
 
 namespace artfriks.Controllers
 {
@@ -20,6 +21,7 @@ namespace artfriks.Controllers
     {
         private readonly UserManager<ApplicationUser> _userManager;
         private readonly SignInManager<ApplicationUser> _signInManager;
+        private ApplicationDbContext _db;
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
@@ -27,6 +29,7 @@ namespace artfriks.Controllers
         public AccountController(
             UserManager<ApplicationUser> userManager,
             SignInManager<ApplicationUser> signInManager,
+            ApplicationDbContext db,
             IEmailSender emailSender,
             ISmsSender smsSender,
             ILoggerFactory loggerFactory)
@@ -34,6 +37,7 @@ namespace artfriks.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
+            _db = db;
             _smsSender = smsSender;
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
@@ -121,6 +125,10 @@ namespace artfriks.Controllers
                 var result = await _userManager.CreateAsync(user, "Polardevil#1");
                 if (result.Succeeded)
                 {
+                    UserModel useme = new UserModel();
+                    useme.UserId = user.Id;
+                    _db.UserModel.Add(useme);
+                    _db.SaveChanges();
                     var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, model.Phone);
                     await _emailSender.SendEmailAsync(model.Email, "Artfreaks Confirm your account",
                         $"Please confirm your account by Using this OTP " + OTP+" .");
@@ -222,6 +230,8 @@ namespace artfriks.Controllers
                 {
                     user.FullName = model.fullame;
                     await _userManager.UpdateAsync(user);
+               
+                    
                     var code = await _userManager.GenerateChangeEmailTokenAsync(user, model.Email);
                     var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
                     await _emailSender.SendEmailAsync(model.Email, "Reset Password",
@@ -274,7 +284,7 @@ namespace artfriks.Controllers
         [HttpPost]
         [AllowAnonymous]
         public async Task<IActionResult> RegisterHttp([FromBody]RegisterViewModel dto)
-        {
+         {
             if (!ModelState.IsValid)
             {
                 return Ok(new { status = 2, errors=ModelState.Values });
@@ -286,6 +296,10 @@ namespace artfriks.Controllers
                 var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(checkuser, checkuser.Phone);
                 await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for CocoSpices is " + OTP + ".");
                 return Ok(new { status = 99, error="Verify your mobile number" });
+            }
+            if (checkuser != null && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == true)
+            {
+                return Ok(new { status = 44, error = "User already exists" });
             }
             try
             {
@@ -314,8 +328,7 @@ namespace artfriks.Controllers
                 var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user,  user.Phone);
                 var callbackUrl = $"https://bo.cocospices.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
-                await _emailSender.SendEmailAsync(dto.Email, "Artfreaks - Confirm your account",
-                       $"Your OTP for Artfreaks is " + OTP + ".");
+             
                 await _smsSender.SendSmsAsync(dto.CountryCode+dto.Phone, "Your OTP for CocoSpices is " + OTP + ".");
 
                 await _signInManager.SignInAsync(user, isPersistent: false);
@@ -324,6 +337,12 @@ namespace artfriks.Controllers
 
                 if (result.Succeeded)
                 {
+                    UserModel useme = new UserModel();
+                    useme.UserId = user.Id;
+                    _db.UserModel.Add(useme);
+                    _db.SaveChanges();
+                    await _emailSender.SendEmailAsync(dto.Email, "Artfreaks - Confirm your account",
+                    $"Your OTP for Artfreaks is " + OTP + ".");
                     return Ok(new { status = 0, message = "Success", user=user });
                     /*
                     var result2 = await _userManager.AddToRoleAsync(user, "Admin");
@@ -356,6 +375,7 @@ namespace artfriks.Controllers
         [AllowAnonymous]
         public async Task<IActionResult> updateUser([FromBody]RegisterViewModel username)
         {
+            
             var check = await _userManager.FindByNameAsync(username.UserName);
             if (check != null && await _userManager.IsPhoneNumberConfirmedAsync(check) == true)
             {
@@ -378,11 +398,15 @@ namespace artfriks.Controllers
                 user.UserName = username.UserName;
                 await _userManager.ChangePasswordAsync(user, "Polardevil#1", username.Password);
                 await _userManager.UpdateAsync(user);
+                string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello "+ user.FullName + ",</h5> <p>Welcome to <strong>artfreaksindia.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/g+.png' width='30' height='30' alt=''/> </a> </div> </div> </div> <!--Import jQuery before materialize.js--> <script type='text/javascript' src='https://code.jquery.com/jquery-2.1.1.min.js'></script> <script type='text/javascript' src='js/materialize.min.js'></script> </body>");
+               await _emailSender.SendEmailAsync(user.Email, "Artfreaks - Thank you for registration",Emailtext);
                 return Ok(new { status = 0, Message = "success" });
             }
             catch (Exception ex)
             {
+                var user = await _userManager.FindByEmailAsync(username.Email);
                 _logger.LogDebug(3, ex.Message);
+                _db.Users.Remove(user);
                 return BadRequest(new { status = 1, Message = ex.Message });
             }
         }

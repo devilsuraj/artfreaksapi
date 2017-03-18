@@ -1,0 +1,1013 @@
+2017-03-18T12:24:41.3035873+05:30  [INF] Executed DbCommand (119ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T12:24:43.8147309+05:30  [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-18T12:24:44.0927468+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-18T12:24:45.8598479+05:30 0HL3DPEKQU8NL [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-18T12:24:45.8688484+05:30 0HL3DPEKQU8NO [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/Categories   (e5be5b71)
+2017-03-18T12:24:45.8688484+05:30 0HL3DPEKQU8NM [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:24:45.8688484+05:30 0HL3DPEKQU8NP [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-18T12:24:45.8688484+05:30 0HL3DPEKQU8NN [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:24:46.1148625+05:30 0HL3DPEKQU8NP [INF] Request finished in 402.791ms 200  (15c52c40)
+2017-03-18T12:24:46.1358637+05:30 0HL3DPEKQU8NO [INF] Request finished in 440.6433ms 204  (15c52c40)
+2017-03-18T12:24:46.1378638+05:30 0HL3DPEKQU8NM [INF] Request finished in 460.7071ms 204  (15c52c40)
+2017-03-18T12:24:46.1458642+05:30 0HL3DPEKQU8NN [INF] Request finished in 449.0815ms 204  (15c52c40)
+2017-03-18T12:24:46.3588764+05:30 0HL3DPEKQU8NQ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:24:46.3938784+05:30 0HL3DPEKQU8NQ [INF] Request finished in 34.8516ms 204  (15c52c40)
+2017-03-18T12:24:46.4688827+05:30 0HL3DPEKQU8NR [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Categories application/json  (e5be5b71)
+2017-03-18T12:24:46.5048848+05:30 0HL3DPEKQU8NS [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:24:46.5048848+05:30 0HL3DPEKQU8NT [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:24:46.6368923+05:30 0HL3DPEKQU8NU [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:24:48.5660027+05:30 0HL3DPEKQU8NL [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:24:48.5660027+05:30 0HL3DPEKQU8NR [INF] Executing action method "artfriks.Controllers.artController.getCategories (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:24:51.0261434+05:30 0HL3DPEKQU8NR [INF] Executed DbCommand (227ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = 0 (3b5ca34b)
+2017-03-18T12:24:51.3301608+05:30 0HL3DPEKQU8NR [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T12:24:52.1042050+05:30 0HL3DPEKQU8NR [INF] Executed action "artfriks.Controllers.artController.getCategories (artfriks)" in 3706.0075ms (afa2e885)
+2017-03-18T12:24:53.0552594+05:30 0HL3DPEKQU8NT [INF] Successfully validated the token. (60169667)
+2017-03-18T12:24:53.4242805+05:30 0HL3DPEKQU8NR [INF] Request finished in 6954.6477ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T12:24:53.4292808+05:30 0HL3DPEKQU8NU [INF] Successfully validated the token. (60169667)
+2017-03-18T12:24:53.4402815+05:30 0HL3DPEKQU8NT [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-03-18T12:24:53.4682831+05:30 0HL3DPEKQU8NU [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-03-18T12:24:53.6652943+05:30 0HL3DPEKQU8NS [INF] Successfully validated the token. (60169667)
+2017-03-18T12:24:54.0663173+05:30 0HL3DPEKQU8NS [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-03-18T12:24:54.0923187+05:30 0HL3DPEKQU8NT [INF] Authorization was successful for user: "ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5". (d7eb274a)
+2017-03-18T12:24:54.2063253+05:30 0HL3DPEKQU8NU [INF] Authorization was successful for user: "ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5". (d7eb274a)
+2017-03-18T12:24:54.2783294+05:30 0HL3DPEKQU8NS [INF] Authorization was successful for user: "ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5". (d7eb274a)
+2017-03-18T12:24:54.2913301+05:30 0HL3DPEKQU8NT [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:24:54.4143372+05:30 0HL3DPEKQU8NS [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:27:23.5028645+05:30 0HL3DPEKQU8NU [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:27:27.8831151+05:30 0HL3DPEKQU8NU [WRN] The LINQ expression '([x].UserId == [x].Id)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-18T12:27:27.9001161+05:30 0HL3DPEKQU8NU [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-18T12:27:28.6501590+05:30 0HL3DPEKQU8NU [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[City], [x].[ConcurrencyStamp], [x].[Country], [x].[CountryCode], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[FormattedAddress], [x].[FullName], [x].[Gender], [x].[LastName], [x].[Latitude], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[Longitude], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[OTP], [x].[OTPfrom], [x].[PasswordHash], [x].[Phone], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[PinCode], [x].[Profession], [x].[SecurityStamp], [x].[State], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [AspNetUsers] AS [x]
+WHERE [x].[Id] IS NULL (3b5ca34b)
+2017-03-18T12:27:28.8451701+05:30 0HL3DPEKQU8NU [ERR] An exception occurred in the database while iterating the results of a query.
+ (3b5ca34b)
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass19_1`1.<CompileQuery>b__1(QueryContext qc)
+2017-03-18T12:27:28.9741775+05:30 0HL3DPEKQU8NU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T12:27:28.9891783+05:30 0HL3DPEKQU8NU [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 154779.5765ms (afa2e885)
+2017-03-18T12:27:28.9931786+05:30  [INF] Connection id ""0HL3DPEKMQDO0"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:27:29.0081794+05:30 0HL3DPEKQU8NU [INF] Request finished in 162367.5121ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T12:27:29.2231917+05:30 0HL3DPEKQU8NS [INF] Executed DbCommand (169ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[City], [x].[ConcurrencyStamp], [x].[Country], [x].[CountryCode], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[FormattedAddress], [x].[FullName], [x].[Gender], [x].[LastName], [x].[Latitude], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[Longitude], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[OTP], [x].[OTPfrom], [x].[PasswordHash], [x].[Phone], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[PinCode], [x].[Profession], [x].[SecurityStamp], [x].[State], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [AspNetUsers] AS [x]
+WHERE [x].[Id] IS NULL (3b5ca34b)
+2017-03-18T12:27:29.3161970+05:30 0HL3DPEKQU8NS [ERR] An exception occurred in the database while iterating the results of a query.
+ (3b5ca34b)
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass19_1`1.<CompileQuery>b__1(QueryContext qc)
+2017-03-18T12:27:29.3802007+05:30 0HL3DPEKQU8NS [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T12:27:29.3812008+05:30 0HL3DPEKQU8NS [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 155099.6852ms (afa2e885)
+2017-03-18T12:27:29.3832009+05:30  [INF] Connection id ""0HL3DPEKMQDNV"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:27:29.3892012+05:30 0HL3DPEKQU8NS [INF] Request finished in 162881.0439ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T12:27:32.0143514+05:30 0HL3DPEKQU8NT [INF] Executed DbCommand (329ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[AccessFailedCount], [x].[Address], [x].[City], [x].[ConcurrencyStamp], [x].[Country], [x].[CountryCode], [x].[Email], [x].[EmailConfirmed], [x].[FirstName], [x].[FormattedAddress], [x].[FullName], [x].[Gender], [x].[LastName], [x].[Latitude], [x].[LockoutEnabled], [x].[LockoutEnd], [x].[Longitude], [x].[NormalizedEmail], [x].[NormalizedUserName], [x].[OTP], [x].[OTPfrom], [x].[PasswordHash], [x].[Phone], [x].[PhoneNumber], [x].[PhoneNumberConfirmed], [x].[PinCode], [x].[Profession], [x].[SecurityStamp], [x].[State], [x].[TwoFactorEnabled], [x].[UserName]
+FROM [AspNetUsers] AS [x]
+WHERE [x].[Id] IS NULL (3b5ca34b)
+2017-03-18T12:27:32.0923558+05:30 0HL3DPEKQU8NT [ERR] An exception occurred in the database while iterating the results of a query.
+ (3b5ca34b)
+System.InvalidOperationException: Sequence contains no elements
+   at System.Linq.Enumerable.First[TSource](IEnumerable`1 source)
+   at lambda_method(Closure , QueryContext )
+   at Microsoft.EntityFrameworkCore.Query.Internal.QueryCompiler.<>c__DisplayClass19_1`1.<CompileQuery>b__1(QueryContext qc)
+2017-03-18T12:27:32.2333639+05:30 0HL3DPEKQU8NT [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T12:27:32.2383642+05:30 0HL3DPEKQU8NT [INF] Executed action "artfriks.Controllers.UserController.Get (artfriks)" in 158599.515ms (afa2e885)
+2017-03-18T12:27:32.2403643+05:30  [INF] Connection id ""0HL3DPEKMQDNU"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:27:32.2463646+05:30 0HL3DPEKQU8NT [INF] Request finished in 165737.5543ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T12:27:32.4953789+05:30 0HL3DPEKQU8NL [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-18T12:27:33.6794466+05:30  [INF] Connection id ""0HL3DPEKMQDO2"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:27:33.6824468+05:30 0HL3DPEKQU8NL [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 165286.6826ms (afa2e885)
+2017-03-18T12:27:33.6874471+05:30  [INF] Connection id ""0HL3DPEKMQDO2"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:27:33.6914473+05:30 0HL3DPEKQU8NL [INF] Request finished in 167990.0337ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-18T12:28:03.6141588+05:30  [INF] Executed DbCommand (144ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T12:28:34.1569057+05:30  [INF] Executed DbCommand (130ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T12:28:35.6249897+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-18T12:28:35.9820101+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-18T12:28:37.7291100+05:30 0HL3DPGPU6HF2 [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-18T12:28:37.7311102+05:30 0HL3DPGPU6HF3 [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-18T12:28:37.7291100+05:30 0HL3DPGPU6HF4 [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-18T12:28:38.1441338+05:30 0HL3DPGPU6HF3 [INF] Request finished in 502.1123ms 200  (15c52c40)
+2017-03-18T12:28:40.2262529+05:30 0HL3DPGPU6HF4 [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:28:40.2262529+05:30 0HL3DPGPU6HF2 [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:28:50.0188130+05:30 0HL3DPGPU6HF2 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-18T12:28:50.1208188+05:30 0HL3DPGPU6HF4 [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-18T12:28:52.6389628+05:30 0HL3DPGPU6HF2 [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 12654.324ms (afa2e885)
+2017-03-18T12:28:52.6809652+05:30 0HL3DPGPU6HF4 [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 12699.3994ms (afa2e885)
+2017-03-18T12:28:52.9449803+05:30 0HL3DPGPU6HF2 [INF] Request finished in 15313.5601ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-18T12:28:52.9519807+05:30 0HL3DPGPU6HF4 [INF] Request finished in 15320.0313ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-18T12:28:53.2549981+05:30  [INF] Connection id ""0HL3DPGPP5MM5"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:28:53.4270079+05:30  [INF] Connection id ""0HL3DPGPP5MM6"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T12:29:13.6371639+05:30 0HL3DPGPU6HF5 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:29:13.7061678+05:30 0HL3DPGPU6HF5 [INF] Request finished in 69.2675ms 204  (15c52c40)
+2017-03-18T12:29:13.7261690+05:30 0HL3DPGPU6HF6 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/Categories   (e5be5b71)
+2017-03-18T12:29:14.0181857+05:30 0HL3DPGPU6HF7 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:29:14.0211858+05:30 0HL3DPGPU6HF6 [INF] Request finished in 295.2875ms 204  (15c52c40)
+2017-03-18T12:29:14.5552164+05:30 0HL3DPGPU6HF8 [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:29:14.5782177+05:30 0HL3DPGPU6HF9 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:29:14.7212259+05:30 0HL3DPGPU6HF7 [INF] Request finished in 703.1354ms 204  (15c52c40)
+2017-03-18T12:29:14.9702401+05:30 0HL3DPGPU6HFA [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Categories application/json  (e5be5b71)
+2017-03-18T12:29:15.0852467+05:30 0HL3DPGPU6HF9 [INF] Request finished in 507.2958ms 204  (15c52c40)
+2017-03-18T12:29:15.0952473+05:30 0HL3DPGPU6HFB [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:29:15.4342667+05:30 0HL3DPGPU6HFC [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T12:29:15.4762691+05:30 0HL3DPGPU6HFA [INF] Executing action method "artfriks.Controllers.artController.getCategories (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:29:16.9783550+05:30 0HL3DPGPU6HFA [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = 0 (3b5ca34b)
+2017-03-18T12:29:17.3543765+05:30 0HL3DPGPU6HFA [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T12:29:17.7503991+05:30 0HL3DPGPU6HFA [INF] Executed action "artfriks.Controllers.artController.getCategories (artfriks)" in 2329.1781ms (afa2e885)
+2017-03-18T12:29:17.8034022+05:30 0HL3DPGPU6HFA [INF] Request finished in 2832.4497ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T12:29:18.9504678+05:30 0HL3DPGPU6HFB [INF] Successfully validated the token. (60169667)
+2017-03-18T12:29:18.9754692+05:30 0HL3DPGPU6HF8 [INF] Successfully validated the token. (60169667)
+2017-03-18T12:29:18.9754692+05:30 0HL3DPGPU6HFC [INF] Successfully validated the token. (60169667)
+2017-03-18T12:29:18.9914701+05:30 0HL3DPGPU6HF8 [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-03-18T12:29:18.9914701+05:30 0HL3DPGPU6HFB [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-03-18T12:29:18.9914701+05:30 0HL3DPGPU6HFC [INF] HttpContext.User merged via AutomaticAuthentication from authenticationScheme: "Bearer". (bdba1d38)
+2017-03-18T12:29:19.0824753+05:30 0HL3DPGPU6HF8 [INF] Authorization was successful for user: "ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5". (d7eb274a)
+2017-03-18T12:29:19.0824753+05:30 0HL3DPGPU6HFB [INF] Authorization was successful for user: "ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5". (d7eb274a)
+2017-03-18T12:29:19.0824753+05:30 0HL3DPGPU6HFC [INF] Authorization was successful for user: "ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5". (d7eb274a)
+2017-03-18T12:29:19.1064767+05:30 0HL3DPGPU6HF8 [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:29:19.1104769+05:30 0HL3DPGPU6HFC [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T12:29:19.1184774+05:30 0HL3DPGPU6HFB [INF] Executing action method "artfriks.Controllers.UserController.Get (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T13:21:52.3238304+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-03-18T13:21:53.3288879+05:30 0HL3DQEI9PJ0J [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-18T13:21:53.4568952+05:30 0HL3DQEI9PJ0J [INF] Request finished in 210.7416ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:23:06.9520989+05:30  [INF] Executed DbCommand (133ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T13:23:08.5001874+05:30  [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-18T13:23:09.4742432+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-18T13:23:13.7974904+05:30 0HL3DQFA97IGE [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-18T13:23:13.8124913+05:30 0HL3DQFA97IGF [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-03-18T13:23:13.8804952+05:30 0HL3DQFA97IGG [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 109 (e5be5b71)
+2017-03-18T13:23:15.3525794+05:30 0HL3DQFA97IGF [INF] Request finished in 1761.9436ms 200  (15c52c40)
+2017-03-18T13:23:19.8038340+05:30 0HL3DQFA97IGG [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"password\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\",
+  \"username\": \"dddd\",
+  \"password\": \"[removed for security reasons]\"
+}" (2bd72e75)
+2017-03-18T13:23:20.6878845+05:30 0HL3DQFA97IGG [WRN] The LINQ expression 'SingleOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-18T13:23:21.5889361+05:30 0HL3DQFA97IGE [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T13:23:22.7820043+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (181ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-18T13:23:22.9810157+05:30 0HL3DQFA97IGG [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-18T13:23:23.0220180+05:30 0HL3DQFA97IGG [INF] The token request was successfully validated. (d7e51e65)
+2017-03-18T13:23:23.6350531+05:30 0HL3DQFA97IGG [INF] Executing action method "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" with arguments (["dddd", "123456", "", "", "password", "", "myClient", "offline_access profile email roles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-18T13:23:37.5898513+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (100ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-18T13:23:40.9330425+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (100ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-18T13:23:46.2023439+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (93ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (3b5ca34b)
+2017-03-18T13:23:46.6013667+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (94ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0 (3b5ca34b)
+2017-03-18T13:23:48.9254996+05:30 0HL3DQFA97IGG [INF] Executing SignInResult with authentication scheme ("ASOS") and the following principal: "System.Security.Claims.ClaimsPrincipal". (f8bf0a82)
+2017-03-18T13:23:50.5115904+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (128ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OpenIddictTokens] ([Id], [ApplicationId], [AuthorizationId], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4); (3b5ca34b)
+2017-03-18T13:23:51.3436380+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (98ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-18T13:23:51.5186480+05:30 0HL3DQFA97IGG [WRN] The LINQ expression 'SingleOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-18T13:23:51.9666736+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (114ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [element].[Id], [element].[ClientId], [element].[ClientSecret], [element].[DisplayName], [element].[LogoutRedirectUri], [element].[RedirectUri], [element].[Type]
+FROM [OpenIddictApplications] AS [element]
+WHERE [element].[Id] = @__key_0 (3b5ca34b)
+2017-03-18T13:23:53.5407636+05:30 0HL3DQFA97IGG [INF] Executed DbCommand (96ms) [Parameters=[@p3='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OpenIddictTokens] SET [ApplicationId] = @p0, [Subject] = @p1, [Type] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT; (3b5ca34b)
+2017-03-18T13:23:56.8659538+05:30 0HL3DQFA97IGG [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\"
+}" (def80055)
+2017-03-18T13:23:57.1129679+05:30 0HL3DQFA97IGE [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-18T13:23:57.1649709+05:30 0HL3DQFA97IGG [INF] AuthenticationScheme: "ASOS" signed in. (c66dd7e7)
+2017-03-18T13:23:57.1919725+05:30 0HL3DQFA97IGG [INF] Executed action "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" in 34111.5163ms (afa2e885)
+2017-03-18T13:23:57.7480043+05:30 0HL3DQFA97IGG [INF] Request finished in 44170.7587ms 200 application/json;charset=UTF-8 (15c52c40)
+2017-03-18T13:23:59.5401068+05:30 0HL3DQFA97IGE [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 38143.8802ms (afa2e885)
+2017-03-18T13:23:59.9141282+05:30 0HL3DQFA97IGE [INF] Request finished in 46336.4752ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:25:21.3787877+05:30 0HL3DQFA97IGH [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/Categories   (e5be5b71)
+2017-03-18T13:25:21.4897940+05:30 0HL3DQFA97IGH [INF] Request finished in 111.8835ms 204  (15c52c40)
+2017-03-18T13:25:21.6768047+05:30 0HL3DQFA97IGI [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Categories application/json  (e5be5b71)
+2017-03-18T13:25:21.7468087+05:30 0HL3DQFA97IGI [INF] Executing action method "artfriks.Controllers.artController.getCategories (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T13:25:22.2938400+05:30 0HL3DQFA97IGI [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = 0 (3b5ca34b)
+2017-03-18T13:25:22.4908513+05:30 0HL3DQFA97IGI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T13:25:22.5338537+05:30 0HL3DQFA97IGI [INF] Executed action "artfriks.Controllers.artController.getCategories (artfriks)" in 797.7989ms (afa2e885)
+2017-03-18T13:25:22.5848566+05:30 0HL3DQFA97IGI [INF] Request finished in 908.4911ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T13:25:29.7702676+05:30 0HL3DQFA97IGJ [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/X-www-form-urlencoded 109 (e5be5b71)
+2017-03-18T13:25:30.1512894+05:30 0HL3DQFA97IGJ [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"password\",
+  \"client_id\": \"myClient\",
+  \"scope\": \"offline_access profile email roles\",
+  \"username\": \"dddd\",
+  \"password\": \"[removed for security reasons]\"
+}" (2bd72e75)
+2017-03-18T13:25:30.4903088+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (97ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-18T13:25:30.5883144+05:30 0HL3DQFA97IGJ [INF] The token request validation process was not fully validated because the client '"myClient"' was a public application. (19a22b6b)
+2017-03-18T13:25:30.5963149+05:30 0HL3DQFA97IGJ [INF] The token request was successfully validated. (d7e51e65)
+2017-03-18T13:25:30.6043153+05:30 0HL3DQFA97IGJ [INF] Executing action method "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" with arguments (["dddd", "123456", "", "", "password", "", "myClient", "offline_access profile email roles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-18T13:25:34.8535584+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (101ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-18T13:25:40.5908865+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (99ms) [Parameters=[@__normalizedUserName_0='?' (Size = 256)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [u].[Id], [u].[AccessFailedCount], [u].[Address], [u].[City], [u].[ConcurrencyStamp], [u].[Country], [u].[CountryCode], [u].[Email], [u].[EmailConfirmed], [u].[FirstName], [u].[FormattedAddress], [u].[FullName], [u].[Gender], [u].[LastName], [u].[Latitude], [u].[LockoutEnabled], [u].[LockoutEnd], [u].[Longitude], [u].[NormalizedEmail], [u].[NormalizedUserName], [u].[OTP], [u].[OTPfrom], [u].[PasswordHash], [u].[Phone], [u].[PhoneNumber], [u].[PhoneNumberConfirmed], [u].[PinCode], [u].[Profession], [u].[SecurityStamp], [u].[State], [u].[TwoFactorEnabled], [u].[UserName]
+FROM [AspNetUsers] AS [u]
+WHERE [u].[NormalizedUserName] = @__normalizedUserName_0 (3b5ca34b)
+2017-03-18T13:25:57.0958306+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (93ms) [Parameters=[@__userId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [role].[Name]
+FROM [AspNetUserRoles] AS [userRole]
+INNER JOIN [AspNetRoles] AS [role] ON [userRole].[RoleId] = [role].[Id]
+WHERE [userRole].[UserId] = @__userId_0 (3b5ca34b)
+2017-03-18T13:25:57.4158489+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (94ms) [Parameters=[@__user_Id_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT [uc].[Id], [uc].[ClaimType], [uc].[ClaimValue], [uc].[UserId]
+FROM [AspNetUserClaims] AS [uc]
+WHERE [uc].[UserId] = @__user_Id_0 (3b5ca34b)
+2017-03-18T13:26:01.6770926+05:30 0HL3DQFA97IGJ [INF] Executing SignInResult with authentication scheme ("ASOS") and the following principal: "System.Security.Claims.ClaimsPrincipal". (f8bf0a82)
+2017-03-18T13:26:02.4381361+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (129ms) [Parameters=[@p0='?' (Size = 450), @p1='?' (Size = 450), @p2='?' (Size = 450), @p3='?' (Size = 4000), @p4='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [OpenIddictTokens] ([Id], [ApplicationId], [AuthorizationId], [Subject], [Type])
+VALUES (@p0, @p1, @p2, @p3, @p4); (3b5ca34b)
+2017-03-18T13:26:03.1721781+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (97ms) [Parameters=[@__identifier_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [application].[Id], [application].[ClientId], [application].[ClientSecret], [application].[DisplayName], [application].[LogoutRedirectUri], [application].[RedirectUri], [application].[Type]
+FROM [OpenIddictApplications] AS [application]
+WHERE [application].[ClientId] = @__identifier_0 (3b5ca34b)
+2017-03-18T13:26:03.6662064+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (125ms) [Parameters=[@__key_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [element].[Id], [element].[ClientId], [element].[ClientSecret], [element].[DisplayName], [element].[LogoutRedirectUri], [element].[RedirectUri], [element].[Type]
+FROM [OpenIddictApplications] AS [element]
+WHERE [element].[Id] = @__key_0 (3b5ca34b)
+2017-03-18T13:26:04.5572573+05:30 0HL3DQFA97IGJ [INF] Executed DbCommand (108ms) [Parameters=[@p3='?' (Size = 450), @p0='?' (Size = 450), @p1='?' (Size = 4000), @p2='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [OpenIddictTokens] SET [ApplicationId] = @p0, [Subject] = @p1, [Type] = @p2
+WHERE [Id] = @p3;
+SELECT @@ROWCOUNT; (3b5ca34b)
+2017-03-18T13:26:04.9152778+05:30 0HL3DQFA97IGJ [INF] The token response was successfully returned: "{
+  \"token_type\": \"Bearer\",
+  \"access_token\": \"[removed for security reasons]\",
+  \"expires_in\": 3600,
+  \"refresh_token\": \"[removed for security reasons]\"
+}" (def80055)
+2017-03-18T13:26:04.9552801+05:30 0HL3DQFA97IGJ [INF] AuthenticationScheme: "ASOS" signed in. (c66dd7e7)
+2017-03-18T13:26:05.2142949+05:30 0HL3DQFA97IGK [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:05.2912993+05:30 0HL3DQFA97IGL [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:05.2912993+05:30 0HL3DQFA97IGJ [INF] Executed action "artfriks.Controllers.AuthorizationController.VerifyPhoneCode (artfriks)" in 34686.8981ms (afa2e885)
+2017-03-18T13:26:05.4183066+05:30 0HL3DQFA97IGL [INF] Request finished in 127.0631ms 204  (15c52c40)
+2017-03-18T13:26:05.4333074+05:30 0HL3DQFA97IGK [INF] Request finished in 218.8052ms 204  (15c52c40)
+2017-03-18T13:26:05.4683094+05:30 0HL3DQFA97IGJ [INF] Request finished in 35693.8524ms 200 application/json;charset=UTF-8 (15c52c40)
+2017-03-18T13:26:05.7183237+05:30 0HL3DQFA97IGM [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:05.7903279+05:30 0HL3DQFA97IGN [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:05.8773328+05:30 0HL3DQFA97IGO [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:05.9123348+05:30 0HL3DQFA97IGO [INF] Request finished in 120.7368ms 204  (15c52c40)
+2017-03-18T13:26:05.9723383+05:30 0HL3DQFA97IGP [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:08.4354792+05:30 0HL3DQFA97IGN [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:26:08.4354792+05:30 0HL3DQFA97IGM [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX10804: Unable to retrieve document from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.<GetAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:26:08.4354792+05:30 0HL3DQFA97IGP [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+2017-03-18T13:26:09.8815619+05:30 0HL3DQFA97IGN [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:26:09.8815619+05:30 0HL3DQFA97IGP [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:26:10.2355821+05:30 0HL3DQFA97IGM [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX10804: Unable to retrieve document from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.<GetAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:26:10.8016145+05:30  [INF] Connection id ""0HL3DQFA1BPDC"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:26:10.9776246+05:30 0HL3DQFA97IGN [INF] Request finished in 5187.4178ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:26:11.0716299+05:30  [INF] Connection id ""0HL3DQFA1BPDB"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:26:11.0756302+05:30 0HL3DQFA97IGP [INF] Request finished in 5103.6994ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:26:11.0906310+05:30 0HL3DQFA97IGM [INF] Request finished in 5370.9506ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:26:11.0906310+05:30  [INF] Connection id ""0HL3DQFA1BPDA"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:26:54.0860902+05:30 0HL3DQFA97IGQ [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:54.0920906+05:30 0HL3DQFA97IGQ [INF] Request finished in 6.5873ms 204  (15c52c40)
+2017-03-18T13:26:54.1230923+05:30 0HL3DQFA97IGR [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/Categories   (e5be5b71)
+2017-03-18T13:26:54.1350930+05:30 0HL3DQFA97IGR [INF] Request finished in 12.1454ms 204  (15c52c40)
+2017-03-18T13:26:54.2260982+05:30 0HL3DQFA97IGS [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:54.3251039+05:30 0HL3DQFA97IGT [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:54.3741067+05:30 0HL3DQFA97IGS [INF] Request finished in 148.0193ms 204  (15c52c40)
+2017-03-18T13:26:54.3881075+05:30 0HL3DQFA97IGU [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Categories application/json  (e5be5b71)
+2017-03-18T13:26:54.3961080+05:30 0HL3DQFA97IGV [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:54.3961080+05:30 0HL3DQFA97IGT [INF] Request finished in 70.7501ms 204  (15c52c40)
+2017-03-18T13:26:54.5421163+05:30 0HL3DQFA97IGU [INF] Executing action method "artfriks.Controllers.artController.getCategories (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T13:26:54.5971195+05:30 0HL3DQFA97IH0 [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:54.5971195+05:30 0HL3DQFA97IH1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:26:54.9151376+05:30 0HL3DQFA97IGU [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = 0 (3b5ca34b)
+2017-03-18T13:26:54.9301385+05:30 0HL3DQFA97IGU [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T13:26:55.0491453+05:30 0HL3DQFA97IGU [INF] Executed action "artfriks.Controllers.artController.getCategories (artfriks)" in 507.8411ms (afa2e885)
+2017-03-18T13:26:55.1301499+05:30 0HL3DQFA97IGU [INF] Request finished in 728.5722ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-18T13:26:55.3801642+05:30 0HL3DQFA97IGV [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX10804: Unable to retrieve document from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.<GetAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:26:55.4161663+05:30 0HL3DQFA97IH0 [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:26:55.5121718+05:30 0HL3DQFA97IH1 [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:26:57.1072630+05:30 0HL3DQFA97IH1 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:26:57.3592774+05:30 0HL3DQFA97IH0 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:26:57.9693123+05:30 0HL3DQFA97IGV [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX10804: Unable to retrieve document from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.<GetAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:26:57.9943138+05:30 0HL3DQFA97IH1 [INF] Request finished in 3397.7795ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:26:58.1753241+05:30 0HL3DQFA97IH0 [INF] Request finished in 3578.3241ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:26:58.1793243+05:30  [INF] Connection id ""0HL3DQFA1BPDE"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:26:58.4433394+05:30  [INF] Connection id ""0HL3DQFA1BPDG"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:26:58.4473397+05:30  [INF] Connection id ""0HL3DQFA1BPDG"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:26:58.4663408+05:30 0HL3DQFA97IGV [INF] Request finished in 4070.011ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:27:34.5444043+05:30 0HL3DQFA97IH2 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getAllPersonal   (e5be5b71)
+2017-03-18T13:27:34.6164084+05:30 0HL3DQFA97IH2 [INF] Request finished in 71.7202ms 204  (15c52c40)
+2017-03-18T13:27:35.0044306+05:30 0HL3DQFA97IH3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAllPersonal   (e5be5b71)
+2017-03-18T13:27:37.7755891+05:30 0HL3DQFA97IH3 [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX10804: Unable to retrieve document from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.<GetAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:27:40.6357527+05:30 0HL3DQFA97IH3 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.IO.IOException: IDX10804: Unable to retrieve document from: 'http://localhost:3000/.well-known/openid-configuration'. ---> System.Net.Http.HttpRequestException: Response status code does not indicate success: 404 (Not Found).
+   at System.Net.Http.HttpResponseMessage.EnsureSuccessStatusCode()
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.HttpDocumentRetriever.<GetDocumentAsync>d__8.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.OpenIdConnect.OpenIdConnectConfigurationRetriever.<GetAsync>d__3.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+   --- End of inner exception stack trace ---
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:27:41.1557825+05:30  [INF] Connection id ""0HL3DQFA1BPDD"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:27:41.4457990+05:30  [INF] Connection id ""0HL3DQFA1BPDD"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T13:27:41.5318040+05:30 0HL3DQFA97IH3 [INF] Request finished in 6526.898ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:27:50.8833388+05:30 0HL3DQFA97IH4 [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:27:51.1503541+05:30 0HL3DQFA97IH4 [INF] Request finished in 261.7794ms 204  (15c52c40)
+2017-03-18T13:27:51.3983683+05:30 0HL3DQFA97IH5 [INF] Request starting HTTP/1.1 GET http://localhost:2822/user/userinfo   (e5be5b71)
+2017-03-18T13:27:52.0754070+05:30 0HL3DQFA97IH5 [ERR] Exception occurred while processing message. (d37e9c4d)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-03-18T13:27:53.5224898+05:30 0HL3DQFA97IH5 [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.InvalidOperationException: IDX10803: Unable to obtain configuration from: 'http://localhost:3000/.well-known/openid-configuration'.
+   at Microsoft.IdentityModel.Protocols.ConfigurationManager`1.<GetConfigurationAsync>d__24.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationHandler`1.<InitializeAsync>d__48.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T13:27:53.9875164+05:30 0HL3DQFA97IH5 [INF] Request finished in 2588.2409ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T13:27:54.4245414+05:30  [INF] Connection id ""0HL3DQFA1BPDF"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T15:44:46.3262353+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-03-18T15:44:47.0622774+05:30 0HL3DSUDF9C4Q [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-18T15:44:47.1512825+05:30 0HL3DSUDF9C4Q [INF] Request finished in 171.4506ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T15:45:35.8110657+05:30  [INF] Executed DbCommand (156ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T15:45:37.5881673+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-18T15:45:37.8081799+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-18T15:45:38.9332442+05:30 0HL3DSUSTV4HV [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-18T15:45:40.5053342+05:30 0HL3DSUSTV4HV [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T15:45:40.5583372+05:30 0HL3DSUSTV4I0 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtTypes/Index   (e5be5b71)
+2017-03-18T15:45:40.5713379+05:30 0HL3DSUSTV4I0 [INF] Executing action method "artfriks.Controllers.ArtTypesController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T15:45:41.3373818+05:30 0HL3DSUSTV4I0 [INF] Executed DbCommand (168ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[PictureUrl], [a].[Type]
+FROM [ArtTypes] AS [a] (3b5ca34b)
+2017-03-18T15:45:44.9825902+05:30 0HL3DSUSTV4I0 [INF] Executing ViewResult, running view at path "/Views/ArtTypes/Index.cshtml". (9707eebe)
+2017-03-18T15:45:44.9825902+05:30 0HL3DSUSTV4HV [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-18T15:45:46.2046601+05:30 0HL3DSUSTV4HV [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 5875.5481ms (afa2e885)
+2017-03-18T15:45:46.2066603+05:30 0HL3DSUSTV4I0 [INF] Executed action "artfriks.Controllers.ArtTypesController.Index (artfriks)" in 5641.0354ms (afa2e885)
+2017-03-18T15:45:46.3436681+05:30 0HL3DSUSTV4I0 [INF] Request finished in 5779.8999ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-18T15:45:46.3486684+05:30 0HL3DSUSTV4HV [INF] Request finished in 7479.63ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-18T15:45:46.3616691+05:30  [INF] Connection id ""0HL3DSUSR38U3"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-03-18T15:45:47.9337590+05:30 0HL3DSUSTV4I1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Index   (e5be5b71)
+2017-03-18T15:45:47.9497600+05:30 0HL3DSUSTV4I1 [INF] Executing action method "artfriks.Controllers.ArtWorksController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T15:45:48.2817789+05:30 0HL3DSUSTV4I1 [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-18T15:45:49.3458398+05:30 0HL3DSUSTV4I1 [INF] Executed DbCommand (111ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-18T15:45:49.3968427+05:30 0HL3DSUSTV4I1 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-18T15:45:49.7718642+05:30 0HL3DSUSTV4I1 [INF] Executed action "artfriks.Controllers.ArtWorksController.Index (artfriks)" in 1836.2417ms (afa2e885)
+2017-03-18T15:45:49.7868650+05:30 0HL3DSUSTV4I1 [INF] Request finished in 1847.7645ms 400 application/json; charset=utf-8 (15c52c40)
+2017-03-18T15:47:55.2350403+05:30  [INF] Executed DbCommand (112ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T15:47:56.6311201+05:30  [INF] Executed DbCommand (131ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-18T15:47:56.7341260+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-18T15:47:57.6171765+05:30 0HL3DT068I3QQ [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Index   (e5be5b71)
+2017-03-18T15:47:59.2512700+05:30 0HL3DT068I3QQ [INF] Executing action method "artfriks.Controllers.ArtWorksController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T15:48:00.2343262+05:30 0HL3DT068I3QQ [INF] Executed DbCommand (230ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-18T15:48:05.3976215+05:30 0HL3DT068I3QQ [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Index.cshtml". (9707eebe)
+2017-03-18T15:48:06.7356981+05:30 0HL3DT068I3QQ [INF] Executed DbCommand (120ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-18T15:48:06.9427099+05:30 0HL3DT068I3QQ [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at artfriks.Controllers.ArtWorksController.<Index>b__3_0(ArtWork x)
+   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()
+   at AspNetCore._Views_ArtWorks_Index_cshtml.<ExecuteAsync>d__33.MoveNext() in /Views/ArtWorks/Index.cshtml:line 36
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderPageAsync>d__14.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorView.<RenderAsync>d__13.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.ViewExecutor.<ExecuteAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultFilterAsync>d__31.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAllResultFiltersAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResourceFilterAsync>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-18T15:48:07.5607452+05:30 0HL3DT068I3QQ [INF] Request finished in 9969.8069ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-18T15:49:05.2950475+05:30  [INF] Executed DbCommand (125ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-18T15:49:06.6191232+05:30  [INF] Executed DbCommand (95ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-18T15:49:06.7031280+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-18T15:49:07.6621829+05:30 0HL3DT0R4I539 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Index   (e5be5b71)
+2017-03-18T15:49:09.1322669+05:30 0HL3DT0R4I539 [INF] Executing action method "artfriks.Controllers.ArtWorksController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-18T15:49:10.3733379+05:30 0HL3DT0R4I539 [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[Orientation], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[TermAccepted], [x].[Title], [x].[UserId], [x].[Width]
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 0 (3b5ca34b)
+2017-03-18T15:49:11.3183920+05:30 0HL3DT0R4I539 [INF] Executed DbCommand (169ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-18T15:49:18.6528115+05:30 0HL3DT0R4I539 [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Index.cshtml". (9707eebe)
+2017-03-18T15:49:19.4888593+05:30 0HL3DT0R4I539 [INF] Executed DbCommand (103ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-18T15:49:20.6699269+05:30 0HL3DT0R4I539 [INF] Executed action "artfriks.Controllers.ArtWorksController.Index (artfriks)" in 11929.0915ms (afa2e885)
+2017-03-18T15:49:20.8639380+05:30 0HL3DT0R4I539 [INF] Request finished in 13304.7292ms 200 text/html; charset=utf-8 (15c52c40)

@@ -23,7 +23,7 @@ namespace artfriks.Services
             try
             {
                 var emailMessage = new MimeMessage();
-                emailMessage.From.Add(new MailboxAddress("Artfreaks", "support@artfreaksindia.com"));
+                emailMessage.From.Add(new MailboxAddress("Artfreaks", "support@artfreaksglobal.com"));
                 emailMessage.To.Add(new MailboxAddress(email, email));
                 emailMessage.Subject = subject;
                 emailMessage.Body = new TextPart("html") { Text = message };
@@ -38,7 +38,7 @@ namespace artfriks.Services
                     // the XOAUTH2 authentication mechanism.
                     client.AuthenticationMechanisms.Remove("XOAUTH2");
                     // Note: only needed if the SMTP server requires authentication
-                    client.Authenticate("support@artfreaksindia.com", "support104");
+                    client.Authenticate("support@artfreaksglobal.com", "art@2017!");
                     client.Send(emailMessage);
                     client.Disconnect(true);
                     return Task.FromResult(0);

@@ -24,7 +24,12 @@ namespace artfriks.Controllers
         {
             return View(await _context.Categories.ToListAsync());
         }
-
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context)
+        {
+            var model = _context.Categories.Where(x=>x.ParentId==0).ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Title });
+            List<SelectListItem> Category = new List<SelectListItem>(model);
+            return Category;
+        }
         // GET: Categories/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -45,6 +50,7 @@ namespace artfriks.Controllers
         // GET: Categories/Create
         public IActionResult Create()
         {
+            ViewBag.Catgories = GetCategory(_context);
             return View();
         }
 
@@ -55,6 +61,7 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Create([Bind("Id,Title")] Category category)
         {
+            ViewBag.Catgories = GetCategory(_context);
             if (ModelState.IsValid)
             {
                 _context.Add(category);
@@ -67,6 +74,7 @@ namespace artfriks.Controllers
         // GET: Categories/Edit/5
         public async Task<IActionResult> Edit(int? id)
         {
+            ViewBag.Catgories = GetCategory(_context);
             if (id == null)
             {
                 return NotFound();
@@ -87,6 +95,7 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id, [Bind("Id,Title")] Category category)
         {
+            ViewBag.Catgories = GetCategory(_context);
             if (id != category.Id)
             {
                 return NotFound();

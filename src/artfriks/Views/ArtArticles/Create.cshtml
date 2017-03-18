@@ -12,16 +12,17 @@
         <hr />
         <div asp-validation-summary="ModelOnly" class="text-danger"></div>
         <div class="form-group">
-            <label asp-for="AddedDate" class="col-md-2 control-label"></label>
+            <label asp-for="Title" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="AddedDate" class="form-control" />
-                <span asp-validation-for="AddedDate" class="text-danger" />
+                <input asp-for="Title" class="form-control" />
+                <span asp-validation-for="Title" class="text-danger" />
             </div>
         </div>
         <div class="form-group">
             <label asp-for="Article" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <input asp-for="Article" class="form-control" />
+                <input   id="Article" asp-for="Article" class="form-control" />
+                <div  class="form-control" id="summernote" ></div>
                 <span asp-validation-for="Article" class="text-danger" />
             </div>
         </div>
@@ -40,20 +41,8 @@
                 </div>
             </div>
         </div>
-        <div class="form-group">
-            <label asp-for="PublishTime" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="PublishTime" class="form-control" />
-                <span asp-validation-for="PublishTime" class="text-danger" />
-            </div>
-        </div>
-        <div class="form-group">
-            <label asp-for="Title" class="col-md-2 control-label"></label>
-            <div class="col-md-10">
-                <input asp-for="Title" class="form-control" />
-                <span asp-validation-for="Title" class="text-danger" />
-            </div>
-        </div>
+       
+  
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Create" class="btn btn-default" />
@@ -68,4 +57,18 @@
 
 @section Scripts {
     @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+    <!-- include summernote css/js-->
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.css" rel="stylesheet">
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.2/summernote.js"></script>
+    <script>
+        $('#summernote').summernote({
+            callbacks: {
+                onBlur: function () {
+                    var markupStr = $('#summernote').summernote('code');
+                    $('#Article').val(markupStr) ;
+                }
+            }
+        });
+       
+    </script>
 }

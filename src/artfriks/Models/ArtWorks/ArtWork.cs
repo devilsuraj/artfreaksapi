@@ -15,10 +15,12 @@ namespace artfriks.Models
         public decimal Price { get; set; }
         public decimal Width { get; set; } 
         public decimal Height { get; set; }
+        public string Orientation { get; set; }
         public string DimensionUnit { get; set; }
         public string MediumString { get; set; }
         public DateTime AddedDate { get; set; }
         public bool TermAccepted { get; set; }
+        public int Views { get; set; }
         public int Status { get; set; } // 0 for new , 1 for approved , 2 for rejected , 3 for deleted
         public string Category { get; set; } // 0 for normal - 1 for deals - 2 for anything else
     }
@@ -47,6 +49,6 @@ namespace artfriks.Models
     public class PostTags
     {
       public string artId { get; set; }
-        public string tagId { get; set; }
+      public string tagId { get; set; }
     }
 }

@@ -1,0 +1,474 @@
+2017-03-16T16:56:04.2253225+05:30  [INF] Executed DbCommand (336ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-16T16:56:05.9324201+05:30  [INF] Executed DbCommand (322ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-16T16:56:06.0384262+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-16T16:56:06.7684679+05:30 0HL3CBSUGHLED [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-16T16:56:07.6405178+05:30 0HL3CBSUGHLED [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:10.2726684+05:30 0HL3CBSUGHLED [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-16T16:56:10.9847091+05:30 0HL3CBSUGHLED [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 3443.2583ms (afa2e885)
+2017-03-16T16:56:11.1027158+05:30 0HL3CBSUGHLED [INF] Request finished in 4359.954ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T16:56:14.6329177+05:30 0HL3CBSUGHLEE [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Index   (e5be5b71)
+2017-03-16T16:56:14.6519188+05:30 0HL3CBSUGHLEE [INF] Executing action method "artfriks.Controllers.ArtWorksController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:15.1119451+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-16T16:56:16.0239973+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (114ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:16.4170198+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (93ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:16.7500388+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (99ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:17.1000589+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (104ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:17.4160769+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (94ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:17.9661084+05:30 0HL3CBSUGHLEE [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Index.cshtml". (9707eebe)
+2017-03-16T16:56:18.6351467+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (182ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:19.0191686+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (93ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:19.3391869+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (93ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:19.6582052+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (93ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:21.1362897+05:30 0HL3CBSUGHLEE [INF] Executed DbCommand (439ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:21.1422901+05:30 0HL3CBSUGHLEE [INF] Executed action "artfriks.Controllers.ArtWorksController.Index (artfriks)" in 6504.3464ms (afa2e885)
+2017-03-16T16:56:21.1442902+05:30 0HL3CBSUGHLEE [INF] Request finished in 6511.7178ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T16:56:23.7144372+05:30 0HL3CBSUGHLEF [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Edit/7   (e5be5b71)
+2017-03-16T16:56:23.8634457+05:30 0HL3CBSUGHLEF [INF] Executing action method "artfriks.Controllers.ArtWorksController.Edit (artfriks)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:25.2985278+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (422ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [m].[Id], [m].[AddedDate], [m].[Category], [m].[Description], [m].[DimensionUnit], [m].[Height], [m].[MediumString], [m].[Orientation], [m].[PictureUrl], [m].[Price], [m].[Status], [m].[TermAccepted], [m].[Title], [m].[UserId], [m].[Width]
+FROM [ArtWorks] AS [m]
+WHERE [m].[Id] = @__id_0 (3b5ca34b)
+2017-03-16T16:56:26.7626115+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (427ms) [Parameters=[@__artWork_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__artWork_UserId_0 (3b5ca34b)
+2017-03-16T16:56:27.0636287+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Mediums]
+FROM [Mediums] AS [m] (3b5ca34b)
+2017-03-16T16:56:27.4706520+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ParentId], [c].[Title]
+FROM [Categories] AS [c] (3b5ca34b)
+2017-03-16T16:56:27.8196720+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Units]
+FROM [Units] AS [u] (3b5ca34b)
+2017-03-16T16:56:28.1976936+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (106ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Tag], [a].[Type]
+FROM [ArtTags] AS [a] (3b5ca34b)
+2017-03-16T16:56:28.5357129+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [c].[Id], [c].[ParentId], [c].[Title]
+FROM [Categories] AS [c] (3b5ca34b)
+2017-03-16T16:56:28.9017339+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [m].[Id], [m].[Mediums]
+FROM [Mediums] AS [m] (3b5ca34b)
+2017-03-16T16:56:29.1907504+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (84ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [u].[Id], [u].[Units]
+FROM [Units] AS [u] (3b5ca34b)
+2017-03-16T16:56:29.4797669+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (85ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[Tag], [a].[Type]
+FROM [ArtTags] AS [a] (3b5ca34b)
+2017-03-16T16:56:29.7817842+05:30 0HL3CBSUGHLEF [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Edit.cshtml". (9707eebe)
+2017-03-16T16:56:31.1108602+05:30 0HL3CBSUGHLEF [INF] Executed DbCommand (150ms) [Parameters=[@__artView_Artwork_Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [n].[ArtId], [n].[TagId], (
+    SELECT TOP(1) [v].[Tag]
+    FROM [ArtTags] AS [v]
+    WHERE [v].[Id] = [n].[TagId]
+)
+FROM [ArtWithTags] AS [n]
+WHERE [n].[ArtId] = @__artView_Artwork_Id_0 (3b5ca34b)
+2017-03-16T16:56:31.2418677+05:30 0HL3CBSUGHLEF [INF] Executed action "artfriks.Controllers.ArtWorksController.Edit (artfriks)" in 7503.7747ms (afa2e885)
+2017-03-16T16:56:31.2428678+05:30 0HL3CBSUGHLEF [INF] Request finished in 7528.314ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T16:56:39.8763616+05:30 0HL3CBSUGHLEG [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Tags?name=d application/json  (e5be5b71)
+2017-03-16T16:56:39.8883623+05:30 0HL3CBSUGHLEG [INF] Executing action method "artfriks.Controllers.artController.getUsers (artfriks)" with arguments (["d"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:39.9183640+05:30 0HL3CBSUGHLEG [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-16T16:56:41.2464400+05:30 0HL3CBSUGHLEH [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Tags?name=de application/json  (e5be5b71)
+2017-03-16T16:56:41.2494401+05:30 0HL3CBSUGHLEH [INF] Executing action method "artfriks.Controllers.artController.getUsers (artfriks)" with arguments (["de"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:41.2504402+05:30 0HL3CBSUGHLEH [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-16T16:56:41.6004602+05:30 0HL3CBSUGHLEG [INF] Executed DbCommand (431ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Tag], [x].[Type]
+FROM [ArtTags] AS [x]
+WHERE LOWER([x].[Tag]) LIKE (N'%' + @__ToLower_0) + N'%' (3b5ca34b)
+2017-03-16T16:56:41.6464628+05:30 0HL3CBSUGHLEG [INF] Executed action "artfriks.Controllers.artController.getUsers (artfriks)" in 1766.1313ms (afa2e885)
+2017-03-16T16:56:41.6464628+05:30 0HL3CBSUGHLEG [INF] Request finished in 1769.8834ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-16T16:56:43.9175927+05:30 0HL3CBSUGHLEI [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/Tags?name=dea application/json  (e5be5b71)
+2017-03-16T16:56:43.9175927+05:30 0HL3CBSUGHLEI [INF] Executing action method "artfriks.Controllers.artController.getUsers (artfriks)" with arguments (["dea"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:43.9185928+05:30 0HL3CBSUGHLEI [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-16T16:56:45.3926771+05:30 0HL3CBSUGHLEI [INF] Executed DbCommand (439ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Tag], [x].[Type]
+FROM [ArtTags] AS [x]
+WHERE LOWER([x].[Tag]) LIKE (N'%' + @__ToLower_0) + N'%' (3b5ca34b)
+2017-03-16T16:56:45.3926771+05:30 0HL3CBSUGHLEI [INF] Executed action "artfriks.Controllers.artController.getUsers (artfriks)" in 1475.107ms (afa2e885)
+2017-03-16T16:56:45.3936772+05:30 0HL3CBSUGHLEI [INF] Request finished in 1476.1487ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-16T16:56:46.4787392+05:30 0HL3CBSUGHLEJ [INF] Request starting HTTP/1.1 POST http://localhost:2822/api/artowrk/PostTags application/json 26 (e5be5b71)
+2017-03-16T16:56:46.6187472+05:30 0HL3CBSUGHLEJ [INF] Executing action method "artfriks.Controllers.artController.PostTags (artfriks)" with arguments (["System.Collections.Generic.List`1[artfriks.Models.PostTags]"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:46.7077523+05:30 0HL3CBSUGHLEH [INF] Executed DbCommand (88ms) [Parameters=[@__ToLower_0='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[Tag], [x].[Type]
+FROM [ArtTags] AS [x]
+WHERE LOWER([x].[Tag]) LIKE (N'%' + @__ToLower_0) + N'%' (3b5ca34b)
+2017-03-16T16:56:46.7077523+05:30 0HL3CBSUGHLEH [INF] Executed action "artfriks.Controllers.artController.getUsers (artfriks)" in 5460.1316ms (afa2e885)
+2017-03-16T16:56:46.7087524+05:30 0HL3CBSUGHLEH [INF] Request finished in 5462.4511ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-16T16:56:47.2867854+05:30 0HL3CBSUGHLEK [INF] Request starting HTTP/1.1 POST http://localhost:2822/ArtWorks/Edit/7 application/x-www-form-urlencoded 482 (e5be5b71)
+2017-03-16T16:56:47.5107983+05:30 0HL3CBSUGHLEK [INF] Executing action method "artfriks.Controllers.ArtWorksController.Edit (artfriks)" with arguments (["7", "artfriks.Models.ArtWorkEditView"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:47.6088039+05:30 0HL3CBSUGHLEJ [INF] Executed DbCommand (94ms) [Parameters=[@p0='?', @p1='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ArtWithTags] ([ArtId], [TagId])
+VALUES (@p0, @p1);
+SELECT [Id]
+FROM [ArtWithTags]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-16T16:56:47.9258220+05:30 0HL3CBSUGHLEJ [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-16T16:56:47.9428230+05:30 0HL3CBSUGHLEJ [INF] Executed action "artfriks.Controllers.artController.PostTags (artfriks)" in 1444.1842ms (afa2e885)
+2017-03-16T16:56:47.9438230+05:30 0HL3CBSUGHLEJ [INF] Request finished in 1465.1203ms 200 application/json; charset=utf-8 (15c52c40)
+2017-03-16T16:56:48.2698417+05:30 0HL3CBSUGHLEK [INF] Executed DbCommand (122ms) [Parameters=[@p14='?', @p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?' (Size = 4000), @p4='?', @p5='?' (Size = 4000), @p6='?' (Size = 4000), @p7='?' (Size = 4000), @p8='?', @p9='?', @p10='?', @p11='?' (Size = 4000), @p12='?' (Size = 4000), @p13='?'], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+UPDATE [ArtWorks] SET [AddedDate] = @p0, [Category] = @p1, [Description] = @p2, [DimensionUnit] = @p3, [Height] = @p4, [MediumString] = @p5, [Orientation] = @p6, [PictureUrl] = @p7, [Price] = @p8, [Status] = @p9, [TermAccepted] = @p10, [Title] = @p11, [UserId] = @p12, [Width] = @p13
+WHERE [Id] = @p14;
+SELECT @@ROWCOUNT; (3b5ca34b)
+2017-03-16T16:56:48.5988605+05:30 0HL3CBSUGHLEK [INF] Executing RedirectResult, redirecting to "/ArtWorks/%2FIndex". (d98d540e)
+2017-03-16T16:56:48.6008606+05:30 0HL3CBSUGHLEK [INF] Executed action "artfriks.Controllers.ArtWorksController.Edit (artfriks)" in 1311.5248ms (afa2e885)
+2017-03-16T16:56:48.6008606+05:30 0HL3CBSUGHLEK [INF] Request finished in 1314.4937ms 302  (15c52c40)
+2017-03-16T16:56:48.6088611+05:30 0HL3CBSUGHLEL [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Index   (e5be5b71)
+2017-03-16T16:56:48.6088611+05:30 0HL3CBSUGHLEL [INF] Executing action method "artfriks.Controllers.ArtWorksController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T16:56:48.9178787+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-16T16:56:49.2498977+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (99ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:49.6039180+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (105ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:49.9249363+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (95ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:50.2429545+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (94ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:50.5699732+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:50.5699732+05:30 0HL3CBSUGHLEL [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Index.cshtml". (9707eebe)
+2017-03-16T16:56:50.8919916+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (95ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:51.2260108+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:51.5520294+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:51.9560525+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (119ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:52.2780709+05:30 0HL3CBSUGHLEL [INF] Executed DbCommand (94ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-16T16:56:52.2830712+05:30 0HL3CBSUGHLEL [INF] Executed action "artfriks.Controllers.ArtWorksController.Index (artfriks)" in 3673.7585ms (afa2e885)
+2017-03-16T16:56:52.2830712+05:30 0HL3CBSUGHLEL [INF] Request finished in 3674.675ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T17:01:43.8417474+05:30 0HL3CBSUGHLEM [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtWorks/Delete/7   (e5be5b71)
+2017-03-16T17:01:43.8437475+05:30 0HL3CBSUGHLEM [INF] Executing action method "artfriks.Controllers.ArtWorksController.Delete (artfriks)" with arguments (["7"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T17:01:43.8767494+05:30 0HL3CBSUGHLEM [WRN] The LINQ expression 'SingleOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-03-16T17:01:44.2057682+05:30 0HL3CBSUGHLEM [INF] Executed DbCommand (88ms) [Parameters=[@__id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(2) [m].[Id], [m].[AddedDate], [m].[Category], [m].[Description], [m].[DimensionUnit], [m].[Height], [m].[MediumString], [m].[Orientation], [m].[PictureUrl], [m].[Price], [m].[Status], [m].[TermAccepted], [m].[Title], [m].[UserId], [m].[Width]
+FROM [ArtWorks] AS [m]
+WHERE [m].[Id] = @__id_0 (3b5ca34b)
+2017-03-16T17:01:44.3837784+05:30 0HL3CBSUGHLEM [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Delete.cshtml". (9707eebe)
+2017-03-16T17:01:44.4357814+05:30 0HL3CBSUGHLEM [INF] Executed action "artfriks.Controllers.ArtWorksController.Delete (artfriks)" in 592.7401ms (afa2e885)
+2017-03-16T17:01:44.4357814+05:30 0HL3CBSUGHLEM [INF] Request finished in 594.5966ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T17:56:13.8107789+05:30  [INF] Executed DbCommand (154ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-16T17:56:14.7418322+05:30  [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-16T17:56:14.8138363+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-16T17:56:15.3028643+05:30 0HL3CCUHU6LCO [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-16T17:56:16.1349119+05:30 0HL3CCUHU6LCO [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T17:56:18.7590620+05:30 0HL3CCUHU6LCO [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-16T17:56:19.4831034+05:30 0HL3CCUHU6LCO [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 3436.3144ms (afa2e885)
+2017-03-16T17:56:19.5231057+05:30 0HL3CCUHU6LCQ [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner1.svg   (e5be5b71)
+2017-03-16T17:56:19.5231057+05:30 0HL3CCUHU6LCP [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner2.svg   (e5be5b71)
+2017-03-16T17:56:19.5241057+05:30 0HL3CCUHU6LCR [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner3.svg   (e5be5b71)
+2017-03-16T17:56:19.5481071+05:30 0HL3CCUHU6LCR [INF] The file "/images/banner3.svg" was not modified (f1f8d725)
+2017-03-16T17:56:19.5481071+05:30 0HL3CCUHU6LCP [INF] The file "/images/banner2.svg" was not modified (f1f8d725)
+2017-03-16T17:56:19.5521073+05:30 0HL3CCUHU6LCQ [INF] The file "/images/banner1.svg" was not modified (f1f8d725)
+2017-03-16T17:56:19.5811090+05:30 0HL3CCUHU6LCO [INF] Request finished in 4307.122ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T17:56:19.5811090+05:30 0HL3CCUHU6LCR [INF] Request finished in 51.9212ms 304 image/svg+xml (15c52c40)
+2017-03-16T17:56:19.5811090+05:30 0HL3CCUHU6LCQ [INF] Request finished in 52.592ms 304 image/svg+xml (15c52c40)
+2017-03-16T17:56:19.5811090+05:30 0HL3CCUHU6LCP [INF] Request finished in 52.7573ms 304 image/svg+xml (15c52c40)
+2017-03-16T17:56:19.5951098+05:30 0HL3CCUHU6LCS [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner4.svg   (e5be5b71)
+2017-03-16T17:56:19.5961098+05:30 0HL3CCUHU6LCS [INF] The file "/images/banner4.svg" was not modified (f1f8d725)
+2017-03-16T17:56:19.5961098+05:30 0HL3CCUHU6LCS [INF] Request finished in 1.3419ms 304 image/svg+xml (15c52c40)
+2017-03-16T17:56:19.6021102+05:30 0HL3CCUHU6LCT [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2   (e5be5b71)
+2017-03-16T17:56:19.6111107+05:30 0HL3CCUHU6LCT [INF] The file "/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" was not modified (f1f8d725)
+2017-03-16T17:56:19.6111107+05:30 0HL3CCUHU6LCT [INF] Request finished in 9.1234ms 304 application/font-woff2 (15c52c40)
+2017-03-16T17:56:26.1394841+05:30 0HL3CCUHU6LCU [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Index   (e5be5b71)
+2017-03-16T17:56:26.1494847+05:30 0HL3CCUHU6LCU [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T17:56:26.6225117+05:30 0HL3CCUHU6LCU [INF] Executed DbCommand (97ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Article], [a].[Author], [a].[IsPublished], [a].[PublishTime], [a].[Title]
+FROM [ArtArticles] AS [a] (3b5ca34b)
+2017-03-16T17:56:27.1025392+05:30 0HL3CCUHU6LCU [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Index.cshtml". (9707eebe)
+2017-03-16T17:56:27.1815437+05:30 0HL3CCUHU6LCU [INF] Executed action "artfriks.Controllers.ArtArticlesController.Index (artfriks)" in 1035.3203ms (afa2e885)
+2017-03-16T17:56:27.1825438+05:30 0HL3CCUHU6LCU [INF] Request finished in 1042.7623ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T17:56:28.4076138+05:30 0HL3CCUHU6LCV [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Create   (e5be5b71)
+2017-03-16T17:56:28.4256149+05:30 0HL3CCUHU6LCV [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T17:56:28.6256263+05:30 0HL3CCUHU6LCV [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Create.cshtml". (9707eebe)
+2017-03-16T17:56:29.2616627+05:30 0HL3CCUHU6LCV [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 836.5858ms (afa2e885)
+2017-03-16T17:56:29.2616627+05:30 0HL3CCUHU6LCV [INF] Request finished in 855.0137ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T17:57:00.0774252+05:30 0HL3CCUHU6LD0 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Create   (e5be5b71)
+2017-03-16T17:57:00.0794254+05:30 0HL3CCUHU6LD0 [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T17:57:00.2574355+05:30 0HL3CCUHU6LD0 [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Create.cshtml". (9707eebe)
+2017-03-16T17:57:00.3314398+05:30 0HL3CCUHU6LD0 [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 251.9039ms (afa2e885)
+2017-03-16T17:57:00.3314398+05:30 0HL3CCUHU6LD0 [INF] Request finished in 253.9615ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T17:57:06.0017641+05:30 0HL3CCUHU6LD1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-16T17:57:06.0077644+05:30 0HL3CCUHU6LD1 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-16T17:57:06.0257655+05:30 0HL3CCUHU6LD1 [INF] Request finished in 23.9658ms 200 image/x-icon (15c52c40)
+2017-03-16T18:02:41.2009364+05:30 0HL3CCUHU6LD2 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Create   (e5be5b71)
+2017-03-16T18:02:41.2009364+05:30 0HL3CCUHU6LD2 [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:02:41.3669459+05:30 0HL3CCUHU6LD2 [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Create.cshtml". (9707eebe)
+2017-03-16T18:02:41.4449504+05:30 0HL3CCUHU6LD2 [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 243.6809ms (afa2e885)
+2017-03-16T18:02:41.4449504+05:30 0HL3CCUHU6LD2 [INF] Request finished in 244.653ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:02:41.8009707+05:30 0HL3CCUHU6LD3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-16T18:02:41.8009707+05:30 0HL3CCUHU6LD3 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-16T18:02:41.8019708+05:30 0HL3CCUHU6LD3 [INF] Request finished in 1.5337ms 200 image/x-icon (15c52c40)
+2017-03-16T18:03:00.0030118+05:30 0HL3CCUHU6LD4 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Create   (e5be5b71)
+2017-03-16T18:03:00.0040119+05:30 0HL3CCUHU6LD4 [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:03:00.1660211+05:30 0HL3CCUHU6LD4 [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Create.cshtml". (9707eebe)
+2017-03-16T18:03:00.2620266+05:30 0HL3CCUHU6LD4 [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 258.6128ms (afa2e885)
+2017-03-16T18:03:00.2620266+05:30 0HL3CCUHU6LD4 [INF] Request finished in 259.4858ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:03:00.5850451+05:30 0HL3CCUHU6LD5 [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-16T18:03:00.5860452+05:30 0HL3CCUHU6LD5 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-16T18:03:00.5880453+05:30 0HL3CCUHU6LD5 [INF] Request finished in 2.4784ms 200 image/x-icon (15c52c40)
+2017-03-16T18:03:39.2182548+05:30 0HL3CCUHU6LD6 [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Create   (e5be5b71)
+2017-03-16T18:03:39.2182548+05:30 0HL3CCUHU6LD6 [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:03:39.3782639+05:30 0HL3CCUHU6LD6 [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Create.cshtml". (9707eebe)
+2017-03-16T18:03:39.4222665+05:30 0HL3CCUHU6LD6 [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 203.706ms (afa2e885)
+2017-03-16T18:03:39.4222665+05:30 0HL3CCUHU6LD6 [INF] Request finished in 204.803ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:03:39.8232894+05:30 0HL3CCUHU6LD7 [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-16T18:03:39.8232894+05:30 0HL3CCUHU6LD7 [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-16T18:03:39.8252895+05:30 0HL3CCUHU6LD7 [INF] Request finished in 1.758ms 200 image/x-icon (15c52c40)
+2017-03-16T18:04:49.6982860+05:30 0HL3CCUHU6LD8 [INF] Request starting HTTP/1.1 POST http://localhost:2822/ArtArticles/Create application/x-www-form-urlencoded 312086 (e5be5b71)
+2017-03-16T18:04:49.9202987+05:30 0HL3CCUHU6LD8 [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (["artfriks.Models.ArtArticles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:05:17.5128769+05:30 0HL3CCUHU6LD8 [INF] Executed DbCommand (6,887ms) [Parameters=[@p0='?', @p1='?' (Size = -1), @p2='?' (Size = 4000), @p3='?', @p4='?', @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ArtArticles] ([AddedDate], [Article], [Author], [IsPublished], [PublishTime], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [ArtArticles]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-16T18:05:17.9859040+05:30 0HL3CCUHU6LD8 [INF] Executing RedirectResult, redirecting to "/ArtArticles/%2FIndex". (d98d540e)
+2017-03-16T18:05:17.9869040+05:30 0HL3CCUHU6LD8 [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 28279.3604ms (afa2e885)
+2017-03-16T18:05:17.9879041+05:30 0HL3CCUHU6LD8 [INF] Request finished in 28289.1048ms 302  (15c52c40)
+2017-03-16T18:08:35.1321801+05:30  [INF] Executed DbCommand (114ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-16T18:08:36.2282428+05:30  [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-16T18:08:36.3182479+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-16T18:08:37.0282886+05:30 0HL3CD5EVRJGB [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Create   (e5be5b71)
+2017-03-16T18:08:37.9353404+05:30 0HL3CD5EVRJGB [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:08:40.7915038+05:30 0HL3CD5EVRJGB [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Create.cshtml". (9707eebe)
+2017-03-16T18:08:42.5276031+05:30 0HL3CD5EVRJGB [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 4681.2152ms (afa2e885)
+2017-03-16T18:08:42.6386094+05:30 0HL3CD5EVRJGB [INF] Request finished in 5634.9441ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:08:59.6195807+05:30 0HL3CD5EVRJGC [INF] Request starting HTTP/1.1 POST http://localhost:2822/ArtArticles/Create application/x-www-form-urlencoded 321 (e5be5b71)
+2017-03-16T18:08:59.8575943+05:30 0HL3CD5EVRJGC [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Create (artfriks)" with arguments (["artfriks.Models.ArtArticles"]) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:09:01.9947166+05:30 0HL3CD5EVRJGC [INF] Executed DbCommand (161ms) [Parameters=[@p0='?', @p1='?' (Size = 4000), @p2='?' (Size = 4000), @p3='?', @p4='?', @p5='?' (Size = 4000)], CommandType='Text', CommandTimeout='30']
+SET NOCOUNT ON;
+INSERT INTO [ArtArticles] ([AddedDate], [Article], [Author], [IsPublished], [PublishTime], [Title])
+VALUES (@p0, @p1, @p2, @p3, @p4, @p5);
+SELECT [Id]
+FROM [ArtArticles]
+WHERE @@ROWCOUNT = 1 AND [Id] = scope_identity(); (3b5ca34b)
+2017-03-16T18:09:02.3487368+05:30 0HL3CD5EVRJGC [INF] Executing RedirectResult, redirecting to "/ArtArticles/%2FIndex". (d98d540e)
+2017-03-16T18:09:02.3507369+05:30 0HL3CD5EVRJGC [INF] Executed action "artfriks.Controllers.ArtArticlesController.Create (artfriks)" in 2713.2075ms (afa2e885)
+2017-03-16T18:09:02.3527370+05:30 0HL3CD5EVRJGC [INF] Request finished in 2733.5408ms 302  (15c52c40)
+2017-03-16T18:09:02.3657378+05:30 0HL3CD5EVRJGD [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Index   (e5be5b71)
+2017-03-16T18:09:02.3667378+05:30 0HL3CD5EVRJGD [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:09:03.0517770+05:30 0HL3CD5EVRJGD [INF] Executed DbCommand (173ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Article], [a].[Author], [a].[IsPublished], [a].[PublishTime], [a].[Title]
+FROM [ArtArticles] AS [a] (3b5ca34b)
+2017-03-16T18:09:05.5189181+05:30 0HL3CD5EVRJGD [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Index.cshtml". (9707eebe)
+2017-03-16T18:09:05.7539316+05:30 0HL3CD5EVRJGD [INF] Executed action "artfriks.Controllers.ArtArticlesController.Index (artfriks)" in 3387.1495ms (afa2e885)
+2017-03-16T18:09:05.7549316+05:30 0HL3CD5EVRJGD [INF] Request finished in 3389.2332ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:11:42.9559230+05:30 0HL3CD5EVRJGE [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Index   (e5be5b71)
+2017-03-16T18:11:42.9559230+05:30 0HL3CD5EVRJGE [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:11:44.2829989+05:30 0HL3CD5EVRJGE [INF] Executed DbCommand (394ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Article], [a].[Author], [a].[IsPublished], [a].[PublishTime], [a].[Title]
+FROM [ArtArticles] AS [a] (3b5ca34b)
+2017-03-16T18:11:48.9622666+05:30 0HL3CD5EVRJGE [ERR] An unhandled exception has occurred while executing the request (cf926119)
+Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationFailedException: One or more compilation failures occurred:
+/Views/ArtArticles/Index.cshtml(43,27): error CS1660: Cannot convert lambda expression to type 'object' because it is not a delegate type
+   at Microsoft.AspNetCore.Mvc.Razor.Compilation.CompilationResult.EnsureSuccessful()
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.CompilerCache.CreateCacheEntry(String relativePath, String normalizedPath, Func`2 compile)
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.CompilerCache.GetOrAdd(String relativePath, Func`2 compile)
+   at Microsoft.AspNetCore.Mvc.Razor.Internal.DefaultRazorPageFactoryProvider.CreateFactory(String relativePath)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.CreateCacheResult(HashSet`1 expirationTokens, String relativePath, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.OnCacheMiss(ViewLocationExpanderContext expanderContext, ViewLocationCacheKey cacheKey)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.LocatePageFromViewLocations(ActionContext actionContext, String pageName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.Razor.RazorViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewEngines.CompositeViewEngine.FindView(ActionContext context, String viewName, Boolean isMainPage)
+   at Microsoft.AspNetCore.Mvc.ViewFeatures.Internal.ViewResultExecutor.FindView(ActionContext actionContext, ViewResult viewResult)
+   at Microsoft.AspNetCore.Mvc.ViewResult.<ExecuteResultAsync>d__26.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultAsync>d__32.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResultFilterAsync>d__31.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAllResultFiltersAsync>d__29.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeResourceFilterAsync>d__23.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-16T18:11:49.0192698+05:30 0HL3CD5EVRJGE [INF] Request finished in 6063.4534ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:11:49.0742730+05:30 0HL3CD5EVRJGF [INF] Request starting HTTP/1.1 GET http://localhost:2822/favicon.ico   (e5be5b71)
+2017-03-16T18:11:49.0972743+05:30 0HL3CD5EVRJGF [INF] Sending file. Request path: '"/favicon.ico"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\favicon.ico"' (27b0a520)
+2017-03-16T18:11:49.1142752+05:30 0HL3CD5EVRJGF [INF] Request finished in 39.7683ms 200 image/x-icon (15c52c40)
+2017-03-16T18:13:06.5037017+05:30 0HL3CD5EVRJGG [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Index   (e5be5b71)
+2017-03-16T18:13:06.5047017+05:30 0HL3CD5EVRJGG [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:13:07.4657567+05:30 0HL3CD5EVRJGG [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Article], [a].[Author], [a].[IsPublished], [a].[PublishTime], [a].[Title]
+FROM [ArtArticles] AS [a] (3b5ca34b)
+2017-03-16T18:13:11.6819978+05:30 0HL3CD5EVRJGG [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Index.cshtml". (9707eebe)
+2017-03-16T18:13:11.8980102+05:30 0HL3CD5EVRJGG [INF] Executed action "artfriks.Controllers.ArtArticlesController.Index (artfriks)" in 5393.3114ms (afa2e885)
+2017-03-16T18:13:11.8980102+05:30 0HL3CD5EVRJGG [INF] Request finished in 5394.7059ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:13:19.1154230+05:30 0HL3CD5EVRJGH [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css.map   (e5be5b71)
+2017-03-16T18:13:19.1154230+05:30 0HL3CD5EVRJGH [INF] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css.map"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map"' (27b0a520)
+2017-03-16T18:13:19.1394244+05:30 0HL3CD5EVRJGH [INF] Request finished in 24.2343ms 200 text/plain (15c52c40)
+2017-03-16T18:15:11.7178635+05:30 0HL3CD5EVRJGI [INF] Request starting HTTP/1.1 GET http://localhost:2822/ArtArticles/Index   (e5be5b71)
+2017-03-16T18:15:11.7188636+05:30 0HL3CD5EVRJGI [INF] Executing action method "artfriks.Controllers.ArtArticlesController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-16T18:15:12.0188807+05:30 0HL3CD5EVRJGI [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Article], [a].[Author], [a].[IsPublished], [a].[PublishTime], [a].[Title]
+FROM [ArtArticles] AS [a] (3b5ca34b)
+2017-03-16T18:15:14.4250183+05:30 0HL3CD5EVRJGI [INF] Executing ViewResult, running view at path "/Views/ArtArticles/Index.cshtml". (9707eebe)
+2017-03-16T18:15:14.4810216+05:30 0HL3CD5EVRJGJ [INF] Request starting HTTP/1.1 GET http://localhost:2822/css/site.css   (e5be5b71)
+2017-03-16T18:15:14.4820216+05:30 0HL3CD5EVRJGK [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css   (e5be5b71)
+2017-03-16T18:15:14.4820216+05:30 0HL3CD5EVRJGK [INF] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\lib\bootstrap\dist\css\bootstrap.css"' (27b0a520)
+2017-03-16T18:15:14.4820216+05:30 0HL3CD5EVRJGJ [INF] Sending file. Request path: '"/css/site.css"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\css\site.css"' (27b0a520)
+2017-03-16T18:15:14.4840217+05:30 0HL3CD5EVRJGJ [INF] Request finished in 2.5075ms 200 text/css (15c52c40)
+2017-03-16T18:15:14.5070230+05:30 0HL3CD5EVRJGK [INF] Request finished in 25.3205ms 200 text/css (15c52c40)
+2017-03-16T18:15:14.5650264+05:30 0HL3CD5EVRJGI [INF] Executed action "artfriks.Controllers.ArtArticlesController.Index (artfriks)" in 2847.1258ms (afa2e885)
+2017-03-16T18:15:14.5660264+05:30 0HL3CD5EVRJGI [INF] Request finished in 2848.3664ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-16T18:15:14.7670379+05:30 0HL3CD5EVRJGL [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery/dist/jquery.js   (e5be5b71)
+2017-03-16T18:15:14.7670379+05:30 0HL3CD5EVRJGL [INF] Sending file. Request path: '"/lib/jquery/dist/jquery.js"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\lib\jquery\dist\jquery.js"' (27b0a520)
+2017-03-16T18:15:14.8110404+05:30 0HL3CD5EVRJGL [INF] Request finished in 44.112ms 200 application/javascript (15c52c40)
+2017-03-16T18:15:14.8210410+05:30 0HL3CD5EVRJGM [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/js/bootstrap.js   (e5be5b71)
+2017-03-16T18:15:14.8210410+05:30 0HL3CD5EVRJGM [INF] Sending file. Request path: '"/lib/bootstrap/dist/js/bootstrap.js"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\lib\bootstrap\dist\js\bootstrap.js"' (27b0a520)
+2017-03-16T18:15:14.8240412+05:30 0HL3CD5EVRJGM [INF] Request finished in 3.1847ms 200 application/javascript (15c52c40)
+2017-03-16T18:15:15.0700552+05:30 0HL3CD5EVRJGN [INF] Request starting HTTP/1.1 GET http://localhost:2822/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo   (e5be5b71)
+2017-03-16T18:15:15.0700552+05:30 0HL3CD5EVRJGN [INF] Sending file. Request path: '"/js/site.js"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\js\site.js"' (27b0a520)
+2017-03-16T18:15:15.0700552+05:30 0HL3CD5EVRJGN [INF] Request finished in 1.0256ms 200 application/javascript (15c52c40)
+2017-03-16T18:15:15.1210582+05:30 0HL3CD5EVRJGO [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css.map   (e5be5b71)
+2017-03-16T18:15:15.1220582+05:30 0HL3CD5EVRJGO [INF] Sending file. Request path: '"/lib/bootstrap/dist/css/bootstrap.css.map"'. Physical path: '"D:\outsource projects\artfreaksapi\src\artfriks\wwwroot\lib\bootstrap\dist\css\bootstrap.css.map"' (27b0a520)
+2017-03-16T18:15:15.1640606+05:30 0HL3CD5EVRJGO [INF] Request finished in 43.1087ms 200 text/plain (15c52c40)

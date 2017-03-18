@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170316094757_subcategory")]
+    partial class subcategory
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -130,6 +131,8 @@ namespace artfriks.Data.Migrations
 
                     b.Property<int>("Category");
 
+                    b.Property<int>("ParentId");
+
                     b.HasKey("Id");
 
                     b.ToTable("ArtCategories");
@@ -244,8 +247,6 @@ namespace artfriks.Data.Migrations
 
                     b.Property<string>("MediumString");
 
-                    b.Property<string>("Orientation");
-
                     b.Property<string>("PictureUrl");
 
                     b.Property<decimal>("Price");
@@ -257,8 +258,6 @@ namespace artfriks.Data.Migrations
                     b.Property<string>("Title");
 
                     b.Property<string>("UserId");
-
-                    b.Property<int>("Views");
 
                     b.Property<decimal>("Width");
 
@@ -318,8 +317,6 @@ namespace artfriks.Data.Migrations
                 {
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd();
-
-                    b.Property<int>("ParentId");
 
                     b.Property<string>("Title");
 

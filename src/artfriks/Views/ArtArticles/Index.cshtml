@@ -40,7 +40,8 @@
                 @Html.DisplayFor(modelItem => item.AddedDate)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.Article)
+                @Html.Raw(item.Article)
+             
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Author)
