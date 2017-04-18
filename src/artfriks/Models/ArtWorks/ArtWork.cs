@@ -19,6 +19,7 @@ namespace artfriks.Models
         public string DimensionUnit { get; set; }
         public string MediumString { get; set; }
         public DateTime AddedDate { get; set; }
+        public DateTime ArtCreationDate { get; set; }
         public bool TermAccepted { get; set; }
         public int Views { get; set; }
         public int Status { get; set; } // 0 for new , 1 for approved , 2 for rejected , 3 for deleted
@@ -31,9 +32,25 @@ namespace artfriks.Models
         public string user { get; set; }
         public int favcount { get; set; }
         public bool isfav { get; set; }
+        public IEnumerable<ArtTag> tags { get; set; }
+        public IEnumerable< ARtKeywords> keywords { get; set; }
+    }
+    public class ArtWorkViewWithTag
+    {
+        public ArtWork art { get; set; }
+        public string UserId { get; set; }
+        public int favcount { get; set; }
+        public bool isfav { get; set; }
+        public IEnumerable<ArtTagView> tags { get; set; }
+    }
+    public class artsview
+    {
+        public IEnumerable<ArtWorkViewWithTag> arts { get; set; }
     }
 
-   
+    public class ArtTagView {
+        public ArtTag Tags { get; set; }
+    }
     public class ArtWorkEditView
     {
         public ArtWork Artwork { get; set; }

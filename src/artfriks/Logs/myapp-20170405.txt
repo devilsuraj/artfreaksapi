@@ -1,0 +1,1098 @@
+2017-04-05T10:03:24.7313089+05:30 0HL3OUG8M3K0D [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getbycategory?id=1&limit=25&offset=0   (e5be5b71)
+2017-04-05T10:03:24.9323204+05:30 0HL3OUG8M3K0D [INF] Request finished in 326.679ms 204  (15c52c40)
+2017-04-05T10:03:25.2093362+05:30 0HL3OUG8M3K0E [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getbycategory?id=1&limit=25&offset=0   (e5be5b71)
+2017-04-05T10:03:25.2453383+05:30 0HL3OUG8M3K0E [INF] Request finished in 0.2698ms 204  (15c52c40)
+2017-04-05T10:03:25.2733399+05:30 0HL3OUG8M3K0F [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getbycategory?id=1&limit=25&offset=0   (e5be5b71)
+2017-04-05T10:03:25.5803575+05:30 0HL3OUG8M3K0G [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getbycategory?id=1&limit=25&offset=0   (e5be5b71)
+2017-04-05T10:03:30.7496531+05:30 0HL3OUG8M3K0G [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkhSSExIQ1lVUVNGM1ZISERUOFBZQVg2OVNCU09NVzlST1NKWUFJTDUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmZmUyNDFkMi00ZTRhLTQ4Y2EtYjlhMi1mZTRmOWJhYjczZTUiLCJuYW1lIjoiZGRkZCIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNmNlMzA5ZWYtZjc4Yi00MDBmLWFmZWUtNDc4ZDExNzBlN2UxIiwianRpIjoiYmI1ZjU4OGItZTU4ZC00YzkwLWE2YmUtODcyNzlkMzA0NmMwIiwidXNhZ2UiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZSI6WyJlbWFpbCIsInByb2ZpbGUiLCJvZmZsaW5lX2FjY2VzcyIsInJvbGVzIl0sImF6cCI6Im15Q2xpZW50IiwibmJmIjoxNDkwNjk4MjQ0LCJleHAiOjE0OTA3MDE4NDQsImlhdCI6MTQ5MDY5ODI0NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoyODIyLyJ9.aYdhe0T624BDhYFfXIQqabAxRcdpHRALY0Hw4Wxe7TimDXELe5zYy3ge-LFu7uPxH8S_c23nhjTmpT2Qh3h3_6f_MW-xz360sacZrNuVGpnaiFDpbH22TdpP5HtsyVu7-69UyURPcdnAiKHshO6wTebfQ-fxwjoFVhjt5rwHe61vo4pueCY_d5biU7tax03GUO_SgQeCX4FeJNHtYGuQYTr-ZiDmhGIuvt9YAtqXz-9c_GFlDJbDi_rDhBHmxisWfaDSA0gBZM2V2JxIu3-zghIGy85k5RMVJ0pPmZiUt_g0-UOr2Hl5Kl319276gJOqJaBDHmk6JzxExDyDDFQDyg". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': 'HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5', 
+token: '{"alg":"RS256","typ":"JWT","kid":"HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5"}.{"sub":"ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5","name":"dddd","AspNet.Identity.SecurityStamp":"6ce309ef-f78b-400f-afee-478d1170e7e1","jti":"bb5f588b-e58d-4c90-a6be-87279d3046c0","usage":"access_token","scope":["email","profile","offline_access","roles"],"azp":"myClient","nbf":1490698244,"exp":1490701844,"iat":1490698244,"iss":"http://localhost:2822/"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-04-05T10:03:30.7506532+05:30 0HL3OUG8M3K0F [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkhSSExIQ1lVUVNGM1ZISERUOFBZQVg2OVNCU09NVzlST1NKWUFJTDUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmZmUyNDFkMi00ZTRhLTQ4Y2EtYjlhMi1mZTRmOWJhYjczZTUiLCJuYW1lIjoiZGRkZCIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNmNlMzA5ZWYtZjc4Yi00MDBmLWFmZWUtNDc4ZDExNzBlN2UxIiwianRpIjoiYmI1ZjU4OGItZTU4ZC00YzkwLWE2YmUtODcyNzlkMzA0NmMwIiwidXNhZ2UiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZSI6WyJlbWFpbCIsInByb2ZpbGUiLCJvZmZsaW5lX2FjY2VzcyIsInJvbGVzIl0sImF6cCI6Im15Q2xpZW50IiwibmJmIjoxNDkwNjk4MjQ0LCJleHAiOjE0OTA3MDE4NDQsImlhdCI6MTQ5MDY5ODI0NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoyODIyLyJ9.aYdhe0T624BDhYFfXIQqabAxRcdpHRALY0Hw4Wxe7TimDXELe5zYy3ge-LFu7uPxH8S_c23nhjTmpT2Qh3h3_6f_MW-xz360sacZrNuVGpnaiFDpbH22TdpP5HtsyVu7-69UyURPcdnAiKHshO6wTebfQ-fxwjoFVhjt5rwHe61vo4pueCY_d5biU7tax03GUO_SgQeCX4FeJNHtYGuQYTr-ZiDmhGIuvt9YAtqXz-9c_GFlDJbDi_rDhBHmxisWfaDSA0gBZM2V2JxIu3-zghIGy85k5RMVJ0pPmZiUt_g0-UOr2Hl5Kl319276gJOqJaBDHmk6JzxExDyDDFQDyg". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': 'HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5', 
+token: '{"alg":"RS256","typ":"JWT","kid":"HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5"}.{"sub":"ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5","name":"dddd","AspNet.Identity.SecurityStamp":"6ce309ef-f78b-400f-afee-478d1170e7e1","jti":"bb5f588b-e58d-4c90-a6be-87279d3046c0","usage":"access_token","scope":["email","profile","offline_access","roles"],"azp":"myClient","nbf":1490698244,"exp":1490701844,"iat":1490698244,"iss":"http://localhost:2822/"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-04-05T10:03:30.7956558+05:30 0HL3OUG8M3K0G [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': 'HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5\"}.{\"sub\":\"ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5\",\"name\":\"dddd\",\"AspNet.Identity.SecurityStamp\":\"6ce309ef-f78b-400f-afee-478d1170e7e1\",\"jti\":\"bb5f588b-e58d-4c90-a6be-87279d3046c0\",\"usage\":\"access_token\",\"scope\":[\"email\",\"profile\",\"offline_access\",\"roles\"],\"azp\":\"myClient\",\"nbf\":1490698244,\"exp\":1490701844,\"iat\":1490698244,\"iss\":\"http://localhost:2822/\"}'." (48071232)
+2017-04-05T10:03:30.7956558+05:30 0HL3OUG8M3K0F [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': 'HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5\"}.{\"sub\":\"ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5\",\"name\":\"dddd\",\"AspNet.Identity.SecurityStamp\":\"6ce309ef-f78b-400f-afee-478d1170e7e1\",\"jti\":\"bb5f588b-e58d-4c90-a6be-87279d3046c0\",\"usage\":\"access_token\",\"scope\":[\"email\",\"profile\",\"offline_access\",\"roles\"],\"azp\":\"myClient\",\"nbf\":1490698244,\"exp\":1490701844,\"iat\":1490698244,\"iss\":\"http://localhost:2822/\"}'." (48071232)
+2017-04-05T10:03:31.1806778+05:30 0HL3OUG8M3K0G [INF] Executing action method "artfriks.Controllers.artController.getbycategory (artfriks)" with arguments (["1", "25", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-04-05T10:03:31.1806778+05:30 0HL3OUG8M3K0F [INF] Executing action method "artfriks.Controllers.artController.getbycategory (artfriks)" with arguments (["1", "25", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-04-05T10:03:35.9209489+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (187ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+catsLevel2 @p0 (3b5ca34b)
+2017-04-05T10:03:36.8270007+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (183ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__Id_0 (3b5ca34b)
+2017-04-05T10:03:38.1520765+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (355ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Views], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-04-05T10:03:38.4790952+05:30 0HL3OUG8M3K0G [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-04-05T10:03:38.5871014+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (237ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+catsLevel2 @p0 (3b5ca34b)
+2017-04-05T10:03:39.4691519+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (265ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Views], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-04-05T10:03:39.4821526+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (266ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__Id_0 (3b5ca34b)
+2017-04-05T10:03:40.4292068+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (274ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:40.9162346+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (427ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Views], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-04-05T10:03:41.3792611+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (277ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:41.6632774+05:30 0HL3OUG8M3K0F [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-04-05T10:03:42.0262981+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (186ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:42.3993195+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (219ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Views], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-04-05T10:03:43.0773582+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (199ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:43.6133889+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (159ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:43.9254067+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (567ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:44.2074229+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (177ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:44.5084401+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (174ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:44.8104574+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (180ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:45.1894790+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (203ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:45.4894962+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:45.8325158+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (191ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:46.2385390+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (223ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:46.5805586+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (223ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:46.9755812+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (220ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:47.3046000+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:47.8226296+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (252ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:48.0946452+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (235ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:48.8286872+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (300ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:49.4677237+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (409ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:51.2138236+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (712ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:51.8118578+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (167ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:52.0508715+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (161ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:52.5248986+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (212ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:52.7939140+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (221ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:53.3039432+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (232ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:53.5279560+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (219ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:53.9419797+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (190ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:54.1559919+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (187ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:54.6260188+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (204ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:54.8210299+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (198ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:55.3390596+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (212ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:55.4390653+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (184ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:56.0160983+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:56.1431056+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (210ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:56.7841422+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (229ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:56.9241502+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (233ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:57.5761875+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (236ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:57.7431971+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (244ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:58.4992403+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (275ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:03:58.7132526+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (289ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:59.4642955+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (288ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:03:59.6733075+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:00.3753476+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:00.6253619+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (284ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:01.3694045+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (296ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:01.5714160+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:02.1894514+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (244ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:02.2574553+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (204ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:03.1375056+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (282ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:03.1935088+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (279ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:03.9575525+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (244ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:04.0325568+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (250ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:04.6135900+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (189ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:04.7605984+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (217ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:05.5276423+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (272ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:05.5776452+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (243ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:06.2216820+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (207ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:06.2556840+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (202ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:06.9297225+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (211ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:06.9737250+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (214ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:07.6167618+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (205ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:07.6427633+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (199ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:08.4208078+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (240ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:08.4358087+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (236ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:09.1898518+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (229ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:09.1988523+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (227ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:09.7168819+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (157ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:09.7288826+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (158ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:10.2239109+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (151ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:10.2319114+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (150ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:10.6749367+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:10.6829372+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (134ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:11.3799771+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (210ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:11.3879775+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (210ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:12.0790170+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (208ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:12.0870175+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (208ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:12.4780399+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (116ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:12.8020584+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:12.9830687+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (269ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:13.1150763+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:13.4140934+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:13.7141106+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:14.0171279+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:14.3231454+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:14.5071559+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:14.6191623+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:14.8251741+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:14.9641821+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (103ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:15.0111847+05:30  [INF] Connection id ""0HL3OUG8KPPQB"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-04-05T10:04:15.1221911+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:15.2661993+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:15.4512099+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:15.5742169+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:15.8252313+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:15.8912351+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:16.1272486+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:16.1912522+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:16.5422723+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (124ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:16.5432724+05:30  [INF] Connection id ""0HL3OUG8KPPQC"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-04-05T10:04:16.5652736+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:16.8392893+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:16.8672909+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:17.1403065+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:17.1693082+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:17.4383236+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:17.4713255+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:17.7523415+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:17.7883436+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:18.0523587+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:18.0913609+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:18.3573761+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:18.3893780+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:18.6633936+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:18.6883951+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:18.9594106+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:18.9854121+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:19.2564276+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:19.2864293+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:19.5554447+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:19.5864464+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:19.8504615+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:19.8864636+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:20.1514788+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:20.1914810+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:20.4614965+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:20.4994987+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:20.7765145+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:20.8155167+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:21.0825320+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:21.1265345+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:21.4275517+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:21.7295690+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:21.8945785+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (242ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:22.0415869+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:22.3416040+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:22.6456214+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:22.8576335+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:22.9696399+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:23.1546505+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:23.2726573+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:23.4726687+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:23.5726744+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:23.8826922+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:24.1837094+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:24.3157169+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (251ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:24.4897269+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:24.6197343+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:24.7897440+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:24.9197515+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:25.0967616+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:25.2187686+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:25.3977788+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:25.5167856+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:25.6987960+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:25.8238032+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:26.0018134+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:26.1668228+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (102ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:26.3238318+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (96ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:26.4688401+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:26.7878583+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (138ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:26.8428615+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (111ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:27.0908757+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:27.1508791+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:27.4008934+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:27.4668972+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:27.7119112+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:27.7849154+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:28.0159286+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:28.3219461+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:28.5889613+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (240ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:28.6199631+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:28.9229805+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:29.2229976+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:29.4760121+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:29.5250149+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:29.7750292+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:29.8330325+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:30.0790466+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:30.1340497+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:30.4430674+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:30.7440846+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:30.8800924+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (239ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:31.0451018+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:31.4701261+05:30 0HL3OUG8M3K0F [INF] Executed DbCommand (89ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = @__Id_0 (3b5ca34b)
+2017-04-05T10:04:31.4811268+05:30 0HL3OUG8M3K0F [INF] Executed action "artfriks.Controllers.artController.getbycategory (artfriks)" in 60431.1038ms (afa2e885)
+2017-04-05T10:04:31.5121285+05:30 0HL3OUG8M3K0F [INF] Request finished in 66237.7272ms 200 application/json; charset=utf-8 (15c52c40)
+2017-04-05T10:04:31.8951505+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:32.2291696+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:32.5281867+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:32.8312040+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:33.1442219+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:33.4852414+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (101ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:33.7892588+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:34.0962764+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:34.4022939+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:35.3623488+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (286ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:35.7143689+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (105ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:04:36.0163862+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:36.3204036+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:36.6254210+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:36.9234381+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:37.2234552+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:04:37.5304728+05:30 0HL3OUG8M3K0G [INF] Executed DbCommand (91ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = @__Id_0 (3b5ca34b)
+2017-04-05T10:04:37.5304728+05:30 0HL3OUG8M3K0G [INF] Executed action "artfriks.Controllers.artController.getbycategory (artfriks)" in 66490.9941ms (afa2e885)
+2017-04-05T10:04:37.5314728+05:30 0HL3OUG8M3K0G [INF] Request finished in 71948.9539ms 200 application/json; charset=utf-8 (15c52c40)
+2017-04-05T10:13:02.6073615+05:30 0HL3OUG8M3K0H [INF] Request starting HTTP/1.1 OPTIONS http://localhost:2822/api/artowrk/getbycategory?id=1&limit=25&offset=0   (e5be5b71)
+2017-04-05T10:13:02.6073615+05:30 0HL3OUG8M3K0H [INF] Request finished in 0.2959ms 204  (15c52c40)
+2017-04-05T10:13:02.6293628+05:30 0HL3OUG8M3K0I [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getbycategory?id=1&limit=25&offset=0   (e5be5b71)
+2017-04-05T10:13:02.6543642+05:30 0HL3OUG8M3K0I [INF] Failed to validate the token "eyJhbGciOiJSUzI1NiIsImtpZCI6IkhSSExIQ1lVUVNGM1ZISERUOFBZQVg2OVNCU09NVzlST1NKWUFJTDUiLCJ0eXAiOiJKV1QifQ.eyJzdWIiOiJmZmUyNDFkMi00ZTRhLTQ4Y2EtYjlhMi1mZTRmOWJhYjczZTUiLCJuYW1lIjoiZGRkZCIsIkFzcE5ldC5JZGVudGl0eS5TZWN1cml0eVN0YW1wIjoiNmNlMzA5ZWYtZjc4Yi00MDBmLWFmZWUtNDc4ZDExNzBlN2UxIiwianRpIjoiYmI1ZjU4OGItZTU4ZC00YzkwLWE2YmUtODcyNzlkMzA0NmMwIiwidXNhZ2UiOiJhY2Nlc3NfdG9rZW4iLCJzY29wZSI6WyJlbWFpbCIsInByb2ZpbGUiLCJvZmZsaW5lX2FjY2VzcyIsInJvbGVzIl0sImF6cCI6Im15Q2xpZW50IiwibmJmIjoxNDkwNjk4MjQ0LCJleHAiOjE0OTA3MDE4NDQsImlhdCI6MTQ5MDY5ODI0NCwiaXNzIjoiaHR0cDovL2xvY2FsaG9zdDoyODIyLyJ9.aYdhe0T624BDhYFfXIQqabAxRcdpHRALY0Hw4Wxe7TimDXELe5zYy3ge-LFu7uPxH8S_c23nhjTmpT2Qh3h3_6f_MW-xz360sacZrNuVGpnaiFDpbH22TdpP5HtsyVu7-69UyURPcdnAiKHshO6wTebfQ-fxwjoFVhjt5rwHe61vo4pueCY_d5biU7tax03GUO_SgQeCX4FeJNHtYGuQYTr-ZiDmhGIuvt9YAtqXz-9c_GFlDJbDi_rDhBHmxisWfaDSA0gBZM2V2JxIu3-zghIGy85k5RMVJ0pPmZiUt_g0-UOr2Hl5Kl319276gJOqJaBDHmk6JzxExDyDDFQDyg". (f3081a27)
+Microsoft.IdentityModel.Tokens.SecurityTokenSignatureKeyNotFoundException: IDX10501: Signature validation failed. Unable to match 'kid': 'HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5', 
+token: '{"alg":"RS256","typ":"JWT","kid":"HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5"}.{"sub":"ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5","name":"dddd","AspNet.Identity.SecurityStamp":"6ce309ef-f78b-400f-afee-478d1170e7e1","jti":"bb5f588b-e58d-4c90-a6be-87279d3046c0","usage":"access_token","scope":["email","profile","offline_access","roles"],"azp":"myClient","nbf":1490698244,"exp":1490701844,"iat":1490698244,"iss":"http://localhost:2822/"}'.
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateSignature(String token, TokenValidationParameters validationParameters)
+   at System.IdentityModel.Tokens.Jwt.JwtSecurityTokenHandler.ValidateToken(String token, TokenValidationParameters validationParameters, SecurityToken& validatedToken)
+   at Microsoft.AspNetCore.Authentication.JwtBearer.JwtBearerHandler.<HandleAuthenticateAsync>d__1.MoveNext()
+2017-04-05T10:13:02.6543642+05:30 0HL3OUG8M3K0I [INF] "Bearer" was not authenticated. Failure message: "IDX10501: Signature validation failed. Unable to match 'kid': 'HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5', 
+token: '{\"alg\":\"RS256\",\"typ\":\"JWT\",\"kid\":\"HRHLHCYUQSF3VHHDT8PYAX69SBSOMW9ROSJYAIL5\"}.{\"sub\":\"ffe241d2-4e4a-48ca-b9a2-fe4f9bab73e5\",\"name\":\"dddd\",\"AspNet.Identity.SecurityStamp\":\"6ce309ef-f78b-400f-afee-478d1170e7e1\",\"jti\":\"bb5f588b-e58d-4c90-a6be-87279d3046c0\",\"usage\":\"access_token\",\"scope\":[\"email\",\"profile\",\"offline_access\",\"roles\"],\"azp\":\"myClient\",\"nbf\":1490698244,\"exp\":1490701844,\"iat\":1490698244,\"iss\":\"http://localhost:2822/\"}'." (48071232)
+2017-04-05T10:13:02.6553643+05:30 0HL3OUG8M3K0I [INF] Executing action method "artfriks.Controllers.artController.getbycategory (artfriks)" with arguments (["1", "25", "0"]) - ModelState is Valid (ba7f4ac2)
+2017-04-05T10:13:04.6274771+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[@p0='?'], CommandType='Text', CommandTimeout='30']
+catsLevel2 @p0 (3b5ca34b)
+2017-04-05T10:13:04.9244941+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[Id] = @__Id_0 (3b5ca34b)
+2017-04-05T10:13:05.5455296+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (185ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Views], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-04-05T10:13:05.8405464+05:30 0HL3OUG8M3K0I [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-04-05T10:13:06.1725654+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[TermAccepted], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[Title], [x].[Views], [x].[Width], (
+    SELECT TOP(1) [n0].[FullName]
+    FROM [AspNetUsers] AS [n0]
+    WHERE [n0].[Id] = [x].[UserId]
+), (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 1
+ORDER BY [x].[AddedDate] DESC (3b5ca34b)
+2017-04-05T10:13:06.4765828+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:06.7715997+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:07.0726169+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:07.3696339+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:07.6656508+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:07.9606677+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:08.2586848+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:08.5557017+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:08.8517187+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:09.1477356+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:09.4447526+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:09.7407695+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:10.0377865+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:10.3458041+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:10.6418211+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:10.9368379+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:11.2348550+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:11.5318720+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:11.8308891+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:12.1249059+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:12.4209228+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:12.7159397+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:13.0139567+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:13.0149568+05:30  [INF] Connection id ""0HL3OUG8KPPQD"" communication error (46f6d175)
+Microsoft.AspNetCore.Server.Kestrel.Internal.Networking.UvException: Error -4077 ECONNRESET connection reset by peer
+2017-04-05T10:13:13.3099737+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:13.6049905+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:13.9220087+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (94ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:14.2200257+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:14.5310435+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (92ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:14.8260604+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:15.1230774+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:15.4210944+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:15.7171114+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:16.0121282+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:16.3101453+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:16.6081623+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:16.9421814+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (99ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:17.2401985+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:17.5392156+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:17.8342324+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:18.1292493+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:18.4262663+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:18.7222832+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:19.0183002+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:19.3153172+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:19.6133342+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:19.9093511+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:20.2033680+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:20.4993849+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:20.7994020+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:21.1004193+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:21.3964362+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:21.6944532+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:21.9904702+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:22.2894873+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:22.5835041+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:22.8805211+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:23.1775381+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:23.4775552+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:23.7735722+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:24.0695891+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:24.3666061+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:24.6646231+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:24.9616401+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:25.2576570+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:25.5526739+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:25.8536911+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:26.1557084+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:26.4537255+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:26.7527426+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:27.0497595+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:27.3477766+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:27.6457936+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:27.9428106+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:28.2428278+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:28.5388447+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:28.8368618+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:29.1348788+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:29.4318958+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:29.7299128+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:30.0279299+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:35.3012315+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:35.5982485+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:35.8962655+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:36.2092834+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:36.5033003+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:36.7993172+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:37.0993343+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:37.3983515+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:37.6953684+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:37.9953856+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:38.2934026+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:38.5914197+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:38.8894367+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:39.1844536+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [xc].[ArtId], [xc].[TagId]
+FROM [ArtWithTags] AS [xc] (3b5ca34b)
+2017-04-05T10:13:39.4794705+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:39.7784876+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:40.0755046+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:40.3735216+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (89ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:40.6715387+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (88ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [b].[Id], [b].[Tag], [b].[Type]
+FROM [ArtTags] AS [b] (3b5ca34b)
+2017-04-05T10:13:41.0065578+05:30 0HL3OUG8M3K0I [INF] Executed DbCommand (87ms) [Parameters=[@__Id_0='?'], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[ParentId], [x].[Title]
+FROM [Categories] AS [x]
+WHERE [x].[ParentId] = @__Id_0 (3b5ca34b)
+2017-04-05T10:13:41.0075579+05:30 0HL3OUG8M3K0I [INF] Executed action "artfriks.Controllers.artController.getbycategory (artfriks)" in 38351.8408ms (afa2e885)
+2017-04-05T10:13:41.0325593+05:30 0HL3OUG8M3K0I [INF] Request finished in 38377.5536ms 200 application/json; charset=utf-8 (15c52c40)

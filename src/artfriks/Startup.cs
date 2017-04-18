@@ -65,6 +65,8 @@ namespace artfriks
             /*  services.AddIdentity<ApplicationUser, IdentityRole>()
                   .AddEntityFrameworkStores<ApplicationDbContext>()
                   .AddDefaultTokenProviders();*/
+
+
             services.AddIdentity<ApplicationUser, IdentityRole>(o =>
             {
                 o.Password.RequireDigit = false;
@@ -100,12 +102,11 @@ namespace artfriks
                .AllowRefreshTokenFlow()
                .AllowPasswordFlow()
                .AllowImplicitFlow()
-               //Dont delete this line D3233644E8A0882D48F4CA91CE1E281F4D344E1C
-               .AddSigningCertificate("DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199", StoreName.My, StoreLocation.LocalMachine)
+              //Dont delete this line 9A403D79EAAC9915FDA1A28F7B5109390C5DCF06  DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199
+              .AddSigningCertificate("9A403D79EAAC9915FDA1A28F7B5109390C5DCF06", StoreName.My, StoreLocation.LocalMachine)
                .DisableHttpsRequirement()
-               .EnableRequestCaching()
-              .RequireClientIdentification();
-              // .AddEphemeralSigningKey()
+               .EnableRequestCaching();
+         // .AddEphemeralSigningKey();
 
             services.AddCors(options =>
             {
@@ -149,8 +150,9 @@ namespace artfriks
                 AutomaticAuthenticate = true,
                 AutomaticChallenge = true,
                 RequireHttpsMetadata = false,
-                Audience = "http://base.kmtrt.in",
-                Authority = "http://base.kmtrt.in",
+                Audience = "http://bo.artfreaksglobal.com/",
+                Authority =  "http://bo.artfreaksglobal.com"
+               // Authority="http://localhost:2822" 
             });
             app.UseOpenIddict();
             app.UseIdentity();
@@ -179,8 +181,8 @@ namespace artfriks
                         ClientId = "myClient",
                         ClientSecret = Crypto.HashPassword("secret_secret_secret"),
                         DisplayName = "My client application",
-                        LogoutRedirectUri = "http://base.kmtrt.in",
-                        RedirectUri = "http://base.kmtrt.in/signin-oidc",
+                        LogoutRedirectUri = "http://bo.artfreaksglobal.com",
+                        RedirectUri = "http://bo.artfreaksglobal.com/signin-oidc",
                         Type = OpenIddictConstants.ClientTypes.Public
 
                     });

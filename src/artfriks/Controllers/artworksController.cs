@@ -45,6 +45,21 @@ namespace artfriks.Controllers
          
         }
 
+        public async Task<IActionResult> Slider()
+        {
+                var model = _context.ArtWorks.ToList().Select(x => new ArtWorkView
+                {
+                    artwork = x,
+                    user = _context.Users.FirstOrDefault(v => v.Id == x.UserId).Email
+                });
+                foreach (var i in model)
+                {
+                    var str = i.artwork.Title;
+                }
+                return View(model);
+
+        }
+
         // GET: ArtWorks/Details/5
         public async Task<IActionResult> Details(int? id)
         {
@@ -106,7 +121,7 @@ namespace artfriks.Controllers
                 TagId = c.TagId,
                 Tag = _context.ArtTags.Where(v => v.Id == c.TagId).First().Tag
             });
-            ViewBag.Catgories = GetCategory(_context);
+            ViewBag.Catgories = GetCategory(_context,0);
             ViewBag.Medium = GetMediums(_context);
             ViewBag.Units = GetUnits(_context);
             ViewBag.Tags = GetTags(_context);
@@ -117,12 +132,13 @@ namespace artfriks.Controllers
             }
             return View(artView);
         }
-        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context)
+        public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context,int id)
         {
-            var model = _context.Categories.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Title });
+            var model = _context.Categories.Where(x=>x.ParentId==id).ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Title });
             List<SelectListItem> Category = new List<SelectListItem>(model);
             return Category;
         }
+
         public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetUnits(ApplicationDbContext _context)
         {
             var model = _context.Units.ToList().Select(x => new SelectListItem() { Value = Convert.ToString(x.Id), Text = x.Units });
@@ -160,6 +176,7 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Edit(int id,  ArtWorkEditView param)
         {
+            ViewBag.Catgories = GetCategory(_context, 0);
             if (id != param.Artwork.Id)
             {
                 return NotFound();

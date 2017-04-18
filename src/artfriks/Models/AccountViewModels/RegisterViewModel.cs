@@ -31,6 +31,7 @@ namespace artfriks.Models.AccountViewModels
         public string oldpassword { get; set; }
         public string Email { get; set; }
     }
+
     public class RegisterViewModel
     {
         [Required]

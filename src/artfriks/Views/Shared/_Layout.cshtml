@@ -28,13 +28,17 @@
             <div class="navbar-collapse collapse">
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="ArtArticles" asp-action="/Index">ArtArticle</a></li>
-                    <li><a asp-area="" asp-controller="Tags" asp-action="/Index">ArtTag</a></li>
+                    <li><a asp-area="" asp-controller="artTags" asp-action="/Index">ArtTag</a></li>
                     <li><a asp-area="" asp-controller="ArtTypes" asp-action="/Index">ArtType</a></li>
                     <li><a asp-area="" asp-controller="ArtWorks" asp-action="/Index">ArtWork</a></li>
+                    <li><a asp-area="" asp-controller="ArtWorks" asp-action="/Slider">ArtWork</a></li>
                     <li><a asp-area="" asp-controller="Categories" asp-action="/Index">Category</a></li>
                     <li><a asp-area="" asp-controller="Media" asp-action="/Index">Media</a></li>
                     <li><a asp-area="" asp-controller="Professions" asp-action="/Index">Profession</a></li>
                     <li><a asp-area="" asp-controller="Units" asp-action="/Index">Unit</a></li>
+                    <li><a asp-area="" asp-controller="Featureds" asp-action="/Index">Features</a></li>
+                    <li><a asp-area="" asp-controller="Categoryhomesections" asp-action="/Index">Category Home</a></li>
+                    <li><a asp-area="" asp-controller="Styles" asp-action="/Index">Styles</a></li>
                 </ul>
                 @*@await Html.PartialAsync("_LoginPartial")*@
 

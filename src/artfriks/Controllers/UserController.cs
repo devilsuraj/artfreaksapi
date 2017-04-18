@@ -50,7 +50,7 @@ namespace artfriks.Controllers
         {
             try
             {
-                var returnValue = _context.Users.Where(x => x.Id == Id).Select(o => new
+                var returnValue = _context.Users.Where(x => x.Id == Id && _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
                 {
                     user = o,
                     userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
@@ -127,7 +127,7 @@ namespace artfriks.Controllers
         {
             try
             {
-                var returnValue = _context.Users.Where(x => x.Country.ToLower().StartsWith(alpha.ToLower())).Select(o => new
+                var returnValue = _context.Users.Where(x => x.Country.ToLower().StartsWith(alpha.ToLower()) && _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
                 {
                     user = o,
                     userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
@@ -148,7 +148,9 @@ namespace artfriks.Controllers
                         UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
                         favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
                         isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
-                    }).OrderByDescending(v => v.AddedDate).Take(3)
+                    }).OrderByDescending(v => v.AddedDate).Take(3),
+                    maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
+                    minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
                 });
                 return Ok(new { status = 1, message = returnValue });
             }

@@ -16,17 +16,22 @@
         <div class="form-group">
             <label class="col-md-2 control-label">Art</label>
             <div class="col-md-10">
-                <img src="http://base.kmtrt.in/wallimages/imagepath/thumb-@Html.DisplayFor(modelItem => modelItem.Artwork.PictureUrl)" width="500"
+                <img src="http://bo.artfreaksglobal.com/wallimages/imagepath/thumb-@Html.DisplayFor(modelItem => modelItem.Artwork.PictureUrl)" width="500"
                      style="border:5px solid #808080" /><br /><hr />
                 @Html.DisplayFor(modelItem => modelItem.Artwork.AddedDate)
                 <span asp-validation-for="Artwork.PictureUrl" class="text-danger" />
             </div>
         </div>
-
+        <div class="form-group">
+            <label  class="col-md-2 control-label"></label>
+            <div class="col-md-10">
+                <select class="form-control" asp-items="@ViewBag.Catgories"></select>
+            </div>
+        </div>
         <div class="form-group">
             <label asp-for="Artwork.Category" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="Artwork.Category" class="form-control" asp-items="@ViewBag.Catgories"></select>
+                <select asp-for="Artwork.Category" class="form-control" asp-items="@ViewBag.subCatgories"></select>
             </div>
         </div>
         <div class="form-group">
@@ -121,7 +126,7 @@
                 $('#addtag').show();
                 $.ajax({
                  
-                    url: "/api/artowrk/Tags?name=" + request.term,
+                    url: "/api/artowrk/allTags?name=" + request.term,
                     type: "GET",
                     contentType:"application/json",
                     dataType: "json",

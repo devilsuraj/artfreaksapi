@@ -21,7 +21,9 @@
         <div class="form-group">
             <label asp-for="ParentId" class="col-md-2 control-label"></label>
             <div class="col-md-10">
-                <select asp-for="ParentId" asp-items="@ViewBag.Catgories " class="form-control"></select>
+                <select asp-for="ParentId" asp-items="@ViewBag.Catgories " class="form-control">
+                    <option value="0">Parent Catgory</option>
+                </select>
                 <span asp-validation-for="ParentId" class="text-danger" />
             </div>
         </div>

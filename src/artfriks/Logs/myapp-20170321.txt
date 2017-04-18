@@ -1,0 +1,357 @@
+2017-03-21T18:45:48.0550718+05:30  [INF] Executed DbCommand (110ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-21T18:45:49.0231272+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-21T18:45:49.1311334+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-21T18:45:51.3982630+05:30 0HL3GBHITFPFQ [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-03-21T18:45:52.4853252+05:30 0HL3GBHITFPFQ [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-21T18:45:56.2615412+05:30 0HL3GBHITFPFQ [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-03-21T18:45:56.3455460+05:30 0HL3GBHITFPFR [INF] Request starting HTTP/1.1 GET http://localhost:2822/artworks/index   (e5be5b71)
+2017-03-21T18:45:56.3825481+05:30 0HL3GBHITFPFR [INF] Executing action method "artfriks.Controllers.ArtWorksController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-21T18:45:57.2875999+05:30 0HL3GBHITFPFQ [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 4932.9017ms (afa2e885)
+2017-03-21T18:45:57.3746049+05:30 0HL3GBHITFPFR [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[Id], [x].[AddedDate], [x].[Category], [x].[Description], [x].[DimensionUnit], [x].[Height], [x].[MediumString], [x].[Orientation], [x].[PictureUrl], [x].[Price], [x].[Status], [x].[TermAccepted], [x].[Title], [x].[UserId], [x].[Views], [x].[Width]
+FROM [ArtWorks] AS [x]
+WHERE [x].[Status] = 0 (3b5ca34b)
+2017-03-21T18:45:57.4236077+05:30 0HL3GBHITFPFQ [INF] Request finished in 6077.7945ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-21T18:45:57.9916402+05:30 0HL3GBHITFPFR [INF] Executed DbCommand (114ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:45:58.0416430+05:30 0HL3GBHITFPFS [INF] Request starting HTTP/1.1 GET http://localhost:2822/artworks/slider   (e5be5b71)
+2017-03-21T18:45:58.0436431+05:30 0HL3GBHITFPFS [INF] Executing action method "artfriks.Controllers.ArtWorksController.Slider (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-21T18:45:58.3716619+05:30 0HL3GBHITFPFS [INF] Executed DbCommand (93ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Views], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-21T18:45:58.5716733+05:30 0HL3GBHITFPFR [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Index.cshtml". (9707eebe)
+2017-03-21T18:45:58.9986978+05:30 0HL3GBHITFPFS [INF] Executed DbCommand (99ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:45:59.0266994+05:30 0HL3GBHITFPFS [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-03-21T18:45:59.2347113+05:30 0HL3GBHITFPFS [INF] Executed action "artfriks.Controllers.ArtWorksController.Slider (artfriks)" in 1191.8469ms (afa2e885)
+2017-03-21T18:45:59.2367114+05:30 0HL3GBHITFPFS [INF] Request finished in 1194.8394ms 400 application/json; charset=utf-8 (15c52c40)
+2017-03-21T18:46:00.7067955+05:30 0HL3GBHITFPFR [INF] Executed DbCommand (103ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:46:00.8018009+05:30 0HL3GBHITFPFR [INF] Executed action "artfriks.Controllers.ArtWorksController.Index (artfriks)" in 4451.0946ms (afa2e885)
+2017-03-21T18:46:00.8018009+05:30 0HL3GBHITFPFR [INF] Request finished in 4457.0356ms 200 text/html; charset=utf-8 (15c52c40)
+2017-03-21T18:46:53.4358114+05:30  [INF] Executed DbCommand (121ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-03-21T18:46:54.2458577+05:30  [INF] Executed DbCommand (90ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-03-21T18:46:54.3398631+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-03-21T18:46:54.8548925+05:30 0HL3GBI5QL74H [INF] Request starting HTTP/1.1 GET http://localhost:2822/artworks/slider   (e5be5b71)
+2017-03-21T18:46:55.6199363+05:30 0HL3GBI5QL74H [INF] Executing action method "artfriks.Controllers.ArtWorksController.Slider (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-21T18:46:56.3459778+05:30 0HL3GBI5QL74H [INF] Executed DbCommand (180ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Views], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-21T18:46:57.1440235+05:30 0HL3GBI5QL74H [INF] Executed DbCommand (119ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:46:57.3020325+05:30 0HL3GBI5QL74H [ERR] An unhandled exception has occurred while executing the request (cf926119)
+System.NullReferenceException: Object reference not set to an instance of an object.
+   at artfriks.Controllers.ArtWorksController.<Slider>b__4_0(ArtWork x)
+   at System.Linq.Enumerable.SelectListIterator`2.MoveNext()
+   at artfriks.Controllers.ArtWorksController.<Slider>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeActionFilterAsync>d__28.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Mvc.Internal.ControllerActionInvoker.<InvokeAsync>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-03-21T18:46:57.6740538+05:30 0HL3GBI5QL74H [INF] Request finished in 2832.8851ms 500 text/html; charset=utf-8 (15c52c40)
+2017-03-21T18:48:39.6998893+05:30 0HL3GBI5QL74I [INF] Request starting HTTP/1.1 GET http://localhost:2822/artworks/slider   (e5be5b71)
+2017-03-21T18:48:39.7058897+05:30 0HL3GBI5QL74I [INF] Executing action method "artfriks.Controllers.ArtWorksController.Slider (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-03-21T18:48:40.0489093+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (98ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [a].[Id], [a].[AddedDate], [a].[Category], [a].[Description], [a].[DimensionUnit], [a].[Height], [a].[MediumString], [a].[Orientation], [a].[PictureUrl], [a].[Price], [a].[Status], [a].[TermAccepted], [a].[Title], [a].[UserId], [a].[Views], [a].[Width]
+FROM [ArtWorks] AS [a] (3b5ca34b)
+2017-03-21T18:48:40.4679333+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (120ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:40.8599557+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:41.1839742+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:41.5089928+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:41.8340114+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:42.1610301+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:42.4870488+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:42.8110673+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:43.1360859+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:43.4781054+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (102ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:44.8741853+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (416ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:45.2112046+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (100ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:45.5362232+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:45.8932436+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (106ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:46.2602646+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (109ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:46.6092845+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (104ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:46.9363032+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:47.2703223+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (99ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:47.5943409+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:47.9523614+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (106ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:48.2803801+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:48.6203996+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (101ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:48.9444181+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:49.2694367+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:49.5954553+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:49.9194739+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:50.2474926+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:53.1956613+05:30 0HL3GBI5QL74I [INF] Executing ViewResult, running view at path "/Views/ArtWorks/Slider.cshtml". (9707eebe)
+2017-03-21T18:48:53.7626937+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:54.1507159+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:54.4787346+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:54.8057533+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:55.1307719+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:55.4587907+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:55.7878095+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:56.1158283+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:56.4428470+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:56.7678656+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:57.0968844+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:57.4249032+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:57.7499217+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:58.0799406+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:58.4049592+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:58.7319779+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:59.0839980+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (103ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:59.4240175+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (100ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:48:59.7530363+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:00.0860554+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:00.4130741+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:00.7400928+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:01.0661114+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:01.3931301+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:01.7221489+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (97ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:02.0491676+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:02.3761863+05:30 0HL3GBI5QL74I [INF] Executed DbCommand (96ms) [Parameters=[@__x_UserId_0='?' (Size = 450)], CommandType='Text', CommandTimeout='30']
+SELECT TOP(1) [v].[Id], [v].[AccessFailedCount], [v].[Address], [v].[City], [v].[ConcurrencyStamp], [v].[Country], [v].[CountryCode], [v].[Email], [v].[EmailConfirmed], [v].[FirstName], [v].[FormattedAddress], [v].[FullName], [v].[Gender], [v].[LastName], [v].[Latitude], [v].[LockoutEnabled], [v].[LockoutEnd], [v].[Longitude], [v].[NormalizedEmail], [v].[NormalizedUserName], [v].[OTP], [v].[OTPfrom], [v].[PasswordHash], [v].[Phone], [v].[PhoneNumber], [v].[PhoneNumberConfirmed], [v].[PinCode], [v].[Profession], [v].[SecurityStamp], [v].[State], [v].[TwoFactorEnabled], [v].[UserName]
+FROM [AspNetUsers] AS [v]
+WHERE [v].[Id] = @__x_UserId_0 (3b5ca34b)
+2017-03-21T18:49:02.8132113+05:30 0HL3GBI5QL74I [INF] Executed action "artfriks.Controllers.ArtWorksController.Slider (artfriks)" in 23103.8692ms (afa2e885)
+2017-03-21T18:49:02.8172116+05:30 0HL3GBI5QL74I [INF] Request finished in 23117.3489ms 200 text/html; charset=utf-8 (15c52c40)

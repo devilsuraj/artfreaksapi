@@ -1,5 +1,5 @@
-@model IEnumerable<artfriks.Models.Category>
-
+@model IEnumerable<artfriks.Models.CategoryView>
+@addTagHelper "*, Microsoft.AspNet.Mvc.TagHelpers"
 @{
     ViewData["Title"] = "Index";
 }
@@ -15,6 +15,9 @@
             <th>
                 @Html.DisplayNameFor(model => model.Title)
             </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ParentId)
+            </th>
             <th></th>
         </tr>
     </thead>
@@ -23,6 +26,9 @@
         <tr>
             <td>
                 @Html.DisplayFor(modelItem => item.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ParentId)
             </td>
             <td>
                 <a asp-action="Edit" asp-route-id="@item.Id">Edit</a> |

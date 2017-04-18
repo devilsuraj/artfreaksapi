@@ -56,5 +56,6 @@ namespace artfriks.Data
         public DbSet<Styles> Styles { get; set; }
         public DbSet<Catgoryhomesection> Catgoryhomesection { get; set; }
         public DbSet<Featured> Featured { get; set; }
+        public DbSet<ARtKeywords> ArtKeywords { get; set; }
     }
 }

@@ -22,7 +22,12 @@ namespace artfriks.Controllers
         // GET: Categories
         public async Task<IActionResult> Index()
         {
-            return View(await _context.Categories.ToListAsync());
+            return View( _context.Categories.Select(x=>new CategoryView
+            {
+                Id=x.Id,
+                Title=x.Title,
+                ParentId=_context.Categories.FirstOrDefault(c=>c.Id==x.ParentId).Title
+            }));
         }
         public List<Microsoft.AspNetCore.Mvc.Rendering.SelectListItem> GetCategory(ApplicationDbContext _context)
         {
@@ -59,7 +64,7 @@ namespace artfriks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Title")] Category category)
+        public async Task<IActionResult> Create( Category category)
         {
             ViewBag.Catgories = GetCategory(_context);
             if (ModelState.IsValid)
@@ -93,7 +98,7 @@ namespace artfriks.Controllers
         // more details see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Title")] Category category)
+        public async Task<IActionResult> Edit(int id,  Category category)
         {
             ViewBag.Catgories = GetCategory(_context);
             if (id != category.Id)

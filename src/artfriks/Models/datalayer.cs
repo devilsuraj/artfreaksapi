@@ -8,7 +8,7 @@ namespace artfriks.Models
 {
     public class datalayer
     {
-        SqlConnection con = new SqlConnection(@"Server=cocoaws.cew0codqdrhj.us-west-2.rds.amazonaws.com,1433;Initial Catalog=Cocospices_Dev1;User ID=cocoadmin;Password=cocospices");
+        SqlConnection con = new SqlConnection(@"Server=cocoaws.cew0codqdrhj.us-west-2.rds.amazonaws.com,1433;Initial Catalog=artfreaks_test;User ID=cocoadmin;Password=cocospices");
         SqlDataReader dr = null;
         public void CloseConnection()
         {
