@@ -55,7 +55,7 @@ namespace artfriks.Services
 
         public Task SendSmsAsync(string number, string message)
         {
-            string longurl = "http://cloud.smsindiahub.in/vendorsms/pushsms.aspx?user=artfreaks&password=*artfeaks*@2017!&sid=ARTFGL&msisdn=" + number + "&msg=" + message + "&fl=0&gwid=2";
+            string longurl = "http://cloud.smsindiahub.in/vendorsms/pushsms.aspx?user=artfreaks&password=*artfreaks*@2017!&sid=ARTFGL&msisdn=" + number + "&msg=" + message + "&fl=0&gwid=2";
             try
             {
                 using (var client = new HttpClient())

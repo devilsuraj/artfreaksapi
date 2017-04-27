@@ -1,0 +1,352 @@
+2017-04-20T09:23:05.7149671+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-04-20T09:23:08.3421174+05:30 0HL47K30U6LJT [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-04-20T09:23:08.3441175+05:30 0HL47K30U6LJU [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-04-20T09:23:08.3441175+05:30 0HL47K30U6LJS [INF] Request starting HTTP/1.1 POST http://localhost:2822/api/artowrk/findyourart application/json 80 (e5be5b71)
+2017-04-20T09:23:08.4561239+05:30 0HL47K30U6LJT [INF] Request finished in 252.1158ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:23:08.4561239+05:30 0HL47K30U6LJU [INF] Request finished in 257.1858ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:23:08.4591241+05:30 0HL47K30U6LJS [INF] Request finished in 258.6821ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:23:40.9639833+05:30 0HL47K30U6LJV [INF] Request starting HTTP/1.1 POST http://localhost:2822/api/artowrk/getAllFavourites application/json 80 (e5be5b71)
+2017-04-20T09:23:40.9669834+05:30 0HL47K30U6LJV [INF] Request finished in 3.3213ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:23:47.9713841+05:30 0HL47K30U6LK0 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAllFavourites application/json  (e5be5b71)
+2017-04-20T09:23:47.9773844+05:30 0HL47K30U6LK0 [INF] Request finished in 6.4504ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:25:03.1796857+05:30 0HL47K30U6LK1 [INF] Request starting HTTP/1.1 POST http://localhost:2822/token application/x-www-form-urlencoded 49 (e5be5b71)
+2017-04-20T09:25:03.1826859+05:30 0HL47K30U6LK1 [INF] Request finished in 5.082ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:25:13.1742574+05:30 0HL47K30U6LK2 [INF] Request starting HTTP/1.1 POST http://localhost:2822/token application/x-www-form-urlencoded 49 (e5be5b71)
+2017-04-20T09:25:13.1772576+05:30 0HL47K30U6LK2 [INF] Request finished in 2.9832ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:25:30.9522742+05:30 0HL47K30U6LK3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAllFavourites application/json  (e5be5b71)
+2017-04-20T09:25:30.9592746+05:30 0HL47K30U6LK3 [INF] Request finished in 7.3111ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:26:48.7727253+05:30 0HL47K30U6LK4 [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/token application/x-www-form-urlencoded 49 (e5be5b71)
+2017-04-20T09:26:48.7757255+05:30 0HL47K30U6LK4 [INF] Request finished in 3.1285ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:26:50.4028185+05:30 0HL47K30U6LK5 [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/token application/x-www-form-urlencoded 49 (e5be5b71)
+2017-04-20T09:26:50.4058187+05:30 0HL47K30U6LK5 [INF] Request finished in 2.5189ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:27:39.6286341+05:30 0HL47K30U6LK6 [INF] Request starting HTTP/1.1 POST http://localhost:2822/api/artowrk/getAllFavourites application/x-www-form-urlencoded 82 (e5be5b71)
+2017-04-20T09:27:39.6336344+05:30 0HL47K30U6LK6 [INF] Request finished in 4.8356ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:27:41.0287142+05:30 0HL47K30U6LK7 [INF] Request starting HTTP/1.1 POST http://localhost:2822/api/artowrk/getAllFavourites application/x-www-form-urlencoded 82 (e5be5b71)
+2017-04-20T09:27:41.0317144+05:30 0HL47K30U6LK7 [INF] Request finished in 2.1306ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:28:41.6551818+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-04-20T09:28:42.3412211+05:30 0HL47K64FEG2O [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-04-20T09:28:42.3412211+05:30 0HL47K64FEG2N [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-04-20T09:28:42.4592278+05:30 0HL47K64FEG2O [INF] Request finished in 169.9191ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:28:42.4592278+05:30 0HL47K64FEG2N [INF] Request finished in 173.2967ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:29:16.9742020+05:30  [FTL] Application startup exception (6c57a5ba)
+System.Reflection.TargetInvocationException: Exception has been thrown by the target of an invocation. ---> System.InvalidOperationException: The certificate corresponding to the given thumbprint was not found.
+   at Microsoft.AspNetCore.Builder.OpenIdConnectServerExtensions.AddCertificate(IList`1 credentials, String thumbprint, StoreName name, StoreLocation location)
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.<>c__DisplayClass9_0.<AddSigningCertificate>b__0(OpenIddictOptions options)
+   at Microsoft.Extensions.Options.OptionsCache`1.CreateOptions()
+   at System.Threading.LazyInitializer.EnsureInitializedCore[T](T& target, Boolean& initialized, Object& syncLock, Func`1 valueFactory)
+   at Microsoft.Extensions.Options.OptionsCache`1.get_Value()
+   at Microsoft.AspNetCore.Builder.OpenIddictExtensions.UseOpenIddict(IApplicationBuilder app)
+   at artfriks.Startup.Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+   --- End of inner exception stack trace ---
+   at System.RuntimeMethodHandle.InvokeMethod(Object target, Object[] arguments, Signature sig, Boolean constructor)
+   at System.Reflection.RuntimeMethodInfo.UnsafeInvokeInternal(Object obj, Object[] parameters, Object[] arguments)
+   at System.Reflection.RuntimeMethodInfo.Invoke(Object obj, BindingFlags invokeAttr, Binder binder, Object[] parameters, CultureInfo culture)
+   at Microsoft.AspNetCore.Hosting.Internal.ConfigureBuilder.Invoke(Object instance, IApplicationBuilder builder)
+   at Microsoft.AspNetCore.Hosting.Internal.WebHost.BuildApplication()
+2017-04-20T09:29:17.8212504+05:30 0HL47K6F1QEGD [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-04-20T09:29:17.8212504+05:30 0HL47K6F1QEGE [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-04-20T09:29:17.9262564+05:30 0HL47K6F1QEGD [INF] Request finished in 151.2931ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:29:17.9312567+05:30 0HL47K6F1QEGE [INF] Request finished in 151.3098ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:30:22.2259341+05:30  [INF] Executed DbCommand (115ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-04-20T09:30:24.8070818+05:30  [INF] Executed DbCommand (571ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-04-20T09:30:24.9570904+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-04-20T09:30:25.7441354+05:30 0HL47K739I8CU [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-04-20T09:30:25.7441354+05:30 0HL47K739I8CV [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-04-20T09:30:25.8851434+05:30 0HL47K739I8CU [INF] Request finished in 167.6707ms 200  (15c52c40)
+2017-04-20T09:30:26.9182025+05:30 0HL47K739I8CV [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-04-20T09:30:31.0804406+05:30 0HL47K739I8CV [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-04-20T09:30:32.0044934+05:30 0HL47K739I8CV [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 5178.7741ms (afa2e885)
+2017-04-20T09:30:32.0304949+05:30 0HL47K739I8D0 [INF] Request starting HTTP/1.1 GET http://localhost:2822/css/site.css   (e5be5b71)
+2017-04-20T09:30:32.0334951+05:30 0HL47K739I8D1 [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/css/bootstrap.css   (e5be5b71)
+2017-04-20T09:30:32.1215001+05:30 0HL47K739I8D2 [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/jquery/dist/jquery.js   (e5be5b71)
+2017-04-20T09:30:32.1375010+05:30 0HL47K739I8D1 [INF] The file "/lib/bootstrap/dist/css/bootstrap.css" was not modified (f1f8d725)
+2017-04-20T09:30:32.1375010+05:30 0HL47K739I8D0 [INF] The file "/css/site.css" was not modified (f1f8d725)
+2017-04-20T09:30:32.1395012+05:30 0HL47K739I8D2 [INF] The file "/lib/jquery/dist/jquery.js" was not modified (f1f8d725)
+2017-04-20T09:30:32.3805149+05:30 0HL47K739I8D2 [INF] Request finished in 258.7691ms 304 application/javascript (15c52c40)
+2017-04-20T09:30:32.3805149+05:30 0HL47K739I8D0 [INF] Request finished in 350.1678ms 304 text/css (15c52c40)
+2017-04-20T09:30:32.3885154+05:30 0HL47K739I8D1 [INF] Request finished in 354.7685ms 304 text/css (15c52c40)
+2017-04-20T09:30:32.3945157+05:30 0HL47K739I8CV [INF] Request finished in 6688.8965ms 200 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:30:32.5185228+05:30 0HL47K739I8D3 [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner1.svg   (e5be5b71)
+2017-04-20T09:30:32.5185228+05:30 0HL47K739I8D4 [INF] Request starting HTTP/1.1 GET http://localhost:2822/js/site.js?v=EWaMeWsJBYWmL2g_KkgXZQ5nPe-a3Ichp0LEgzXczKo   (e5be5b71)
+2017-04-20T09:30:32.5245232+05:30 0HL47K739I8D5 [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner2.svg   (e5be5b71)
+2017-04-20T09:30:32.5365239+05:30 0HL47K739I8D6 [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2   (e5be5b71)
+2017-04-20T09:30:32.5405241+05:30 0HL47K739I8D3 [INF] The file "/images/banner1.svg" was not modified (f1f8d725)
+2017-04-20T09:30:32.5705258+05:30 0HL47K739I8D5 [INF] The file "/images/banner2.svg" was not modified (f1f8d725)
+2017-04-20T09:30:32.5735260+05:30 0HL47K739I8D4 [INF] The file "/js/site.js" was not modified (f1f8d725)
+2017-04-20T09:30:32.7345352+05:30 0HL47K739I8D3 [INF] Request finished in 209.9372ms 304 image/svg+xml (15c52c40)
+2017-04-20T09:30:32.7575365+05:30 0HL47K739I8D6 [INF] The file "/lib/bootstrap/dist/fonts/glyphicons-halflings-regular.woff2" was not modified (f1f8d725)
+2017-04-20T09:30:32.7855381+05:30 0HL47K739I8D7 [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner3.svg   (e5be5b71)
+2017-04-20T09:30:32.8235403+05:30 0HL47K739I8D5 [INF] Request finished in 272.3543ms 304 image/svg+xml (15c52c40)
+2017-04-20T09:30:32.8885440+05:30 0HL47K739I8D7 [INF] The file "/images/banner3.svg" was not modified (f1f8d725)
+2017-04-20T09:30:32.8915442+05:30 0HL47K739I8D8 [INF] Request starting HTTP/1.1 GET http://localhost:2822/lib/bootstrap/dist/js/bootstrap.js   (e5be5b71)
+2017-04-20T09:30:32.9155455+05:30 0HL47K739I8D8 [INF] The file "/lib/bootstrap/dist/js/bootstrap.js" was not modified (f1f8d725)
+2017-04-20T09:30:32.9275462+05:30 0HL47K739I8D4 [INF] Request finished in 409.3666ms 304 application/javascript (15c52c40)
+2017-04-20T09:30:32.9385469+05:30 0HL47K739I8D9 [INF] Request starting HTTP/1.1 GET http://localhost:2822/images/banner4.svg   (e5be5b71)
+2017-04-20T09:30:32.9615482+05:30 0HL47K739I8D7 [INF] Request finished in 176.0319ms 304 image/svg+xml (15c52c40)
+2017-04-20T09:30:32.9745489+05:30 0HL47K739I8D8 [INF] Request finished in 82.9658ms 304 application/javascript (15c52c40)
+2017-04-20T09:30:32.9995504+05:30 0HL47K739I8D6 [INF] Request finished in 460.682ms 304 application/font-woff2 (15c52c40)
+2017-04-20T09:30:33.0125511+05:30 0HL47K739I8D9 [INF] The file "/images/banner4.svg" was not modified (f1f8d725)
+2017-04-20T09:30:33.0415528+05:30 0HL47K739I8D9 [INF] Request finished in 102.8907ms 304 image/svg+xml (15c52c40)
+2017-04-20T09:30:38.1968476+05:30 0HL47K739I8DA [INF] Request starting HTTP/1.1 POST http://localhost:2822/api/artowrk/getAllFavourites application/x-www-form-urlencoded 82 (e5be5b71)
+2017-04-20T09:30:38.2228491+05:30 0HL47K739I8DA [INF] Request finished in 25.8333ms 404  (15c52c40)
+2017-04-20T09:30:47.9964081+05:30 0HL47K739I8DB [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAllFavourites application/json  (e5be5b71)
+2017-04-20T09:30:48.0334102+05:30 0HL47K739I8DB [INF] Executing action method "artfriks.Controllers.artController.Getfav (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-04-20T09:31:18.3801460+05:30 0HL47K739I8DB [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-04-20T09:31:18.8951754+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9231770+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9301774+05:30 0HL47K739I8DB [WRN] The LINQ expression '([n].Id == {from ArtWork b in value(Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[artfriks.Models.ArtWork]) where ([b].Id == [x].ArtId) select [b].UserId => First()})' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9341777+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9361778+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9401780+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9601792+05:30 0HL47K739I8DB [WRN] The LINQ expression '([op].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9641794+05:30 0HL47K739I8DB [WRN] The LINQ expression 'FirstOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9691797+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9711798+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9731799+05:30 0HL47K739I8DB [WRN] The LINQ expression '([n].Id == {from ArtWork b in value(Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[artfriks.Models.ArtWork]) where ([b].Id == [x].ArtId) select [b].UserId => First()})' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9761801+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9781802+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9801803+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9831805+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9851806+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9871807+05:30 0HL47K739I8DB [WRN] The LINQ expression '([n].Id == {from ArtWork b in value(Microsoft.EntityFrameworkCore.Query.Internal.EntityQueryable`1[artfriks.Models.ArtWork]) where ([b].Id == [x].ArtId) select [b].UserId => First()})' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9891808+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9911809+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9931810+05:30 0HL47K739I8DB [WRN] The LINQ expression 'First()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:18.9981813+05:30 0HL47K739I8DB [WRN] The LINQ expression '([xc].ArtId == [x].ArtId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:19.0031816+05:30 0HL47K739I8DB [WRN] The LINQ expression '([b].Id == [xc].TagId)' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:19.0061818+05:30 0HL47K739I8DB [WRN] The LINQ expression 'FirstOrDefault()' could not be translated and will be evaluated locally. To configure this warning use the DbContextOptionsBuilder.ConfigureWarnings API (event id 'RelationalEventId.QueryClientEvaluationWarning'). ConfigureWarnings can be used when overriding the DbContext.OnConfiguring method or using AddDbContext on the application service provider. (3b5ca34b)
+2017-04-20T09:31:19.3792031+05:30 0HL47K739I8DB [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[ArtId], (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtFavourites] AS [x]
+WHERE [x].[UserId] IS NULL (3b5ca34b)
+2017-04-20T09:31:19.3932039+05:30 0HL47K739I8DB [INF] Executed action "artfriks.Controllers.artController.Getfav (artfriks)" in 31382.7871ms (afa2e885)
+2017-04-20T09:31:19.4022044+05:30 0HL47K739I8DB [INF] Request finished in 31405.265ms 200 application/json; charset=utf-8 (15c52c40)
+2017-04-20T09:31:31.2768836+05:30 0HL47K739I8DC [INF] Request starting HTTP/1.1 POST http://localhost:2822/token application/x-www-form-urlencoded 82 (e5be5b71)
+2017-04-20T09:31:31.2908844+05:30 0HL47K739I8DC [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "artfriks.Controllers.UserController.Put (artfriks)
+artfriks.Controllers.UserController.PutApplicationUser (artfriks)" (ab9a4111)
+2017-04-20T09:31:31.9769237+05:30 0HL47K739I8DC [ERR] An unhandled exception has occurred while executing the request (cf926119)
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+artfriks.Controllers.UserController.Put (artfriks)
+artfriks.Controllers.UserController.PutApplicationUser (artfriks)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.<RouteAsync>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-04-20T09:31:32.3079426+05:30 0HL47K739I8DC [INF] Request finished in 1030.3668ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:31:50.5389854+05:30 0HL47K739I8DD [INF] Request starting HTTP/1.1 POST http://localhost:2822/token application/x-www-form-urlencoded 49 (e5be5b71)
+2017-04-20T09:31:50.5639868+05:30 0HL47K739I8DD [ERR] Request matched multiple actions resulting in ambiguity. Matching actions: "artfriks.Controllers.UserController.Put (artfriks)
+artfriks.Controllers.UserController.PutApplicationUser (artfriks)" (ab9a4111)
+2017-04-20T09:31:51.1600209+05:30 0HL47K739I8DD [ERR] An unhandled exception has occurred while executing the request (cf926119)
+Microsoft.AspNetCore.Mvc.Internal.AmbiguousActionException: Multiple actions matched. The following actions matched route data and had all constraints satisfied:
+
+artfriks.Controllers.UserController.Put (artfriks)
+artfriks.Controllers.UserController.PutApplicationUser (artfriks)
+   at Microsoft.AspNetCore.Mvc.Internal.ActionSelector.SelectBestCandidate(RouteContext context, IReadOnlyList`1 candidates)
+   at Microsoft.AspNetCore.Mvc.Internal.MvcAttributeRouteHandler.RouteAsync(RouteContext context)
+   at Microsoft.AspNetCore.Routing.Tree.TreeRouter.<RouteAsync>d__11.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Routing.RouteCollection.<RouteAsync>d__9.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Builder.RouterMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Authentication.AuthenticationMiddleware`1.<Invoke>d__18.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.ApplicationInsights.AspNetCore.ExceptionTrackingMiddleware.<Invoke>d__4.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.MigrationsEndPointMiddleware.<Invoke>d__5.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.DatabaseErrorPageMiddleware.<Invoke>d__6.MoveNext()
+--- End of stack trace from previous location where exception was thrown ---
+   at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+   at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+   at Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware.<Invoke>d__6.MoveNext()
+2017-04-20T09:31:51.3020290+05:30 0HL47K739I8DD [INF] Request finished in 762.5984ms 500 text/html; charset=utf-8 (15c52c40)
+2017-04-20T09:32:43.5310163+05:30 0HL47K739I8DE [INF] Request starting HTTP/1.1 GET http://localhost:2822/api/artowrk/getAllFavourites application/json  (e5be5b71)
+2017-04-20T09:32:43.5380167+05:30 0HL47K739I8DE [INF] Executing action method "artfriks.Controllers.artController.Getfav (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-04-20T09:32:45.3381197+05:30 0HL47K739I8DE [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
+2017-04-20T09:32:45.7661442+05:30 0HL47K739I8DE [INF] Executed DbCommand (91ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT [x].[ArtId], (
+    SELECT COUNT(*)
+    FROM [ArtFavourites] AS [x2]
+    WHERE [x2].[ArtId] = [x].[Id]
+), (
+    SELECT CASE
+        WHEN EXISTS (
+            SELECT 1
+            FROM [ArtFavourites] AS [x3]
+            WHERE ([x3].[ArtId] = [x].[Id]) AND [x3].[UserId] IS NULL)
+        THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+    END
+)
+FROM [ArtFavourites] AS [x]
+WHERE [x].[UserId] IS NULL (3b5ca34b)
+2017-04-20T09:32:45.7691443+05:30 0HL47K739I8DE [INF] Executed action "artfriks.Controllers.artController.Getfav (artfriks)" in 2235.2789ms (afa2e885)
+2017-04-20T09:32:45.7751447+05:30 0HL47K739I8DE [INF] Request finished in 2243.6197ms 200 application/json; charset=utf-8 (15c52c40)
+2017-04-20T09:33:02.6901122+05:30 0HL47K739I8DF [INF] Request starting HTTP/1.1 POST http://localhost:2822/connect/verifycode application/x-www-form-urlencoded 82 (e5be5b71)
+2017-04-20T09:33:02.9011242+05:30 0HL47K739I8DF [INF] The token request was successfully extracted from the HTTP request: "{
+  \"grant_type\": \"client_credentials\",
+  \"client_Id\": \"postman\",
+  \"client_secret\": \"[removed for security reasons]\"
+}" (2bd72e75)
+2017-04-20T09:33:02.9191253+05:30 0HL47K739I8DF [ERR] The token request was rejected because the '"client_credentials"' grant is not supported. (2d9aaca3)
+2017-04-20T09:33:02.9241255+05:30 0HL47K739I8DF [ERR] The token request was rejected with the following error: "unsupported_grant_type" ; "The specified grant_type is not supported by this authorization server." (38a377e7)
+2017-04-20T09:33:02.9491270+05:30 0HL47K739I8DF [INF] The token response was successfully returned: "{
+  \"error\": \"unsupported_grant_type\",
+  \"error_description\": \"The specified grant_type is not supported by this authorization server.\"
+}" (def80055)
+2017-04-20T09:33:03.0161308+05:30 0HL47K739I8DF [INF] Request finished in 325.506ms 400 application/json;charset=UTF-8 (15c52c40)

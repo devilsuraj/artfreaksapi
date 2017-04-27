@@ -134,7 +134,7 @@ namespace artfriks.Controllers
                     return BadRequest(new OpenIdConnectResponse
                     {
                         Error = OpenIdConnectConstants.Errors.InvalidGrant,
-                        ErrorDescription = "The username/password couple is invalid."
+                        ErrorDescription = "Invalid Username or Password."
                     });
                 }
                 if (_userManager.SupportsUserLockout)

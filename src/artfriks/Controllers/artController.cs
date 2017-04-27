@@ -11,6 +11,7 @@ using Microsoft.AspNetCore.Authorization;
 using System.Data;
 using Microsoft.EntityFrameworkCore;
 using System.Data.SqlClient;
+using System.Globalization;
 
 namespace artfriks.Controllers
 {
@@ -33,7 +34,7 @@ namespace artfriks.Controllers
             try
             {
                 var user = _userManager.GetUserId(User);
-                var returnValue = _context.ArtWorks.Where(x => x.UserId == user && x.Status!=55).Select(p => new {
+                var returnValue = _context.ArtWorks.Where(x => x.UserId == user  && x.Status!=55).Select(p => new {
                     Id = p.Id,
                     AddedDate = p.AddedDate,
                     TermAccepted = p.TermAccepted,
@@ -71,7 +72,7 @@ namespace artfriks.Controllers
             try
             {
                 var user = _userManager.GetUserId(User);
-                var returnValue = _context.ArtFavourites.Where(x=>x.UserId==user).
+                var returnValue = _context.ArtFavourites.Where(x=>x.UserId==user && _context.ArtWorks.Any(v=>v.Id==x.ArtId)).
                     Select(mo=> new {
 
                        artwork = _context.ArtWorks.FirstOrDefault(op=> op.Id ==mo.ArtId && op.Title !=null) ?? new ArtWork(),
@@ -98,30 +99,31 @@ namespace artfriks.Controllers
             var user = _userManager.GetUserId(User);
             try
             {
-                var returnValue = _context.ArtWorks.Where(x=>x.Status==1).Select(p=>new  {
-                    Id=p.Id,
-                    AddedDate=p.AddedDate,
-                    TermAccepted=p.TermAccepted,
-                    Category=p.Category,
-                    Description=p.Description,
-                    DimensionUnit=p.DimensionUnit,
-                    Height=p.Height,
-                    MediumString=p.MediumString,
-                    PictureUrl=p.PictureUrl,
-                    Price=p.Price,
-                    Status=p.Status,
+                var returnValue = _context.ArtWorks.Where(x => x.Status == 1).Select(p => new
+                {
+                    Id = p.Id,
+                    AddedDate = p.AddedDate,
+                    TermAccepted = p.TermAccepted,
+                    Category = p.Category,
+                    Description = p.Description,
+                    DimensionUnit = p.DimensionUnit,
+                    Height = p.Height,
+                    MediumString = p.MediumString,
+                    PictureUrl = p.PictureUrl,
+                    Price = p.Price,
+                    Status = p.Status,
                     views = p.Views,
-                    Title =p.Title,
-                    Width=p.Width,
-                    UserId=_context.Users.Where(n=>n.Id==p.UserId).First().FullName,
-                    favcount=_context.ArtFavourites.Where(x=>x.ArtId==p.Id).Count(),
-                    isfav=_context.ArtFavourites.Any(x=>x.ArtId==p.Id && x.UserId==user),
+                    Title = p.Title,
+                    Width = p.Width,
+                    UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                    favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                    isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user),
                     tags = _context.ArtWithTags.Where(c => c.ArtId == p.Id).Select(v => new
                     {
                         Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
                     })
                 }).OrderByDescending(v => v.AddedDate);
-                return Ok(new { status = 1, message = returnValue });
+                return Ok(new { status = 1, message = returnValue, Month = GetMonth() });
             }
             catch (Exception ex)
             {
@@ -337,6 +339,13 @@ namespace artfriks.Controllers
                     keywords = _context.ArtKeywords.Where(v=>v.ArtId==p.Id)
 
                 }).First() ?? new ArtWorkView();
+                if (returnValue.artwork != null)
+                {
+                    var a = returnValue.artwork;
+                    a.Views = a.Views + 1;
+                    _context.ArtWorks.Update(a);
+                    _context.SaveChanges();
+                }
                 var otherarts = _context.ArtWorks.Where(x => x.Category == returnValue.artwork.Category).OrderBy(x => Guid.NewGuid()).Take(5).ToList(); 
                 if (returnValue == null) { return Ok(new { status = 0, message = "Not Found" }); }
                 var userInfo = _context.Users.Where(c => c.Id == returnValue.artwork.UserId).First() ;
@@ -611,6 +620,24 @@ namespace artfriks.Controllers
                     );
                 return Ok(model);
             }
+            else if (name.Orientation.Count() == 0)
+            {
+                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && x.Price > name.Prices).
+                    Select(c => new
+                    {
+                        art = c,
+                        UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.FirstOrDefault(art => art.Id == c.Id).UserId).First().FullName,
+                        favcount = _context.ArtFavourites.Where(x => x.ArtId == c.Id).Count(),
+                        tags = _context.ArtWithTags.Where(xc => xc.ArtId == c.Id).Select(v => new
+                        {
+                            Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
+                        }),
+                        isfav = _context.ArtFavourites.Any(x => x.ArtId == c.Id && x.UserId == _context.ArtWorks.FirstOrDefault(art => art.Id == c.Id).UserId)
+
+                    }
+                    );
+                return Ok(model);
+            }
             else
             {
                 var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && name.Orientation.Contains(x.Orientation) && x.Price < name.Prices).
@@ -644,8 +671,71 @@ namespace artfriks.Controllers
         [AllowAnonymous]
         public IActionResult getArticles()
         {
-            return Ok(_context.ArtArticles.ToList());
+            return Ok(new { Month = GetMonth(), Articles = _context.ArtArticles.ToList() });
+           // return Ok(_context.ArtArticles.ToList());
         }
+
+        public List<Tuple<string, string>> GetMonth()
+        {
+            var list = new List<Tuple<string, string>>();
+
+            var Month = Enumerable.Range(0, 3).Select(i => new { M = DateTimeOffset.Now.AddMonths(-i).ToString("MM/yyyy") }).ToArray();
+
+            for (int i = 0; i < Month.Length; i++)
+            {
+                var t = Month[i].M.Split('/');
+                list.Add(Tuple.Create(Month[i].M, (CultureInfo.CurrentCulture.DateTimeFormat.GetMonthName(Convert.ToInt32(t[0])) + " " + t[1])));
+            }
+            return list;
+        }
+
+        [HttpGet]
+        [Route("api/artowrk/GetAllbyDate")]
+        public IActionResult GetAllbyDate(string date)
+        {
+            var user = _userManager.GetUserId(User);
+            try
+            {
+                var returnValue = _context.ArtWorks.Where(x => x.Status == 1 && x.AddedDate.ToString("MM/yyyy") == date).Select(p => new
+                {
+                    Id = p.Id,
+                    AddedDate = p.AddedDate,
+                    TermAccepted = p.TermAccepted,
+                    Category = p.Category,
+                    Description = p.Description,
+                    DimensionUnit = p.DimensionUnit,
+                    Height = p.Height,
+                    MediumString = p.MediumString,
+                    PictureUrl = p.PictureUrl,
+                    Price = p.Price,
+                    Status = p.Status,
+                    views = p.Views,
+                    Title = p.Title,
+                    Width = p.Width,
+                    UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                    favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                    isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user),
+                    tags = _context.ArtWithTags.Where(c => c.ArtId == p.Id).Select(v => new
+                    {
+                        Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
+                    })
+                }).OrderByDescending(v => v.AddedDate);
+                return Ok(new { status = 1, message = returnValue, Month = GetMonth() });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [Route("api/artowrk/getARticlebyDate")]
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult getArticlesbyDate(string date)
+        {
+            return Ok(new { Month = GetMonth(), Articles = _context.ArtArticles.Where(x => x.AddedDate.ToString("MM/yyyy") == date).ToList() });
+        }
+
         [Route("api/artowrk/getARticlebyId")]
         [HttpGet]
         [AllowAnonymous]

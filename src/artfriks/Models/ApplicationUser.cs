@@ -44,6 +44,7 @@ namespace artfriks.Models
         public int Id { get; set; }
         public string Text { get; set; }
         public string Image { get; set; }
+        public decimal Price { get; set; }
     }
 
     public class Styles

@@ -357,5 +357,88 @@ namespace artfriks.Controllers
         public void Delete(int id)
         {
         }
+
+        [HttpGet]
+        [Route("~/user/AlluserinfoByName")]
+        public IActionResult AlluserinfoByName()
+        {
+            try
+            {
+                var returnValue = _context.Users.Where(x => _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
+                {
+                    user = o,
+                    userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
+                    arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                    {
+                        Id = p.Id,
+                        AddedDate = p.AddedDate,
+                        TermAccepted = p.TermAccepted,
+                        Category = p.Category,
+                        Description = p.Description,
+                        DimensionUnit = p.DimensionUnit,
+                        Height = p.Height,
+                        MediumString = p.MediumString,
+                        PictureUrl = p.PictureUrl,
+                        Price = p.Price,
+                        Status = p.Status,
+                        Title = p.Title,
+                        Width = p.Width,
+                        UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                        favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                        isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
+                    }).OrderByDescending(v => v.AddedDate).Take(3),
+                    maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
+                    minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
+                });
+                return Ok(new { status = 1, message = returnValue });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
+        [HttpGet]
+        [Route("~/user/AlluserinfoByLocation")]
+        public IActionResult AlluserinfoByLocation()
+        {
+            try
+            {
+                var returnValue = _context.Users.Where(x => _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
+                {
+                    user = o,
+                    userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
+                    arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                    {
+                        Id = p.Id,
+                        AddedDate = p.AddedDate,
+                        TermAccepted = p.TermAccepted,
+                        Category = p.Category,
+                        Description = p.Description,
+                        DimensionUnit = p.DimensionUnit,
+                        Height = p.Height,
+                        MediumString = p.MediumString,
+                        PictureUrl = p.PictureUrl,
+                        Price = p.Price,
+                        Status = p.Status,
+                        Title = p.Title,
+                        Width = p.Width,
+                        UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                        favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                        isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
+                    }).OrderByDescending(v => v.AddedDate).Take(3),
+                    maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
+                    minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
+                });
+                return Ok(new { status = 1, message = returnValue });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
     }
+
+
+
 }
