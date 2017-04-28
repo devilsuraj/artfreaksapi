@@ -25,6 +25,7 @@ namespace artfriks.Controllers
         private readonly IEmailSender _emailSender;
         private readonly ISmsSender _smsSender;
         private readonly ILogger _logger;
+        private ApplicationDbContext _context;
 
         public AccountController(
             UserManager<ApplicationUser> userManager,
@@ -32,17 +33,17 @@ namespace artfriks.Controllers
             ApplicationDbContext db,
             IEmailSender emailSender,
             ISmsSender smsSender,
-            ILoggerFactory loggerFactory)
+            ILoggerFactory loggerFactory,
+            ApplicationDbContext context)
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _emailSender = emailSender;
             _db = db;
             _smsSender = smsSender;
+            _context = context;
             _logger = loggerFactory.CreateLogger<AccountController>();
         }
-
-
 
         //
         // GET: /Account/Login
@@ -132,7 +133,7 @@ namespace artfriks.Controllers
                     _db.UserModel.Add(useme);
                     _db.SaveChanges();
                     var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, model.Phone);
-                  //  await _emailSender.SendEmailAsync(model.Email, "Artfreaks Confirm your account",
+                    //  await _emailSender.SendEmailAsync(model.Email, "Artfreaks Confirm your account",
                     //    $"Please confirm your account by Using this verification code " + OTP + " .");
                     ////await _smsSender.SendSmsAsync(model.Phone, "Your OTP for CocoSpices is " + OTP + ".");
                     //await _smsSender.SendSmsAsync(model.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
@@ -237,8 +238,8 @@ namespace artfriks.Controllers
 
                     var code = await _userManager.GenerateChangeEmailTokenAsync(user, model.Email);
                     var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                  //  await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                //     $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+                    //  await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                    //     $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                     return Ok(new { status = 1, Message = "Success" });
                 }
                 else if (result.Succeeded)
@@ -254,8 +255,8 @@ namespace artfriks.Controllers
                 {
                     var code = await _userManager.GenerateChangeEmailTokenAsync(user, model.Email);
                     var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                   // await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                  //   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+                    // await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                    //   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
                 }
                 return Ok(new { status = 1, Message = "Updated Successfully" });
             }
@@ -293,16 +294,20 @@ namespace artfriks.Controllers
                 return Ok(new { status = 2, errors = ModelState.Values });
             }
             var checkuser = await _userManager.FindByEmailAsync(dto.Email);
-            if (checkuser != null && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == false)
+            if (checkuser.AccessFailedCount == 0)
             {
-                var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(checkuser, checkuser.Phone);
-                //await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
-                return Ok(new { status = 99, error = "Verify your mobile number" });
+                //if (checkuser != null && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == false)
+                //{
+                //    var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(checkuser, checkuser.Phone);
+                //    await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
+                //    return Ok(new { status = 99, error = "Verify your mobile number" });
+                //}
+                if (checkuser != null)// && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == true)
+                {
+                    return Ok(new { status = 44, error = "User already exists" });
+                }
             }
-            if (checkuser != null && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == true)
-            {
-                return Ok(new { status = 44, error = "User already exists" });
-            }
+
             try
             {
                 var user = new ApplicationUser
@@ -329,14 +334,14 @@ namespace artfriks.Controllers
                 user.SecurityStamp = Guid.NewGuid().ToString();
                 var result = await _userManager.CreateAsync(user, "Polardevil#1");
 
-                var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+              /*  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                 var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
-                var callbackUrl = $"https://api.Artfriksglobal.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
-
+                var callbackUrl = $"https://bo.Artfriksglobal.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
+                */
                 //await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
 
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                _logger.LogInformation(3, "User created a new account with password.");
+               // await _signInManager.SignInAsync(user, isPersistent: false);
+              //  _logger.LogInformation(3, "User created a new account with password.");
 
 
                 if (result.Succeeded)
@@ -345,8 +350,8 @@ namespace artfriks.Controllers
                     useme.UserId = user.Id;
                     _db.UserModel.Add(useme);
                     _db.SaveChanges();
-                  //  await _emailSender.SendEmailAsync(dto.Email, "Artfreaks - Confirm your account",
-                  //  $"Your verification code for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
+                    //  await _emailSender.SendEmailAsync(dto.Email, "Artfreaks - Confirm your account",
+                    //  $"Your verification code for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
                     return Ok(new { status = 0, message = "Success", user = user });
                     /*
                     var result2 = await _userManager.AddToRoleAsync(user, "Admin");
@@ -379,7 +384,7 @@ namespace artfriks.Controllers
         public async Task<IActionResult> updateUser([FromBody]RegisterViewModel username)
         {
             var check = await _userManager.FindByNameAsync(username.UserName);
-            if (check != null && await _userManager.IsPhoneNumberConfirmedAsync(check) == true)
+            if (check != null)// && await _userManager.IsPhoneNumberConfirmedAsync(check) == true)
             {
                 return Ok(new { status = 5, Message = "Please choose another UserName" });
             }
@@ -388,22 +393,22 @@ namespace artfriks.Controllers
             try
             {
                 var user = await _userManager.FindByEmailAsync(username.Email);
-               /* if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, username.OTP, username.Phone) == false)
-                {
-                    return Ok(new { status = 4, Message = "Wrong verification code " });
-                }
-                else
-                {
-                    user.PhoneNumberConfirmed = true;
-                }*/
+                /* if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, username.OTP, username.Phone) == false)
+                 {
+                     return Ok(new { status = 4, Message = "Wrong verification code " });
+                 }
+                 else
+                 {
+                     user.PhoneNumberConfirmed = true;
+                 }*/
                 user.PhoneNumberConfirmed = true;
                 user.FullName = username.FullName;
                 user.Address = username.Address;
                 user.UserName = username.UserName;
                 await _userManager.ChangePasswordAsync(user, "Polardevil#1", username.Password);
                 await _userManager.UpdateAsync(user);
-                string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello " + user.FullName + ",</h5> <p>Welcome to <strong>artfreaksglobal.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/g+.png' width='30' height='30' alt=''/> </a> </div> </div> </div> </body>");
-              //  await _emailSender.SendEmailAsync(user.Email, "Artfreaks Global - Thank you for registration", Emailtext);
+               // string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello " + user.FullName + ",</h5> <p>Welcome to <strong>artfreaksglobal.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/g+.png' width='30' height='30' alt=''/> </a> </div> </div> </div> </body>");
+             //   await _emailSender.SendEmailAsync(user.Email, "Artfreaks Global - Thank you for registration", Emailtext);
                 return Ok(new { status = 0, Message = "success" });
             }
             catch (Exception ex)
@@ -450,7 +455,7 @@ namespace artfriks.Controllers
                 }
                 var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
                 //await _smsSender.SendSmsAsync(user.CountryCode + user.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
-               // await _emailSender.SendEmailAsync(user.Email, "Artfreaks verification code", "Your verification code for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
+                //  await _emailSender.SendEmailAsync(user.Email, "Artfreaks verification code", "Your verification code for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
                 return Ok(new { status = 0, Message = "success" });
             }
             catch (Exception ex)
@@ -720,7 +725,7 @@ namespace artfriks.Controllers
             var message = "Your security code is: " + code;
             if (model.SelectedProvider == "Email")
             {
-              //  await _emailSender.SendEmailAsync(await _userManager.GetEmailAsync(user), "Security Code", message);
+                //  await _emailSender.SendEmailAsync(await _userManager.GetEmailAsync(user), "Security Code", message);
             }
             else if (model.SelectedProvider == "Phone")
             {

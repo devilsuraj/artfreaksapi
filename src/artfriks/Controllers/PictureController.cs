@@ -1,13 +1,13 @@
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.IO;
 using ImageSharp;
 using Microsoft.Net.Http.Headers;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
+using artfriks.Models;
+using artfriks.Data;
+using System.Linq;
 
 namespace artfriks.Controllers
 {
@@ -15,9 +15,14 @@ namespace artfriks.Controllers
     public class PictureController : Controller
     {
         private readonly IHostingEnvironment _appEnvironment;
-        public PictureController(IHostingEnvironment appEnvironment)
+        private UserManager<ApplicationUser> _userManager;
+        private ApplicationDbContext _context;
+
+        public PictureController(ApplicationDbContext context, IHostingEnvironment appEnvironment, UserManager<ApplicationUser> userManager)
         {
             _appEnvironment = appEnvironment;
+            _userManager = userManager;
+            _context = context;
         }
         static byte[] GetBytes(string str)
         {
@@ -59,7 +64,10 @@ namespace artfriks.Controllers
         [Route("~/picture/save")]
         public ActionResult SaveUploadedFile()
         {
-            string fName = "";
+            var user = _userManager.GetUserId(User);
+            var username = _context.Users.Where(x => x.Id == user).First().UserName;
+
+           // string fName = "";
             string fname2 = "";
             string c = "";
             try
@@ -69,7 +77,7 @@ namespace artfriks.Controllers
                     c = Request.Headers["h-id"].ToString();
                     // c = Request.Form.Keys.ToString();
                     var parsedContentDisposition = ContentDispositionHeaderValue.Parse(file.ContentDisposition);
-                    fName = parsedContentDisposition.FileName.Trim('"');
+                 //   fName = "01"/*+ parsedContentDisposition.FileName.Trim('"')*/;
                     if (file != null && file.ContentDisposition.Length > 0)
                     {
                         var originalDirectory = new DirectoryInfo(string.Format("{0}\\wwwroot\\WallImages", _appEnvironment.ContentRootPath));
@@ -79,7 +87,7 @@ namespace artfriks.Controllers
                         if (!isExists)
                             System.IO.Directory.CreateDirectory(pathString);
                         int i = 0;
-                        string filemask = "scart{0}" + ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                        string filemask = "Afg_" + username + "" + Path.GetExtension(file.FileName);
                         fname2 = string.Format(filemask, i);
                         do
                         {

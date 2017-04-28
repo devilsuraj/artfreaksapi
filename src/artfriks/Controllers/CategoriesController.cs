@@ -20,7 +20,7 @@ namespace artfriks.Controllers
         }
 
         // GET: Categories
-        public async Task<IActionResult> Index()
+        public  IActionResult Index()
         {
             return View( _context.Categories.Select(x=>new CategoryView
             {

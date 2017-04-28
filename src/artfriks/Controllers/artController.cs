@@ -34,7 +34,8 @@ namespace artfriks.Controllers
             try
             {
                 var user = _userManager.GetUserId(User);
-                var returnValue = _context.ArtWorks.Where(x => x.UserId == user  && x.Status!=55).Select(p => new {
+                var returnValue = _context.ArtWorks.Where(x => x.UserId == user && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id && x.Status != 55).Select(p => new
+                {
                     Id = p.Id,
                     AddedDate = p.AddedDate,
                     TermAccepted = p.TermAccepted,
@@ -52,11 +53,11 @@ namespace artfriks.Controllers
                     UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
                     favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
                     isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user),
-                    tags = _context.ArtWithTags.Where(c => c.ArtId == p.Id).Select(v => new 
+                    tags = _context.ArtWithTags.Where(c => c.ArtId == p.Id).Select(v => new
                     {
                         Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
                     })
-                }).OrderByDescending(v => v.AddedDate); 
+                }).OrderByDescending(v => v.AddedDate);
                 return Ok(new { status = 1, message = returnValue });
             }
             catch (Exception ex)
@@ -72,11 +73,12 @@ namespace artfriks.Controllers
             try
             {
                 var user = _userManager.GetUserId(User);
-                var returnValue = _context.ArtFavourites.Where(x=>x.UserId==user && _context.ArtWorks.Any(v=>v.Id==x.ArtId)).
-                    Select(mo=> new {
+                var returnValue = _context.ArtFavourites.Where(x => x.UserId == user && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id && _context.ArtWorks.Any(v => v.Id == x.ArtId)).
+                    Select(mo => new
+                    {
 
-                       artwork = _context.ArtWorks.FirstOrDefault(op=> op.Id ==mo.ArtId && op.Title !=null) ?? new ArtWork(),
-                        UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.Where(b=>b.Id==mo.ArtId).First().UserId).First().FullName,
+                        artwork = _context.ArtWorks.FirstOrDefault(op => op.Id == mo.ArtId && op.Title != null) ?? new ArtWork(),
+                        UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.Where(b => b.Id == mo.ArtId).First().UserId).First().FullName,
                         favcount = _context.ArtFavourites.Where(x => x.ArtId == mo.Id).Count(),
                         isfav = _context.ArtFavourites.Any(x => x.ArtId == mo.Id && x.UserId == user),
                         tags = _context.ArtWithTags.Where(xc => xc.ArtId == mo.ArtId).Select(v => new
@@ -99,7 +101,7 @@ namespace artfriks.Controllers
             var user = _userManager.GetUserId(User);
             try
             {
-                var returnValue = _context.ArtWorks.Where(x => x.Status == 1).Select(p => new
+                var returnValue = _context.ArtWorks.Where(x => x.Status == 1 && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id).Select(p => new
                 {
                     Id = p.Id,
                     AddedDate = p.AddedDate,
@@ -137,9 +139,11 @@ namespace artfriks.Controllers
         {
             try
             {
-                var returnValue = _context.ArtWithTags.Where(x => x.TagId == Id).Select(c => new {
+                var returnValue = _context.ArtWithTags.Where(x => x.TagId == Id).Select(c => new
+                {
                     art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId),
-                    UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId).First().FullName,
+                    UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.First(art => art.Id == c.ArtId).UserId).First().FullName,
+
                     favcount = _context.ArtFavourites.Where(x => x.ArtId == c.ArtId).Count(),
                     tags = _context.ArtWithTags.Where(xc => xc.ArtId == c.ArtId).Select(v => new
                     {
@@ -155,7 +159,7 @@ namespace artfriks.Controllers
             }
         }
 
-      
+
 
         [HttpGet]
         [Route("api/artowrk/getdeals")]
@@ -165,8 +169,9 @@ namespace artfriks.Controllers
             {
                 try
                 {
-                    var returnValue = _context.ArtWithTags.Where(x => x.TagId == 10  && _context.ArtWorks.Any(v => v.Price >= Id && v.Id == x.ArtId)).Select(c => new {
-                        art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId ),
+                    var returnValue = _context.ArtWithTags.Where(x => x.TagId == 10 && _context.ArtWorks.Any(v => v.Price >= Id && v.Id == x.ArtId)).Select(c => new
+                    {
+                        art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId),
                         UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId).First().FullName,
                         favcount = _context.ArtFavourites.Where(x => x.ArtId == c.ArtId).Count(),
                         tags = _context.ArtWithTags.Where(xc => xc.ArtId == c.ArtId).Select(v => new
@@ -184,7 +189,8 @@ namespace artfriks.Controllers
             }
             try
             {
-                var returnValue = _context.ArtWithTags.Where(x => x.TagId == 10 && _context.ArtWorks.Any(v=>v.Price <=Id && v.Id==x.ArtId)).Select(c => new {
+                var returnValue = _context.ArtWithTags.Where(x => x.TagId == 10 && _context.ArtWorks.Any(v => v.Price <= Id && v.Id == x.ArtId)).Select(c => new
+                {
                     art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId),
                     UserId = _context.Users.Where(n => n.Id == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId).First().FullName,
                     favcount = _context.ArtFavourites.Where(x => x.ArtId == c.ArtId).Count(),
@@ -204,8 +210,8 @@ namespace artfriks.Controllers
 
         public IEnumerable<CategoryChildFromStore> GetCatLevel(int id)
         {
-           
-                datalayer _dataLayer = new datalayer();
+
+            datalayer _dataLayer = new datalayer();
             using (var reader = _dataLayer.GetDataReaderByProc("catsLevel", "@CategoryId", id.ToString()))
             {
                 while (reader.Read())
@@ -237,7 +243,8 @@ namespace artfriks.Controllers
             {
                 if (result != null)
                 {
-                    var model = _context.ArtWorks.Where(x => x.Status == 1).Select(p => new {
+                    var model = _context.ArtWorks.Where(x => x.Status == 1 && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id).Select(p => new
+                    {
                         Id = p.Id,
                         AddedDate = p.AddedDate,
                         TermAccepted = p.TermAccepted,
@@ -252,10 +259,10 @@ namespace artfriks.Controllers
                         Title = p.Title,
                         views = p.Views,
                         Width = p.Width,
-                        tags = _context.ArtWithTags.Where(xc => xc.ArtId == p.Id).Select(v => new 
+                        tags = _context.ArtWithTags.Where(xc => xc.ArtId == p.Id).Select(v => new
                         {
                             Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
-                        }) ,
+                        }),
                         UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
                         favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
                         isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == user)
@@ -263,7 +270,7 @@ namespace artfriks.Controllers
                     var returnValue = (from a in result join b in model on a.Id.ToString() equals b.Category group b by b.Id into bg select bg.FirstOrDefault());
                     var subcategories = _context.Categories.Where(x => x.ParentId == Id);
                     var categorytitle = _context.Categories.FirstOrDefault(x => x.Id == Id).Title;
-                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), subcategories= subcategories, categorytitle= categorytitle , pages= returnValue.Count()});
+                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), subcategories = subcategories, categorytitle = categorytitle, pages = returnValue.Count() });
                 }
                 else
                 {
@@ -283,16 +290,17 @@ namespace artfriks.Controllers
             //10 - deals , 11 - collection , 12 - slider
             try
             {
-                var slider = _context.ArtWithTags.Where(x => x.TagId == 12).Select(c => new {
+                var slider = _context.ArtWithTags.Where(x => x.TagId == 12).Select(c => new
+                {
                     art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId)
-                  }).OrderBy(x => Guid.NewGuid()).Take(9).ToList();
+                }).OrderBy(x => Guid.NewGuid()).Take(9).ToList();
 
                 var featured = _context.Featured.ToList();
                 var category = _context.Catgoryhomesection.ToList();
                 var styles = _context.Styles.ToList();
                 var homesection = _context.homesection.ToList();
-              
-                return Ok(new { status = 1, slider=slider,featured=featured,styles=styles,homesection=homesection , category=category });
+
+                return Ok(new { status = 1, slider = slider, featured = featured, styles = styles, homesection = homesection, category = category });
             }
             catch (Exception ex)
             {
@@ -307,10 +315,11 @@ namespace artfriks.Controllers
             //10 - deals , 11 - collection , 12 - slider
             try
             {
-                var slider = _context.ArtWithTags.Where(x => x.TagId == 12).Select(c => new {
+                var slider = _context.ArtWithTags.Where(x => x.TagId == 12).Select(c => new
+                {
                     art = _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId)
                 }).OrderBy(x => Guid.NewGuid()).Take(9).ToList();
-        return Ok(new { status = 1, slider = slider});
+                return Ok(new { status = 1, slider = slider });
             }
             catch (Exception ex)
             {
@@ -325,7 +334,7 @@ namespace artfriks.Controllers
             var user = _userManager.GetUserId(User);
             try
             {
-                var returnValue = _context.ArtWorks.Where(x => x.Id == Id).Select(p => new ArtWorkView
+                var returnValue = _context.ArtWorks.Where(x => x.Id == Id && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id).Select(p => new ArtWorkView
                 {
                     artwork = p,
                     user = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
@@ -336,7 +345,7 @@ namespace artfriks.Controllers
                         Id = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId).Id,
                         Tag = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId).Tag
                     }),
-                    keywords = _context.ArtKeywords.Where(v=>v.ArtId==p.Id)
+                    keywords = _context.ArtKeywords.Where(v => v.ArtId == p.Id)
 
                 }).First() ?? new ArtWorkView();
                 if (returnValue.artwork != null)
@@ -346,17 +355,19 @@ namespace artfriks.Controllers
                     _context.ArtWorks.Update(a);
                     _context.SaveChanges();
                 }
-                var otherarts = _context.ArtWorks.Where(x => x.Category == returnValue.artwork.Category).OrderBy(x => Guid.NewGuid()).Take(5).ToList(); 
+                var otherarts = _context.ArtWorks.Where(x => x.Category == returnValue.artwork.Category).OrderBy(x => Guid.NewGuid()).Take(5).ToList();
                 if (returnValue == null) { return Ok(new { status = 0, message = "Not Found" }); }
-                var userInfo = _context.Users.Where(c => c.Id == returnValue.artwork.UserId).First() ;
+                var userInfo = _context.Users.Where(c => c.Id == returnValue.artwork.UserId).First();
                 var userProfile = _context.UserModel.Where(x => x.UserId == returnValue.artwork.UserId).First() ?? new UserModel();
-                var userArtWorks = _context.ArtWorks.Where(x => x.UserId == returnValue.artwork.UserId).Take(5).OrderByDescending(c=>c.AddedDate);
-                if (user != null) {
-                    var MessageReplies = _context.Messages.Where(x => x.ArtId == Id && x.FromUserId == user).Select(o => new {
+                var userArtWorks = _context.ArtWorks.Where(x => x.UserId == returnValue.artwork.UserId).Take(5).OrderByDescending(c => c.AddedDate);
+                if (user != null)
+                {
+                    var MessageReplies = _context.Messages.Where(x => x.ArtId == Id && x.FromUserId == user).Select(o => new
+                    {
                         message = _context.Messages.Where(b => b.Id == o.Id),
-                        replyies = _context.MessageReplies.Where(v=>v.MessageId==o.Id)
-                     
-                });
+                        replyies = _context.MessageReplies.Where(v => v.MessageId == o.Id)
+
+                    });
                     return Ok(new
                     {
                         status = 1,
@@ -366,7 +377,7 @@ namespace artfriks.Controllers
                         profile = userProfile,
                         artworks = userArtWorks,
                         messages = MessageReplies,
-                        otherarts= otherarts
+                        otherarts = otherarts
                     });
                 }
                 return Ok(new
@@ -392,14 +403,14 @@ namespace artfriks.Controllers
         {
             try
             {
-                foreach(var i in Posttags)
+                foreach (var i in Posttags)
                 {
                     var arta = new ArtWithTags();
-                    arta.ArtId = Convert.ToInt32( i.artId);
-                    arta.TagId = Convert.ToInt32( i.tagId);
+                    arta.ArtId = Convert.ToInt32(i.artId);
+                    arta.TagId = Convert.ToInt32(i.tagId);
                     _context.ArtWithTags.Add(arta);
                 }
-             
+
                 _context.SaveChanges();
                 return Ok(new { status = 1, message = "success" });
             }
@@ -462,7 +473,7 @@ namespace artfriks.Controllers
         [Route("api/artowrk/RemoveKeywords")]
         public IActionResult RemoveKeywords(int Id, string tag)
         {
-         
+
             try
             {
                 var arta = _context.ArtKeywords.Where(x => x.ArtId == Id && x.Keyword == tag);
@@ -512,12 +523,12 @@ namespace artfriks.Controllers
             try
             {
                 var user = _userManager.GetUserId(User);
-                var Fav = _context.ArtFavourites.Where(x=>x.UserId==user && x.ArtId==Id);
-                 foreach(var i in Fav)
+                var Fav = _context.ArtFavourites.Where(x => x.UserId == user && x.ArtId == Id);
+                foreach (var i in Fav)
                 {
                     _context.ArtFavourites.Remove(i);
                 }
-              
+
                 _context.SaveChanges();
                 // Call Notification here
                 return Ok(new { status = 1, message = "Success" });
@@ -534,7 +545,7 @@ namespace artfriks.Controllers
         {
             try
             {
-                var art = _context.ArtWorks.FirstOrDefault(x => x.Id == Id);
+                var art = _context.ArtWorks.FirstOrDefault(x => x.Id == Id && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id);
                 if (art == null)
                 {
                     return Ok(new { status = 0, message = "Not Found" });
@@ -558,18 +569,18 @@ namespace artfriks.Controllers
 
         [Route("api/artowrk/Tags")]
         [HttpGet]
-     
+
         [AllowAnonymous]
         public IActionResult getUsers(string name)
         {
-            return Ok(_context.ArtTags.Where(x => x.Type!="Admin" && x.Tag.ToLower().Contains(name.ToLower())));
+            return Ok(_context.ArtTags.Where(x => x.Type != "Admin" && x.Tag.ToLower().Contains(name.ToLower())));
         }
         [Route("api/artowrk/allTags")]
         [HttpGet]
         [AllowAnonymous]
         public IActionResult allTags(string name)
         {
-            return Ok(_context.ArtTags.Where(x =>  x.Tag.ToLower().Contains(name.ToLower())));
+            return Ok(_context.ArtTags.Where(x => x.Tag.ToLower().Contains(name.ToLower())));
         }
 
         [Route("api/artowrk/artbyname")]
@@ -580,7 +591,8 @@ namespace artfriks.Controllers
             //var model = from a in _context.ArtWorks join b in _context.Categories on a.Category
             try
             {
-               var result = _context.ArtWorks.FromSql("selectquery @p0", name).ToList().Select(c=> new {
+                var result = _context.ArtWorks.FromSql("selectquery @p0", name).ToList().Select(c => new
+                {
                     art = c,
                     favcount = _context.ArtFavourites.Where(x => x.ArtId == c.Id).Count(),
                     tags = _context.ArtWithTags.Where(xc => xc.ArtId == c.Id).Select(v => new
@@ -604,7 +616,7 @@ namespace artfriks.Controllers
         {
             if (name.Prices == 1200)
             {
-                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && name.Orientation.Contains(x.Orientation) && x.Price > name.Prices).
+                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id && name.Orientation.Contains(x.Orientation) && x.Price > name.Prices).
                     Select(c => new
                     {
                         art = c,
@@ -622,7 +634,7 @@ namespace artfriks.Controllers
             }
             else if (name.Orientation.Count() == 0)
             {
-                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && x.Price > name.Prices).
+                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id && x.Price > name.Prices).
                     Select(c => new
                     {
                         art = c,
@@ -640,7 +652,7 @@ namespace artfriks.Controllers
             }
             else
             {
-                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && name.Orientation.Contains(x.Orientation) && x.Price < name.Prices).
+                var model = _context.ArtWorks.Where(x => name.CategoryId.Contains(x.Category) && x.UserId == _context.Users.Where(b => b.Id == x.UserId && b.AccessFailedCount == 0).First().Id && name.Orientation.Contains(x.Orientation) && x.Price < name.Prices).
                     Select(c => new
                     {
                         art = c,
@@ -655,7 +667,7 @@ namespace artfriks.Controllers
                     });
                 return Ok(model);
             }
-          
+
         }
 
         [Route("api/artowrk/getspecialtags")]
@@ -672,7 +684,7 @@ namespace artfriks.Controllers
         public IActionResult getArticles()
         {
             return Ok(new { Month = GetMonth(), Articles = _context.ArtArticles.ToList() });
-           // return Ok(_context.ArtArticles.ToList());
+            // return Ok(_context.ArtArticles.ToList());
         }
 
         public List<Tuple<string, string>> GetMonth()
@@ -741,7 +753,7 @@ namespace artfriks.Controllers
         [AllowAnonymous]
         public IActionResult getArticlesbyId(int Id)
         {
-            return Ok(_context.ArtArticles.Where(x=>x.Id==Id).First());
+            return Ok(_context.ArtArticles.Where(x => x.Id == Id).First());
         }
 
         [Route("api/artowrk/Categories")]
@@ -749,7 +761,7 @@ namespace artfriks.Controllers
         [AllowAnonymous]
         public IActionResult getCategories()
         {
-            return Ok(_context.Categories.Where(x=>x.ParentId==0).ToList());
+            return Ok(_context.Categories.Where(x => x.ParentId == 0).ToList());
         }
 
         [Route("api/artowrk/Subcategories")]
@@ -824,28 +836,29 @@ namespace artfriks.Controllers
         {
             int i = 0;
             var arts = _context.ArtWorks.ToList();
-            foreach (var Art in arts) {
+            foreach (var Art in arts)
+            {
                 if (Art.Width == Art.Height)
                     Art.Orientation = "Square";
                 else if (Art.Width > Art.Height)
                     Art.Orientation = "Landscape";
-                else if(Art.Height>Art.Width)
+                else if (Art.Height > Art.Width)
                     Art.Orientation = "Portrait";
 
                 try
                 {
                     _context.ArtWorks.Update(Art);
-                    i = i+1; 
+                    i = i + 1;
                 }
                 catch (Exception ex)
                 {
                     return Ok(new { status = 0, message = ex.Message });
                 }
                 _context.SaveChanges();
-             
+
             }
             return Ok(new { status = 1, message = "Success", id = i });
-           // return Ok(new { status = 0, message = "Final" });
+            // return Ok(new { status = 0, message = "Final" });
         }
 
         [HttpPost]
@@ -854,8 +867,9 @@ namespace artfriks.Controllers
         public IActionResult updateArt([FromBody]ArtWork Art)
         {
             var user = _userManager.GetUserId(User);
-            var oldart = _context.ArtWorks.FirstOrDefault(x => x.Id ==Art.Id);
-            if (oldart == null) {
+            var oldart = _context.ArtWorks.FirstOrDefault(x => x.Id == Art.Id);
+            if (oldart == null)
+            {
                 return Ok(new { status = 0, message = "Not Found" });
             }
             if (oldart.UserId != user)
@@ -875,7 +889,7 @@ namespace artfriks.Controllers
             oldart.AddedDate = DateTime.Now;
             if (Art.Width == Art.Height)
                 oldart.Orientation = "Square";
-            else if(Art.Width > Art.Height)
+            else if (Art.Width > Art.Height)
                 oldart.Orientation = "Landscape";
             else
                 oldart.Orientation = "Portrait";
@@ -903,15 +917,16 @@ namespace artfriks.Controllers
         [Route("api/artowrk/UpdateViewOnArt")]
         public IActionResult UpdateViewOnArt(int id)
         {
-        try { 
-            var oldart = _context.ArtWorks.FirstOrDefault(x => x.Id == id);
-            if (oldart == null)
+            try
             {
-                return Ok(new { status = 0, message = "Not Found" });
-            }
+                var oldart = _context.ArtWorks.FirstOrDefault(x => x.Id == id);
+                if (oldart == null)
+                {
+                    return Ok(new { status = 0, message = "Not Found" });
+                }
                 oldart.Views = oldart.Views + 1;
                 _context.ArtWorks.Update(oldart);
-              
+
                 _context.SaveChanges();
                 return Ok(new { status = 1, message = "Success" });
             }

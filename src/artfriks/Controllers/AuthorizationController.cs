@@ -123,7 +123,7 @@ namespace artfriks.Controllers
                         ErrorDescription = "The user is locked out"
                     });
                 }
-
+            
                 // Ensure the password is valid.
                 if (!await _userManager.CheckPasswordAsync(user, request.Password))
                 {
