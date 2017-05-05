@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170502062405_Cont")]
+    partial class Cont
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -358,18 +359,6 @@ namespace artfriks.Data.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Catgoryhomesection");
-                });
-
-            modelBuilder.Entity("artfriks.Models.Country", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd();
-
-                    b.Property<string>("CountryName");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Country");
                 });
 
             modelBuilder.Entity("artfriks.Models.DailyDiscount", b =>

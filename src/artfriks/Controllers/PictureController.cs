@@ -87,7 +87,7 @@ namespace artfriks.Controllers
                         if (!isExists)
                             System.IO.Directory.CreateDirectory(pathString);
                         int i = 0;
-                        string filemask = "Afg_" + username + "" + Path.GetExtension(file.FileName);
+                        string filemask = "Afg_" + username + "{0}" + Path.GetExtension(file.FileName);
                         fname2 = string.Format(filemask, i);
                         do
                         {

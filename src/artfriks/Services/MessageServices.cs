@@ -4,10 +4,15 @@ using MimeKit;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
+using System.Net.Http.Headers;
 using System.Net.Security;
 using System.Security.Cryptography.X509Certificates;
+using System.Text;
 using System.Threading.Tasks;
+using SendGrid;
+using SendGrid.Helpers.Mail;
 
 namespace artfriks.Services
 {
@@ -16,9 +21,14 @@ namespace artfriks.Services
     // For more details see this link http://go.microsoft.com/fwlink/?LinkID=532713
     public class AuthMessageSender : IEmailSender, ISmsSender
     {
-    
+        //const string DOMAIN = "sandbox702392bd182f42ca9afde1f2db9e30cb.mailgun.org";
+        //const string API_KEY = "key-90610484192486ed24c74808d5ee613f";
+
+        const string DOMAIN = "mail.artfreaksglobal.com";
+        const string API_KEY = "key-62a55fa32f128ed01c3b126dd7a37c99";
+
         static public IConfigurationRoot Configuration { get; set; }
-        public Task SendEmailAsync(string email, string subject, string message)
+        public Task SendEmailAsync1(string email, string subject, string message)
         {
             try
             {
@@ -52,6 +62,19 @@ namespace artfriks.Services
         }
 
 
+        public async Task SendEmailAsync(string to, string subject, string message)
+        {
+
+
+            //var apiKey = Environment.GetEnvironmentVariable("Artfreka");
+            var client = new SendGridClient("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");
+            var from = new EmailAddress("support@artfreaksglobal.com", "Artfreaks Global");
+   
+            var tos = new EmailAddress(to, to);
+
+            var msg = MailHelper.CreateSingleEmail(from, tos, subject, message, message);
+            var response = await client.SendEmailAsync(msg);
+        }
 
         public Task SendSmsAsync(string number, string message)
         {

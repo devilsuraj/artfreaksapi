@@ -59,23 +59,23 @@ namespace artfriks.Controllers
                     ErrorDescription = "Invalid Username or Password."
                 });
             }
-            if (!await _userManager.IsPhoneNumberConfirmedAsync(user))
-            {
-                if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, code, username))
-                {
-                    await _userManager.ChangePhoneNumberAsync(user, username, code);
-                    return await Exchange(new OpenIdConnectRequest { Username = username, Password = password, GrantType = grant_type, Scope = scope, Resource = resource, ClientId = client_id });
-                }
-                else
-                {
-                    return BadRequest(new OpenIdConnectResponse
-                    {
-                        Error = OpenIdConnectConstants.Errors.InvalidGrant,
-                        ErrorDescription = "Verification code is wrong."
-                    });
-                }
-            }
-            else
+            //if (!await _userManager.IsPhoneNumberConfirmedAsync(user))
+            //{
+            //    if (await _userManager.VerifyChangePhoneNumberTokenAsync(user, code, username))
+            //    {
+            //        await _userManager.ChangePhoneNumberAsync(user, username, code);
+            //        return await Exchange(new OpenIdConnectRequest { Username = username, Password = password, GrantType = grant_type, Scope = scope, Resource = resource, ClientId = client_id });
+            //    }
+            //    else
+            //    {
+            //        return BadRequest(new OpenIdConnectResponse
+            //        {
+            //            Error = OpenIdConnectConstants.Errors.InvalidGrant,
+            //            ErrorDescription = "Verification code is wrong."
+            //        });
+            //    }
+            //}
+            //else
                 return await Exchange(new OpenIdConnectRequest { Username = username, Password = password, GrantType = grant_type, Scope = scope });
         }
 

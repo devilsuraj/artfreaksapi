@@ -36,7 +36,7 @@ namespace artfriks.Controllers
                     user = o,
                     userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel()
                 }).First();
-                return Ok( new { status =1, message=returnValue});
+                return Ok(new { status = 1, message = returnValue });
             }
             catch (Exception ex)
             {
@@ -54,7 +54,8 @@ namespace artfriks.Controllers
                 {
                     user = o,
                     userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
-                    arts = _context.ArtWorks.Where(x => x.UserId == Id).Select(p => new {
+                    arts = _context.ArtWorks.Where(x => x.UserId == Id).Select(p => new
+                    {
                         Id = p.Id,
                         AddedDate = p.AddedDate,
                         TermAccepted = p.TermAccepted,
@@ -72,7 +73,7 @@ namespace artfriks.Controllers
                         favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
                         isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == Id)
                     }).OrderByDescending(v => v.AddedDate)
-            }).First();
+                }).First();
                 return Ok(new { status = 1, message = returnValue });
             }
             catch (Exception ex)
@@ -110,7 +111,7 @@ namespace artfriks.Controllers
                         favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
                         isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
                     }).OrderByDescending(v => v.AddedDate).Take(3),
-                    maxprice = _context.ArtWorks.Where(v=>v.UserId==o.Id).Max(c=>c.Price),
+                    maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
                     minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
                 });
                 return Ok(new { status = 1, message = returnValue });
@@ -131,7 +132,8 @@ namespace artfriks.Controllers
                 {
                     user = o,
                     userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
-                    arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new {
+                    arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                    {
                         Id = p.Id,
                         AddedDate = p.AddedDate,
                         TermAccepted = p.TermAccepted,
@@ -166,19 +168,20 @@ namespace artfriks.Controllers
         {
             return "value";
         }
-        
+
         // POST: api/User
         [HttpPost]
         [Route("~/user/sendMessage")]
         public IActionResult Post([FromBody]Messages value)
         {
-            try { 
-            var userId = _userManager.GetUserId(User);
-            value.FromUserId = userId;
+            try
+            {
+                var userId = _userManager.GetUserId(User);
+                value.FromUserId = userId;
                 value.AddedDate = DateTime.Now;
-            value.ToUserId = _context.ArtWorks.FirstOrDefault(x => x.Id == value.ArtId).UserId ?? "";
-            _context.Messages.Add(value);
-            _context.SaveChanges();
+                value.ToUserId = _context.ArtWorks.FirstOrDefault(x => x.Id == value.ArtId).UserId ?? "";
+                _context.Messages.Add(value);
+                _context.SaveChanges();
                 return Ok(new { status = 1, message = "Success" });
             }
             catch (Exception ex)
@@ -195,17 +198,19 @@ namespace artfriks.Controllers
             try
             {
                 var userId = _userManager.GetUserId(User);
-              
-              var message=  _context.Messages.Where(x=>x.ToUserId ==userId || x.FromUserId==userId).Select(m=> new {
+
+                var message = _context.Messages.Where(x => x.ToUserId == userId || x.FromUserId == userId).Select(m => new
+                {
                     message = m,
-                    from = _context.Users.FirstOrDefault(x=>x.Id==m.FromUserId).UserName,
+                    from = _context.Users.FirstOrDefault(x => x.Id == m.FromUserId).UserName,
                     to = _context.Users.FirstOrDefault(x => x.Id == m.ToUserId).UserName,
-                    replies = _context.MessageReplies.Where(x => x.MessageId == m.Id).Select(mo => new {
+                    replies = _context.MessageReplies.Where(x => x.MessageId == m.Id).Select(mo => new
+                    {
                         message = mo,
                         from = _context.Users.FirstOrDefault(x => x.Id == mo.UserId).UserName
                     })
-            });
-          
+                });
+
                 return Ok(new { status = 1, message = message });
             }
             catch (Exception ex)
@@ -223,11 +228,12 @@ namespace artfriks.Controllers
             {
                 var userId = _userManager.GetUserId(User);
 
-                var message = _context.MessageReplies.Where(x => x.MessageId == id).Select(m => new {
+                var message = _context.MessageReplies.Where(x => x.MessageId == id).Select(m => new
+                {
                     message = m,
                     from = _context.Users.FirstOrDefault(x => x.Id == m.UserId).UserName
                 });
-               
+
                 return Ok(new { status = 1, message = message });
             }
             catch (Exception ex)
@@ -262,7 +268,7 @@ namespace artfriks.Controllers
         {
             try
             {
-                var Message = _context.MessageReplies.FirstOrDefault(x=>x.Id==Id);
+                var Message = _context.MessageReplies.FirstOrDefault(x => x.Id == Id);
                 if (Message == null)
                 {
                     return Ok(new { status = 0, message = "Not Found" });
@@ -302,9 +308,10 @@ namespace artfriks.Controllers
         [Route("~/user/updateuserinfo")]
         public IActionResult Put(int id, [FromBody]UserModel value)
         {
-            try { 
-            var userId = _userManager.GetUserId(User);
-            var UserBio = _context.UserModel.Any(x => x.UserId == userId);
+            try
+            {
+                var userId = _userManager.GetUserId(User);
+                var UserBio = _context.UserModel.Any(x => x.UserId == userId);
                 if (UserBio == false)
                 {
                     value.UserId = userId;
@@ -314,11 +321,11 @@ namespace artfriks.Controllers
                 }
 
                 _context.Entry(value).State = EntityState.Modified;
-               /* var UserBio2 = _context.UserModel.Where(x => x.UserId == userId).First();
-                
-                UserBio2 = value;
-            _context.UserModel.Update(UserBio2);*/
-            _context.SaveChanges();
+                /* var UserBio2 = _context.UserModel.Where(x => x.UserId == userId).First();
+
+                 UserBio2 = value;
+             _context.UserModel.Update(UserBio2);*/
+                _context.SaveChanges();
                 return Ok(new { status = 1, message = "Updated Successfully" });
             }
             catch (Exception ex)
@@ -360,37 +367,73 @@ namespace artfriks.Controllers
 
         [HttpGet]
         [Route("~/user/AlluserinfoByName")]
-        public IActionResult AlluserinfoByName()
+        public IActionResult AlluserinfoByName(int limit, int offset, string alpha)
         {
+
             try
             {
-                var returnValue = _context.Users.Where(x => _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
+                if (alpha == "" || alpha == null || alpha == String.Empty)
                 {
-                    user = o,
-                    userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
-                    arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                    var returnValue = _context.Users.Where(x => _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
                     {
-                        Id = p.Id,
-                        AddedDate = p.AddedDate,
-                        TermAccepted = p.TermAccepted,
-                        Category = p.Category,
-                        Description = p.Description,
-                        DimensionUnit = p.DimensionUnit,
-                        Height = p.Height,
-                        MediumString = p.MediumString,
-                        PictureUrl = p.PictureUrl,
-                        Price = p.Price,
-                        Status = p.Status,
-                        Title = p.Title,
-                        Width = p.Width,
-                        UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
-                        favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
-                        isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
-                    }).OrderByDescending(v => v.AddedDate).Take(3),
-                    maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
-                    minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
-                });
-                return Ok(new { status = 1, message = returnValue });
+                        user = o,
+                        userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
+                        arts = _context.ArtWorks.Where(x => x.UserId == o.Id && _context.Users.Any(v => v.Id == x.UserId)).Select(p => new
+                        {
+                            Id = p.Id,
+                            AddedDate = p.AddedDate,
+                            TermAccepted = p.TermAccepted,
+                            Category = p.Category,
+                            Description = p.Description,
+                            DimensionUnit = p.DimensionUnit,
+                            Height = p.Height,
+                            MediumString = p.MediumString,
+                            PictureUrl = p.PictureUrl,
+                            Price = p.Price,
+                            Status = p.Status,
+                            Title = p.Title,
+                            Width = p.Width,
+                            UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                            favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                            isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
+                        }).OrderByDescending(v => v.AddedDate).Take(3),
+                        maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id && _context.Users.Any(n => n.Id == v.UserId)).Max(c => c.Price),
+                        minprice = _context.ArtWorks.Where(v => v.UserId == o.Id && _context.Users.Any(n => n.Id == v.UserId)).Min(c => c.Price)
+                    });
+                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count() });
+                }
+                else
+                {
+                    var returnValue = _context.Users.Where(x => x.FullName.ToLower().StartsWith(alpha.ToLower()) && _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
+                    {
+                        user = o,
+                        userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
+                        arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                        {
+                            Id = p.Id,
+                            AddedDate = p.AddedDate,
+                            TermAccepted = p.TermAccepted,
+                            Category = p.Category,
+                            Description = p.Description,
+                            DimensionUnit = p.DimensionUnit,
+                            Height = p.Height,
+                            MediumString = p.MediumString,
+                            PictureUrl = p.PictureUrl,
+                            Price = p.Price,
+                            Status = p.Status,
+                            Title = p.Title,
+                            Width = p.Width,
+                            UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                            favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                            isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
+                        }).OrderByDescending(v => v.AddedDate).Take(3),
+                        maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
+                        minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
+                    });
+                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count() });
+                }
+
+
             }
             catch (Exception ex)
             {
@@ -400,37 +443,73 @@ namespace artfriks.Controllers
 
         [HttpGet]
         [Route("~/user/AlluserinfoByLocation")]
-        public IActionResult AlluserinfoByLocation()
+        public IActionResult AlluserinfoByLocation(int limit, int offset, string alpha)
         {
             try
             {
-                var returnValue = _context.Users.Where(x => _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
+                if (alpha == "" || alpha == null || alpha == String.Empty)
                 {
-                    user = o,
-                    userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
-                    arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                    var returnValue = _context.Users.Where(x => _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
                     {
-                        Id = p.Id,
-                        AddedDate = p.AddedDate,
-                        TermAccepted = p.TermAccepted,
-                        Category = p.Category,
-                        Description = p.Description,
-                        DimensionUnit = p.DimensionUnit,
-                        Height = p.Height,
-                        MediumString = p.MediumString,
-                        PictureUrl = p.PictureUrl,
-                        Price = p.Price,
-                        Status = p.Status,
-                        Title = p.Title,
-                        Width = p.Width,
-                        UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
-                        favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
-                        isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
-                    }).OrderByDescending(v => v.AddedDate).Take(3),
-                    maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
-                    minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
-                });
-                return Ok(new { status = 1, message = returnValue });
+                        user = o,
+                        userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
+                        arts = _context.ArtWorks.Where(x => x.UserId == o.Id && _context.Users.Any(n => n.Id == x.UserId)).Select(p => new
+                        {
+                            Id = p.Id,
+                            AddedDate = p.AddedDate,
+                            TermAccepted = p.TermAccepted,
+                            Category = p.Category,
+                            Description = p.Description,
+                            DimensionUnit = p.DimensionUnit,
+                            Height = p.Height,
+                            MediumString = p.MediumString,
+                            PictureUrl = p.PictureUrl,
+                            Price = p.Price,
+                            Status = p.Status,
+                            Title = p.Title,
+                            Width = p.Width,
+                            UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                            favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                            isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
+                        }).OrderByDescending(v => v.AddedDate).Take(3),
+                        maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id && _context.Users.Any(n => n.Id == v.UserId)).Max(c => c.Price),
+                        minprice = _context.ArtWorks.Where(v => v.UserId == o.Id && _context.Users.Any(n => n.Id == v.UserId)).Min(c => c.Price)
+                    });
+                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count() });
+                }
+                else
+                {
+                    var returnValue = _context.Users.Where(x => x.Country.ToLower().StartsWith(alpha.ToLower()) && _context.ArtWorks.Any(b => b.UserId == x.Id)).Select(o => new
+                    {
+                        user = o,
+                        userbio = _context.UserModel.Where(x => x.UserId == o.Id).First() ?? new UserModel(),
+                        arts = _context.ArtWorks.Where(x => x.UserId == o.Id).Select(p => new
+                        {
+                            Id = p.Id,
+                            AddedDate = p.AddedDate,
+                            TermAccepted = p.TermAccepted,
+                            Category = p.Category,
+                            Description = p.Description,
+                            DimensionUnit = p.DimensionUnit,
+                            Height = p.Height,
+                            MediumString = p.MediumString,
+                            PictureUrl = p.PictureUrl,
+                            Price = p.Price,
+                            Status = p.Status,
+                            Title = p.Title,
+                            Width = p.Width,
+                            UserId = _context.Users.Where(n => n.Id == p.UserId).First().FullName,
+                            favcount = _context.ArtFavourites.Where(x => x.ArtId == p.Id).Count(),
+                            isfav = _context.ArtFavourites.Any(x => x.ArtId == p.Id && x.UserId == o.Id)
+                        }).OrderByDescending(v => v.AddedDate).Take(3),
+                        maxprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Max(c => c.Price),
+                        minprice = _context.ArtWorks.Where(v => v.UserId == o.Id).Min(c => c.Price)
+                    });
+                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count() });
+                }
+
+
+
             }
             catch (Exception ex)
             {

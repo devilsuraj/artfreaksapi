@@ -51,6 +51,7 @@ namespace artfriks.Controllers
         [AllowAnonymous]
         public IActionResult Login(string returnUrl = null)
         {
+            _emailSender.SendEmailAsync("shaheen@aeonsoftware.net", "Hi", "Hello");
             ViewData["ReturnUrl"] = returnUrl;
             return View();
         }
@@ -294,19 +295,19 @@ namespace artfriks.Controllers
                 return Ok(new { status = 2, errors = ModelState.Values });
             }
             var checkuser = await _userManager.FindByEmailAsync(dto.Email);
-            if (checkuser.AccessFailedCount == 0)
+            //if (checkuser.AccessFailedCount == 0)
+            //{
+            //if (checkuser != null && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == false)
+            //{
+            //    var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(checkuser, checkuser.Phone);
+            //    await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
+            //    return Ok(new { status = 99, error = "Verify your mobile number" });
+            //}
+            if (checkuser != null)// && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == true)
             {
-                //if (checkuser != null && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == false)
-                //{
-                //    var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(checkuser, checkuser.Phone);
-                //    await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
-                //    return Ok(new { status = 99, error = "Verify your mobile number" });
-                //}
-                if (checkuser != null)// && await _userManager.IsPhoneNumberConfirmedAsync(checkuser) == true)
-                {
-                    return Ok(new { status = 44, error = "User already exists" });
-                }
+                return Ok(new { status = 44, error = "User already exists" });
             }
+            //}
 
             try
             {
@@ -334,14 +335,14 @@ namespace artfriks.Controllers
                 user.SecurityStamp = Guid.NewGuid().ToString();
                 var result = await _userManager.CreateAsync(user, "Polardevil#1");
 
-              /*  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
-                var callbackUrl = $"https://bo.Artfriksglobal.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
-                */
+                /*  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+                  var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
+                  var callbackUrl = $"https://bo.Artfriksglobal.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
+                  */
                 //await _smsSender.SendSmsAsync(dto.CountryCode + dto.Phone, "Your OTP for Artfreaksglobal is " + OTP + ". Thank you for using Artfreaksglobal!");
 
-               // await _signInManager.SignInAsync(user, isPersistent: false);
-              //  _logger.LogInformation(3, "User created a new account with password.");
+                // await _signInManager.SignInAsync(user, isPersistent: false);
+                //  _logger.LogInformation(3, "User created a new account with password.");
 
 
                 if (result.Succeeded)
@@ -405,11 +406,24 @@ namespace artfriks.Controllers
                 user.FullName = username.FullName;
                 user.Address = username.Address;
                 user.UserName = username.UserName;
-                await _userManager.ChangePasswordAsync(user, "Polardevil#1", username.Password);
-                await _userManager.UpdateAsync(user);
-               // string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello " + user.FullName + ",</h5> <p>Welcome to <strong>artfreaksglobal.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/g+.png' width='30' height='30' alt=''/> </a> </div> </div> </div> </body>");
-             //   await _emailSender.SendEmailAsync(user.Email, "Artfreaks Global - Thank you for registration", Emailtext);
-                return Ok(new { status = 0, Message = "success" });
+                var res = await _userManager.ChangePasswordAsync(user, "Polardevil#1", username.Password);
+                // await _userManager.RemovePasswordAsync(user);
+                //await _userManager.AddPasswordAsync(user, username.Password);
+
+
+                string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello " + user.UserName + "-" + user.Email + ",</h5> <p>Welcome to <strong>artfreaksglobal.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> </div> </div> </div> </body>");
+                await _emailSender.SendEmailAsync(user.Email, "Artfreaks Global - Thank you for registration", Emailtext);
+                if (res.Succeeded)
+                {
+                    await _userManager.UpdateAsync(user);
+
+                    return Ok(new { status = 0, Message = "success" });
+                }
+                else
+                {
+                    return Ok(new { status = 1, Message = "Use of space and special character is not allowed" });
+                }
+
             }
             catch (Exception ex)
             {
@@ -617,17 +631,42 @@ namespace artfriks.Controllers
 
                 // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
                 // Send an email with this link
-                //var code = await _userManager.GeneratePasswordResetTokenAsync(user);
-                //var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
-                //await _emailSender.SendEmailAsync(model.Email, "Reset Password",
-                //   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
-                //return View("ForgotPasswordConfirmation");
+                var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+                var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+                await _emailSender.SendEmailAsync(model.Email, "Reset Password",
+                   $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+                return View("ForgotPasswordConfirmation");
             }
 
             // If we got this far, something failed, redisplay form
             return View(model);
         }
 
+        [HttpGet]
+        [AllowAnonymous]
+        public IActionResult Forgot()
+        {
+            return View();
+        }
+
+        [Route("api/account/Forgot")]
+        [HttpPost]
+        [AllowAnonymous]
+        public async Task<IActionResult> Forgot(string Email)
+        {
+            var user = await _userManager.FindByEmailAsync(Email);
+            if (user == null)
+            {
+                return Ok(new { status = 3, Message = "User does not exist" });
+            }
+
+            var code = await _userManager.GeneratePasswordResetTokenAsync(user);
+            var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+            await _emailSender.SendEmailAsync(Email, "Reset Password",
+               $"Please reset your password by clicking here: <a href='{callbackUrl}'>link</a>");
+
+            return Ok(new { status = 1, Message = "success" });
+        }
         //
         // GET: /Account/ForgotPasswordConfirmation
         [HttpGet]
@@ -653,6 +692,7 @@ namespace artfriks.Controllers
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> ResetPassword(ResetPasswordViewModel model)
         {
+
             if (!ModelState.IsValid)
             {
                 return View(model);
@@ -661,15 +701,16 @@ namespace artfriks.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return RedirectToAction(nameof(AccountController.ResetPasswordConfirmation), "Account");
+                return Redirect("http://alpha.artfreaksglobal.com/v2/#/account/login");
             }
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return RedirectToAction(nameof(AccountController.ResetPasswordConfirmation), "Account");
+                return Redirect("http://alpha.artfreaksglobal.com/v2/#/account/login");
             }
             AddErrors(result);
             return View();
+
         }
 
         //

@@ -56,9 +56,8 @@
     "Microsoft.VisualStudio.Web.CodeGenerators.Mvc": {
       "version": "1.0.0-preview2-final",
       "type": "build"
-    }
-    
- 
+    },
+    "Sendgrid": "9.1.1"
   },
 
   "tools": {

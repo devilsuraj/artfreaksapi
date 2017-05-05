@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
@@ -13,7 +14,7 @@ namespace artfriks.Models
         public string Description { get; set; }
         public string UserId { get; set; }
         public decimal Price { get; set; }
-        public decimal Width { get; set; } 
+        public decimal Width { get; set; }
         public decimal Height { get; set; }
         public string Orientation { get; set; }
         public string DimensionUnit { get; set; }
@@ -23,9 +24,20 @@ namespace artfriks.Models
         public bool TermAccepted { get; set; }
         public int Views { get; set; }
         public int Status { get; set; } // 0 for new , 1 for approved , 2 for rejected , 3 for deleted
-        public string Category { get; set; } // 0 for normal - 1 for deals - 2 for anything else
-    }
+        public string Category { get; set; }
 
+       
+        // 0 for normal - 1 for deals - 2 for anything else
+        public ArtWork()
+        {
+            this.AddedDate = DateTime.Now;
+        }
+    }
+    public class ArtUploadModel
+    {
+        public ArtWork Artwork { get; set; }
+        public string[] SubCategrory { get; set; }
+    }
     public class ArtWorkView
     {
         public ArtWork artwork { get; set; }
@@ -34,7 +46,9 @@ namespace artfriks.Models
         public int favcount { get; set; }
         public bool isfav { get; set; }
         public IEnumerable<ArtTag> tags { get; set; }
-        public IEnumerable< ARtKeywords> keywords { get; set; }
+        public IEnumerable<ARtKeywords> keywords { get; set; }
+        public int[] CategorysId { get; set; }
+        public List<SelectListItem> Items { get; set; }
     }
     public class ArtWorkViewWithTag
     {
@@ -49,7 +63,8 @@ namespace artfriks.Models
         public IEnumerable<ArtWorkViewWithTag> arts { get; set; }
     }
 
-    public class ArtTagView {
+    public class ArtTagView
+    {
         public ArtTag Tags { get; set; }
     }
     public class ArtWorkEditView
@@ -66,7 +81,7 @@ namespace artfriks.Models
     }
     public class PostTags
     {
-      public string artId { get; set; }
-      public string tagId { get; set; }
+        public string artId { get; set; }
+        public string tagId { get; set; }
     }
 }

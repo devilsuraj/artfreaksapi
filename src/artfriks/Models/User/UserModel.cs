@@ -15,12 +15,5 @@ namespace artfriks.Models
         public DateTime UpdateDate { get; set; }
     }
 
-
  
-
-
-
-     
-
-
 }

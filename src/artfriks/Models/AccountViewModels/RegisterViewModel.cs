@@ -46,15 +46,15 @@ namespace artfriks.Models.AccountViewModels
         public string CountryCode { get; set; }
         [Required]
         public string Address { get; set; }
-        [Required]
+  
         public string FormattedAddress { get; set; }
-        [Required]
+    
         public string Longitude { get; set; }
-        [Required]
+    
         public string Latitude { get; set; }
-        [Required]
+      
         public string City { get; set; }
-        [Required]
+      
         public string State { get; set; }
         [Required]
         public string Country { get; set; }
@@ -69,5 +69,6 @@ namespace artfriks.Models.AccountViewModels
         public string Gender { get; set; }
         public string FirstName { get; set; }
         public string LastName { get; set; }
+        public string Terms { get; set; }
     }
 }
