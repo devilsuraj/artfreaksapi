@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170506061959_changecountrytable")]
+    partial class changecountrytable
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -21,8 +22,6 @@ namespace artfriks.Data.Migrations
                     b.Property<string>("Id");
 
                     b.Property<int>("AccessFailedCount");
-
-                    b.Property<DateTime>("Adddate");
 
                     b.Property<string>("Address");
 
@@ -250,7 +249,7 @@ namespace artfriks.Data.Migrations
 
                     b.Property<DateTime>("AddedDate");
 
-                    b.Property<string>("ArtCreationDate");
+                    b.Property<DateTime>("ArtCreationDate");
 
                     b.Property<string>("Category");
 
@@ -375,7 +374,7 @@ namespace artfriks.Data.Migrations
 
                     b.Property<string>("NiceName");
 
-                    b.Property<short>("Numcode");
+                    b.Property<int>("Numcode");
 
                     b.Property<int>("Phonecode");
 

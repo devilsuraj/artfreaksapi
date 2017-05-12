@@ -8,9 +8,10 @@ using artfriks.Data;
 namespace artfriks.Data.Migrations
 {
     [DbContext(typeof(ApplicationDbContext))]
-    partial class ApplicationDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170506102059_ooooooo.55")]
+    partial class ooooooo55
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("ProductVersion", "1.0.1")
@@ -250,7 +251,7 @@ namespace artfriks.Data.Migrations
 
                     b.Property<DateTime>("AddedDate");
 
-                    b.Property<string>("ArtCreationDate");
+                    b.Property<DateTime>("ArtCreationDate");
 
                     b.Property<string>("Category");
 

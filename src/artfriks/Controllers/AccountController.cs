@@ -123,10 +123,10 @@ namespace artfriks.Controllers
                     Phone = model.Phone,
                     Profession = model.Profession,
                     CountryCode = model.CountryCode,
-                    UserName = model.Email,
+                    UserName = model.UserName,
                     Email = model.Email
                 };
-                var result = await _userManager.CreateAsync(user, "Polardevil#1");
+                var result = await _userManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     UserModel useme = new UserModel();
@@ -308,12 +308,26 @@ namespace artfriks.Controllers
                 return Ok(new { status = 44, error = "User already exists" });
             }
             //}
+            var check = await _userManager.FindByNameAsync(dto.UserName);
+            if (check != null)// && await _userManager.IsPhoneNumberConfirmedAsync(check) == true)
+            {
+                return Ok(new { status = 5, Message = "Please choose another UserName" });
+            }
+            if (dto.Password != dto.ConfirmPassword)// && await _userManager.IsPhoneNumberConfirmedAsync(check) == true)
+            {
+                return Ok(new { status = 5, Message = "Password and confirm password did not match" });
+            }
+            var checkmodelstate = ModelState["UserName"];
+            if (checkmodelstate != null && checkmodelstate.Errors.Any())
+            {
+                return Ok(new { status = 5, Message = "Dont use white spaces or Special Characters in Username" });
+            }
 
             try
             {
                 var user = new ApplicationUser
                 {
-                    UserName = dto.Email,
+                    UserName = dto.UserName,
                     FullName = dto.FullName,
                     Email = dto.Email,
                     Address = dto.Address,
@@ -332,9 +346,10 @@ namespace artfriks.Controllers
                     FirstName = dto.FirstName,
                     LastName = dto.LastName
                 };
+                user.PhoneNumberConfirmed = true;
                 user.SecurityStamp = Guid.NewGuid().ToString();
-                var result = await _userManager.CreateAsync(user, "Polardevil#1");
-
+                var result = await _userManager.CreateAsync(user,dto.Password);
+              
                 /*  var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
                   var OTP = await _userManager.GenerateChangePhoneNumberTokenAsync(user, user.Phone);
                   var callbackUrl = $"https://bo.Artfriksglobal.com/Account/ConfirmEmail?userId={ user.Id}&code={code}";
@@ -411,7 +426,7 @@ namespace artfriks.Controllers
                 //await _userManager.AddPasswordAsync(user, username.Password);
 
 
-                string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello " + user.UserName + "-" + user.Email + ",</h5> <p>Welcome to <strong>artfreaksglobal.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='http://alpha.artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> </div> </div> </div> </body>");
+                string Emailtext = String.Format(" <div class='container emailer'> <div class='row'> <h5>Hello " + user.UserName + "-" + user.Email + ",</h5> <p>Welcome to <strong>artfreaksglobal.com. </strong> We are simply thrilled to see you here! </p> <p>Art Freaks is a <strong>Non Commission </strong> based online Art Gallery where - <strong>Artists can showcase and sell their works online to buyers directly; & Art Collectors and Gallery Owners can contact the Artists directly. </strong> </p> <h5>If you are an Artist you can... </h5> <p> - Upload images of your artworks to create your own art gallery and have Art Collectors contact you directly in your own private inbox! <a href='https://artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'> upload now </a> </p> <p>- Not in mood to deal with buyer directly? No issues! Let us handle the transaction for you for a small fee/percentage. <a href='#' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us here</a> </p> <p>- Browse and connect with other artists from around the world for free flowing creative exchang. </p> <h5>If you are an Art Collector you can... </h5> <p>- Browse through our extensive online collection of original Artworks, by Name or by Genre, and connect to the Artists directly! <a href='https://artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'> browse now </a> </p> <p>- Not sure what you looking for... We have customised search module, 'Find Your Art' section, which finds art according to your specific requirement <a href='https://artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'>try it... </a> </p> <p>Still not satisfied? Then connect with our Art Specialists Panel, who will personally advise and curate the artworks for that Special Wall! A free, personalised initiative by Art Freaks India. <a href='https://artfreaksglobal.com' class='red-text' style='font-family:Century751 BT; font-style:italic;'>write to us...</a> </p> <p>We are truly glad that you are a part of this Global Art Community! </p> <br /> <p>Cheers!!</p> <p>Art Freaks India Team </p> </div> <div class='row'> <div class='col s6 m6 l6'><img src='http://base.kmtrt.in/images/newlogo.png' width='580' height='65' alt='' class='responsive-img'/> </div> <div class='col s6 m6 l6 right-align' > <a href='#'><img src='http://base.kmtrt.in/images/fb.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/tw.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/insta.png' width='30' height='30' alt=''/> </a> <a href='#'> <img src='http://base.kmtrt.in/images/pin.png' width='30' height='30' alt=''/> </a> </div> </div> </div> </body>");
                 await _emailSender.SendEmailAsync(user.Email, "Artfreaks Global - Thank you for registration", Emailtext);
                 if (res.Succeeded)
                 {
@@ -701,12 +716,12 @@ namespace artfriks.Controllers
             if (user == null)
             {
                 // Don't reveal that the user does not exist
-                return Redirect("http://alpha.artfreaksglobal.com/v2/#/account/login");
+                return Redirect("https://artfreaksglobal.com/v2/#/account/login");
             }
             var result = await _userManager.ResetPasswordAsync(user, model.Code, model.Password);
             if (result.Succeeded)
             {
-                return Redirect("http://alpha.artfreaksglobal.com/v2/#/account/login");
+                return Redirect("https://artfreaksglobal.com/v2/#/account/login");
             }
             AddErrors(result);
             return View();

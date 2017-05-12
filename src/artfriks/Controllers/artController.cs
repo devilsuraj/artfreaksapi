@@ -59,7 +59,7 @@ namespace artfriks.Controllers
                         Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
                     })
                 }).OrderByDescending(v => v.AddedDate);
-                return Ok(new { status = 1, message = returnValue });
+                return Ok(new { status = 1, message = returnValue.OrderByDescending(c=>c.Id) });
             }
             catch (Exception ex)
             {
@@ -102,7 +102,7 @@ namespace artfriks.Controllers
             var user = _userManager.GetUserId(User);
             try
             {
-                var returnValue = _context.ArtWorks.Where(x => x.Status == 1 && _context.Users.Any(c => c.Id == x.UserId)).Select(p => new
+                var returnValue = _context.ArtWorks.Where(x => x.Status == 1 && _context.Users.Any(c => c.Id == x.UserId)).OrderByDescending(v=>v.AddedDate).Select(p => new
                 {
                     Id = p.Id,
                     AddedDate = p.AddedDate,
@@ -126,7 +126,7 @@ namespace artfriks.Controllers
                         Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
                     })
                 }).OrderByDescending(v => v.AddedDate);
-                return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count(), Month = GetMonth() });
+                return Ok(new { status = 1, message = returnValue.OrderByDescending(c=>c.Id).Skip(limit * offset).Take(limit), pages = returnValue.Count(), Month = GetMonth() });
             }
             catch (Exception ex)
             {
@@ -152,7 +152,7 @@ namespace artfriks.Controllers
                     }),
                     isfav = _context.ArtFavourites.Any(x => x.ArtId == c.Id && x.UserId == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId)
                 }).ToList();
-                return Ok(new { status = 1, message = returnValue });
+                return Ok(new { status = 1, message = returnValue.OrderByDescending(c=>c.art.Id) });
             }
             catch (Exception ex)
             {
@@ -712,7 +712,11 @@ namespace artfriks.Controllers
         [AllowAnonymous]
         public IActionResult getArticles(int limit, int offset)
         {
-            var returnValue = _context.ArtArticles.ToList();
+            if (limit == 0)
+            {
+                limit = 20; offset = 0;
+            }
+            var returnValue = _context.ArtArticles.Where(x => x.AddedDate.ToString("MM/yyyy") == DateTime.Now.ToString("MM/yyyy")).ToList();
 
             return Ok(new { Month = GetMonth(), Articles = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count() });
             // return Ok(_context.ArtArticles.ToList());
@@ -763,7 +767,7 @@ namespace artfriks.Controllers
                         Tags = _context.ArtTags.FirstOrDefault(b => b.Id == v.TagId)
                     })
                 }).OrderByDescending(v => v.AddedDate);
-                return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count(), Month = GetMonth() });
+                return Ok(new { status = 1, message = returnValue.OrderByDescending(c=>c.Id).Skip(limit * offset).Take(limit), pages = returnValue.Count(), Month = GetMonth() });
             }
             catch (Exception ex)
             {
@@ -933,11 +937,11 @@ namespace artfriks.Controllers
             {
                 return Ok(new { status = 0, message = "Access Denied" });
             }
-            
+
             List<Int32> list = (_context.ArtCategories.Where(x => x.ArtId == Art.Artwork.Id).Select(x => x.Id).ToList());
 
 
-            oldart.ArtCreationDate = Art.Artwork.AddedDate;
+            oldart.ArtCreationDate = Art.Artwork.ArtCreationDate;
             oldart.Category = Art.Artwork.Category;
             oldart.Description = Art.Artwork.Description;
             oldart.DimensionUnit = Art.Artwork.DimensionUnit;
@@ -1131,7 +1135,7 @@ namespace artfriks.Controllers
                     isfav = _context.ArtFavourites.Any(x => x.ArtId == c.Id && x.UserId == _context.ArtWorks.FirstOrDefault(art => art.Id == c.ArtId).UserId)
                 }).ToList();
 
-                return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), pages = returnValue.Count() });
+                return Ok(new { status = 1, message = returnValue.OrderByDescending(c=>c.art.Id).Skip(limit * offset).Take(limit), pages = returnValue.Count() });
             }
             catch (Exception ex)
             {
@@ -1202,7 +1206,7 @@ namespace artfriks.Controllers
                     var subcategories = _context.Categories.Where(x => x.ParentId == Id);
                     var categorytitle = _context.Categories.FirstOrDefault(x => x.Id == Id).Title;
 
-                    return Ok(new { status = 1, message = returnValue.Skip(limit * offset).Take(limit), subcategories = subcategories, categorytitle = categorytitle, pages = returnValue.Count() });
+                    return Ok(new { status = 1, message = returnValue.OrderByDescending(c=>c.Id).Skip(limit * offset).Take(limit), subcategories = subcategories, categorytitle = categorytitle, pages = returnValue.Count() });
                 }
                 else
                 {

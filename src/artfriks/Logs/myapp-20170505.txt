@@ -7807,3 +7807,20 @@ ORDER BY _Position; (3b5ca34b)
 2017-05-05T18:41:23.0605882+05:30 0HL4JMVU4OPK2 [INF] Executing ObjectResult, writing value "Microsoft.AspNetCore.Mvc.ControllerContext". (4e968210)
 2017-05-05T18:41:23.1175915+05:30 0HL4JMVU4OPK2 [INF] Executed action "artfriks.Controllers.artController.updateArt (artfriks)" in 79031.4476ms (afa2e885)
 2017-05-05T18:41:23.1375926+05:30 0HL4JMVU4OPK2 [INF] Request finished in 80742.9906ms 200 application/json; charset=utf-8 (15c52c40)
+2017-05-05T19:46:35.1623477+05:30  [INF] Executed DbCommand (132ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+IF EXISTS (SELECT * FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE') SELECT 1 ELSE SELECT 0 (3b5ca34b)
+2017-05-05T19:46:35.7833832+05:30  [INF] Executed DbCommand (109ms) [Parameters=[], CommandType='Text', CommandTimeout='30']
+SELECT CASE
+    WHEN EXISTS (
+        SELECT 1
+        FROM [OpenIddictApplications] AS [o])
+    THEN CAST(1 AS BIT) ELSE CAST(0 AS BIT)
+END (3b5ca34b)
+2017-05-05T19:46:35.9073903+05:30  [INF] User profile is available. Using '"C:\Users\Administrator\AppData\Local\ASP.NET\DataProtection-Keys"' as key repository and Windows DPAPI to encrypt keys at rest. (7ac5e29c)
+2017-05-05T19:46:36.8184424+05:30 0HL4JO5BKAU5B [INF] Request starting HTTP/1.1 DEBUG http://localhost:2822/  0 (e5be5b71)
+2017-05-05T19:46:36.8184424+05:30 0HL4JO5BKAU5C [INF] Request starting HTTP/1.1 GET http://localhost:2822/   (e5be5b71)
+2017-05-05T19:46:36.8924466+05:30 0HL4JO5BKAU5B [INF] Request finished in 88.0007ms 200  (15c52c40)
+2017-05-05T19:46:37.4184767+05:30 0HL4JO5BKAU5C [INF] Executing action method "artfriks.Controllers.HomeController.Index (artfriks)" with arguments (null) - ModelState is Valid (ba7f4ac2)
+2017-05-05T19:46:39.5435983+05:30 0HL4JO5BKAU5C [INF] Executing ViewResult, running view at path "/Views/Home/Index.cshtml". (9707eebe)
+2017-05-05T19:46:39.9746229+05:30 0HL4JO5BKAU5C [INF] Executed action "artfriks.Controllers.HomeController.Index (artfriks)" in 2596.0659ms (afa2e885)
+2017-05-05T19:46:40.0696283+05:30 0HL4JO5BKAU5C [INF] Request finished in 3273.0874ms 200 text/html; charset=utf-8 (15c52c40)

@@ -26,6 +26,8 @@ namespace artfriks.Models
         public string State { get; set; }
         public string Country { get; set; }
         public string PinCode { get; set; }
+        public DateTime Adddate { get; set; }
+        public ApplicationUser() { this.Adddate = DateTime.Now; }
     }
 
     public class homesection

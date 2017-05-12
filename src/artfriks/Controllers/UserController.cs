@@ -334,6 +334,26 @@ namespace artfriks.Controllers
             }
         }
 
+        // PUT: api/User/5
+        [HttpGet]
+        [Route("~/user/updateusername")]
+        public IActionResult Putusername(string value)
+        {
+            try
+            {
+                var userId = _userManager.GetUserName(User);
+                var user = _context.ApplicationUser.FirstOrDefault(c => c.UserName == userId);
+                user.FullName = value;
+                _context.ApplicationUser.Update(user);
+                _context.SaveChanges();
+                return Ok(new { status = 1, message = "Updated Successfully" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 0, message = ex.Message });
+            }
+        }
+
         [HttpPost("{id}")]
         [Route("~/user/updateuserprofile")]
         public IActionResult PutApplicationUser(int id, [FromBody]ApplicationUser value)
@@ -363,6 +383,23 @@ namespace artfriks.Controllers
         [HttpDelete("{id}")]
         public void Delete(int id)
         {
+        }
+
+        [HttpGet]
+        [Route("~/user/addinvites")]
+        public IActionResult postInvites(string id)
+        {
+            try {
+                Invite invite = new Invite();
+                invite.Email = id;
+                _context.Invites.Add(invite);
+                _context.SaveChanges();
+                return Ok(new { status = 0, message ="Added Successfully" });
+            }
+            catch (Exception ex)
+            {
+                return Ok(new { status = 1, message = ex.Message });
+            }
         }
 
         [HttpGet]
