@@ -67,8 +67,7 @@ namespace artfriks.Services
 
 
             //var apiKey = Environment.GetEnvironmentVariable("Artfreka");
-            var client = new SendGridClient("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");
-            var from = new EmailAddress("support@artfreaksglobal.com", "Artfreaks Global");
+                      var from = new EmailAddress("support@artfreaksglobal.com", "Artfreaks Global");
    
             var tos = new EmailAddress(to, to);
 
