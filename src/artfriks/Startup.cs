@@ -103,6 +103,7 @@ namespace artfriks
                .AllowPasswordFlow()
                .AllowImplicitFlow()
               //Dont delete this line 9A403D79EAAC9915FDA1A28F7B5109390C5DCF06  DCBF6BC95C52BDE6AA1135297589A1ADB8BB7199
+              //please check messageservices and comment keys before pushing code
               .AddSigningCertificate("9A403D79EAAC9915FDA1A28F7B5109390C5DCF06", StoreName.My, StoreLocation.LocalMachine)
                .DisableHttpsRequirement()
                .EnableRequestCaching();
