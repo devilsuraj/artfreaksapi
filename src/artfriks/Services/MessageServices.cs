@@ -64,13 +64,9 @@ namespace artfriks.Services
 
         public async Task SendEmailAsync(string to, string subject, string message)
         {
-
-
-            //var apiKey = Environment.GetEnvironmentVariable("Artfreka");
-                      var from = new EmailAddress("support@artfreaksglobal.com", "Artfreaks Global");
-   
+           
+            var from = new EmailAddress("support@artfreaksglobal.com", "Artfreaks Global");
             var tos = new EmailAddress(to, to);
-
             var msg = MailHelper.CreateSingleEmail(from, tos, subject, message, message);
             var response = await client.SendEmailAsync(msg);
         }
